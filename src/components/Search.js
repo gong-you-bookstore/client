@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Scanner from "./Scanner";
 
-const Search = ()=> {
+const Search = ({result, setResult, setIsRegister})=> {
   const [searchWord, setSearchWord] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [camera, setCamera] = useState(false);
-  // const [searchWord, setSearchWord] = useState(null);
-  const [result, setResult] = useState({});
+
+  const navigate = useNavigate();
 
   const onDetected = searchWord => {
     setSearchWord(searchWord);
@@ -20,10 +21,6 @@ const Search = ()=> {
       setResult({})
     }
   },[searchResults])
-
-  useEffect(()=>{
-    console.log('result', result)
-  },[result])
 
   const onChangeSearchWord = (event) => {
     setSearchWord(event.target.value);
@@ -50,22 +47,7 @@ const Search = ()=> {
   };
   
   
-  const onClickLibraryButton = () => {
-    sendLibrary()
-      .then((res) => {
-        console.log("dddddddddd", res)
-      })
-      .catch((error) => {
-        console.log("작성실패", error);
-      });
-  };
-
-  const sendLibrary = async () => {
-    return await axios.get(
-      `https://www.nl.go.kr/NL/search/openApi/search.do?key=844178c1b1ab808edc1094993a1e3aec8f8565712a5ab9bf69b8bf793ebc633d&apiType=json&srchTarget=total&kwd=${searchWord}&pageSize=10&category=도서`
-
-    );
-  };  
+  
 
   return (
     <>
@@ -93,12 +75,6 @@ const Search = ()=> {
       >
         Search
       </button>
-      <button
-        type="button"
-        onClick={() => onClickLibraryButton()}
-      >
-        Library
-      </button>
       <ul>
       {
         searchResults.map((item, index)=>(
@@ -112,15 +88,6 @@ const Search = ()=> {
       </ul>
       </div>
 
-      {
-        result ? (
-          <>
-            <h1>{result.title}</h1>
-            <h3>{result.isbn}</h3>
-            <p>{result.contents}</p>
-          </>
-        ) : (<></>)
-      }
     </>
   )
 }
