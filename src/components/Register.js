@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import RegisterForm from "./RegisterForm";
+import Kakaomap from "./Kakaomap";
+
+
 const Register = ({result, setResult}) => {
   const [KDC, setKDC] = useState("")
 
@@ -9,6 +11,7 @@ const Register = ({result, setResult}) => {
   useEffect(()=>{
     sendNLK()
       .then((res) => {
+        console.log(navigator.geolocation)
         if(res.data.total === 1){
           setKDC(res.data.result[0].classNo.substr(0, 3))
         }
@@ -74,6 +77,7 @@ const Register = ({result, setResult}) => {
           disabled
         ></textarea>
 
+        <Kakaomap />
       </div>
     </div>
     </>

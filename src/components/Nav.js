@@ -4,6 +4,13 @@ import $ from 'jquery'
 const Nav = ()=>{
   const navigate = useNavigate();
 
+  const menus = [
+    {name: "책방", address: "/bookstore"},
+    {name: "등록", address: "/register"},
+    {name: "커뮤니티", address: "/community"},
+    {name: "login", address: "/login"},
+  ]
+
   const onClickHamburger = () => {
     if($('.hamburger').hasClass("active")){
       $('.hamburger').removeClass( 'active' );
@@ -25,35 +32,23 @@ const Nav = ()=>{
         </h1>
       </div>
       
-      <div class="hamburger" onClick={()=>onClickHamburger()}>
+      <div className="hamburger" onClick={()=>onClickHamburger()}>
         <span className="line"></span>
         <span className="line"></span>
         <span className="line"></span>
       </div>
       
 
-      <ul className="navbar-menu">                     
-        <li>
-          <a 
-            onClick={()=>{navigate("/bookstore")}}
-          >
-            책방
-          </a>
-        </li>
-        <li>
-          <a 
-            onClick={()=>{navigate("/register")}}
-          >
-            등록
-          </a>
-        </li>
-        <li>
-          <a 
-            onClick={()=>{navigate('/login')}}
-          >
-            login
-          </a>
-        </li>
+      <ul className="navbar-menu">
+        {
+          menus.map((item, index)=>(
+            <li key={index}>
+              <a onClick={()=>{navigate(item.address)}}>
+                {item.name}
+              </a>
+            </li>
+          ))
+        }                   
       </ul>
 
       

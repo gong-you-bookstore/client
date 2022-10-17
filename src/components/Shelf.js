@@ -17,7 +17,7 @@ const Shelf = ()=>{
       </div>
       <div className='wood-shelf'></div>
 
-      <div className='book-container'>
+      {/* <div className='book-container'>
         {
           data.map((item, index)=>(
             <div key={index} className='book'>
@@ -37,7 +37,7 @@ const Shelf = ()=>{
           ))
         }
       </div>
-      <div className='wood-shelf'></div>
+      <div className='wood-shelf'></div> */}
 
       
     </>
