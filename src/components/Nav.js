@@ -1,7 +1,23 @@
 import { useNavigate } from "react-router-dom"
 import $ from 'jquery'
+import logoWhiteImg from './../assets/images/logo_row_white.png'
+import logoColorImg from './../assets/images/logo-color.png'
+
+import { useEffect, useState } from "react"
 
 const Nav = ()=>{
+  const [isTop, setIsTop] = useState(true)
+
+  $(document).on('scroll', function(){
+    if($(window).scrollTop() > 100){
+        $("nav").addClass("non-top");
+        setIsTop(false);
+    }else{
+        $("nav").removeClass("non-top");
+        setIsTop(true);
+    }
+  })
+
   const navigate = useNavigate();
 
   const menus = [
@@ -28,7 +44,14 @@ const Nav = ()=>{
         <h1
           onClick={()=>{navigate("/")}}
         >
-          공 유 책 방
+        {
+          isTop ? (
+            <img src={logoWhiteImg} style={{width:"70px"}}></img>
+          ) : (
+            <img src={logoColorImg} style={{width:"70px"}}></img>
+          )
+        }
+
         </h1>
       </div>
       

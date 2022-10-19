@@ -11,7 +11,7 @@ const Register = ({result, setResult}) => {
   useEffect(()=>{
     sendNLK()
       .then((res) => {
-        console.log(navigator.geolocation)
+        console.log("fffffff", res)
         if(res.data.total === 1){
           setKDC(res.data.result[0].classNo.substr(0, 3))
         }
