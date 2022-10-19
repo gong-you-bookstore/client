@@ -8,6 +8,8 @@ import { useEffect, useState } from "react"
 const Nav = ()=>{
   const [isTop, setIsTop] = useState(true)
 
+  const navigate = useNavigate();
+
   $(document).on('scroll', function(){
     if($(window).scrollTop() > 100){
         $("nav").addClass("non-top");
@@ -17,8 +19,6 @@ const Nav = ()=>{
         setIsTop(true);
     }
   })
-
-  const navigate = useNavigate();
 
   const menus = [
     {name: "책방", address: "/bookstore"},
@@ -51,7 +51,6 @@ const Nav = ()=>{
             <img src={logoColorImg} style={{width:"70px"}}></img>
           )
         }
-
         </h1>
       </div>
       
@@ -60,7 +59,6 @@ const Nav = ()=>{
         <span className="line"></span>
         <span className="line"></span>
       </div>
-      
 
       <ul className="navbar-menu">
         {
@@ -73,12 +71,7 @@ const Nav = ()=>{
           ))
         }                   
       </ul>
-
-      
     </nav>
-
-
-        
     )
 }
 

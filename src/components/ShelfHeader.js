@@ -1,14 +1,20 @@
+import { useNavigate } from 'react-router-dom'
+
 import logoRowImg from './../assets/images/logo_row_white.png'
 
 const ShelfHeader = () => {
+  const navigate = useNavigate();
+
   return (
-    <header className="header shelfImg">
+    <header className="header-shelf">
         <div className="overlay">
-        <img className="logo" src={logoRowImg} />
+        <img className="w150" src={logoRowImg} />
           <h1 className="subtitle">우리가 만드는 공유책장</h1>
           <button
             className='color-btn'
             type="button"
+            onClick={()=>navigate('/register')}
+
           >
             GET STARTED
           </button>

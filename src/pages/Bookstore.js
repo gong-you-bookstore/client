@@ -4,6 +4,7 @@ import Shelf from "../components/Shelf";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 import { useEffect } from "react";
+import Sidebar from "../components/Sidebar";
 
 const Bookstore = ()=>{
 
@@ -13,13 +14,12 @@ const Bookstore = ()=>{
     <>
       <Nav />
       <ShelfHeader />
+<div className="stone-background">
+<Shelf />
 
-      <div className='stone-background'>
+</div>
 
 
-        <Shelf />
-
-      </div>
 
 
     </>
