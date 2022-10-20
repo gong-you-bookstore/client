@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 import logoRowImg from './../assets/images/logo_row_white.png'
 
-const ShelfHeader = () => {
+const ShelfHeader = ({onClickDownBtn}) => {
   const navigate = useNavigate();
 
   return (
@@ -18,11 +18,11 @@ const ShelfHeader = () => {
           >
             GET STARTED
           </button>
-            {/* <h1 className="subtitle">우리가 만드는 공유책장</h1>
-            <h1 className="title">Open Bookstore</h1>   */}
         </div>  
 
-        <div className="mouse-icon"><div className="wheel"></div></div>
+        <div className="mouse-icon" onClick={()=>{onClickDownBtn()}}>
+          <div className="wheel"></div>
+        </div>
     </header>
   )
 }
