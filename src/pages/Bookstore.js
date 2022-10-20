@@ -3,21 +3,33 @@ import Nav from "../components/Nav";
 import Shelf from "../components/Shelf";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Sidebar from "../components/Sidebar";
+
 
 const Bookstore = ()=>{
 
-  const navigate = useNavigate();
+  const gallaryRef = useRef();
+
+  const onClickDownBtn = () => {
+    gallaryRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return(
     <>
       <Nav />
-      <ShelfHeader />
-<div className="stone-background">
-<Shelf />
-
-</div>
+      <ShelfHeader onClickDownBtn={onClickDownBtn}/>
+      
+      <div className="stone-wrapper" ref={gallaryRef}>
+    
+      <h1>Gallery</h1>
+        <div className="gallery-area" >
+          <Shelf/>
+          <Shelf/>
+          <Shelf/>
+          <Shelf/>
+        </div>
+      </div>
 
 
 

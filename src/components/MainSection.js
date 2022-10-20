@@ -1,4 +1,5 @@
-import { Fade, Slide, Flip, Rotate, Roll } from "react-awesome-reveal";
+import { Slide, Rotate } from "react-awesome-reveal";
+import { useEffect, useRef } from "react";
 
 import DoorHeader from "./DoorHeader";
 
@@ -9,13 +10,20 @@ import locationImg from './../assets/images/location.png'
 
 
 const MainSection = () => {
+
+  const mainRef = useRef();
+
+  const onClickDownBtn = () => {
+    mainRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <>
-      <DoorHeader />
+      <DoorHeader onClickDownBtn={onClickDownBtn}/>
 
-      <div className="main-section">
+      <div className="main-section" ref={mainRef}>
         <div className="container">
-          <span className="main-title">공유, 추천</span>
+          <span className="main-title">공유 • 추천</span>
           <div className="flex-box">
             <div className="content-info-left">
               <Slide direction="up" cascade triggerOnce>

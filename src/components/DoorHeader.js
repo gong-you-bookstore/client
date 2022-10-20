@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import logoRowImg from './../assets/images/logo_row_white.png'
 
-const DoorHeader = () => {
+const DoorHeader = ({onClickDownBtn}) => {
   const navigate = useNavigate();
   return (
     <header className="header-door">
@@ -13,7 +13,7 @@ const DoorHeader = () => {
               type="button"
               onClick={()=>navigate('/register')}
             >
-              GET STARTED
+              Get Started
             </button>
         </div>  
         <div className="shape">
@@ -22,7 +22,8 @@ const DoorHeader = () => {
               </path>
           </svg>
         </div>  
-        <div className="mouse-icon"><div className="wheel"></div></div>
+        <div className="mouse-icon" onClick={()=>{onClickDownBtn()}}>
+          <div className="wheel"></div></div>
 
     </header>
   )
