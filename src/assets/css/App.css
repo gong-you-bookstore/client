@@ -51,7 +51,6 @@
 .mt-20 {
   margin-top: 20px;
 }
-
 .color-btn {
   padding: 10px 20px;
   color: #fff;
@@ -65,7 +64,6 @@
 .color-btn:hover {
   box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.4);
 }
-
 .info-text {
   letter-spacing: 5px;
   line-height: 2;
