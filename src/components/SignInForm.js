@@ -26,6 +26,7 @@ const SignInForm = ({setIsSignIn})=>{
           placeholder="Email"
           value={signInData.email}
           onChange={onChangeSignInData}
+          className="input-styled w-100p"
         />
         <label htmlFor="password" className="form-label"></label>
         <input
@@ -35,6 +36,7 @@ const SignInForm = ({setIsSignIn})=>{
           name="password"
           id="password"
           value={signInData.password}
+          className="input-styled w-100p"
         />
         <button 
           type="button" 
@@ -42,7 +44,7 @@ const SignInForm = ({setIsSignIn})=>{
             console.log("1")
             // onClickLoginButton()
           }}
-          className="mb-20 mt-20 color-btn"
+          className="mb-20 mt-20 color-btn w-100p"
         >
           Login
         </button>

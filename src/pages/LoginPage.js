@@ -1,6 +1,5 @@
 import SignInForm from "../components/SignInForm";
 import SignUpForm from "../components/SignUpForm";
-import Nav from '../components/Nav'
 import $ from 'jquery'
 import { useState } from "react";
 import logoColorImg from './../assets/images/logo-color.png'
@@ -14,7 +13,6 @@ const LoginPage = () => {
   
   return (
     <>
-    <Nav />
     {/* <div className="grey-col-background"> */}
     <header className="header-door">
     <div className="overlay" >

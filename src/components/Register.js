@@ -29,8 +29,7 @@ const Register = ({result, setResult}) => {
   
   return (
     <>
-    <div className="center-overlay">
-      <div className="content-box">
+    <div className="flex-col-box login-container">
         <img src={result.thumbnail} />
 
         <label htmlFor="email" className="form-label">Title</label>
@@ -42,6 +41,7 @@ const Register = ({result, setResult}) => {
           value={result.title}
           // onChange={onChangeSignInData}
           disabled
+          className="input-styled w-100p"
         />
 
         <label htmlFor="email" className="form-label">ISBN13</label>
@@ -53,6 +53,8 @@ const Register = ({result, setResult}) => {
           value={result.isbn.slice(-13)}
           // onChange={onChangeSignInData}
           disabled
+          className="input-styled w-100p"
+
         />
 
         <label htmlFor="email" className="form-label">KDC</label>
@@ -64,21 +66,22 @@ const Register = ({result, setResult}) => {
           value={KDC}
           // onChange={onChangeSignInData}
           disabled
+          className="input-styled w-100p"
+
         />
 
         <label htmlFor="content" className="form-label">Content</label>
         <textarea
-          className="form-control"
+          className="input-styled w-100p"
           value={result.contents}
           // onChange={onChangeUpdateData}
           name="content"
           id="content"
-          rows="8"
+          rows="5"
           disabled
         ></textarea>
 
         <Kakaomap />
-      </div>
     </div>
     </>
   )

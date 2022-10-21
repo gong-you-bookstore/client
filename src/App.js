@@ -1,6 +1,6 @@
 import './assets/css/App.css'
 import { Route, Routes } from "react-router-dom";
-
+import Nav from './components/Nav';
 import Bookstore from './pages/Bookstore';
 import RegisterPage from './pages/RegisterPage';
 import Home from './pages/Home';
@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />

@@ -23,7 +23,10 @@ const DoorHeader = ({onClickDownBtn}) => {
           </svg>
         </div>  
         <div className="mouse-icon" onClick={()=>{onClickDownBtn()}}>
-          <div className="wheel"></div></div>
+          <div className="wheel">
+          </div>
+        </div>
+
 
     </header>
   )

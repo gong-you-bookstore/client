@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import DoorHeader from "./DoorHeader";
 
 import tokenImg from './../assets/images/coin2.png'
-import mapImg from './../assets/images/map.png'
-import locationImg from './../assets/images/location.png'
+import mapImg from './../assets/images/map2.png'
+import locationImg from './../assets/images/chat.png'
 
 
 
@@ -41,7 +41,7 @@ const MainSection = () => {
                 <p className="info-text fc-muted fs-28">
                 주변 친구들과<br/>
                 책을 <span className="fc-main fw-bold">공유</span>하고<br/>
-                새로운 책을 <span className="fc-main fw-bold">추천</span>받으세요
+                새로운 책을<br/><span className="fc-main fw-bold">추천</span>받으세요
                 </p>
               </Slide>
             </div>
