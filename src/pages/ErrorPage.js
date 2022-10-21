@@ -9,12 +9,10 @@ const ErrorPage = () => {
   return (
     <>
     <Nav />
-    <div className="black-background">
-      <div className="error">
+    <div className="grey-col-background">
       <img src={logoColorImg} className="w150" />
-      </div>
-      <div className="error" title="404">
-        404:<br/>Page Not Found.
+      <div className="fc-white fs-32" title="404">
+        Page Not Found.
       </div>
     </div>
     </>

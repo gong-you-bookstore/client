@@ -6,12 +6,12 @@ const DoorHeader = ({onClickDownBtn}) => {
   return (
     <header className="header-door">
         <div className="overlay">
-          <img className="w150" src={logoRowImg} />
-            <h1 className="subtitle">우리가 만드는 공유책장</h1>
+          <h1 className="subtitle">우리가 만드는 공유책장</h1>
+          <img className="w150 mb-20" src={logoRowImg} />
             <button
               className='color-btn'
               type="button"
-              onClick={()=>navigate('/register')}
+              onClick={()=>navigate('/login')}
             >
               Get Started
             </button>
