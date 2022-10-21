@@ -18,10 +18,10 @@ const SignUpForm = ({setIsSignIn})=>{
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <div className="login-form">
+      <h1 className="mb-20">Sign Up</h1>
+      <div className="login-form flex-col-box">
       
-        <label htmlFor="password" className="form-label">Email Address</label>
+        <label htmlFor="password" className="form-label"></label>
 
         <input
           id="email"
@@ -31,7 +31,7 @@ const SignUpForm = ({setIsSignIn})=>{
           value={signUpData.email}
           onChange={onChangeSignUpData}
         />
-        <label htmlFor="password" className="form-label">Password</label>
+        <label htmlFor="password" className="form-label"></label>
 
         <input
           id="password"
@@ -41,7 +41,7 @@ const SignUpForm = ({setIsSignIn})=>{
           value={signUpData.password}
           onChange={onChangeSignUpData}
         />
-        <label htmlFor="password" className="form-label">rePassword</label>
+        <label htmlFor="password" className="form-label"></label>
 
         <input
           id="rePassword"
@@ -51,7 +51,7 @@ const SignUpForm = ({setIsSignIn})=>{
           value={signUpData.rePassword}
           onChange={onChangeSignUpData}
         />
-        <label htmlFor="password" className="form-label">Name</label>
+        <label htmlFor="password" className="form-label"></label>
         <input
           id="name"
           name="name"
@@ -60,16 +60,22 @@ const SignUpForm = ({setIsSignIn})=>{
           value={signUpData.name}
           onChange={onChangeSignUpData}
         />
-        <button type="button" onClick={()=>{}}>
+        <button 
+          type="button" 
+          onClick={()=>{}}
+          className="mb-20 mt-20 color-btn"
+        >
           Sign Up
         </button>
 
       <p className="message">
         Already registered?{" "}
         <span>
-          <strong onClick={()=>{
+          <strong
+            className="c-p"
+            onClick={()=>{
               setIsSignIn(true)
-            }}>Sign In</strong>
+            }}>Let`s Sign In</strong>
         </span>
       </p>
       </div>

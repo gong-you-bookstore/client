@@ -15,11 +15,10 @@ const SignInForm = ({setIsSignIn})=>{
   
   return (
     <>
-      <h1>Login</h1>
-      <p>등록된 이메일로 로그인을 진행해주세요.</p>
+      <h1 className="mb-20">Sign In</h1>
 
-      <div className="login-form">
-        <label htmlFor="email" className="form-label">Email address</label>
+      <div className="login-form flex-col-box">
+        <label htmlFor="email" className="form-label"></label>
         <input
           id="email"
           name="email"
@@ -28,7 +27,7 @@ const SignInForm = ({setIsSignIn})=>{
           value={signInData.email}
           onChange={onChangeSignInData}
         />
-        <label htmlFor="password" className="form-label">Password</label>
+        <label htmlFor="password" className="form-label"></label>
         <input
           type="password"
           placeholder="Password"
@@ -37,11 +36,15 @@ const SignInForm = ({setIsSignIn})=>{
           id="password"
           value={signInData.password}
         />
-        <button type="button" onClick={()=>{
-          console.log("1")
-          // onClickLoginButton()
-        }}>
-          login
+        <button 
+          type="button" 
+          onClick={()=>{
+            console.log("1")
+            // onClickLoginButton()
+          }}
+          className="mb-20 mt-20 color-btn"
+        >
+          Login
         </button>
 
 
@@ -49,9 +52,10 @@ const SignInForm = ({setIsSignIn})=>{
           Not registered?{"  "}
           <span>
             <strong
+              className="c-p"
               onClick={()=>{
                 setIsSignIn(false)
-              }}>Create an account</strong>
+              }}>Create an Account</strong>
           </span>
         </p>
       </div>
