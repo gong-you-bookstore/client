@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom"
 import $ from 'jquery'
+import logo from './../assets/images/logo.png'
+
 import logoWhiteImg from './../assets/images/logo_row_white.png'
 import logoColorImg from './../assets/images/logo-color.png'
+import favicon from './../assets/images/favicon.png'
 
 import { useEffect, useState } from "react"
 
@@ -13,16 +16,18 @@ const Nav = ()=>{
   $(document).on('scroll', function(){
     if($(window).scrollTop() > 100){
         $("nav").addClass("non-top");
-        setIsTop(false);
+        $(".line").css('background-color', '#333');
+        setIsTop(false)
     }else{
         $("nav").removeClass("non-top");
-        setIsTop(true);
+        $(".line").css('background-color', '#fff');
+        setIsTop(true)
     }
   })
 
   const menus = [
+    {name: "찾기", address: "/register"},
     {name: "책방", address: "/bookstore"},
-    {name: "등록", address: "/register"},
     {name: "커뮤니티", address: "/community"},
     {name: "login", address: "/login"},
   ]
@@ -40,18 +45,19 @@ const Nav = ()=>{
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <h1
-          onClick={()=>{navigate("/")}}
+      <div 
+        onClick={()=>{navigate("/");}}
+        className="navbar-logo"
         >
-        {
+        <img src={favicon} style={{width:"40px"}} className="hex-logo"/>
+        <img src={logo} style={{width:"60px"}} className="txt-logo"/>
+        {/* {
           isTop ? (
-            <img src={logoWhiteImg} style={{width:"70px"}}></img>
+            <img src={logo} style={{width:"60px"}}></img>
           ) : (
-            <img src={logoColorImg} style={{width:"70px"}}></img>
+            <img src={logoColorImg} style={{width:"60px"}}></img>
           )
-        }
-        </h1>
+        } */}
       </div>
       
       <div className="hamburger" onClick={()=>onClickHamburger()}>

@@ -1,6 +1,5 @@
 import ShelfHeader from "../components/ShelfHeader";
-import Nav from "../components/Nav";
-import Shelf from "../components/Shelf";
+import BookCarousel from "../components/BookCarousel";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 import { useEffect, useRef } from "react";
@@ -17,17 +16,30 @@ const Bookstore = ()=>{
 
   return(
     <>
-      <Nav />
       <ShelfHeader onClickDownBtn={onClickDownBtn}/>
       
-      <div className="stone-wrapper" ref={gallaryRef}>
+      <div className="cement-wallpaper" ref={gallaryRef}>
     
       <h1>Gallery</h1>
         <div className="gallery-area" >
-          <Shelf/>
-          <Shelf/>
-          <Shelf/>
-          <Shelf/>
+
+        <div className="container">
+          <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+
+        <div className="container">
+          <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+
+        <div className="container">
+          <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+
+
+          
         </div>
       </div>
 

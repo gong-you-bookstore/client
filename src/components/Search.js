@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Scanner from "./Scanner";
+import SearchCarousel from "./SearchCarousel";
 
 const Search = ({result, setResult, setIsRegister})=> {
   const [searchWord, setSearchWord] = useState('');
@@ -51,42 +52,52 @@ const Search = ({result, setResult, setIsRegister})=> {
 
   return (
     <>
+
       <div className="section-container">
         {camera && <Scanner onDetected={onDetected} />}
       </div>
 
-    <div style={{marginTop:"100px"}}>
+    <div className="search-container" style={{margin:"120px 0 0 0"}}>
     <input
         id="searchWord"
         name="searchWord"
         type="text"
-        placeholder="searchWord"
+        placeholder="검색어를 입력하세요"
         value={searchWord}
         onChange={onChangeSearchWord}
+        className="input-styled w-100p"
       />
       
-      <button onClick={() => setCamera(!camera)}>
+      <button 
+        type="button"
+        onClick={() => setCamera(!camera)}
+        className="mb-20 mt-20 color-btn w-100p"
+      >
         {camera ? "Stop" : "ISBN SCAN"}
       </button>
 
       <button
         type="button"
         onClick={() => onClickSearchButton()}
+        className="mb-20 mt-20 color-btn w-100p"
       >
         Search
       </button>
-      <ul>
-      {
-        searchResults.map((item, index)=>(
-          <li key={index} style={{display:"inline-block"}}>
-            <img src={item.thumbnail} onClick={()=>{
-              setResult(item)
-            }} />
-          </li>
-        ))
-      }
-      </ul>
       </div>
+
+      {
+        searchResults.length ? (
+          <>
+            <SearchCarousel 
+              searchResults={searchResults} 
+              setResult={setResult}
+            />
+          </>
+        ) : (
+          <></>
+        )
+      
+      }
 
     </>
   )

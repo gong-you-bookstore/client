@@ -30,6 +30,7 @@ const SignUpForm = ({setIsSignIn})=>{
           placeholder="Email"
           value={signUpData.email}
           onChange={onChangeSignUpData}
+          className="input-styled w-100p"
         />
         <label htmlFor="password" className="form-label"></label>
 
@@ -40,6 +41,7 @@ const SignUpForm = ({setIsSignIn})=>{
           placeholder="Password"
           value={signUpData.password}
           onChange={onChangeSignUpData}
+          className="input-styled w-100p"
         />
         <label htmlFor="password" className="form-label"></label>
 
@@ -50,6 +52,7 @@ const SignUpForm = ({setIsSignIn})=>{
           placeholder="re-Password"
           value={signUpData.rePassword}
           onChange={onChangeSignUpData}
+          className="input-styled w-100p"
         />
         <label htmlFor="password" className="form-label"></label>
         <input
@@ -59,11 +62,12 @@ const SignUpForm = ({setIsSignIn})=>{
           placeholder="Name"
           value={signUpData.name}
           onChange={onChangeSignUpData}
+          className="input-styled w-100p"
         />
         <button 
           type="button" 
           onClick={()=>{}}
-          className="mb-20 mt-20 color-btn"
+          className="mb-20 mt-20 color-btn w-100p"
         >
           Sign Up
         </button>

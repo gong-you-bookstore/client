@@ -1,5 +1,4 @@
 import MainSection from "../components/MainSection";
-import Nav from "../components/Nav";
 import Search from "../components/Search";
 
 const Home = ()=>{
@@ -7,7 +6,6 @@ const Home = ()=>{
   
   return(
     <>
-    <Nav />
     <MainSection/>
     </>
     
