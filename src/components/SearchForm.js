@@ -55,13 +55,13 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
 
     <div className="content-section white-box">
       <span className="fc-main fs-32 fw-bold">Step 1</span>
-      <p className="fc-dark fs-28">
+      <p className="fc-muted fs-28">
         등록하고 싶은 책을 검색하세요
       </p>
       {
         // camera && <Scanner onDetected={onDetected} />
       }
-      <div className="search-container" >
+      <div className="mtb-50" >
         <input
           id="searchWord"
           name="searchWord"
@@ -75,7 +75,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
           <button 
             type="button"
             // onClick={() => setCamera(!camera)}
-            className=" color-btn w-100p"
+            className=" color-btn w-100p mtb-10"
           >
             {camera ? "Stop" : "ISBN SCAN"}
           </button>
@@ -83,7 +83,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
           <button
             type="button"
             onClick={() => onClickSearchButton()}
-            className="mb-20 mt-20 color-btn w-100p"
+            className="mtb-10 color-btn w-100p"
           >
             Search
           </button>

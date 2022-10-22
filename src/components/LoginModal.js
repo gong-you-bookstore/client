@@ -59,7 +59,7 @@ const LoginModal = ({isOpen, setOpen}) => {
       <div className="flex-col-box">
         <img 
           src={logoColorImg} 
-          className="w120 mb-10 c-p"
+          className="w-120 mb-10 c-p"
         />
         {
           isSignIn ? (

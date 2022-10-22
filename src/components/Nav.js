@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 import logo from './../assets/images/logo.png'
 import favicon from './../assets/images/favicon.png'
-import LoginModal from "../pages/LoginModal"
+import LoginModal from "./LoginModal"
 
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
