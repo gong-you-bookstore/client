@@ -1,12 +1,16 @@
 import SearchCarousel from "./SearchCarousel";
 
-const SelectForm = ({searchResults, setResult}) => {
+const SelectForm = ({searchResults, setResult, step2Ref}) => {
   return (
+    <>
+              
+    <span className="pointer" ref={step2Ref} >
+    </span>
     <div className="container">
     {
           searchResults.length ? (
             <>
-              <div className="content-section white-box grey-background">
+              <div className="content-section white-box">
                 <span className="fc-main fs-32 fw-bold">Step 2</span>
                 <p className="fc-muted fs-28">
                 맞는 책을 고르세요
@@ -24,6 +28,7 @@ const SelectForm = ({searchResults, setResult}) => {
           )
         }
     </div>
+    </>
   )
 }
 

@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import Kakaomap from "./Kakaomap";
 
 
-const RegisterForm = ({result, resultRef}) => {
+const RegisterForm = ({result, step3Ref}) => {
   const [KDC, setKDC] = useState("")
 
   useEffect(()=>{
     sendNLK()
       .then((res) => {
+        console.log("KDC", res.data.result[0].classNo)
         if(res.data.total === 1){
           setKDC(res.data.result[0].classNo.substr(0, 3))
         }
@@ -26,8 +27,10 @@ const RegisterForm = ({result, resultRef}) => {
   };  
   
   return (
-    <div className="container" ref={resultRef}>
-    <div className="content-section white-box" >
+    <>
+    <span className="pointer" ref={step3Ref} />
+    <div className="container">
+    <div className="white-box content-section" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
     <p className="fc-muted fs-28">
         내용을 작성해주세요
@@ -88,6 +91,7 @@ const RegisterForm = ({result, resultRef}) => {
     </div>
     </div>
     </div>
+    </>
   )
 }
 
