@@ -10,7 +10,7 @@ const RegisterForm = ({result, step3Ref}) => {
   useEffect(()=>{
     sendNLK()
       .then((res) => {
-        console.log("KDC", res.data.result[0].classNo)
+        // console.log("KDC", res.data.result[0].classNo)
         if(res.data.total === 1){
           setKDC(res.data.result[0].classNo.substr(0, 3))
         }
@@ -28,9 +28,9 @@ const RegisterForm = ({result, step3Ref}) => {
   
   return (
     <>
-    <span className="pointer" ref={step3Ref} />
-    <div className="container">
-    <div className="white-box content-section" >
+    <span className="pointer"  />
+    <div className="container w-100p">
+    <div className="white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
     <p className="fc-muted fs-28">
         내용을 작성해주세요
@@ -38,7 +38,7 @@ const RegisterForm = ({result, step3Ref}) => {
     <div className="flex-col-box mtb-50">
         <img src={result.thumbnail} />
 
-        <label htmlFor="email" className="form-label">Title</label>
+        <label htmlFor="email" className="form-label" ref={step3Ref}>Title</label>
         <input
           id="title"
           name="title"

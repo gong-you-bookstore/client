@@ -52,7 +52,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
   return (
     <>
     <div className="container">
-    <div className="content-section white-box">
+    <div className=" white-box">
       <span className="fc-main fs-32 fw-bold">Step 1</span>
       <p className="fc-muted fs-28">
         등록하고 싶은 책을 검색하세요
@@ -60,7 +60,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
       {
         // camera && <Scanner onDetected={onDetected} />
       }
-      <div className="mtb-50" >
+      <div className="mt-20" >
         <input
           id="searchWord"
           name="searchWord"
