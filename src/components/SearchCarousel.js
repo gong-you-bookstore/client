@@ -25,23 +25,17 @@ const SearchCarousel = ({searchResults, setResult})=>{
   
   return (
     <>
-        <span className="fc-main fs-32 fw-bold">Step 2</span>
-        <p className="fc-dark fs-28">
-        맞는 책을 고르세요
-        </p>
           <Carousel responsive={responsive}>
             {searchResults.map((item, index)=>(
-              <>
                 <img 
                   key={index} 
                   src={item.thumbnail} 
-                  className=""
+                  className="h-150"
                   onClick={()=>{
                     setResult(item);
                   }}
                 
                 />
-              </>
             ))}
           </Carousel>
     </>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const { kakao } = window;
 
@@ -11,6 +11,12 @@ export default function KakaoMapScript() {
     // };
     // const map = new kakao.maps.Map(container, options);
 
+    
+
+    // useEffect(()=>{
+    //     console.log("ssssssssss",lat, lon)
+
+    // },[lat])
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -25,9 +31,11 @@ export default function KakaoMapScript() {
     
         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
         navigator.geolocation.getCurrentPosition(function(position) {
-            
-            var lat = position.coords.latitude, // 위도
-                lon = position.coords.longitude; // 경도
+            // setLat(position.coords.latitude);
+            // setLon(position.coords.longitude);
+            var lat = 37.3970802, // 위도
+                lon = 126.986331; // 경도
+
             
             var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
                 message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다

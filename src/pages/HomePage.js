@@ -10,7 +10,6 @@ const HomePage = ()=>{
     introRef.current?.scrollIntoView({ behavior: 'smooth' });
   }
   
-  
   return(
     <>
     <DoorHeader onClickDownBtn={onClickDownBtn}/>

@@ -5,6 +5,7 @@ import $ from 'jquery'
 
 import SelectForm from "../components/SelectForm";
 const RegisterPage = () => {
+  
   const resultRef = useRef();
   const onClickDownBtn = () => {
     resultRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -20,7 +21,6 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div className="grey-full-background">
         <SearchForm
           searchWord={searchWord}
           setSearchWord={setSearchWord}
@@ -31,7 +31,6 @@ const RegisterPage = () => {
           searchResults={searchResults}
           setResult={setResult}
         />
-      </div>
 
       {
         result.title ? (

@@ -8,7 +8,7 @@ const ErrorPage = () => {
   return (
     <>
     <div className="darkgrey-full-background flex-col-box ">
-      <img src={logoColorImg} className="w150" />
+      <img src={logoColorImg} className="w-150" />
       <div className="fc-white fs-32" title="404">
         Page Not Found.
       </div>

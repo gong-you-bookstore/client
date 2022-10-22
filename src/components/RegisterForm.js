@@ -29,10 +29,10 @@ const RegisterForm = ({result, resultRef}) => {
     <div className="container" ref={resultRef}>
     <div className="content-section white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
-    <p className="fc-dark fs-28">
+    <p className="fc-muted fs-28">
         내용을 작성해주세요
       </p>
-    <div className="flex-col-box">
+    <div className="flex-col-box mtb-50">
         <img src={result.thumbnail} />
 
         <label htmlFor="email" className="form-label">Title</label>

@@ -35,25 +35,40 @@
 .c-p {
   cursor: pointer;
 }
+.h-150 {
+  height: 150px;
+}
 .w-100p {
   width: 100%;
 }
-.w200 {
+.w-200 {
   width: 200px;
 }
-.w150 {
+.w-150 {
   width: 150px;
 }
-.w120 {
+.w-120 {
   width: 120px;
 }
-
+.mb-10 {
+  margin-bottom: 10px;
+}
 .mb-20 {
   margin-bottom: 20px;
 }
-
 .mt-20 {
   margin-top: 20px;
+}
+
+.mtb-10 {
+  margin: 10px 0;
+}
+.mtb-50 {
+  margin: 50px 0;
+}
+
+.mtb-10 {
+  margin: 10px 0;
 }
 .color-btn {
   padding: 10px 20px;
@@ -82,7 +97,7 @@
   color: #fff;
 }
 .fc-muted {
-  color: #666;
+  color: #888;
 }
 
 .fs-32 {
@@ -352,7 +367,7 @@
 }
 
 .grey-background {
-  background-color: #efefef;
+  background-color: #efefef !important;
 }
 
 .center-text {
@@ -590,7 +605,6 @@ video.drawingBuffer {
 
 .book {
   margin: 20px 10px 0 10px;
-  height: 150px;
   background-color: white;
   transition: all .3s ease-in-out;
   transform-origin: left center 0px;

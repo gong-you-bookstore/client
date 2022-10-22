@@ -47,7 +47,7 @@ const Intro = ({introRef}) => {
           <span className="fc-main fs-32 fw-bold">Step 2</span>
           <div className="content-info-center">
             <Rotate>
-              <img src={tokenImg} className="w200" />
+              <img src={tokenImg} className="w-200" />
             </Rotate>
             <p className="info-text center-text fc-dark fs-28">
               책을 <span className="fc-main fw-bold">토큰</span> 으로 바꿔보세요
@@ -60,7 +60,7 @@ const Intro = ({introRef}) => {
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Step 3</span>
           <div className="content-info-between-1">
-            <img src={mapImg} className="w200" />
+            <img src={mapImg} className="w-200" />
             <Fade direction="right" cascade triggerOnce>
               <p className="info-text fc-dark fs-28">
                 내 주변 사람들의 책을 확인하세요.
@@ -73,7 +73,7 @@ const Intro = ({introRef}) => {
                 지역 사람들과 커뮤니티를 형성해 보세요.
               </p>
             </Fade>
-            <img src={locationImg} className="w200" />
+            <img src={locationImg} className="w-200" />
           </div>
         </div>
       </div>
