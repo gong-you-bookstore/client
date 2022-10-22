@@ -17,12 +17,16 @@ const Nav = ()=>{
     {name: "커뮤니티", address: "/community"},
   ]
 
-  // 페이지 이동시 햄버거 메뉴 닫기
-  useEffect(()=>{
+  const CloseHamburger = () => {
     if($('.hamburger').hasClass("active")){
       $('.hamburger').removeClass( 'active' );
       $('.navbar-menu').removeClass( 'active' );
     }
+  };
+
+  
+  useEffect(()=>{
+    CloseHamburger();
   },[pathname])
 
 
@@ -78,6 +82,7 @@ const Nav = ()=>{
         <li>
           <a onClick={()=>{
             setOpen(true);
+            CloseHamburger();
             $('body').css("overflow", "hidden");
           }}>
             Login

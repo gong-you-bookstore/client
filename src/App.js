@@ -5,11 +5,13 @@ import GallaryPage from './pages/GallaryPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />

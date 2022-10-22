@@ -28,9 +28,7 @@ const BookCarousel = ()=>{
     <>
           <Carousel responsive={responsive}>
             {data.map((item, index)=>(
-              <>
                 <img key={index} src={item.img_url} className="book" />
-              </>
             ))}
           </Carousel>
     </>
