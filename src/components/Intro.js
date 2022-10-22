@@ -12,7 +12,8 @@ const Intro = ({introRef}) => {
 
   return (
     <>
-      <div className="content-section" ref={introRef}>
+      <span className="pointer" ref={introRef} />
+      <div className="content-section" >
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Step 1</span>
           <div className="flex-box">

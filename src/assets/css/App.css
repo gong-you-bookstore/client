@@ -515,9 +515,7 @@
 .input-styled:focus {
   outline: none;
   border-color: #00C9A9;
-
 }
-
 
 strong:hover {
   text-decoration: underline;

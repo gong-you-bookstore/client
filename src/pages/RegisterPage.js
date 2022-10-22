@@ -5,10 +5,15 @@ import $ from 'jquery'
 
 import SelectForm from "../components/SelectForm";
 const RegisterPage = () => {
-  
-  const resultRef = useRef();
-  const onClickDownBtn = () => {
-    resultRef.current?.scrollIntoView({ behavior: 'smooth' });
+  const step2Ref = useRef();
+  const step3Ref = useRef();
+
+  const ScrollToStep2 = () => {
+    step2Ref.current?.scrollIntoView({ behavior: 'smooth'});
+  }
+
+  const ScrollToStep3 = () => {
+    step3Ref.current?.scrollIntoView({ behavior: 'smooth' });
   }
 
   const [searchWord, setSearchWord] = useState('');
@@ -16,7 +21,11 @@ const RegisterPage = () => {
   const [result, setResult] = useState({});
 
   useEffect(()=>{
-    onClickDownBtn()
+    ScrollToStep2()
+  },[searchResults])
+
+  useEffect(()=>{
+    ScrollToStep3()
   },[result])
 
   return (
@@ -26,10 +35,11 @@ const RegisterPage = () => {
           setSearchWord={setSearchWord}
           setSearchResults={setSearchResults}
         />
-      
+
         <SelectForm 
           searchResults={searchResults}
           setResult={setResult}
+          step2Ref={step2Ref}
         />
 
       {
@@ -37,7 +47,7 @@ const RegisterPage = () => {
           <>
             <RegisterForm
               result={result}
-              resultRef={resultRef}
+              step3Ref={step3Ref}
             />
           </>
         ) : (<></>)

@@ -52,7 +52,6 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
   return (
     <>
     <div className="container">
-
     <div className="content-section white-box">
       <span className="fc-main fs-32 fw-bold">Step 1</span>
       <p className="fc-muted fs-28">
