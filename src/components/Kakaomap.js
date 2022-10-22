@@ -22,7 +22,7 @@ const MapMaker = ({lat,lon}) => {
   }, [])
 
   return (
-    <div id="map" style={{width:"100%",height:"300px"}}></div>
+    <div id="map" style={{width:"80%",height:"300px"}}></div>
   );
 }
 
@@ -47,7 +47,7 @@ const Kakaomap = () => {
   },[])
 
   useEffect(()=>{
-    console.log(lat, lon)
+    // console.log(lat, lon)
   },[lat])
   
   // 위치 값을 찾으면 출력

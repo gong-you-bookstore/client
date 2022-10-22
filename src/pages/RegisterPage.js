@@ -9,11 +9,11 @@ const RegisterPage = () => {
   const step3Ref = useRef();
 
   const ScrollToStep2 = () => {
-    step2Ref.current?.scrollIntoView({ behavior: 'smooth'});
+    step2Ref.current?.scrollIntoView({ behavior: 'smooth', block:"center"});
   }
 
   const ScrollToStep3 = () => {
-    step3Ref.current?.scrollIntoView({ behavior: 'smooth' });
+    step3Ref.current?.scrollIntoView({ behavior: 'smooth', block:"center" });
   }
 
   const [searchWord, setSearchWord] = useState('');
@@ -21,7 +21,9 @@ const RegisterPage = () => {
   const [result, setResult] = useState({});
 
   useEffect(()=>{
-    ScrollToStep2()
+    if(searchResults.length){
+      ScrollToStep2()
+    }
   },[searchResults])
 
   useEffect(()=>{
@@ -30,18 +32,23 @@ const RegisterPage = () => {
 
   return (
     <>
+      <div className="bg-full-v flex-col-box">
         <SearchForm
           searchWord={searchWord}
           setSearchWord={setSearchWord}
           setSearchResults={setSearchResults}
         />
+      </div>
 
+      <div className="bg-full-v flex-col-box">
         <SelectForm 
           searchResults={searchResults}
           setResult={setResult}
           step2Ref={step2Ref}
         />
+      </div>
 
+      <div className="bg-full-p flex-col-box">
       {
         result.title ? (
           <>
@@ -52,6 +59,8 @@ const RegisterPage = () => {
           </>
         ) : (<></>)
       }
+      </div>
+
     </>
   )
 }
