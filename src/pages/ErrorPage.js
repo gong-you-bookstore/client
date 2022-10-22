@@ -7,7 +7,7 @@ import logoColorImg from './../assets/images/logo-color.png'
 const ErrorPage = () => {
   return (
     <>
-    <div className="grey-col-background">
+    <div className="darkgrey-full-background flex-col-box ">
       <img src={logoColorImg} className="w150" />
       <div className="fc-white fs-32" title="404">
         Page Not Found.
