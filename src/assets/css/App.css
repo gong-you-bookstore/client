@@ -27,7 +27,9 @@
 
   }
 }
-
+.t-c {
+  text-align: center;
+}
 .c-p {
   cursor: pointer;
 }
@@ -488,7 +490,7 @@
 
 }
 
-.login-container strong:hover {
+strong:hover {
   text-decoration: underline;
   color: #00C9A9;
 }

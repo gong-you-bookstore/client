@@ -1,23 +1,19 @@
 import './assets/css/App.css'
 import { Route, Routes } from "react-router-dom";
 import Nav from './components/Nav';
-import Bookstore from './pages/Bookstore';
+import GallaryPage from './pages/GallaryPage';
 import RegisterPage from './pages/RegisterPage';
-import Home from './pages/Home';
-import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
-// https://stackoverflow.com/questions/69473259/how-to-show-or-hide-navbar-when-scroll-use-react-js
+
+
 function App() {
-
-
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-
-        <Route path="/bookstore" element={<Bookstore />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/bookstore" element={<GallaryPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path='/*' element={<ErrorPage />} />
       </Routes>

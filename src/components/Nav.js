@@ -1,37 +1,43 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import $ from 'jquery'
-import logo from './../assets/images/logo.png'
-
-import logoWhiteImg from './../assets/images/logo_row_white.png'
-import logoColorImg from './../assets/images/logo-color.png'
-import favicon from './../assets/images/favicon.png'
-
 import { useEffect, useState } from "react"
 
+import logo from './../assets/images/logo.png'
+import favicon from './../assets/images/favicon.png'
+import LoginModal from "../pages/LoginModal"
+
 const Nav = ()=>{
-  const [isTop, setIsTop] = useState(true)
-
+  const [isOpen, setOpen] = useState(false);
+  const {pathname} = useLocation();
   const navigate = useNavigate();
-
-  $(document).on('scroll', function(){
-    if($(window).scrollTop() > 100){
-        $("nav").addClass("non-top");
-        $(".line").css('background-color', '#333');
-        setIsTop(false)
-    }else{
-        $("nav").removeClass("non-top");
-        $(".line").css('background-color', '#fff');
-        setIsTop(true)
-    }
-  })
 
   const menus = [
     {name: "찾기", address: "/register"},
     {name: "책방", address: "/bookstore"},
     {name: "커뮤니티", address: "/community"},
-    {name: "login", address: "/login"},
   ]
 
+  // 페이지 이동시 햄버거 메뉴 닫기
+  useEffect(()=>{
+    if($('.hamburger').hasClass("active")){
+      $('.hamburger').removeClass( 'active' );
+      $('.navbar-menu').removeClass( 'active' );
+    }
+  },[pathname])
+
+
+  // 스크롤 내리면 헤더스타일 변경
+  $(document).on('scroll', function(){
+    if($(window).scrollTop() > 100){
+        $("nav").addClass("non-top");
+        $(".line").css('background-color', '#333');
+    }else{
+        $("nav").removeClass("non-top");
+        $(".line").css('background-color', '#fff');
+    }
+  })
+
+  // 햄버거 메뉴 클릭시 네비메뉴 출력 & 햄버거바 애니메인션
   const onClickHamburger = () => {
     if($('.hamburger').hasClass("active")){
       $('.hamburger').removeClass( 'active' );
@@ -40,10 +46,10 @@ const Nav = ()=>{
       $('.hamburger').addClass( 'active' );
       $('.navbar-menu').addClass( 'active' );
     }
-    
   }
 
   return (
+    <>
     <nav className="navbar">
       <div 
         onClick={()=>{navigate("/");}}
@@ -51,13 +57,6 @@ const Nav = ()=>{
         >
         <img src={favicon} style={{width:"40px"}} className="hex-logo"/>
         <img src={logo} style={{width:"60px"}} className="txt-logo"/>
-        {/* {
-          isTop ? (
-            <img src={logo} style={{width:"60px"}}></img>
-          ) : (
-            <img src={logoColorImg} style={{width:"60px"}}></img>
-          )
-        } */}
       </div>
       
       <div className="hamburger" onClick={()=>onClickHamburger()}>
@@ -75,9 +74,20 @@ const Nav = ()=>{
               </a>
             </li>
           ))
-        }                   
+        } 
+        <li>
+          <a onClick={()=>{
+            setOpen(true);
+            $('body').css("overflow", "hidden");
+          }}>
+            Login
+          </a>
+        </li>                  
       </ul>
     </nav>
+
+    <LoginModal isOpen={isOpen} setOpen={setOpen} />
+    </>
     )
 }
 

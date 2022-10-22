@@ -3,10 +3,9 @@ import BookCarousel from "../components/BookCarousel";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 import { useEffect, useRef } from "react";
-import Sidebar from "../components/Sidebar";
+import GallaryContainer from "../containers/GallaryContainer";
 
-
-const Bookstore = ()=>{
+const GallaryPage = ()=>{
 
   const gallaryRef = useRef();
 
@@ -17,7 +16,6 @@ const Bookstore = ()=>{
   return(
     <>
       <ShelfHeader onClickDownBtn={onClickDownBtn}/>
-      
       <div className="cement-wallpaper" ref={gallaryRef}>
     
       <h1>Gallery</h1>
@@ -50,4 +48,4 @@ const Bookstore = ()=>{
   )
 }
 
-export default Bookstore;
+export default GallaryPage;

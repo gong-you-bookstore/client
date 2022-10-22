@@ -8,7 +8,9 @@ const ShelfHeader = ({onClickDownBtn}) => {
   return (
     <header className="header-shelf">
         <div className="overlay">
+
         <h1 className="subtitle">우리가 만드는 공유책장</h1>
+
         <img className="w150 mb-20" src={logoRowImg} />
           <button
             className='color-btn'
@@ -18,6 +20,7 @@ const ShelfHeader = ({onClickDownBtn}) => {
           >
             GET STARTED
           </button>
+
         </div>  
 
         <div className="mouse-icon" onClick={()=>{onClickDownBtn()}}>
