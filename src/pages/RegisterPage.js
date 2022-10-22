@@ -1,38 +1,48 @@
-import Search from "../components/Search"
-import Register from "../components/Register";
-import { useEffect, useState } from "react";
+import SearchForm from "../components/SearchForm"
+import RegisterForm from "../components/RegisterForm";
+import { useEffect, useState, useRef } from "react";
 import $ from 'jquery'
 
+import SelectForm from "../components/SelectForm";
 const RegisterPage = () => {
+  const resultRef = useRef();
+  const onClickDownBtn = () => {
+    resultRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
 
-  
+  const [searchWord, setSearchWord] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
   const [result, setResult] = useState({});
+
+  useEffect(()=>{
+    onClickDownBtn()
+  },[result])
 
   return (
     <>
-    <div className="container">
-      <div className="search-box mb-20">
-      <Search 
-        result={result}
-        setResult={setResult}
-      />
-      </div>
-    
-    {
-      result.title ? (
-        <>
-          <Register 
-            result={result}
-            setResult={setResult}
-          />
-        </>
-      ) : (
-        <></>
-      )
-    }
+      <div className="grey-full-background">
+        <SearchForm
+          searchWord={searchWord}
+          setSearchWord={setSearchWord}
+          setSearchResults={setSearchResults}
+        />
       
-    </div>
+        <SelectForm 
+          searchResults={searchResults}
+          setResult={setResult}
+        />
+      </div>
 
+      {
+        result.title ? (
+          <>
+            <RegisterForm
+              result={result}
+              resultRef={resultRef}
+            />
+          </>
+        ) : (<></>)
+      }
     </>
   )
 }

@@ -12,7 +12,7 @@ const Intro = ({introRef}) => {
 
   return (
     <>
-      <div className="main-section" ref={introRef}>
+      <div className="content-section" ref={introRef}>
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Step 1</span>
           <div className="flex-box">
@@ -23,12 +23,14 @@ const Intro = ({introRef}) => {
                 책을 <span className="fc-main fw-bold">검색</span> 하고<br/>
                 책방에 <span className="fc-main fw-bold">등록</span> 하세요
                 </p>
-                <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="main-book-1" />
               </Fade>
+
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="main-book-1" />
             </div>
             <div className="content-info-right">
-              <Fade direction="up" cascade triggerOnce>
                 <img src="https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg" className="main-book-1" />
+              <Fade direction="up" cascade triggerOnce>
+
                 <p className="info-text fc-muted fs-28">
                 주변 친구들과<br/>
                 책을 <span className="fc-main fw-bold">공유</span> 하고<br/>
@@ -40,7 +42,7 @@ const Intro = ({introRef}) => {
         </div>
       </div>
 
-      <div className="main-section grey-background">
+      <div className="content-section grey-background">
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Step 2</span>
           <div className="content-info-center">
@@ -54,7 +56,7 @@ const Intro = ({introRef}) => {
         </div>
       </div>
 
-      <div className="main-section">
+      <div className="content-section">
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Step 3</span>
           <div className="content-info-between-1">

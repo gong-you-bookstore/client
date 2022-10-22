@@ -1,5 +1,4 @@
 import Intro from "../components/Intro";
-import Search from "../components/Search";
 import { useEffect, useRef } from "react";
 import DoorHeader from './../components/DoorHeader'
 
