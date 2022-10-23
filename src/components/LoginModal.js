@@ -19,7 +19,6 @@ const customStyles = {
     borderRadius: "20px",
     outline: "none",
     padding: "50px 40px",
-    boxShadow: "3px 10px 15px 3px #1414147f",
     top: '50%',
     left: '50%',
     right: 'auto',
