@@ -68,7 +68,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
           placeholder="검색어를 입력하세요"
           value={searchWord}
           onChange={onChangeSearchWord}
-          className="input-styled w-100p"
+          className="input-styled w-100p fc-white"
         />
           
           <button 

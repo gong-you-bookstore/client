@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Kakaomap from "./Kakaomap";
 
 
-const RegisterForm = ({result, step3Ref}) => {
+const RegisterForm = ({result}) => {
   const [KDC, setKDC] = useState("")
 
   useEffect(()=>{
@@ -28,17 +28,16 @@ const RegisterForm = ({result, step3Ref}) => {
   
   return (
     <>
-    <span className="pointer"  />
     <div className="container w-100p">
     <div className="white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
-    <p className="fc-muted fs-28">
+    <p className="fc-dark fs-28" >
         내용을 작성해주세요
       </p>
     <div className="flex-col-box mtb-50">
         <img src={result.thumbnail} />
 
-        <label htmlFor="email" className="form-label" ref={step3Ref}>Title</label>
+        <label htmlFor="email" className="form-label" >Title</label>
         <input
           id="title"
           name="title"

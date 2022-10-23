@@ -1,11 +1,9 @@
 import SearchCarousel from "./SearchCarousel";
 
-const SelectForm = ({searchResults, setResult, step2Ref}) => {
+const SelectForm = ({searchResults, setResult}) => {
   return (
     <>
               
-    <span className="pointer" ref={step2Ref} >
-    </span>
     {
           searchResults.length ? (
             <>
