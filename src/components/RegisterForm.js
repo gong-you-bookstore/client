@@ -1,14 +1,13 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { getBookByNLK } from "../apis/book";
 import Kakaomap from "./Kakaomap";
 
 
-const RegisterForm = ({result}) => {
+const RegisterForm = ({result, step3Ref}) => {
   const [KDC, setKDC] = useState("")
 
   useEffect(()=>{
-    sendNLK()
+    getBookByNLK(result.isbn.slice(-13))
       .then((res) => {
         // console.log("KDC", res.data.result[0].classNo)
         if(res.data.total === 1){
@@ -20,14 +19,11 @@ const RegisterForm = ({result}) => {
       });
   }, [result])
   
-  const sendNLK = async () => {
-    return await axios.get(
-      `https://www.nl.go.kr/NL/search/openApi/search.do?key=844178c1b1ab808edc1094993a1e3aec8f8565712a5ab9bf69b8bf793ebc633d&apiType=json&kwd=${result.isbn.slice(-13)}&pageSize=1&category=도서`
-    );
-  };  
+  
   
   return (
     <>
+    <div className="bg-full-p flex-col-box lh-2" ref={step3Ref}>
     <div className="container w-100p">
     <div className="white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
@@ -87,6 +83,7 @@ const RegisterForm = ({result}) => {
         ></textarea>
 
         <Kakaomap />
+    </div>
     </div>
     </div>
     </div>

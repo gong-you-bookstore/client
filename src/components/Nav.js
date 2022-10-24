@@ -8,7 +8,6 @@ import LoginModal from "./LoginModal"
 
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
-  const {pathname} = useLocation();
   const navigate = useNavigate();
 
   const menus = [
@@ -16,30 +15,6 @@ const Nav = ()=>{
     {name: "책방", address: "/bookstore"},
     {name: "커뮤니티", address: "/community"},
   ]
-
-  const CloseHamburger = () => {
-    if($('.hamburger').hasClass("active")){
-      $('.hamburger').removeClass( 'active' );
-      $('.navbar-menu').removeClass( 'active' );
-    }
-  };
-
-  
-  useEffect(()=>{
-    CloseHamburger();
-  },[pathname])
-
-
-  // 스크롤 내리면 헤더스타일 변경
-  $(document).on('scroll', function(){
-    if($(window).scrollTop() > 100){
-        $("nav").addClass("non-top");
-        $(".line").css('background-color', '#333');
-    }else{
-        $("nav").removeClass("non-top");
-        $(".line").css('background-color', '#fff');
-    }
-  })
 
   // 햄버거 메뉴 클릭시 네비메뉴 출력 & 햄버거바 애니메인션
   const onClickHamburger = () => {
@@ -82,7 +57,7 @@ const Nav = ()=>{
         <li>
           <a onClick={()=>{
             setOpen(true);
-            CloseHamburger();
+            // CloseHamburger();
             $('body').css("overflow", "hidden");
           }}>
             Login

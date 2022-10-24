@@ -1,10 +1,7 @@
-import { useEffect } from "react";
-import $ from 'jquery';
-import logoWhiteImg from './../assets/images/logo_row_white.png'
 import logoColorImg from './../assets/images/logo-color.png'
 
 
-const ErrorPage = () => {
+const NotFound = () => {
   return (
     <>
     <div className="bg-full-v flex-col-box ">
@@ -18,4 +15,4 @@ const ErrorPage = () => {
   )
 }
 
-export default ErrorPage;
+export default NotFound;
