@@ -1,6 +1,5 @@
 /*global kakao */
 import {useRef,useEffect, useState} from "react";
-// import KakaoMapScript from "./KakaoMapScript";
 const { kakao } = window;
 
 // 위도 경도를 넘겨 지도 출력
@@ -45,17 +44,14 @@ const Kakaomap = () => {
   useEffect(()=>{
     getLocation();
   },[])
-
-  useEffect(()=>{
-    // console.log(lat, lon)
-  },[lat])
   
   // 위치 값을 찾으면 출력
-  if (lat !== 0) {
+  if (lat) {
     return (
       <MapMaker lat={lat} lon={lon} />
     )
   }
+
   return (
     <></>
   )

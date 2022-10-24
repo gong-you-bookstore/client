@@ -1,9 +1,8 @@
-import ShelfHeader from "../components/ShelfHeader";
+import Banner from "../components/Banner";
 import BookCarousel from "../components/BookCarousel";
 import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 import { useEffect, useRef } from "react";
-import GallaryContainer from "../containers/GallaryContainer";
 
 const GallaryPage = ()=>{
 
@@ -15,7 +14,9 @@ const GallaryPage = ()=>{
 
   return(
     <>
-      <ShelfHeader onClickDownBtn={onClickDownBtn}/>
+    <header className="header-shelf">
+    <Banner onClickDownBtn={onClickDownBtn}/>
+    </header>
       <div className="cement-wallpaper" ref={gallaryRef}>
     
       <h1>Gallery</h1>

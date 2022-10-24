@@ -45,7 +45,7 @@ input:-webkit-autofill:active {
 }
 
 .lh-2 {
-  line-height: 2;
+  line-height: 1.5;
 }
 .c-p {
   cursor: pointer;
@@ -359,7 +359,7 @@ input:-webkit-autofill:active {
 }
 
 .shape svg path {
-  fill: #fff;
+  fill: #f8f8f8;
 }
 /* desktop */
 @media screen and (min-width:1024px) {

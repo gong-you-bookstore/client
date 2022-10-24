@@ -4,20 +4,19 @@ import Nav from './components/Nav';
 import GallaryPage from './pages/GallaryPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
-import ErrorPage from './pages/ErrorPage';
-import ScrollToTop from './components/ScrollToTop';
-
+import NotFound from './pages/NotFound';
+import WizardPage from './utils/WizardPage';
 
 function App() {
   return (
     <div className="App">
-      <ScrollToTop />
+      <WizardPage />
       <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/bookstore" element={<GallaryPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path='/*' element={<ErrorPage />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
     </div>
   );

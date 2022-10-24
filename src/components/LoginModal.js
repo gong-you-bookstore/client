@@ -1,5 +1,5 @@
-import SignInForm from "../components/SignInForm";
-import SignUpForm from "../components/SignUpForm";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 import $ from 'jquery'
 import { useState } from "react";
 import logoColorImg from './../assets/images/logo-color.png'
