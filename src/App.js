@@ -5,12 +5,10 @@ import GallaryPage from './pages/GallaryPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
-import WizardPage from './utils/WizardPage';
 
 function App() {
   return (
     <div className="App">
-      <WizardPage />
       <Nav />
       <Routes>
         <Route path="/" element={<HomePage />} />

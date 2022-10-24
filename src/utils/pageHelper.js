@@ -20,6 +20,13 @@ export const closeHamburger = () => {
   }
 }
 
-export const scrollToTop = () => {
-  window.scrollTo(0, 0)
+export const onClickHamburger = () => {
+  if($('.hamburger').hasClass("active")){
+    $('.hamburger').removeClass( 'active' );
+    $('.navbar-menu').removeClass( 'active' );
+  } else {
+    $('.hamburger').addClass( 'active' );
+    $('.navbar-menu').addClass( 'active' );
+  }
 }
+
