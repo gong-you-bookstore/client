@@ -5,10 +5,12 @@ import { useEffect, useState } from "react"
 import logo from './../assets/images/logo.png'
 import favicon from './../assets/images/favicon.png'
 import LoginModal from "./LoginModal"
+import { onClickHamburger, closeHamburger, changeNavByScroll } from "../utils/pageHelper"
 
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
+  const {pathname} = useLocation();
 
   const menus = [
     {name: "찾기", address: "/register"},
@@ -16,16 +18,13 @@ const Nav = ()=>{
     {name: "커뮤니티", address: "/community"},
   ]
 
-  // 햄버거 메뉴 클릭시 네비메뉴 출력 & 햄버거바 애니메인션
-  const onClickHamburger = () => {
-    if($('.hamburger').hasClass("active")){
-      $('.hamburger').removeClass( 'active' );
-      $('.navbar-menu').removeClass( 'active' );
-    } else {
-      $('.hamburger').addClass( 'active' );
-      $('.navbar-menu').addClass( 'active' );
-    }
-  }
+  changeNavByScroll();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    closeHamburger();
+  },[pathname])
+
 
   return (
     <>
@@ -57,7 +56,7 @@ const Nav = ()=>{
         <li>
           <a onClick={()=>{
             setOpen(true);
-            // CloseHamburger();
+            closeHamburger();
             $('body').css("overflow", "hidden");
           }}>
             Login

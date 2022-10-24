@@ -30,7 +30,7 @@ const Kakaomap = () => {
   const [lat, setLat] = useState(0)
   const [lon, setLon] = useState(0)
 
-  const getLocation = () => {
+  useEffect(()=>{
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function(position) {
@@ -39,10 +39,6 @@ const Kakaomap = () => {
         }, 
       );
     }
-  }
-
-  useEffect(()=>{
-    getLocation();
   },[])
   
   // 위치 값을 찾으면 출력
