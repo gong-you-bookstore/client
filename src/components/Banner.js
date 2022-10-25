@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import logoRowImg from './../assets/images/logo_row_white.png'
 
-const Banner = ({onClickDownBtn}) => {
+const Banner = ({setIsScrollTo}) => {
   const {pathname} = useLocation();
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Banner = ({onClickDownBtn}) => {
         )
       }
       
-      <div className="mouse-icon" onClick={()=>{onClickDownBtn()}}>
+      <div className="mouse-icon" onClick={()=>{setIsScrollTo(true)}}>
         <div className="wheel">
         </div>
       </div>

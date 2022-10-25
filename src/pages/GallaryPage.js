@@ -1,21 +1,14 @@
 import Banner from "../components/Banner";
 import BookCarousel from "../components/BookCarousel";
-import { useNavigate } from "react-router-dom";
-import $ from "jquery";
-import { useEffect, useRef } from "react";
+import useScrollTo from "../lib/hooks/useScrollTo";
 
 const GallaryPage = ()=>{
-
-  const gallaryRef = useRef();
-
-  const onClickDownBtn = () => {
-    gallaryRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }
+  const [gallaryRef, setIsScrollTo] = useScrollTo();
 
   return(
     <>
     <header className="header-shelf">
-    <Banner onClickDownBtn={onClickDownBtn}/>
+    <Banner setIsScrollTo={setIsScrollTo}/>
     </header>
       <div className="cement-wallpaper" ref={gallaryRef}>
     

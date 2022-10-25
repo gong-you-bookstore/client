@@ -5,23 +5,21 @@ import { Rotate, Fade } from "react-awesome-reveal";
 import tokenImg from './../assets/images/coin2.png'
 import mapImg from './../assets/images/map2.png'
 import locationImg from './../assets/images/chat.png'
-
+import useScrollTo from "../lib/hooks/useScrollTo";
 const HomePage = ()=>{
-  const introRef = useRef();
+  const [introRef, setIsScrollTo] = useScrollTo();
 
-  const onClickDownBtn = () => {
-    introRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }
-  
   return(
     <>
     <header className="header-door">
-    <Banner onClickDownBtn={onClickDownBtn}/>
+    <Banner 
+      setIsScrollTo={setIsScrollTo}
+    />
     </header>
     <span className="pointer" ref={introRef} />
       <div className="content-section" >
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Step 1</span>
+          <span className="fc-main fs-32 fw-bold">Info 1</span>
           <div className="flex-box">
             <div className="content-info-left">
               <Fade direction="up" cascade triggerOnce>
@@ -51,7 +49,7 @@ const HomePage = ()=>{
 
       <div className="content-section grey-background">
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Step 2</span>
+          <span className="fc-main fs-32 fw-bold">Info 2</span>
           <div className="content-info-center">
             <Rotate>
               <img src={tokenImg} className="w-200" />
@@ -65,7 +63,7 @@ const HomePage = ()=>{
 
       <div className="content-section">
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Step 3</span>
+          <span className="fc-main fs-32 fw-bold">Info 3</span>
           <div className="content-info-between-1">
             <img src={mapImg} className="w-200" />
             <Fade direction="right" cascade triggerOnce>

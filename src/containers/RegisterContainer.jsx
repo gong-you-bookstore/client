@@ -1,20 +1,12 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import SearchForm from "../components/SearchForm"
 import RegisterForm from "../components/RegisterForm";
 import SelectForm from "../components/SelectForm";
-
+import useScrollTo from "../lib/hooks/useScrollTo";
 const RegisterContainer = () => {
-  const step2Ref = useRef();
-  const step3Ref = useRef();
-
-  const ScrollToStep2 = () => {
-    step2Ref.current?.scrollIntoView({ behavior: 'smooth', block:"center"});
-  }
-
-  const ScrollToStep3 = () => {
-    step3Ref.current?.scrollIntoView({ behavior: 'smooth'});
-  }
+  const [step2Ref, setIsScrollToStep2] = useScrollTo();
+  const [step3Ref, setIsScrollToStep3] = useScrollTo();
 
   const [searchWord, setSearchWord] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -22,13 +14,13 @@ const RegisterContainer = () => {
 
   useEffect(()=>{
     if(searchResults.length){
-      ScrollToStep2()
+      setIsScrollToStep2(true);
     }
   },[searchResults])
 
   useEffect(()=>{
     if(result.title) {
-      ScrollToStep3()
+      setIsScrollToStep3(true);
     }
   },[result])
 

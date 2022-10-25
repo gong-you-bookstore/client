@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getBookByNLK } from "../apis/book";
-import Kakaomap from "./Kakaomap";
 
+import Kakaomap from "./Kakaomap";
+import { getBookByNLK } from "../lib/services";
 
 const RegisterForm = ({result, step3Ref}) => {
   const [KDC, setKDC] = useState("")

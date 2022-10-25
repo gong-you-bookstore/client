@@ -1,16 +1,15 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import $ from 'jquery'
 import { useEffect, useState } from "react"
-
+import useLocWizard from "../lib/hooks/useLocWizard"
 import logo from './../assets/images/logo.png'
 import favicon from './../assets/images/favicon.png'
 import LoginModal from "./LoginModal"
-import { onClickHamburger, closeHamburger, changeNavByScroll } from "../utils/pageHelper"
+import { onToggleHamburger, onCloseHamburger } from "../lib/utils"
 
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
-  const {pathname} = useLocation();
 
   const menus = [
     {name: "찾기", address: "/register"},
@@ -18,13 +17,7 @@ const Nav = ()=>{
     {name: "커뮤니티", address: "/community"},
   ]
 
-  changeNavByScroll();
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    closeHamburger();
-  },[pathname])
-
+  useLocWizard();
 
   return (
     <>
@@ -37,7 +30,7 @@ const Nav = ()=>{
         <img src={logo} style={{width:"60px"}} className="txt-logo"/>
       </div>
       
-      <div className="hamburger" onClick={()=>onClickHamburger()}>
+      <div className="hamburger" onClick={()=>onToggleHamburger()}>
         <span className="line"></span>
         <span className="line"></span>
         <span className="line"></span>
@@ -56,7 +49,7 @@ const Nav = ()=>{
         <li>
           <a onClick={()=>{
             setOpen(true);
-            closeHamburger();
+            onCloseHamburger();
             $('body').css("overflow", "hidden");
           }}>
             Login
