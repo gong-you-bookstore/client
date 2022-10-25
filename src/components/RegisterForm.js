@@ -31,7 +31,7 @@ const RegisterForm = ({result, step3Ref}) => {
         내용을 작성해주세요
       </p>
     <div className="flex-col-box mtb-50">
-        <img src={result.thumbnail} />
+        <img src={result.thumbnail} alt="img" />
 
         <label htmlFor="email" className="form-label" >Title</label>
         <input

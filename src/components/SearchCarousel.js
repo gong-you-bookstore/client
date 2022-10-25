@@ -31,6 +31,7 @@ const SearchCarousel = ({searchResults, setResult})=>{
                   key={index} 
                   src={item.thumbnail} 
                   className="h-150 c-p"
+                  alt="img" 
                   onClick={()=>{
                     setResult(item);
                   }}

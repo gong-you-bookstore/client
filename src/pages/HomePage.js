@@ -30,10 +30,10 @@ const HomePage = ()=>{
                 </p>
               </Fade>
 
-                <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="main-book-1" />
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="main-book-1" alt="img" />
             </div>
             <div className="content-info-right">
-                <img src="https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg" className="main-book-1" />
+                <img src="https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg" className="main-book-1" alt="img" />
               <Fade direction="up" cascade triggerOnce>
 
                 <p className="info-text fc-muted fs-28">
@@ -52,7 +52,7 @@ const HomePage = ()=>{
           <span className="fc-main fs-32 fw-bold">Info 2</span>
           <div className="content-info-center">
             <Rotate>
-              <img src={tokenImg} className="w-200" />
+              <img src={tokenImg} className="w-200" alt="img" />
             </Rotate>
             <p className="info-text center-text fc-dark fs-28">
               책을 <span className="fc-main fw-bold">토큰</span> 으로 바꿔보세요
@@ -65,7 +65,7 @@ const HomePage = ()=>{
         <div className="container">
           <span className="fc-main fs-32 fw-bold">Info 3</span>
           <div className="content-info-between-1">
-            <img src={mapImg} className="w-200" />
+            <img src={mapImg} className="w-200" alt="img" />
             <Fade direction="right" cascade triggerOnce>
               <p className="info-text fc-dark fs-28">
                 내 주변 사람들의 책을 확인하세요.
@@ -78,7 +78,7 @@ const HomePage = ()=>{
                 지역 사람들과 커뮤니티를 형성해 보세요.
               </p>
             </Fade>
-            <img src={locationImg} className="w-200" />
+            <img src={locationImg} className="w-200" alt="img" />
           </div>
         </div>
       </div>
