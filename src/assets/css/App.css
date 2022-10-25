@@ -362,12 +362,12 @@ input:-webkit-autofill:active {
   fill: #f8f8f8;
 }
 /* desktop */
-/* @media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) {
   .shape {
     display: none;
 
   }
-} */
+}
 /* tablet */
 @media (max-width: 1199.98px) {
   .shape svg {
