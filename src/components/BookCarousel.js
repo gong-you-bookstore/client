@@ -32,6 +32,7 @@ const BookCarousel = ()=>{
                   key={index} 
                   src={item.img_url} 
                   className="book h-150" 
+                  alt="img" 
                 />
             ))}
           </Carousel>

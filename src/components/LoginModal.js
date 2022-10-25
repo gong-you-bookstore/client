@@ -59,6 +59,7 @@ const LoginModal = ({isOpen, setOpen}) => {
         <img 
           src={logoColorImg} 
           className="w-120 mb-10 c-p"
+          alt="img" 
         />
         {
           isSignIn ? (

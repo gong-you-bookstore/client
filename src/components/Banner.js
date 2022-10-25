@@ -9,7 +9,7 @@ const Banner = ({setIsScrollTo}) => {
     <>
       <div className="overlay">
         <h1 className="subtitle">우리가 만드는 공유책장</h1>
-        <img className="w-150 mb-20" src={logoRowImg} />
+        <img className="w-150 mb-20" src={logoRowImg} alt="img" />
           <button
             className='color-btn'
             type="button"
