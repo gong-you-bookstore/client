@@ -65,6 +65,11 @@ input:-webkit-autofill:active {
 .w-120 {
   width: 120px;
 }
+
+.w-50 {
+  width: 80px;
+}
+
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -120,6 +125,9 @@ input:-webkit-autofill:active {
 }
 .fs-28 {
   font-size: 28px;
+}
+.fs-12 {
+  font-size: 12px;
 }
 .fw-bold {
   font-weight: bold;
@@ -399,7 +407,12 @@ input:-webkit-autofill:active {
   transition: all .3s ease-in-out;
 
 }
-
+.border-top-line{
+  width: 100%;
+  border-top: .5px #444 solid;
+  padding: 30px 0 0 0;
+  text-align: center;
+}
 .flex-box {
   display: flex;
   justify-content: space-between;
@@ -517,6 +530,16 @@ input:-webkit-autofill:active {
 
 }
 
+.bg-dark {
+  background-color: #26292F;
+  width: 100%;
+  min-height: 200px;
+  position: relative;
+  /* overflow: hidden; */
+  background-size: cover;
+  padding: 20px 0 50px 0;
+}
+
 .flex-col-box {
   display: flex;
   flex-direction: column;
@@ -524,6 +547,7 @@ input:-webkit-autofill:active {
   justify-content: center;
   gap: 10px;
 }
+
 
 .content-section {
   margin: 60px 0;
