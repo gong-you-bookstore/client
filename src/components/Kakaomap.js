@@ -1,5 +1,5 @@
 /*global kakao */
-import {useRef,useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 const { kakao } = window;
 
 // 위도 경도를 넘겨 지도 출력

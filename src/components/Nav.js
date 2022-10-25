@@ -1,6 +1,6 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import $ from 'jquery'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import useLocWizard from "../lib/hooks/useLocWizard"
 import logo from './../assets/images/logo.png'
 import favicon from './../assets/images/favicon.png'
