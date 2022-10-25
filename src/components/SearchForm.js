@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Scanner from "./Scanner";
-import { getBooksByKakao } from "../apis/book";
+import { getBooksByKakao } from "../lib/services";
 const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
-  
   const [camera, setCamera] = useState(false);
-
   const navigate = useNavigate();
 
   // const onDetected = searchWord => {
   //   setSearchWord(searchWord);
   // };
-
 
   const onChangeSearchWord = (event) => {
     setSearchWord(event.target.value);

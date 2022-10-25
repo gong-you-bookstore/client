@@ -1,7 +1,7 @@
-// 스크롤 내리면 네비바 스타일 변경
 import $ from 'jquery'
 
-export const changeNavByScroll = () => {
+// 스크롤 내리면 네비바 스타일 변경
+export const onChangeNavByScroll = () => {
   $(document).on('scroll', function(){
     if($(window).scrollTop() > 100){
         $("nav").addClass("non-top");
@@ -13,14 +13,16 @@ export const changeNavByScroll = () => {
   })
 }
 
-export const closeHamburger = () => {
+// 햄버거 버튼 닫기
+export const onCloseHamburger = () => {
   if($('.hamburger').hasClass("active")){
     $('.hamburger').removeClass( 'active' );
     $('.navbar-menu').removeClass( 'active' );
   }
 }
 
-export const onClickHamburger = () => {
+// 햄버거 버튼 토글
+export const onToggleHamburger = () => {
   if($('.hamburger').hasClass("active")){
     $('.hamburger').removeClass( 'active' );
     $('.navbar-menu').removeClass( 'active' );
@@ -28,5 +30,10 @@ export const onClickHamburger = () => {
     $('.hamburger').addClass( 'active' );
     $('.navbar-menu').addClass( 'active' );
   }
+}
+
+// 스크롤 최상단 이동
+export const scrollToTop = () => {
+  window.scrollTo(0, 0)
 }
 
