@@ -365,7 +365,6 @@ input:-webkit-autofill:active {
 @media screen and (min-width:1024px) {
   .shape {
     display: none;
-
   }
 }
 /* tablet */

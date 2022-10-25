@@ -1,11 +1,10 @@
-import { useRef } from "react";
 import Banner from './../components/Banner'
 import { Rotate, Fade } from "react-awesome-reveal";
-
 import tokenImg from './../assets/images/coin2.png'
 import mapImg from './../assets/images/map2.png'
 import locationImg from './../assets/images/chat.png'
 import useScrollTo from "../lib/hooks/useScrollTo";
+
 const HomePage = ()=>{
   const [introRef, setIsScrollTo] = useScrollTo();
 
