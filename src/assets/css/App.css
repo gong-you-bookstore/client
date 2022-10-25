@@ -693,15 +693,15 @@ video.drawingBuffer {
   opacity: 0;
   transition: all 0.3s ease-in;
   cursor: pointer;
-  color: #eee;
-  background-color: #00C9A9;
+  color: #fff;
+  background-color: rgba(0,201,169, 0.5);
 }
 
 .top-btn.active {
   opacity: 1;
 }
 .top-btn.active:hover { 
-  box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.4);
+  box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.2);
 }
 
 
