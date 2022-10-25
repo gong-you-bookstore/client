@@ -6,11 +6,14 @@ import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
+import BackToTopBtn from './components/BackToTopBtn';
 
 function App() {
   return (
     <div className="App">
       <Nav />
+      <BackToTopBtn />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/bookstore" element={<GallaryPage />} />
