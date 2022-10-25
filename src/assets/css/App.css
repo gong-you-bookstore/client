@@ -679,10 +679,29 @@ video.drawingBuffer {
   transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
   -webkit-backface-visibility: hidden;
   box-shadow: 3px 10px 15px 3px #141414, 20px 8px 0 #eee;
-  
 }
-html{
-  /* scroll-behavior: smooth; */
+
+.top-btn {
+  position: fixed; 
+  bottom: 40px; 
+  right: 20px;
+  z-index: 99; 
+  width: 50px; 
+  height: 50px;
+  border-radius: 100%;
+  border: 0 none;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  color: #eee;
+  background-color: #00C9A9;
+}
+
+.top-btn.active {
+  opacity: 1;
+}
+.top-btn.active:hover { 
+  box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.4);
 }
 
 
