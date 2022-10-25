@@ -696,6 +696,13 @@ video.drawingBuffer {
   color: #fff;
   background-color: rgba(0,201,169, 0.5);
 }
+/* phone */
+@media screen and (max-width:464px) {
+  .top-btn.active {
+    width: 40px; 
+    height: 40px;
+  }
+}
 
 .top-btn.active {
   opacity: 1;
