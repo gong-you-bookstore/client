@@ -18,7 +18,7 @@ const HomePage = ()=>{
     <span className="pointer" ref={introRef} />
       <div className="content-section" >
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Info 1</span>
+          {/* <span className="fc-main fs-32 fw-bold">Info 1</span> */}
           <div className="flex-box">
             <div className="content-info-left">
               <Fade direction="up" cascade triggerOnce>
@@ -48,7 +48,7 @@ const HomePage = ()=>{
 
       <div className="content-section grey-background">
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Info 2</span>
+          {/* <span className="fc-main fs-32 fw-bold">Info 2</span> */}
           <div className="content-info-center">
             <Rotate>
               <img src={tokenImg} className="w-200" alt="img" />
@@ -62,18 +62,18 @@ const HomePage = ()=>{
 
       <div className="content-section">
         <div className="container">
-          <span className="fc-main fs-32 fw-bold">Info 3</span>
+          {/* <span className="fc-main fs-32 fw-bold">Info 3</span> */}
           <div className="content-info-between-1">
             <img src={mapImg} className="w-200" alt="img" />
             <Fade direction="right" cascade triggerOnce>
-              <p className="info-text fc-dark fs-28">
+              <p className="info-text fc-muted fs-28">
                 내 주변 사람들의 책을 확인하세요.
               </p>
             </Fade>
           </div>
           <div className="content-info-between-2">
             <Fade direction="left" cascade triggerOnce>
-              <p className="info-text fc-dark fs-28">
+              <p className="info-text fc-muted fs-28">
                 지역 사람들과 커뮤니티를 형성해 보세요.
               </p>
             </Fade>
