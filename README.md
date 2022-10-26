@@ -1,6 +1,4 @@
 # 공유책방 - FE
-</br>
-</br>
 
 <div align='center'>
 
