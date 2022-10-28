@@ -262,7 +262,8 @@ input:-webkit-autofill:active {
   /* background: url(./../images/door.jpg) no-repeat center center fixed; */
   background-image: url(./../images/door.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-x:center;
+  background-position-y: center;
   background-attachment: fixed;
   background-size: cover;
 
