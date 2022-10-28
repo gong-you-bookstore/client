@@ -259,10 +259,14 @@ input:-webkit-autofill:active {
 .header-door {
   position: relative;
   height: 100vh;
-  min-height: 500px;
-  background: url(./../images/door.jpg) no-repeat center center fixed;
-  overflow: hidden;
+  /* background: url(./../images/door.jpg) no-repeat center center fixed; */
+  background-image: url(./../images/door.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   background-size: cover;
+
+  overflow: hidden;
 
 }
 .header-shelf {
