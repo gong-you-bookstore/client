@@ -269,6 +269,7 @@ input, textarea, button {
   position: relative;
   height: 100vh;
   /* background: url(./../images/door.jpg) no-repeat center center fixed; */
+  height: --webkit-fill-available;
   background-image: url(./../images/door.jpg);
   background-repeat: no-repeat;
   background-position-x:center;
