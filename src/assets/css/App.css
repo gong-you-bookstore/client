@@ -274,11 +274,20 @@ input, textarea, button {
   overflow: hidden;
 
 }
-@supports (-webkit-overflow-scrolling: touch) {
+
+/* tablet */
+@media screen and (max-width:1024px) {
+  .header-shelf,
   .header-door {
     background-attachment: scroll; 	
   } 
 }
+
+/* @supports (-webkit-overflow-scrolling: touch) {
+  .header-door {
+    background-attachment: scroll; 	
+  } 
+} */
 
 
 
