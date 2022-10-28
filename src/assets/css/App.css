@@ -267,6 +267,7 @@ input, textarea, button {
   height: 100vh;
   /* height: calc(var(--vh) * 100); */
   /* background: url(./../images/door.jpg) no-repeat center center fixed; */
+  width: 100%;
   height: --webkit-fill-available;
   background-image: url(./../images/door.jpg);
   background-repeat: no-repeat;
