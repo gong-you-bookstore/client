@@ -270,10 +270,19 @@ input, textarea, button {
   -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-
   overflow: hidden;
-
 }
+.header-shelf {
+  position: relative;
+  height: 100vh;
+  background: url(./../images/shelf.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+
 
 /* tablet */
 @media screen and (max-width:1024px) {
@@ -288,17 +297,6 @@ input, textarea, button {
     background-attachment: scroll; 	
   } 
 } */
-
-
-
-.header-shelf {
-  position: relative;
-  height: 100vh;
-  min-height: 500px;
-  background: url(./../images/shelf.jpg) no-repeat center center fixed;
-  overflow: hidden;
-  background-size: cover;
-}
 
 .header-shelf .overlay,
 .header-door .overlay {
