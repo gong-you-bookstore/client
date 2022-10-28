@@ -265,26 +265,18 @@ input, textarea, button {
 .header-door {
   position: relative;
   height: 100vh;
-  /* height: calc(var(--vh) * 100); */
-  /* background: url(./../images/door.jpg) no-repeat center center fixed; */
-  width: 100%;
-  height: --webkit-fill-available;
-  background-image: url(./../images/door.jpg);
-  background-repeat: no-repeat;
-  background-position-x:center;
-  background-position-y: center;
-  background-attachment: fixed;
+  background: url(./../images/door.jpg) no-repeat center center fixed;
   background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 
   overflow: hidden;
 
 }
-/* iOS only */
-@supports (-webkit-touch-callout: none) { 
-  .header-door {
-    height: -webkit-fill-available;
-  }
-}
+
+
+
 
 .header-shelf {
   position: relative;
@@ -292,6 +284,16 @@ input, textarea, button {
   min-height: 500px;
   background: url(./../images/shelf.jpg) no-repeat center center fixed;
   overflow: hidden;
+  background-size: cover;
+}
+
+.header-door:after {
+  position: relative;
+  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+  background: url(./../images/door.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 .header-shelf .overlay,
