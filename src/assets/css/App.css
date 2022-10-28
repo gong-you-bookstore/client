@@ -265,6 +265,7 @@ input, textarea, button {
 .header-door {
   position: relative;
   height: 100vh;
+  /* height: calc(var(--vh) * 100); */
   /* background: url(./../images/door.jpg) no-repeat center center fixed; */
   height: --webkit-fill-available;
   background-image: url(./../images/door.jpg);
@@ -277,6 +278,13 @@ input, textarea, button {
   overflow: hidden;
 
 }
+/* iOS only */
+@supports (-webkit-touch-callout: none) { 
+  .header-door {
+    height: -webkit-fill-available;
+  }
+}
+
 .header-shelf {
   position: relative;
   height: 100vh;
