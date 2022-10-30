@@ -15,7 +15,6 @@ const Footer = () => {
             </div>
             <div className=' border-top-line'>
             <p>Copyright © Team V2S, Ajou Univ. All Rights Reserved.</p>
-            <p>Designed by jiheon788</p>
             </div>
         </div>
       </div>
