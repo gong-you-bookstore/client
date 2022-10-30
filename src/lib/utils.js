@@ -4,13 +4,13 @@ import $ from 'jquery'
 export const onChangeStylesByScroll = () => {
   $(document).on('scroll', function(){
     if($(window).scrollTop() > 100){
-        $("nav").addClass("non-top");
-        $(".line").css('background-color', '#333');
-        $('.top-btn').addClass( 'active' );
+      $("nav").addClass("non-top");
+      $(".line").css('background-color', '#333');
+      $('.top-btn').addClass( 'active' );
     }else{
-        $("nav").removeClass("non-top");
-        $(".line").css('background-color', '#fff');
-        $('.top-btn').removeClass( 'active' );
+      $("nav").removeClass("non-top");
+      $(".line").css('background-color', '#fff');
+      $('.top-btn').removeClass( 'active' );
     }
   })
 }
