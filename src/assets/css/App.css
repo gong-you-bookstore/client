@@ -16,9 +16,6 @@ body {
   background-color: #f8f8f8;
 }
 
-/* 모바일 수평 스크롤 금지 */
-
-
 /* tablet */
 @media screen and (max-width:1024px) {
   .container {
@@ -253,6 +250,7 @@ input:-webkit-autofill:active {
   }
 }
 
+/* Delete IOS Style */
 input, textarea, button {
   appearance: none;
   -moz-appearance: none;
@@ -283,7 +281,6 @@ input, textarea, button {
   overflow: hidden;
 }
 
-
 /* tablet */
 @media screen and (max-width:1024px) {
   .header-shelf,
@@ -291,12 +288,6 @@ input, textarea, button {
     background-attachment: scroll; 	
   } 
 }
-
-/* @supports (-webkit-overflow-scrolling: touch) {
-  .header-door {
-    background-attachment: scroll; 	
-  } 
-} */
 
 .header-shelf .overlay,
 .header-door .overlay {
