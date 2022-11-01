@@ -3,19 +3,19 @@ import { useEffect, useState } from "react";
 import Kakaomap from "./Kakaomap";
 import { getBookByNLK } from "../lib/services";
 
-const RegisterForm = ({result, step3Ref}) => {
-  const [KDC, setKDC] = useState("")
-
+const RegisterForm = ({result, step3Ref, setBookData,bookData}) => {
   useEffect(()=>{
-    getBookByNLK(result.isbn.slice(-13))
+    getBookByNLK(bookData.isbn13)
       .then((res) => {
-        // console.log("KDC", res.data.result[0].classNo)
         if(res.data.total === 1){
-          setKDC(res.data.result[0].classNo.substr(0, 3))
+          setBookData({
+            ...bookData,
+            kdc: res.data.result[0].classNo.substr(0, 3)
+          })
         }
       })
       .catch((error) => {
-        console.log("작성실패", error);
+        console.log(error);
       });
   }, [result])
   
@@ -31,7 +31,7 @@ const RegisterForm = ({result, step3Ref}) => {
         내용을 작성해주세요
       </p>
     <div className="flex-col-box mtb-50">
-        <img src={result.thumbnail} alt="img" />
+        <img src={bookData.thumbnail} alt="img" />
 
         <label htmlFor="email" className="form-label" >Title</label>
         <input
@@ -39,7 +39,7 @@ const RegisterForm = ({result, step3Ref}) => {
           name="title"
           type="text"
           placeholder="title"
-          value={result.title}
+          value={bookData.title}
           // onChange={onChangeSignInData}
           disabled
           className="input-styled w-100p"
@@ -51,7 +51,7 @@ const RegisterForm = ({result, step3Ref}) => {
           name="ISBN13"
           type="text"
           placeholder="ISBN13"
-          value={result.isbn.slice(-13)}
+          value={bookData.ISBN13}
           // onChange={onChangeSignInData}
           disabled
           className="input-styled w-100p"
@@ -64,7 +64,7 @@ const RegisterForm = ({result, step3Ref}) => {
           name="KDC"
           type="text"
           placeholder="KDC"
-          value={KDC}
+          value={bookData.kdc}
           // onChange={onChangeSignInData}
           disabled
           className="input-styled w-100p"
@@ -74,7 +74,7 @@ const RegisterForm = ({result, step3Ref}) => {
         <label htmlFor="content" className="form-label">Content</label>
         <textarea
           className="input-styled w-100p"
-          value={result.contents}
+          value={bookData.contents}
           // onChange={onChangeUpdateData}
           name="content"
           id="content"
@@ -82,7 +82,10 @@ const RegisterForm = ({result, step3Ref}) => {
           disabled
         ></textarea>
 
-        <Kakaomap />
+        <Kakaomap 
+          setBookData = {setBookData}
+          bookData={bookData}
+        />
     </div>
     </div>
     </div>

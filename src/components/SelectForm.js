@@ -1,6 +1,6 @@
 import SearchCarousel from "./SearchCarousel";
 
-const SelectForm = ({searchResults, setResult, step2Ref}) => {
+const SelectForm = ({searchResults, step2Ref, setBookData}) => {
   return (
     <>
               
@@ -16,7 +16,7 @@ const SelectForm = ({searchResults, setResult, step2Ref}) => {
                     </p>
                     <SearchCarousel 
                       searchResults={searchResults} 
-                      setResult={setResult}
+                      setBookData = {setBookData}
                     />
                   </div>
                 </div>
