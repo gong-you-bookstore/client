@@ -5,7 +5,7 @@ export const getBooksByKakao = async (searchWord) => {
   return await axios.get(
     `https://dapi.kakao.com/v3/search/book?&size=20&query=${searchWord}`, {
       headers:{
-        Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_JH}`
+        Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_REST_API_KEY_JH}`
       }
     }
   );

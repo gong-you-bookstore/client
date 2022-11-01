@@ -3,7 +3,8 @@ import {useEffect, useState} from "react";
 const { kakao } = window;
 
 // 위도 경도를 넘겨 지도 출력
-const MapMaker = ({lat,lon}) => {
+const MapMaker = ({lat, lon}) => {
+
   useEffect(()=>{
     var container = document.getElementById('map');
     var options = {
@@ -15,9 +16,8 @@ const MapMaker = ({lat,lon}) => {
     var markerPosition  = new kakao.maps.LatLng(lat, lon); 
     var marker = new kakao.maps.Marker({
       position: markerPosition
-  });
-  marker.setMap(map);
-
+    });
+    marker.setMap(map);
   }, [])
 
   return (
@@ -26,7 +26,7 @@ const MapMaker = ({lat,lon}) => {
 }
 
 // 위도 경도를 찾은 후, 맵을 호출
-const Kakaomap = () => {
+const Kakaomap = ({setBookData,bookData}) => {
   const [lat, setLat] = useState(0)
   const [lon, setLon] = useState(0)
 
@@ -40,18 +40,26 @@ const Kakaomap = () => {
       );
     }
   },[])
+
+  useEffect(()=>{
+    setBookData({
+      ...bookData,
+      lat,
+      lon
+    })
+  },[lat])
   
   // 위치 값을 찾으면 출력
-  if (lat) {
+  if (lat || lon) {
     return (
-      <MapMaker lat={lat} lon={lon} />
+      <MapMaker 
+        lat={lat} 
+        lon={lon} 
+      />
     )
+  } else {
+    return <></>
   }
-
-  return (
-    <></>
-  )
-
 }
 
 export default Kakaomap;

@@ -10,7 +10,12 @@ const RegisterContainer = () => {
 
   const [searchWord, setSearchWord] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [result, setResult] = useState({});
+  const [bookData, setBookData] = useState({})
+
+
+  useEffect(()=>{
+    console.log(bookData)
+  },[bookData])
 
   useEffect(()=>{
     if(searchResults.length){
@@ -19,31 +24,33 @@ const RegisterContainer = () => {
   },[searchResults])
 
   useEffect(()=>{
-    if(result.title) {
+    if(bookData.title) {
       setIsScrollToStep3(true);
     }
-  },[result])
+  },[bookData])
 
   return (
     <>
         <SearchForm
-          searchWord={searchWord}
-          setSearchWord={setSearchWord}
-          setSearchResults={setSearchResults}
+          searchWord = {searchWord}
+          setSearchWord = {setSearchWord}
+          setSearchResults = {setSearchResults}
         />
 
         <SelectForm 
-          searchResults={searchResults}
-          setResult={setResult}
-          step2Ref={step2Ref}
+          searchResults = {searchResults}
+          step2Ref = {step2Ref}
+          bookData={bookData}
+          setBookData = {setBookData}
         />
 
       {
-        result.title ? (
+        bookData.title ? (
           <>
             <RegisterForm
-              result={result}
-              step3Ref={step3Ref}
+              step3Ref = {step3Ref}
+              bookData={bookData}
+              setBookData = {setBookData}
             />
           </>
         ) : (<></>)
