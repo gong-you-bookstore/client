@@ -12,7 +12,7 @@ const Nav = ()=>{
   const navigate = useNavigate();
 
   const menus = [
-    {name: "찾기", address: "/register"},
+    {name: "등록", address: "/register"},
     {name: "책방", address: "/bookstore"},
     {name: "커뮤니티", address: "/community"},
   ]
@@ -27,7 +27,8 @@ const Nav = ()=>{
         className="navbar-logo"
         >
         <img src={favicon} style={{width:"40px"}} className="hex-logo" alt="img" />
-        <img src={logo} style={{width:"60px"}} className="txt-logo" alt="img" />
+        {/* <img src={logo} style={{width:"60px"}} className="txt-logo" alt="img" /> */}
+        <h1>공유책방</h1>
       </div>
       
       <div className="hamburger" onClick={()=>onToggleHamburger()}>
