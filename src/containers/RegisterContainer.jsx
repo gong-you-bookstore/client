@@ -13,9 +13,9 @@ const RegisterContainer = () => {
   const [bookData, setBookData] = useState({})
 
 
-  useEffect(()=>{
-    console.log(bookData)
-  },[bookData])
+  // useEffect(()=>{
+  //   console.log(bookData)
+  // },[bookData])
 
   useEffect(()=>{
     if(searchResults.length){

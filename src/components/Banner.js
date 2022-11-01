@@ -10,13 +10,19 @@ const Banner = ({setIsScrollTo}) => {
       <div className="overlay">
         <h1 className="subtitle">우리가 만드는 공유책장</h1>
         <img className="w-150 mb-20" src={logoRowImg} alt="img" />
-          <button
+
+        {
+          pathname === "/" ? (
+            <button
             className='color-btn'
             type="button"
-            onClick={()=>navigate("/register")}
-          >
-            Get Started
-          </button>
+            onClick={()=>navigate("/bookstore")}
+            >
+              책방 둘러보기
+            </button>
+          ) : (<></>)
+        }
+          
       </div>  
       {
         pathname === "/" ? (
