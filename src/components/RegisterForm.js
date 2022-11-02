@@ -23,7 +23,7 @@ const RegisterForm = ({result, step3Ref, setBookData,bookData}) => {
   
   return (
     <>
-    <div className="bg-full-p flex-col-box-center lh-2" ref={step3Ref}>
+    <div className="bg-white-full-p flex-col-box-center lh-2" ref={step3Ref}>
     <div className="container w-100p">
     <div className="white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>

@@ -5,7 +5,7 @@ import logoImg from './../assets/images/logo_row_white.png'
 const Footer = () => {
   return (
     <>
-      <div className="bg-dark">
+      <footer className="footer-bg-dark">
         <div className="flex-col-box-center fc-muted fs-12 container">
         <img src={faviconImg} className="w-50" alt="img" />
           <div className='flex-sp-box w-100p
@@ -17,7 +17,7 @@ const Footer = () => {
             <p>Copyright © Team V2S, Ajou Univ. All Rights Reserved.</p>
             </div>
         </div>
-      </div>
+      </footer>
     </>
   )
 }

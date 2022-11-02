@@ -7,7 +7,7 @@ const SelectForm = ({searchResults, step2Ref, setBookData}) => {
     {
           searchResults.length ? (
             <>
-              <div className="bg-full-v flex-col-box-center lh-2" ref={step2Ref}>
+              <div className="bg-dark-full-vh flex-col-box-center lh-2" ref={step2Ref}>
                 <div className="container w-100p">
                   <div className="white-box">
                     <span className="fc-main fs-32 fw-bold">Step 2</span>

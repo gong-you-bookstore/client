@@ -14,7 +14,7 @@ const Nav = ()=>{
   const menus = [
     {name: "등록", address: "/register"},
     {name: "책방", address: "/bookstore"},
-    {name: "커뮤니티", address: "/community"},
+    {name: "test", address: "/test"},
   ]
 
   useLocWizard();
