@@ -287,9 +287,11 @@ input, textarea, button {
 
 /* tablet */
 @media screen and (max-width:1024px) {
-  .header-shelf,
   .header-door {
     background-image: url(./../images/door-long.jpg);
+  }
+  .header-shelf,
+  .header-door {
     background-attachment: scroll; 	
   } 
 }
@@ -445,7 +447,7 @@ input, textarea, button {
 }
 
 .main-book-2 {
-  height: 480px;
+  height: 450px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: -10px 22px 29px 0px #222;

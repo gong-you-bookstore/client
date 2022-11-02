@@ -51,7 +51,7 @@ const RegisterForm = ({result, step3Ref, setBookData,bookData}) => {
           name="ISBN13"
           type="text"
           placeholder="ISBN13"
-          value={bookData.ISBN13}
+          value={bookData.isbn13}
           // onChange={onChangeSignInData}
           disabled
           className="input-styled w-100p"
