@@ -3,9 +3,9 @@ import Banner from "../components/Banner"
 const Test = () => {
   return (
     <>
-  <header className="header-shelf">
+  {/* <header className="header-shelf">
     <Banner />
-    </header>
+    </header> */}
 
     <div className="main-wrapper">
 
@@ -15,20 +15,31 @@ const Test = () => {
 
     <div className="gallery gallery-area">
       <div className="container w-100p">
-            <BookCarousel/>
-          </div>
-      <div className="wood-shelf" />
-      <div className="container w-100p">
-            <BookCarousel/>
-          </div>
-          <div className="wood-shelf" />
-
-          <div className="container w-100p">
-            <BookCarousel/>
-          </div>
-          <div className="wood-shelf" />
+        <div className="book-container">
+        <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
       </div>
+
+      <div className="container w-100p">
+        <div className="book-container">
+        <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+      </div>
+
+      <div className="container w-100p">
+        <div className="book-container">
+        <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+      </div>
+      
+
+      
     </div>
+    </div>
+
     </>
   )
 }

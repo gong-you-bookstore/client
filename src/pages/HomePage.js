@@ -69,7 +69,7 @@ const HomePage = ()=>{
           <div className='container flex-sp-box w-100p'>
           
           <div className='flex-col-box'>
-            <h1 class="fc-main fs-32 mb-20">새로 올라온 책</h1>
+            {/* <h1 class="fc-main fs-32 mb-20">새로 올라온 책</h1> */}
             <h1 class="fc-dark fs-32">The Great Gatsby</h1>
             <p class="fc-dark">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
           </div>
@@ -84,7 +84,7 @@ const HomePage = ()=>{
       </div>
 
 
-      {/* <div className="content-section">
+      <div className="content-section">
         <div className="container">
           <div className="content-info-between-1">
             <img src={mapImg} className="w-200" alt="img" />
@@ -103,7 +103,7 @@ const HomePage = ()=>{
             <img src={locationImg} className="w-200" alt="img" />
           </div>
         </div>
-      </div> */}
+      </div>
     </>
     
   )

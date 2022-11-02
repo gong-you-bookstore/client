@@ -6,7 +6,7 @@
   /* line-height: 20px */
 }
 .container{
-  max-width: 1100px;
+  max-width: 1050px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -432,7 +432,7 @@ input, textarea, button {
   background-position: center;
 }
 .book-bg-cover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   height: 100%;
   backdrop-filter: blur(20px);
   display: flex;
@@ -514,6 +514,7 @@ input, textarea, button {
   .info-text {
     font-size: 24px;
   }
+  .main-book-2,
   .main-book-1 {
     width: 220px;
   }
@@ -527,6 +528,7 @@ input, textarea, button {
   
 /* phone */
 @media screen and (max-width:464px) {
+  .main-book-2,
   .main-book-1 {
     width: 200px;
   }
@@ -703,7 +705,7 @@ video.drawingBuffer {
 
 .main-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 800px;
   display: flex;
   background-image: url(./../images/cement2.jpg);
 
@@ -733,13 +735,17 @@ aside {
 
 }
 
-
+.book-container{
+padding: 0 0 0 30px;
+}
 .gallery {
-  padding: 0 30px 50px;
   width: 100%;
   background-color: blue;
   background-image: url(./../images/cement2.jpg);
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -750,13 +756,14 @@ aside {
 }
 
 .gallery-area {
-  padding: 100px 0;
+  padding: 70px 0px;
+  
 }
 
 /* x, y , blur, spread, color */
 .wood-shelf{
   border-top: solid 1px sandybrown;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   background-image: url(./../images/wood2.jpg);
   box-shadow: 0 10px 20px 8px #141414;
   height: 10px;
