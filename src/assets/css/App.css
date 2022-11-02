@@ -52,6 +52,10 @@ input:-webkit-autofill:active {
 .h-150 {
   height: 150px;
 }
+
+.h-350 {
+  height:350px;
+}
 .w-100p {
   width: 100%;
 }
@@ -95,7 +99,7 @@ input:-webkit-autofill:active {
   border-radius: 50px;
   border: none;
   background-color: #00C9A9;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   transition: all 0.3s;
 }
@@ -201,8 +205,8 @@ input:-webkit-autofill:active {
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
 }
-.hamburger .line .dark {
-  background-color: #333 !important;
+.non-top .hamburger .line {
+  background-color: #333;
 }
 /* tablet */
 @media screen and (max-width:1024px) {
@@ -263,7 +267,7 @@ input, textarea, button {
 .header-door {
   position: relative;
   height: 100vh;
-  background: url(./../images/door.jpg) no-repeat center center fixed;
+  background: url(./../images/door-wide.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -285,6 +289,7 @@ input, textarea, button {
 @media screen and (max-width:1024px) {
   .header-shelf,
   .header-door {
+    background-image: url(./../images/door-long.jpg);
     background-attachment: scroll; 	
   } 
 }
@@ -409,8 +414,19 @@ input, textarea, button {
   }
 }
 
+.book-bg {
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.book-bg-cover {
+  background-color: rgba(255, 255, 255, .2);
+  height: 100%;
+  backdrop-filter: blur(20px);
+  display: flex;
 
-
+}
 
 .grey-background {
   background-color: #efefef !important;
@@ -426,8 +442,16 @@ input, textarea, button {
   border-bottom-right-radius: 10px;
   box-shadow: -10px 22px 29px 0px #7f818e;
   transition: all .3s ease-in-out;
-
 }
+
+.main-book-2 {
+  height: 480px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: -10px 22px 29px 0px #222;
+  transition: all .3s ease-in-out;
+}
+
 .border-top-line{
   width: 100%;
   border-top: .5px #444 solid;
@@ -482,6 +506,12 @@ input, textarea, button {
   }
   .main-book-1 {
     width: 220px;
+  }
+  .flex-sp-box {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-self: center;
+    gap: 50px;
   }
 }
   
@@ -561,12 +591,18 @@ input, textarea, button {
   padding: 20px 0 50px 0;
 }
 
-.flex-col-box {
+.flex-col-box-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+.flex-col-box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .flex-sp-box {

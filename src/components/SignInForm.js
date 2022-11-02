@@ -17,7 +17,7 @@ const SignInForm = ({setIsSignIn})=>{
     <>
       <h1 className="mb-20">Sign In</h1>
 
-      <div className="login-form flex-col-box">
+      <div className="login-form flex-col-box-center">
         <label htmlFor="email" className="form-label"></label>
         <input
           id="email"

@@ -23,14 +23,14 @@ const RegisterForm = ({result, step3Ref, setBookData,bookData}) => {
   
   return (
     <>
-    <div className="bg-full-p flex-col-box lh-2" ref={step3Ref}>
+    <div className="bg-full-p flex-col-box-center lh-2" ref={step3Ref}>
     <div className="container w-100p">
     <div className="white-box" >
     <span className="fc-main fs-32 fw-bold">Step 3</span>
     <p className="fc-dark fs-28" >
         내용을 작성해주세요
       </p>
-    <div className="flex-col-box mtb-50">
+    <div className="flex-col-box-center mtb-50">
         <img src={bookData.thumbnail} alt="img" />
 
         <label htmlFor="email" className="form-label" >Title</label>

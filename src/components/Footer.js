@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-dark">
-        <div className="flex-col-box fc-muted fs-12 container">
+        <div className="flex-col-box-center fc-muted fs-12 container">
         <img src={faviconImg} className="w-50" alt="img" />
           <div className='flex-sp-box w-100p
           '>

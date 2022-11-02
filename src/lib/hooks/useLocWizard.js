@@ -10,14 +10,13 @@ const useLocWizard = () => {
   $(document).on('scroll', function(){
     if (pathname === "/bookstore") {
       $("nav").removeClass("non-top");
-      $(".line").css('background-color', '#fff');
     } else if ($(window).scrollTop() > 100){
       $("nav").addClass("non-top");
-      $(".line").css('background-color', '#333');
+      // $(".line").css('background-color', '#333');
       $('.top-btn').addClass( 'active' );
     } else {
       $("nav").removeClass("non-top");
-      $(".line").css('background-color', '#fff');
+      // $(".line").css('background-color', '#fff');
       $('.top-btn').removeClass( 'active' );
     }
   })
