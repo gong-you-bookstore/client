@@ -1,5 +1,5 @@
 import Banner from './../components/Banner'
-import { Rotate, Fade } from "react-awesome-reveal";
+import { Rotate, Fade, Slide } from "react-awesome-reveal";
 import tokenImg from './../assets/images/coin2.png'
 import mapImg from './../assets/images/map2.png'
 import locationImg from './../assets/images/chat.png'
@@ -18,7 +18,6 @@ const HomePage = ()=>{
     <span className="pointer" ref={introRef} />
       <div className="content-section" >
         <div className="container">
-          {/* <span className="fc-main fs-32 fw-bold">Info 1</span> */}
           <div className="flex-box">
             <div className="content-info-left">
               <Fade direction="up" cascade triggerOnce>
@@ -48,7 +47,6 @@ const HomePage = ()=>{
 
       <div className="content-section">
         <div className="container">
-          {/* <span className="fc-main fs-32 fw-bold">Info 2</span> */}
           <div className="content-info-center">
             <Rotate>
               <img src={tokenImg} className="w-200" alt="img" />
@@ -71,8 +69,9 @@ const HomePage = ()=>{
           <div className='container flex-sp-box w-100p'>
           
           <div className='flex-col-box'>
-            <h1 class="fc-white fs-32">The Great Gatsby</h1>
-            <p class="fc-white">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
+            <h1 class="fc-main fs-32 mb-20">새로 올라온 책</h1>
+            <h1 class="fc-dark fs-32">The Great Gatsby</h1>
+            <p class="fc-dark">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
           </div>
 
           <img 
@@ -84,11 +83,9 @@ const HomePage = ()=>{
         </div>
       </div>
 
-      
 
-      <div className="content-section">
+      {/* <div className="content-section">
         <div className="container">
-          {/* <span className="fc-main fs-32 fw-bold">Info 3</span> */}
           <div className="content-info-between-1">
             <img src={mapImg} className="w-200" alt="img" />
             <Fade direction="right" cascade triggerOnce>
@@ -106,7 +103,7 @@ const HomePage = ()=>{
             <img src={locationImg} className="w-200" alt="img" />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
     
   )
