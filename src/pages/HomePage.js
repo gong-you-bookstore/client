@@ -46,7 +46,7 @@ const HomePage = ()=>{
         </div>
       </div>
 
-      <div className="content-section grey-background">
+      <div className="content-section">
         <div className="container">
           {/* <span className="fc-main fs-32 fw-bold">Info 2</span> */}
           <div className="content-info-center">
@@ -59,6 +59,32 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
+
+      <div 
+        className="book-bg"
+        style={{
+          backgroundImage:
+            "url(https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg)",
+        }}
+      >
+        <div className='book-bg-cover '>
+          <div className='container flex-sp-box w-100p'>
+          
+          <div className='flex-col-box'>
+            <h1 class="fc-white fs-32">The Great Gatsby</h1>
+            <p class="fc-white">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
+          </div>
+
+          <img 
+            src = "https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg"
+            className="main-book-2" 
+            alt="img" 
+          />
+          </div>
+        </div>
+      </div>
+
+      
 
       <div className="content-section">
         <div className="container">

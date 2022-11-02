@@ -55,7 +55,7 @@ const LoginModal = ({isOpen, setOpen}) => {
       }}
       style={customStyles}
     >
-      <div className="flex-col-box">
+      <div className="flex-col-box-center">
         <img 
           src={logoColorImg} 
           className="w-120 mb-10 c-p"

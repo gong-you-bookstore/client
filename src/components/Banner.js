@@ -18,7 +18,7 @@ const Banner = ({setIsScrollTo}) => {
             type="button"
             onClick={()=>navigate("/bookstore")}
             >
-              책방 둘러보기
+              입장하기
             </button>
           ) : (<></>)
         }

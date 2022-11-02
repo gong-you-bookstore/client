@@ -19,7 +19,7 @@ const SignUpForm = ({setIsSignIn})=>{
   return (
     <>
       <h1 className="mb-20">Sign Up</h1>
-      <div className="login-form flex-col-box">
+      <div className="login-form flex-col-box-center">
       
         <label htmlFor="password" className="form-label"></label>
 
