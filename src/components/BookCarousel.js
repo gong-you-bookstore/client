@@ -1,6 +1,7 @@
-import data from './../assets/bookmini.json'
+import books from './../assets/bookmini.json'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useNavigate } from 'react-router-dom';
 
 const responsive = {
   superLargeDesktop: {
@@ -23,16 +24,20 @@ const responsive = {
 };
 
 const BookCarousel = ()=>{
+  const navigate = useNavigate();
   
   return (
     <>
           <Carousel responsive={responsive}>
-            {data.map((item, index)=>(
+            {books.map((book, index)=>(
                 <img 
                   key={index} 
-                  src={item.img_url} 
+                  src={book.img_url} 
                   className="book h-150" 
-                  alt="img" 
+                  alt="img"
+                  onClick={()=>{
+                    navigate(`/${book.isbn13}/detail`)
+                  }} 
                 />
             ))}
           </Carousel>

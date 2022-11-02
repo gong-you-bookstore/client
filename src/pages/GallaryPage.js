@@ -7,9 +7,9 @@ const GallaryPage = ()=>{
 
   return(
     <>
-    <header className="header-shelf">
+    {/* <header className="header-shelf">
     <Banner setIsScrollTo={setIsScrollTo}/>
-    </header>
+    </header> */}
       <div className="cement-wallpaper" ref={gallaryRef}>
     
       <h1>Gallery</h1>

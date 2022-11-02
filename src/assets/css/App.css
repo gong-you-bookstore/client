@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 * {
   font-family: 'Noto Sans KR', sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   /* line-height: 20px */
 }
 .container{
@@ -417,7 +417,7 @@ input, textarea, button {
 }
 
 .book-bg {
-  height: 1000px;
+  height: 800px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -427,7 +427,6 @@ input, textarea, button {
   height: 100%;
   backdrop-filter: blur(20px);
   display: flex;
-
 }
 
 .grey-background {
@@ -447,7 +446,7 @@ input, textarea, button {
 }
 
 .main-book-2 {
-  height: 450px;
+  width: 340px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: -10px 22px 29px 0px #222;
@@ -560,18 +559,17 @@ input, textarea, button {
   
 }
 
-.bg-full-v {
+.bg-dark-full-vh {
   background-color: #26292F;
   width: 100vw;
   height: 100vh;
-  min-height: 500px;
   position: relative;
   overflow: hidden;
   background-size: cover;
   color: #eee;
   
 }
-.bg-full-p {
+.bg-white-full-p {
   background-color: #f8f8f8;
   width: 100vw;
   height: 100%;
@@ -583,7 +581,7 @@ input, textarea, button {
 
 }
 
-.bg-dark {
+.footer-bg-dark {
   background-color: #26292F;
   width: 100%;
   min-height: 200px;
@@ -604,7 +602,7 @@ input, textarea, button {
 .flex-col-box {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 10px;
 }
 
 .flex-sp-box {
@@ -694,16 +692,38 @@ video.drawingBuffer {
 
 
 
+.main-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-grow: 1;
+  margin-top: 100px;
+  overflow: hidden;
+}
 
+aside {
+  width: 320px;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  background-color: red;
+}
 
-
+.gallery {
+  flex-grow: 1;
+  padding: 0 30px 50px;
+  overflow-y: auto;
+  background-color: blue;
+}
 
 
 
 .cement-wallpaper {
   height: 100%;
   background-image: url(./../images/cement2.jpg);
-  padding: 100px 0;
 }
 
 .gallery-area {
@@ -713,7 +733,7 @@ video.drawingBuffer {
 /* x, y , blur, spread, color */
 .wood-shelf{
   border-top: solid 1px sandybrown;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   background-image: url(./../images/wood2.jpg);
   box-shadow: 0 10px 20px 8px #141414;
   height: 10px;
@@ -774,5 +794,6 @@ video.drawingBuffer {
 .top-btn.active:hover { 
   box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.2);
 }
+
 
 
