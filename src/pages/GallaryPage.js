@@ -1,18 +1,18 @@
 import Banner from "../components/Banner";
 import BookCarousel from "../components/BookCarousel";
 import useScrollTo from "../lib/hooks/useScrollTo";
+import { Rotate, Fade, Hinge } from "react-awesome-reveal";
 
 const GallaryPage = ()=>{
   const [gallaryRef, setIsScrollTo] = useScrollTo();
 
   return(
     <>
-    {/* <header className="header-shelf">
+    <header className="header-shelf">
     <Banner setIsScrollTo={setIsScrollTo}/>
-    </header> */}
+    </header>
       <div className="cement-wallpaper" ref={gallaryRef}>
     
-      <h1>Gallery</h1>
         <div className="gallery-area" >
 
         <div className="container">

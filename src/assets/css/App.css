@@ -283,6 +283,15 @@ input, textarea, button {
 	-moz-background-size: cover;
 	-o-background-size: cover;
   overflow: hidden;
+  /* animation:change 1s ease-in; */
+}
+@keyframes change {
+  from {
+    background-image: url(./../images/door-wide.jpg);
+  }
+  to {
+    background-image: url(./../images/shelf.jpg);
+  }
 }
 
 /* tablet */
@@ -423,7 +432,7 @@ input, textarea, button {
   background-position: center;
 }
 .book-bg-cover {
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.8);
   height: 100%;
   backdrop-filter: blur(20px);
   display: flex;
@@ -696,27 +705,41 @@ video.drawingBuffer {
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-grow: 1;
-  margin-top: 100px;
-  overflow: hidden;
+  background-image: url(./../images/cement2.jpg);
+
 }
 
 aside {
-  width: 320px;
+  width: 250px;
   /* height: 100%; */
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   flex-shrink: 0;
-  background-color: red;
+  background-color: rgba(38, 41, 47, 1);
+  box-shadow: 0px -20px 30px 1px #141414;
+  z-index: 49;
+}
+/* tablet */
+@media screen and (max-width:1024px) {
+  aside {
+    display: none;
+  }
 }
 
+/* phone */
+@media screen and (max-width:464px) {
+
+}
+
+
 .gallery {
-  flex-grow: 1;
   padding: 0 30px 50px;
-  overflow-y: auto;
+  width: 100%;
   background-color: blue;
+  background-image: url(./../images/cement2.jpg);
+
 }
 
 
@@ -733,7 +756,7 @@ aside {
 /* x, y , blur, spread, color */
 .wood-shelf{
   border-top: solid 1px sandybrown;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   background-image: url(./../images/wood2.jpg);
   box-shadow: 0 10px 20px 8px #141414;
   height: 10px;
