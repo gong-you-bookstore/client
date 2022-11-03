@@ -299,6 +299,13 @@ input, textarea, button {
   .header-door {
     background-image: url(./../images/door-long.jpg);
   }
+  /* .header-shelf,
+  .header-door {
+    background-attachment: scroll; 	
+  }  */
+}
+/* IOS Only */
+@supports (-webkit-touch-callout: none) {
   .header-shelf,
   .header-door {
     background-attachment: scroll; 	

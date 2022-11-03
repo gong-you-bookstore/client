@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Scanner from "./Scanner";
 import { getBooksByKakao } from "../lib/services";
-const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
+const SearchForm = (
+  {
+    searchWord,
+    setSearchWord, 
+    setSearchResults, 
+    setIsScrollToStep2
+  }
+) => {
   const [camera, setCamera] = useState(false);
-  const navigate = useNavigate();
 
   // const onDetected = searchWord => {
   //   setSearchWord(searchWord);
@@ -18,6 +23,7 @@ const SearchForm = ({searchWord,setSearchWord, setSearchResults})=> {
     getBooksByKakao(searchWord)
       .then((res) => {
         setSearchResults(res.data.documents)
+        setIsScrollToStep2(true)
       })
       .catch((error) => {
         console.log("작성실패", error);
