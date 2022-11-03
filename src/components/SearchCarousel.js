@@ -22,7 +22,11 @@ const responsive = {
 };
 
 
-const SearchCarousel = ({searchResults, setBookData})=>{
+const SearchCarousel = ({
+  searchResults, 
+  setResult, 
+  setIsScrollToStep3
+})=>{
   
   return (
     <>
@@ -34,10 +38,8 @@ const SearchCarousel = ({searchResults, setBookData})=>{
                   className="h-150 c-p"
                   alt="img" 
                   onClick={()=>{
-                    setBookData({
-                      ...item,
-                      isbn13: item.isbn.substr(-13)
-                    })
+                    setResult(item);
+                    setIsScrollToStep3(true)
                   }}
                 
                 />

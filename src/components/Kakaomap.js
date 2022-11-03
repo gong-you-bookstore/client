@@ -26,7 +26,7 @@ const MapMaker = ({lat, lon}) => {
 }
 
 // 위도 경도를 찾은 후, 맵을 호출
-const Kakaomap = ({setBookData,bookData}) => {
+const Kakaomap = () => {
   const [lat, setLat] = useState(0)
   const [lon, setLon] = useState(0)
 
@@ -40,14 +40,6 @@ const Kakaomap = ({setBookData,bookData}) => {
       );
     }
   },[])
-
-  useEffect(()=>{
-    setBookData({
-      ...bookData,
-      lat,
-      lon
-    })
-  },[lat])
   
   // 위치 값을 찾으면 출력
   if (lat || lon) {
