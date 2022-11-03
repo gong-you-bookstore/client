@@ -5,6 +5,13 @@
   letter-spacing: 1.5px;
   /* line-height: 20px */
 }
+
+/* 모바일 수평 스크롤 금지 */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .container{
   max-width: 1050px;
   padding-right: 15px;
@@ -283,14 +290,16 @@ input, textarea, button {
 	-moz-background-size: cover;
 	-o-background-size: cover;
   overflow: hidden;
-  /* animation:change 1s ease-in; */
+  /* animation:change 1s ease-in-out; */
 }
 @keyframes change {
   from {
-    background-image: url(./../images/door-wide.jpg);
+    opacity: 1;
+    /* height: 100vh; */
   }
   to {
-    background-image: url(./../images/shelf.jpg);
+    opacity: .7;
+    /* height: 0vh; */
   }
 }
 
@@ -404,7 +413,7 @@ input, textarea, button {
 
 .shape svg {
   position: absolute;
-  bottom: -28px;
+  bottom: -32px;
   left: 0;
   width: 100%;
   z-index: 9;
@@ -720,7 +729,7 @@ video.drawingBuffer {
 
 aside {
   width: 250px;
-  /* height: 100%; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -760,6 +769,9 @@ padding: 0 0 0 30px;
 .cement-wallpaper {
   height: 100%;
   background-image: url(./../images/cement2.jpg);
+  /* background-image: url(./../images/cement.png); */
+  background-size: contain;
+
 }
 
 .gallery-area {
@@ -769,11 +781,11 @@ padding: 0 0 0 30px;
 
 /* x, y , blur, spread, color */
 .wood-shelf{
-  border-top: solid 1px sandybrown;
-  margin-bottom: 80px;
+  border-top: solid .5px sandybrown;
+  margin-bottom: 100px;
   background-image: url(./../images/wood2.jpg);
   box-shadow: 0 10px 20px 8px #141414;
-  height: 10px;
+  height: 8px;
   /* width: 100%; */
   z-index: 99;
   position: relative;

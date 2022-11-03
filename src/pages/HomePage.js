@@ -58,7 +58,7 @@ const HomePage = ()=>{
         </div>
       </div>
 
-      <div 
+      {/* <div 
         className="book-bg"
         style={{
           backgroundImage:
@@ -69,7 +69,6 @@ const HomePage = ()=>{
           <div className='container flex-sp-box w-100p'>
           
           <div className='flex-col-box'>
-            {/* <h1 className="fc-main fs-32 mb-20">새로 올라온 책</h1> */}
             <h1 className="fc-dark fs-32">The Great Gatsby</h1>
             <p className="fc-dark">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
           </div>
@@ -81,7 +80,7 @@ const HomePage = ()=>{
           />
           </div>
         </div>
-      </div>
+      </div> */}
 
 
       <div className="content-section">

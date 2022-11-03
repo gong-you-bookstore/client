@@ -2,9 +2,16 @@ import Banner from "../components/Banner";
 import BookCarousel from "../components/BookCarousel";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import { Rotate, Fade, Hinge } from "react-awesome-reveal";
+import { useEffect } from "react";
 
 const GallaryPage = ()=>{
   const [gallaryRef, setIsScrollTo] = useScrollTo();
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsScrollTo(true);
+    }, 1000)
+  }, [])
 
   return(
     <>
