@@ -6,11 +6,11 @@ export const onChangeStylesByScroll = () => {
     if($(window).scrollTop() > 100){
       $("nav").addClass("non-top");
       $(".line").css('background-color', '#333');
-      $('.top-btn').addClass( 'active' );
+      $('.rounded-btn').addClass( 'active' );
     }else{
       $("nav").removeClass("non-top");
       $(".line").css('background-color', '#fff');
-      $('.top-btn').removeClass( 'active' );
+      $('.rounded-btn').removeClass( 'active' );
     }
   })
 }

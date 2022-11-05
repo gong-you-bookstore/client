@@ -1,10 +1,11 @@
-import { scrollToTopSmooth } from '../lib/utils';
+import { scrollToTopSmooth } from '../../lib/utils';
+
 const BackToTopBtn = () => {
 
   return (
     <>
       <button 
-        className="top-btn fw-bold"
+        className="rounded-btn"
         onClick={()=>{scrollToTopSmooth();}}
       >TOP</button>
     </>

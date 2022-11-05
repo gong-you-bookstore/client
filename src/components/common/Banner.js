@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import logoRowImg from './../assets/images/logo_row_white.png'
+import logoRowImg from './../../assets/images/logo_row_white.png'
 
 const Banner = ({setIsScrollTo}) => {
   const {pathname} = useLocation();

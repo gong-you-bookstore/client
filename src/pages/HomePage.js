@@ -1,4 +1,4 @@
-import Banner from './../components/Banner'
+import Banner from './../components/common/Banner'
 import { Rotate, Fade, Slide } from "react-awesome-reveal";
 import tokenImg from './../assets/images/coin2.png'
 import mapImg from './../assets/images/map2.png'

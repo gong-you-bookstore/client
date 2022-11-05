@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 * {
   font-family: 'Noto Sans KR', sans-serif;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   /* line-height: 20px */
 }
 
@@ -290,15 +290,15 @@ input, textarea, button {
 	-moz-background-size: cover;
 	-o-background-size: cover;
   overflow: hidden;
-  /* animation:change 1s ease-in-out; */
+  animation:glare 1s ease-in-out;
 }
-@keyframes change {
+@keyframes glare {
   from {
-    opacity: 1;
+    opacity: .5;
     /* height: 100vh; */
   }
   to {
-    opacity: .7;
+    opacity: 1;
     /* height: 0vh; */
   }
 }
@@ -716,56 +716,6 @@ video.drawingBuffer {
 
 
 
-
-
-
-.main-wrapper {
-  width: 100%;
-  min-height: 800px;
-  display: flex;
-  background-image: url(./../images/cement2.jpg);
-
-}
-
-aside {
-  width: 250px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  overflow-x: hidden;
-  flex-shrink: 0;
-  background-color: rgba(38, 41, 47, 1);
-  box-shadow: 0px -20px 30px 1px #141414;
-  z-index: 49;
-}
-/* tablet */
-@media screen and (max-width:1024px) {
-  aside {
-    display: none;
-  }
-}
-
-/* phone */
-@media screen and (max-width:464px) {
-
-}
-
-.book-container{
-padding: 0 0 0 30px;
-}
-.gallery {
-  width: 100%;
-  background-color: blue;
-  background-image: url(./../images/cement2.jpg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 .cement-wallpaper {
   height: 100%;
   background-image: url(./../images/cement2.jpg);
@@ -794,6 +744,7 @@ padding: 0 0 0 30px;
 
 
 .book {
+  height: 170px;
   margin: 20px 10px 0 10px;
   background-color: white;
   transition: all .3s ease-in-out;
@@ -807,6 +758,24 @@ padding: 0 0 0 30px;
 
 }
 
+/* tablet */
+@media screen and (max-width:1024px) {
+  .book {
+    height: 160px;
+  }
+  
+}
+
+/* phone */
+@media screen and (max-width:464px) {
+  .book {
+    height: 140px;
+  }
+  .wood-shelf {
+    margin-bottom: 50px;
+  }
+}
+
 .book:hover {
   cursor: pointer;
   transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
@@ -814,7 +783,7 @@ padding: 0 0 0 30px;
   box-shadow: 3px 10px 15px 3px #141414, 20px 8px 0 #eee;
 }
 
-.top-btn {
+.rounded-btn {
   position: fixed; 
   bottom: 40px; 
   right: 20px;
@@ -827,21 +796,20 @@ padding: 0 0 0 30px;
   transition: all 0.3s ease-in;
   cursor: pointer;
   color: #fff;
-  background-color: rgba(0,201,169, 0.5);
+  background-color: rgba(170, 170, 170, .8);
 }
 /* phone */
 @media screen and (max-width:464px) {
-  .top-btn {
+  .rounded-btn {
     width: 40px; 
     height: 40px;
   }
 }
-
-.top-btn.active {
+.rounded-btn.active {
   opacity: 1;
 }
-.top-btn.active:hover { 
-  box-shadow:0px 0px 0px 5px rgba(0,201,169, 0.2);
+.rounded-btn.active:hover { 
+  box-shadow:0px 0px 0px 5px rgba(170, 170, 170, 0.3);
 }
 
 

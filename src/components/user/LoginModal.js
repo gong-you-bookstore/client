@@ -2,7 +2,7 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 import $ from 'jquery'
 import { useState } from "react";
-import logoColorImg from './../assets/images/logo-color.png'
+import logoColorImg from './../../assets/images/logo-color.png'
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 
