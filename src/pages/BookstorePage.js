@@ -1,16 +1,15 @@
-import Banner from "../components/Banner";
+import Banner from "../components/common/Banner";
 import BookCarousel from "../components/BookCarousel";
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { Rotate, Fade, Hinge } from "react-awesome-reveal";
 import { useEffect } from "react";
 
-const GallaryPage = ()=>{
+const BookstorePage = ()=>{
   const [gallaryRef, setIsScrollTo] = useScrollTo();
 
   useEffect(()=>{
     setTimeout(()=>{
       setIsScrollTo(true);
-    }, 1000)
+    }, 1100)
   }, [])
 
   return(
@@ -49,4 +48,4 @@ const GallaryPage = ()=>{
   )
 }
 
-export default GallaryPage;
+export default BookstorePage;

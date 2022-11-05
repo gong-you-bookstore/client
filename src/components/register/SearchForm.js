@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Scanner from "./Scanner";
-import { getBooksByKakao } from "../lib/services";
+import { getBooksByKakao } from "../../lib/services";
 const SearchForm = (
   {
     searchWord,

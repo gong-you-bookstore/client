@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Kakaomap from "./Kakaomap";
-import { getBookByNLK } from "../lib/services";
+import { getBookByNLK } from "../../lib/services";
 
 const RegisterForm = ({
   result,

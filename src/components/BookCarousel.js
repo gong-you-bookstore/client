@@ -23,24 +23,24 @@ const responsive = {
   }
 };
 
-const BookCarousel = ()=>{
+const BookCarousel = () => {
   const navigate = useNavigate();
   
   return (
     <>
-          <Carousel responsive={responsive}>
-            {books.map((book, index)=>(
-                <img 
-                  key={index} 
-                  src={book.img_url} 
-                  className="book h-150" 
-                  alt="img"
-                  onClick={()=>{
-                    navigate(`/${book.isbn13}/detail`)
-                  }} 
-                />
-            ))}
-          </Carousel>
+      <Carousel responsive={responsive}>
+        {books.map((book, index)=>(
+            <img 
+              key={index} 
+              src={book.img_url} 
+              className="book" 
+              alt="img"
+              onClick={()=>{
+                navigate(`/${book.isbn13}/detail`)
+              }} 
+            />
+        ))}
+      </Carousel>
     </>
   )
 }

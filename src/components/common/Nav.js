@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom"
 import $ from 'jquery'
 import { useState } from "react"
-import useLocWizard from "../lib/hooks/useLocWizard"
-import logo from './../assets/images/logo.png'
-import favicon from './../assets/images/favicon.png'
-import LoginModal from "./LoginModal"
-import { onToggleHamburger, onCloseHamburger } from "../lib/utils"
+import useLocWizard from "../../lib/hooks/useLocWizard"
+import favicon from './../../assets/images/favicon.png'
+import LoginModal from "../user/LoginModal"
+import { onToggleHamburger, onCloseHamburger } from "../../lib/utils"
 
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
@@ -14,7 +13,7 @@ const Nav = ()=>{
   const menus = [
     {name: "등록", address: "/register"},
     {name: "책방", address: "/bookstore"},
-    {name: "test", address: "/test"},
+    {name: "설문", address: "/survey"},
   ]
 
   useLocWizard();

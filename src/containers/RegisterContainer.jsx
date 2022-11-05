@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-import SearchForm from "../components/SearchForm"
-import RegisterForm from "../components/RegisterForm";
-import SelectForm from "../components/SelectForm";
+import SearchForm from "../components/register/SearchForm"
+import RegisterForm from "../components/register/RegisterForm";
+import SelectForm from "../components/register/SelectForm";
 import useScrollTo from "../lib/hooks/useScrollTo";
+
 const RegisterContainer = () => {
   const [step2Ref, setIsScrollToStep2] = useScrollTo();
   const [step3Ref, setIsScrollToStep3] = useScrollTo();
@@ -13,9 +14,9 @@ const RegisterContainer = () => {
   const [result, setResult] = useState({})
 
 
-  useEffect(()=>{
-    console.log(result)
-  },[result])
+  // useEffect(()=>{
+  //   console.log(result)
+  // },[result])
   return (
     <>
         <SearchForm
@@ -30,7 +31,7 @@ const RegisterContainer = () => {
           <SelectForm 
             searchResults = {searchResults}
             step2Ref = {step2Ref}
-            setResult={setResult}
+            setResult = {setResult}
             setIsScrollToStep3 = {setIsScrollToStep3}
           />
         ) : (<></>)
@@ -38,7 +39,7 @@ const RegisterContainer = () => {
       {
         result.title ? (
           <RegisterForm
-            result={result}
+            result = {result}
             step3Ref = {step3Ref}
           />
         ) : (<></>)
