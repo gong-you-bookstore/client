@@ -1,21 +1,8 @@
-import { useState } from "react";
-
-
-const SignUpForm = ({setIsSignIn})=>{
-  const [signUpData, setSignUpData] = useState({
-    email: "",
-    password: "",
-    rePassword: "",
-    name: "",
-  });
-  
-  const onChangeSignUpData = (event) => {
-    setSignUpData({
-      ...signUpData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
+const SignUpForm = ({
+  setIsSignIn,
+  signUpData,
+  onChangeSignUpData
+})=>{
   return (
     <>
       <h1 className="mb-20">Sign Up</h1>

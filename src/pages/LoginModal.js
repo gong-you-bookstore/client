@@ -1,9 +1,9 @@
-import SignInForm from "./SignInForm";
-import SignUpForm from "./SignUpForm";
+import SignInContainer from "../containers/user/SignInContainer";
+import SignUpContainer from "../containers/user/SignUpContainer";
 import $ from 'jquery'
 import { useState } from "react";
-import logoColorImg from './../../assets/images/logo-color.png'
-import { useNavigate } from "react-router-dom";
+import logoColorImg from '../assets/images/logo-color.png'
+
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
@@ -42,7 +42,6 @@ const customStyles = {
 
 
 const LoginModal = ({isOpen, setOpen}) => {
-  const navigate = useNavigate();
   const [isSignIn, setIsSignIn] = useState(true);
   
   return (
@@ -63,9 +62,9 @@ const LoginModal = ({isOpen, setOpen}) => {
         />
         {
           isSignIn ? (
-            <SignInForm setIsSignIn={setIsSignIn} />
+            <SignInContainer setIsSignIn={setIsSignIn} />
           ) : (
-            <SignUpForm setIsSignIn={setIsSignIn}/>
+            <SignUpContainer setIsSignIn={setIsSignIn}/>
           )
         }
         </div>

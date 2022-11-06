@@ -1,22 +1,11 @@
-import { useState } from "react";
-
-const SignInForm = ({setIsSignIn})=>{
-  const [signInData, setSignInData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const onChangeSignInData = (event) => {
-    setSignInData({
-      ...signInData,
-      [event.target.name]: event.target.value,
-    });
-  };
-  
+const SignInForm = ({
+  setIsSignIn,
+  signInData,
+  onChangeSignInData
+})=>{
   return (
     <>
       <h1 className="mb-20">Sign In</h1>
-
       <div className="login-form flex-col-box-center">
         <label htmlFor="email" className="form-label"></label>
         <input
@@ -48,8 +37,6 @@ const SignInForm = ({setIsSignIn})=>{
         >
           Login
         </button>
-
-
         <p className="message">
           Not registered?{"  "}
           <span>

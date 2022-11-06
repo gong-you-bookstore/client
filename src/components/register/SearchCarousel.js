@@ -21,31 +21,25 @@ const responsive = {
   }
 };
 
-
 const SearchCarousel = ({
   searchResults, 
-  setResult, 
-  setIsScrollToStep3
+  onClickSelectImg, 
 })=>{
-  
   return (
-    <>
-          <Carousel responsive={responsive}>
-            {searchResults.map((item, index)=>(
-                <img 
-                  key={index} 
-                  src={item.thumbnail} 
-                  className="h-150 c-p"
-                  alt="img" 
-                  onClick={()=>{
-                    setResult(item);
-                    setIsScrollToStep3(true)
-                  }}
-                
-                />
-            ))}
-          </Carousel>
-    </>
+    <Carousel responsive={responsive}>
+      {searchResults.map((searchResult, index)=>(
+          <img 
+            key={index} 
+            src={searchResult.thumbnail} 
+            className="h-150 c-p"
+            alt="img" 
+            onClick={()=>{
+              onClickSelectImg(searchResult)
+            }}
+          
+          />
+      ))}
+    </Carousel>
   )
 }
 
