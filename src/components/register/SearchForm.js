@@ -1,35 +1,9 @@
-import { useState } from "react";
-import Scanner from "./Scanner";
-import { getBooksByKakao } from "../../lib/services";
-const SearchForm = (
-  {
-    searchWord,
-    setSearchWord, 
-    setSearchResults, 
-    setIsScrollToStep2
-  }
-) => {
-  const [camera, setCamera] = useState(false);
-
-  // const onDetected = searchWord => {
-  //   setSearchWord(searchWord);
-  // };
-
-  const onChangeSearchWord = (event) => {
-    setSearchWord(event.target.value);
-  };
-
-  const onClickSearchButton = () => {
-    getBooksByKakao(searchWord)
-      .then((res) => {
-        setSearchResults(res.data.documents)
-        setIsScrollToStep2(true)
-      })
-      .catch((error) => {
-        console.log("작성실패", error);
-      });
-  };
-
+const SearchForm = ({
+  searchWord,
+  camera,
+  onChangeSearchWord, 
+  onClickSearchButton
+}) => {
   return (
     <>
       <div className="bg-dark-full-vh flex-col-box-center lh-2">

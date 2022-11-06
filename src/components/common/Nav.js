@@ -3,9 +3,8 @@ import $ from 'jquery'
 import { useState } from "react"
 import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
-import LoginModal from "../user/LoginModal"
 import { onToggleHamburger, onCloseHamburger } from "../../lib/utils"
-
+import LoginModal from "../../pages/LoginModal"
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();

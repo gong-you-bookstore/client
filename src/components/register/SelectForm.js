@@ -2,9 +2,8 @@ import SearchCarousel from "./SearchCarousel";
 
 const SelectForm = ({
   searchResults, 
-  step2Ref, 
-  setResult, 
-  setIsScrollToStep3
+  step2Ref,
+  onClickSelectImg
 }) => {
   return (
     <>
@@ -19,9 +18,8 @@ const SelectForm = ({
             맞는 책을 고르세요
             </p>
             <SearchCarousel 
-              searchResults={searchResults} 
-              setResult={setResult}
-              setIsScrollToStep3={setIsScrollToStep3}
+              searchResults = {searchResults} 
+              onClickSelectImg = {onClickSelectImg}
             />
           </div>
         </div>
