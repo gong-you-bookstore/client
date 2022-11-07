@@ -40,12 +40,13 @@ const customStyles = {
   },
 };
 
-
-const LoginModal = ({isOpen, setOpen}) => {
+const LoginModal = ({
+  isOpen, 
+  setOpen
+}) => {
   const [isSignIn, setIsSignIn] = useState(true);
   
   return (
-    <>
     <Modal
       isOpen={isOpen}
       onRequestClose={() => {
@@ -69,8 +70,6 @@ const LoginModal = ({isOpen, setOpen}) => {
         }
         </div>
     </Modal>
-    
-    </>
   )
 }
 

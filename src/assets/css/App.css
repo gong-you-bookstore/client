@@ -11,29 +11,40 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+body {
+  background-color: #f8f8f8;
+}
 
-.container{
-  max-width: 1050px;
+/* mini phone */
+.container {
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
-body {
-  background-color: #f8f8f8;
+/* phone */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 }
-
 /* tablet */
-@media screen and (max-width:1024px) {
+@media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
-/* phone */
-@media screen and (max-width:464px) {
+/* desktop */
+@media (min-width: 992px) {
   .container {
-    width: 100%;
-
+    max-width: 960px;
+  }
+}
+/* super desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
   }
 }
 
@@ -162,7 +173,7 @@ input:-webkit-autofill:active {
 .non-top{
   background-color: rgba(255,255,255,1); 
   color: #333;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-logo {
@@ -215,21 +226,12 @@ input:-webkit-autofill:active {
 .non-top .hamburger .line {
   background-color: #333;
 }
-/* tablet */
-@media screen and (max-width:1024px) {
-  .txt-logo {
-    display: none;
-  }
-}
 
 /* phone */
-@media screen and (max-width:464px) {
+@media screen and (max-width:576px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .txt-logo {
-    display: none;
   }
   .navbar-menu {
     display: none;
@@ -274,7 +276,7 @@ input, textarea, button {
 .header-door {
   position: relative;
   height: 100vh;
-  background: url(./../images/door-wide.jpg) no-repeat center center fixed;
+  background: url(./../images/door-long.jpg) no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -303,15 +305,11 @@ input, textarea, button {
   }
 }
 
-/* tablet */
-@media screen and (max-width:1024px) {
+/* desktop */
+@media screen and (min-width: 992px) {
   .header-door {
-    background-image: url(./../images/door-long.jpg);
+    background-image: url(./../images/door-wide.jpg);
   }
-  /* .header-shelf,
-  .header-door {
-    background-attachment: scroll; 	
-  }  */
 }
 /* IOS Only */
 @supports (-webkit-touch-callout: none) {
@@ -413,32 +411,28 @@ input, textarea, button {
 
 .shape svg {
   position: absolute;
-  bottom: -32px;
   left: 0;
   width: 100%;
   z-index: 9;
-}
-
-.shape svg path {
-  fill: #f8f8f8;
-}
-/* desktop */
-@media screen and (min-width:1024px) {
-  .shape {
-    display: none;
-  }
+  bottom: 0;
 }
 /* tablet */
-@media (max-width: 1199.98px) {
+@media (min-width: 768px) {
   .shape svg {
     bottom: -15px;
   }
 }
-/* phone */
-@media (max-width: 767.98px) {
+/* desktop */
+@media screen and (min-width: 992px) {
   .shape svg {
-    bottom: 0;
+    /* bottom: -30px; */
+
+    display: none;
   }
+}
+
+.shape svg path {
+  fill: #f8f8f8;
 }
 
 .book-bg {
@@ -526,7 +520,7 @@ input, textarea, button {
   margin: 70px 0 100px 0;
 }
 /* tablet */
-@media screen and (max-width:1024px) {
+@media screen and (max-width:991px) {
   .info-text {
     font-size: 24px;
   }
@@ -541,9 +535,8 @@ input, textarea, button {
     gap: 50px;
   }
 }
-  
 /* phone */
-@media screen and (max-width:464px) {
+@media screen and (max-width:575px) {
   .main-book-2,
   .main-book-1 {
     width: 200px;
@@ -641,14 +634,20 @@ input, textarea, button {
 .content-section {
   margin: 60px 0;
   padding: 20px 0;
-  height: 100%;
+  /* height: 100%; */
+}
+/* phone */
+@media screen and (max-width:575px) {
+  .content-section {
+    margin: 30px 0;
+  }
 }
 
 .white-box {
   /* background-color: #2F4858; */
-  padding: 30px 40px;
-  color: #333;
-  border-radius: 20px;
+  /* padding: 30px 40px; */
+  /* color: #333; */
+  /* border-radius: 20px; */
   /* box-shadow: 3px 10px 15px 3px #1414147f; */
   /* box-shadow: -10px 22px 29px 0px #7f818e; */
 
@@ -743,7 +742,7 @@ video.drawingBuffer {
 }
 
 
-.book {
+.book-dynamic {
   height: 170px;
   margin: 20px 10px 0 10px;
   background-color: white;
@@ -755,28 +754,42 @@ video.drawingBuffer {
   -webkit-backface-visibility: hidden;
   overflow: hidden;
   box-shadow: 3px 10px 15px 3px #141414;
+}
 
+.book-static {
+  margin: 20px 10px;
+  height: 170px;
+  transition: all .2s ease-in-out;
+}
+
+.book-static:hover {
+  transform: scale(1.1);
 }
 
 /* tablet */
-@media screen and (max-width:1024px) {
-  .book {
-    height: 160px;
-  }
-  
-}
-
-/* phone */
-@media screen and (max-width:464px) {
-  .book {
+@media screen and (max-width:991px) {
+  .book-static,
+  .book-dynamic {
     height: 140px;
   }
   .wood-shelf {
     margin-bottom: 50px;
   }
+  
 }
 
-.book:hover {
+/* phone */
+@media screen and (max-width:575px) {
+  .book-static,
+  .book-dynamic {
+    height: 100px;
+  }
+  .wood-shelf {
+    margin-bottom: 40px;
+  }
+}
+
+.book-dynamic:hover {
   cursor: pointer;
   transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
   -webkit-backface-visibility: hidden;
@@ -799,7 +812,7 @@ video.drawingBuffer {
   background-color: rgba(170, 170, 170, .8);
 }
 /* phone */
-@media screen and (max-width:464px) {
+@media screen and (max-width:575px) {
   .rounded-btn {
     width: 40px; 
     height: 40px;
