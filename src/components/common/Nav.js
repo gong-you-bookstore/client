@@ -3,18 +3,17 @@ import $ from 'jquery'
 import { useState } from "react"
 import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
-import { onToggleHamburger, onCloseHamburger } from "../../lib/utils"
+import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
 import LoginModal from "../../pages/LoginModal"
+
 const Nav = ()=>{
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
-
   const menus = [
     {name: "등록", address: "/register"},
     {name: "책방", address: "/bookstore"},
     {name: "설문", address: "/survey"},
   ]
-
   useLocWizard();
 
   return (

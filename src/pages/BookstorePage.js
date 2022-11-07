@@ -36,6 +36,11 @@ const BookstorePage = ()=>{
         </div>
         <div className="wood-shelf" />
 
+        <div className="container">
+          <BookCarousel/>
+        </div>
+        <div className="wood-shelf" />
+
 
           
         </div>
