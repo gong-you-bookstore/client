@@ -1,5 +1,5 @@
 import './assets/css/App.css'
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Nav from './components/common/Nav';
 import BookstorePage from './pages/BookstorePage';
 import RegisterPage from './pages/RegisterPage';
@@ -10,8 +10,6 @@ import BackToTopBtn from './components/common/BackToTopBtn';
 import BookDetailPage from './pages/BookDetailPage';
 import SurveyPage from './pages/SurveyPage';
 function App() {
-  const {pathname} = useLocation();
-
   return (
     <div className="App">
       <Nav />

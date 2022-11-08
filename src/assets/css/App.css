@@ -782,10 +782,10 @@ video.drawingBuffer {
 @media screen and (max-width:575px) {
   .book-static,
   .book-dynamic {
-    height: 100px;
+    height: 125px;
   }
   .wood-shelf {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 
