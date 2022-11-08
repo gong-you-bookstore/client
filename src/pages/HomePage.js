@@ -1,5 +1,5 @@
 import Banner from './../components/common/Banner'
-import { Rotate, Fade, Slide } from "react-awesome-reveal";
+import { Rotate, Fade } from "react-awesome-reveal";
 import tokenImg from './../assets/images/coin2.png'
 import mapImg from './../assets/images/map2.png'
 import locationImg from './../assets/images/chat.png'

@@ -37,21 +37,22 @@ const Nav = ()=>{
       <ul className="navbar-menu">
         {
           menus.map((item, index)=>(
-            <li key={index}>
-              <a onClick={()=>{navigate(item.address)}}>
-                {item.name}
-              </a>
+            <li 
+              key={index}
+              onClick={()=>{navigate(item.address)}}
+            >
+              {item.name}
             </li>
           ))
         } 
-        <li>
-          <a onClick={()=>{
+        <li
+          onClick={() => {
             setOpen(true);
             onCloseHamburger();
             $('body').css("overflow", "hidden");
-          }}>
+          }}
+        >
             Login
-          </a>
         </li>                  
       </ul>
     </nav>

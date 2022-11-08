@@ -43,6 +43,6 @@ export const responsiveCarousel = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 4
+    items: 3
   }
 };
