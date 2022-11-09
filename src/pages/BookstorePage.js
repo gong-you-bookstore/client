@@ -1,51 +1,41 @@
 import Banner from "../components/common/Banner";
-import BookCarousel from "../components/BookCarousel";
-import useScrollTo from "../lib/hooks/useScrollTo";
-import { useEffect } from "react";
-
+import { useState } from "react";
+import StorePage from "./StorePage";
+import GalleryPage from "./GalleryPage";
 const BookstorePage = ()=>{
-  const [gallaryRef, setIsScrollTo] = useScrollTo();
+  // const [gallaryRef, setIsScrollTo] = useScrollTo();
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setIsScrollTo(true);
-    }, 1100)
-  }, [])
+  const [isStore, setIsStore] = useState(true);
+
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     setIsScrollTo(true);
+  //   }, 1100)
+  // }, [])
+  
 
   return(
     <>
     <header className="header-shelf">
-    <Banner setIsScrollTo={setIsScrollTo}/>
+    <Banner />
     </header>
-      <div className="cement-wallpaper" ref={gallaryRef}>
-    
-        <div className="gallery-area" >
+    {
+      isStore ? (
+        <StorePage 
+          isStore = {isStore}
+          setIsStore = {setIsStore}
+        />
+      ) : (
+        <GalleryPage 
+          isStore = {isStore}
+          setIsStore = {setIsStore}
+        />
+      )
+    }
+      
 
-        <div className="container">
-          <BookCarousel/>
-        </div>
-        <div className="wood-shelf" />
-
-        <div className="container">
-          <BookCarousel/>
-        </div>
-        <div className="wood-shelf" />
-
-        <div className="container">
-          <BookCarousel/>
-        </div>
-        <div className="wood-shelf" />
-
-        <div className="container">
-          <BookCarousel/>
-        </div>
-        <div className="wood-shelf" />
-
-
-          
-        </div>
-      </div>
-
+      
+      
 
 
 
