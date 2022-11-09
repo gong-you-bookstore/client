@@ -799,7 +799,7 @@ video.drawingBuffer {
 } */
 .store-grid {
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
   grid-template-areas:
 		"header header header"
 		" side main main"
@@ -827,12 +827,7 @@ video.drawingBuffer {
   transition: all 0.2s ease-in-out;
   background-color: #26292F;
 }
-/* phone */
-@media screen and (max-width:575px) {
-  .side-bar {
-    display: none;
-  }
-}
+
 
 .side-bar li {
   cursor: pointer;
@@ -842,15 +837,41 @@ video.drawingBuffer {
   transition: all 0.3s ease-in-out;
 
 }
-.side-bar li:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
 
+.side-bar li.active {
+  background-color: #00C9A9;
+  font-weight: bold;
+}
+/* phone */
+@media screen and (max-width:575px) {
+  .store-grid {
+    grid-template-areas:
+      "header"
+      "side"
+      "main"
+      "main";
+    justify-content: center;
+  }
+  .side-bar {
+    padding: 10px 20px;
+  }
+  .side-bar ul {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+  }
+  .side-bar li {
+    text-align: center;
+    margin: 2px 2px;
+    padding: 5px 8px;
+  }
+}
 
 .store-area {
   padding: 50px;
   grid-area: main;
-  background-color: red;
+  background-color: #ccc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -877,9 +898,12 @@ video.drawingBuffer {
   height: 200px;
   width: 300px;
   background-color: rgba(255, 255, 255, 1);
-  display: inline-block;
   margin: 10px 5px;
   padding: 25px 20px;
+  display: flex;
+  border-radius: 5px;
+  gap: 10px;
+  overflow: hidden;
 }
 /* .book-card-cover {
   background-color: rgba(255, 255, 255, .2);

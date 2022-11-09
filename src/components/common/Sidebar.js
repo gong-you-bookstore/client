@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import favicon from './../../assets/images/favicon.png'
 import $ from 'jquery'
 const Sidebar = () => {
-  const navigate = useNavigate();
   const categories = [
     {name: "총류", kdc: "000"},
     {name: "철학", kdc: "100"},
@@ -22,6 +21,8 @@ const Sidebar = () => {
   }
 
 
+
+
   return (
     <>
     <span className="arrow" 
@@ -31,13 +32,30 @@ const Sidebar = () => {
 
     <aside className="side-bar fc-white">
       <ul>
+        <li 
+          className="active"
+          onClick={()=>{
+            $(`.side-bar li:nth-child(1)`).toggleClass("active")
+
+            if($(`.side-bar li:nth-child(1)`).hasClass("active")) {
+              $(`.side-bar li:nth-child(n+2)`).removeClass("active")
+            }
+          }}
+        >
+          <p></p>
+          <p>전체</p>
+        </li>
         {
           categories.map((category, index) => (
             <li 
               key={index}
-              // onClick={()=>{navigate(category.address)}}
+              onClick={()=>{
+                $(`.side-bar li:nth-child(1)`).removeClass("active");
+                $(`.side-bar li:nth-child(${index + 2})`).toggleClass("active");
+              }}
             >
-              {category.kdc} {category.name}
+              <p>{category.kdc}</p>
+              <p>{category.name}</p>
             </li>
           ))
         }
