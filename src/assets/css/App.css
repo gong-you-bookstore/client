@@ -150,6 +150,9 @@ input:-webkit-autofill:active {
 .fs-28 {
   font-size: 28px;
 }
+.fs-14 {
+  font-size: 14px;
+}
 .fs-12 {
   font-size: 12px;
 }
@@ -414,6 +417,7 @@ input, textarea, button {
   animation-play-state: running;
 }
 
+
 .shape svg {
   position: absolute;
   left: 0;
@@ -430,12 +434,11 @@ input, textarea, button {
 /* desktop */
 @media screen and (min-width: 992px) {
   .shape svg {
-    /* bottom: -30px; */
-
     display: none;
   }
 }
 
+.shape-st svg path,
 .shape svg path {
   fill: #f8f8f8;
 }
@@ -460,10 +463,12 @@ input, textarea, button {
 }
 
 .main-book-2 {
-  width: 340px;
+  position: relative;
+  top: 130px;
+  width: 200px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: -10px 22px 29px 0px #222;
+  box-shadow: -10px 22px 29px 0px rgba(0, 0, 0, 0.5);
   transition: all .3s ease-in-out;
 }
 
@@ -657,8 +662,6 @@ strong:hover {
   color: #00C9A9;
 }
 
-
-
 #interactive.viewport {
   width: 400px;
   height: 300px;
@@ -671,7 +674,6 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  
 }
 
 #interactive.viewport canvas.drawingBuffer,
@@ -680,7 +682,6 @@ video.drawingBuffer {
   height: 300px;
 }
 
-
 .grey-full-bg {
   background-color: #CACACA;
   width: 100vw;
@@ -688,16 +689,12 @@ video.drawingBuffer {
   position: relative;
   overflow: hidden;
   background-size: cover;
-  
 }
 
 .cement-wallpaper {
   height: 100%;
   background-image: url(./../images/cement2.jpg);
-  /* background-image: url(./../images/cement.png); */
-  /* background: linear-gradient(to bottom, black, transparent); */
   background-size: contain;
-
 }
 
 .gallery-area {
@@ -708,8 +705,6 @@ video.drawingBuffer {
   /* text-shadow: 1px 3px #333; */
   letter-spacing: 3px;
 }
-
-
 
 /* x, y , blur, spread, color */
 .wood-shelf{
@@ -724,7 +719,6 @@ video.drawingBuffer {
   position: relative;
   z-index: 1;
 }
-
 
 .book-dynamic {
   height: 170px;
@@ -780,23 +774,6 @@ video.drawingBuffer {
   box-shadow: 3px 10px 15px 3px #141414, 20px 8px 0 #eee;
 }
 
-/* .arrow {
-  display: none;
-  position: fixed;
-  top: 80px;
-  left: 35px;
-  width: 20px; 
-  height: 20px; 
-  border-top: 5px solid #fff; 
-  border-right: 5px solid #fff;
-  transform: rotate(45deg);
-  transition: all 0.3s ease-in-out;
-  z-index: 99;
-}
-.arrow.deactive {
-  transform: rotate(-135deg);
-  
-} */
 .store-grid {
   display: grid;
   /* justify-content: center; */
@@ -807,13 +784,16 @@ video.drawingBuffer {
 		" side main main";
 }
 
-
-
 .store-banner {
   grid-area: header;
-  padding: 20px;
-  height: 200px;
-  background-color: #7f818e;
+  height: 400px;
+  margin-bottom: 80px;
+  width: 100vw;
+}
+.store-banner-cover {
+  height: 100%;
+  backdrop-filter: blur(25px);
+  background-color: rgba(255,255,255,.4);
 }
 
 .side-bar {
@@ -822,25 +802,28 @@ video.drawingBuffer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 130px 10px;
-  background-color: #ccc;
+  padding: 10px 10px;
   transition: all 0.2s ease-in-out;
-  background-color: #26292F;
 }
 
 
 .side-bar li {
   cursor: pointer;
-  margin: 20px 0;
-  padding: 5px 15px;
-  border-radius: 5px;
+  margin: 15px 0;
+  padding: 8px 15px;
+  border-radius: 12px;
   transition: all 0.3s ease-in-out;
+  color: #333;
 
+}
+.side-bar li:hover {
+  background-color: #eee;
 }
 
 .side-bar li.active {
   background-color: #00C9A9;
   font-weight: bold;
+  color: #eee;
 }
 /* phone */
 @media screen and (max-width:575px) {
@@ -853,7 +836,7 @@ video.drawingBuffer {
     justify-content: center;
   }
   .side-bar {
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
   .side-bar ul {
     align-items: center;
@@ -863,15 +846,14 @@ video.drawingBuffer {
   }
   .side-bar li {
     text-align: center;
-    margin: 2px 2px;
-    padding: 5px 8px;
+    margin: 2px;
+    padding: 5px 9px;
   }
 }
 
 .store-area {
-  padding: 50px;
+  padding: 20px;
   grid-area: main;
-  background-color: #ccc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -892,26 +874,23 @@ video.drawingBuffer {
   }
 }
 
-
-
 .book-card {
   height: 200px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 1);
   margin: 10px 5px;
-  padding: 25px 20px;
+  padding: 12px 20px;
   display: flex;
-  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
   gap: 10px;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
-/* .book-card-cover {
-  background-color: rgba(255, 255, 255, .2);
-  height: 100%;
-  backdrop-filter: blur(15px) ;
-  border-radius: 25px;
-  padding: 25px 20px;
-} */
+.book-card:focus,
+.book-card:hover {
+  box-shadow: 0 6px 100px rgb(93 100 122 / 80%);
+}
 
 .book {
   height: 150px;
