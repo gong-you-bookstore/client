@@ -11,8 +11,9 @@ const Nav = ()=>{
   const navigate = useNavigate();
   const menus = [
     {name: "등록", address: "/register"},
-    {name: "책방", address: "/bookstore"},
-    {name: "설문", address: "/survey"},
+    {name: "책방", address: "/store"},
+    {name: "갤러리", address: "/jiheon788/gallery"},
+    // {name: "설문", address: "/survey"},
   ]
   useLocWizard();
 
