@@ -1,6 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import favicon from './../../assets/images/favicon.png'
 import $ from 'jquery'
+
 const Sidebar = () => {
   const categories = [
     {name: "총류", kdc: "000"},
@@ -13,24 +12,12 @@ const Sidebar = () => {
     {name: "언어", kdc: "700"},
     {name: "문학", kdc: "800"},
     {name: "역사", kdc: "900"},
+    {name: "기타", kdc: ""},
   ]
-
-  const onToggleArrow = () => {
-    $('.arrow').toggleClass( 'deactive' );
-    $('.side-bar').toggleClass('deactive');
-  }
-
-
-
 
   return (
     <>
-    <span className="arrow" 
-    // onClick={()=>onToggleArrow()}
-    />
-    
-
-    <aside className="side-bar fc-white">
+    <aside className="side-bar fs-14">
       <ul>
         <li 
           className="active"
@@ -42,7 +29,7 @@ const Sidebar = () => {
             }
           }}
         >
-          <p></p>
+          <p>#</p>
           <p>전체</p>
         </li>
         {
@@ -54,7 +41,7 @@ const Sidebar = () => {
                 $(`.side-bar li:nth-child(${index + 2})`).toggleClass("active");
               }}
             >
-              <p>{category.kdc}</p>
+              <p># {category.kdc}</p>
               <p>{category.name}</p>
             </li>
           ))

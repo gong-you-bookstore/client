@@ -58,29 +58,7 @@ const HomePage = ()=>{
         </div>
       </div>
 
-      {/* <div 
-        className="book-bg"
-        style={{
-          backgroundImage:
-            "url(https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg)",
-        }}
-      >
-        <div className='book-bg-cover '>
-          <div className='container flex-sp-box w-100p'>
-          
-          <div className='flex-col-box'>
-            <h1 className="fc-dark fs-32">The Great Gatsby</h1>
-            <p className="fc-dark">The Great Gatsby, F. Scott Fitzgerald’s third book,<br/> stands as the supreme achievement of his career.</p>
-          </div>
-
-          <img 
-            src = "https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg"
-            className="main-book-2" 
-            alt="img" 
-          />
-          </div>
-        </div>
-      </div> */}
+      
 
 
       <div className="content-section">

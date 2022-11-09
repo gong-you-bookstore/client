@@ -1,5 +1,5 @@
 import './assets/css/App.css'
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Nav from './components/common/Nav';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
@@ -12,13 +12,9 @@ import GalleryPage from './pages/GalleryPage';
 import StorePage from './pages/StorePage';
 
 function App() {
-  const { pathname } = useLocation();
 
   return (
     <div className="App">
-      {
-        // pathname === "/store" ? (<></>) : (<Nav />)
-      }
       <Nav />
       <BackToTopBtn />
 
