@@ -14,16 +14,15 @@ const StorePage = () => {
               <div
                 key={index}
                 className="book-card"
-                // style={{
-                //   backgroundImage:
-                //     `url(${book.img_url})`,
-                // }}
               >
                 <img
                   className="book"
                   src = {book.img_url}
                   alt="img" 
                 />
+                <div>
+                  <h1>{book.title}</h1>
+                </div>
               </div>
             ))
           }
