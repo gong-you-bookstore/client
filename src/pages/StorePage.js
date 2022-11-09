@@ -1,58 +1,32 @@
-import { useEffect } from 'react';
 import books from '../assets/bookmini.json'
-import $ from 'jquery'
-import Banner from '../components/common/Banner';
 import Sidebar from '../components/common/Sidebar';
 
-const StorePage = ({
-  
-}) => {
+const StorePage = () => {
 
   return (
-    <div className='store-wrapper'>
+    <div className="store-grid">
+      <div className="store-banner"></div>
+
       <Sidebar />
-    
-      <div className="store-area">
-        {
-          books.map((book, index) => (
-            <div
-              key={index}
-              className="book-card"
-              style={{
-                backgroundImage:
-                  `url(${book.img_url})`,
-              }}
-            >
-              <div className="book-card-cover">
-              <img
-                className="book"
-                src = {book.img_url}
-                alt="img" 
-              />
+      <div className="store-area ">
+          {
+            books.map((book, index) => (
+              <div
+                key={index}
+                className="book-card"
+                // style={{
+                //   backgroundImage:
+                //     `url(${book.img_url})`,
+                // }}
+              >
+                <img
+                  className="book"
+                  src = {book.img_url}
+                  alt="img" 
+                />
               </div>
-            </div>
-          ))
-        }
-        {
-          books.map((book, index) => (
-            <div
-              key={index}
-              className="book-card"
-              style={{
-                backgroundImage:
-                  `url(${book.img_url})`,
-              }}
-            >
-              <div className="book-card-cover">
-              <img
-                className="book"
-                src = {book.img_url}
-                alt="img" 
-              />
-              </div>
-            </div>
-          ))
-        }
+            ))
+          }
       </div>
     </div>
   )
