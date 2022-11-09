@@ -1,5 +1,6 @@
 import $ from 'jquery'
 
+
 // 스크롤 내리면 스타일 변경
 export const onChangeStylesByScroll = () => {
   $(window).on('scroll', function(){

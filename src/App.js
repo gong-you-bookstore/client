@@ -12,12 +12,14 @@ import GalleryPage from './pages/GalleryPage';
 import StorePage from './pages/StorePage';
 
 function App() {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
+
   return (
     <div className="App">
       {
-        pathname === "/store" ? (<></>) : (<Nav />)
+        // pathname === "/store" ? (<></>) : (<Nav />)
       }
+      <Nav />
       <BackToTopBtn />
 
       <Routes>
