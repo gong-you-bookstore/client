@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import books from '../assets/bookmini.json'
 import Sidebar from '../components/common/Sidebar';
 
 const StorePage = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="store-grid">
@@ -14,11 +16,11 @@ const StorePage = () => {
       >
         <div className='store-banner-cover '>
           <div className='container flex-sp-box w-100p'>
-          <img 
+          {/* <img 
             src = "https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg"
             className="main-book-2" 
             alt="img" 
-          />
+          /> */}
           </div>
         </div>
       </div>
@@ -31,6 +33,9 @@ const StorePage = () => {
               <div
                 key={index}
                 className="book-card"
+                onClick={() => {
+                  navigate(`/${book.isbn13}/detail`)
+                }}
               >
                 <img
                   className="book"

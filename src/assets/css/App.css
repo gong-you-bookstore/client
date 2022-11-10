@@ -784,16 +784,18 @@ video.drawingBuffer {
 		" side main main";
 }
 
+
 .store-banner {
   grid-area: header;
   height: 400px;
   margin-bottom: 80px;
   width: 100vw;
+  background-size: cover;
 }
 .store-banner-cover {
   height: 100%;
   backdrop-filter: blur(25px);
-  background-color: rgba(255,255,255,.4);
+  background-color: rgba(255,255,255, .1);
 }
 
 .side-bar {
@@ -810,10 +812,11 @@ video.drawingBuffer {
 .side-bar li {
   cursor: pointer;
   margin: 15px 0;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
   color: #333;
+  background-color: #eee;
 
 }
 .side-bar li:hover {
@@ -875,6 +878,7 @@ video.drawingBuffer {
 }
 
 .book-card {
+  background-color: #fff;
   height: 200px;
   width: 300px;
   margin: 10px 5px;
