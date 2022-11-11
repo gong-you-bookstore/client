@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const SERVER_URL = "/api"
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 export const sendSignUpData = async (signUpData) => {
   return await axios({
     method: "post",
