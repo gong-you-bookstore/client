@@ -63,7 +63,10 @@ const LoginModal = ({
         />
         {
           isSignIn ? (
-            <SignInContainer setIsSignIn={setIsSignIn} />
+            <SignInContainer
+              setOpen = {setOpen} 
+              setIsSignIn={setIsSignIn}
+            />
           ) : (
             <SignUpContainer setIsSignIn={setIsSignIn}/>
           )

@@ -9,13 +9,13 @@ const BookDetailPage = () => {
   const [book, setBook] = useState({})
 
   useEffect(()=>{
-    // console.log(book);
+    console.log(book);
   }, [book])
 
   useEffect(() => {
 
     books.map((item) => {
-      if (item.isbn13 == params.isbn13) {
+      if (item.isbn13 === Number(params.isbn13)) {
         setBook(item);
       }
     })
@@ -40,6 +40,11 @@ const BookDetailPage = () => {
           </div>
         </div>
       </div>
+
+      <h1>{book.title}</h1>
+      <p>{book.author}</p>
+      <p>{book.description}</p>
+
 
 
     </>

@@ -1,12 +1,13 @@
 const SignInForm = ({
   setIsSignIn,
   signInData,
-  onChangeSignInData
+  onChangeSignInData,
+  onClickSignInBtn
 })=>{
   return (
     <>
       <h1 className="mb-20">Sign In</h1>
-      <div className="login-form flex-col-box-center">
+      <form className="flex-col-box-center">
         <label htmlFor="email" className="form-label"></label>
         <input
           id="email"
@@ -21,6 +22,7 @@ const SignInForm = ({
         <input
           type="password"
           placeholder="Password"
+          autoComplete="off"
           onChange={onChangeSignInData}
           name="password"
           id="password"
@@ -30,8 +32,7 @@ const SignInForm = ({
         <button 
           type="button" 
           onClick={()=>{
-            console.log("1")
-            // onClickLoginButton()
+            onClickSignInBtn();
           }}
           className="mb-20 mt-20 color-btn w-100p"
         >
@@ -47,7 +48,7 @@ const SignInForm = ({
               }}>Create an Account</strong>
           </span>
         </p>
-      </div>
+      </form>
     </>
   )
 }
