@@ -1,20 +1,17 @@
 import { useNavigate } from "react-router-dom"
 import $ from 'jquery'
 import { useState } from "react"
+import { useCookies } from "react-cookie";
 import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
 import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
 import LoginModal from "../../pages/LoginModal"
-
+import { MENUS } from "../../assets/data"
 const Nav = ()=>{
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
-  const menus = [
-    {name: "등록", address: "/register"},
-    {name: "책방", address: "/store"},
-    {name: "갤러리", address: "/jiheon788/gallery"},
-    // {name: "설문", address: "/survey"},
-  ]
+  
   useLocWizard();
 
   return (
@@ -25,7 +22,6 @@ const Nav = ()=>{
         className="navbar-logo"
         >
         <img src={favicon} style={{width:"40px"}} className="hex-logo" alt="img" />
-        {/* <img src={logo} style={{width:"60px"}} className="txt-logo" alt="img" /> */}
         <h1>공유책방</h1>
       </div>
       
@@ -37,7 +33,7 @@ const Nav = ()=>{
 
       <ul className="navbar-menu">
         {
-          menus.map((item, index)=>(
+          MENUS.map((item, index)=>(
             <li 
               key={index}
               onClick={()=>{navigate(item.address)}}
@@ -45,16 +41,37 @@ const Nav = ()=>{
               {item.name}
             </li>
           ))
-        } 
-        <li
-          onClick={() => {
-            setOpen(true);
-            onCloseHamburger();
-            $('body').css("overflow", "hidden");
-          }}
-        >
-            Login
-        </li>                  
+        }
+
+        {
+          cookies.userData ? (
+            <button
+            className='ghost-btn'
+            type="button"
+            onClick={() => {
+              removeCookie("userData", { path: "/" });
+            }}
+            >
+              {cookies.userData.email}님 로그아웃
+            </button>
+          ) : (
+            <>
+            <button
+            className='ghost-btn'
+            type="button"
+            onClick={() => {
+              setOpen(true);
+              onCloseHamburger();
+              $('body').css("overflow", "hidden");
+            }}
+            >
+              로그인
+            </button>
+            </>
+          )
+        }
+          
+        
       </ul>
     </nav>
 

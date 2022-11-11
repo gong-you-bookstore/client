@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import SignUpForm from "../../components/user/SignUpForm";
+import { sendSignUpData } from "../../lib/api/user";
 
 const SignUpContainer = ({
   setIsSignIn
@@ -7,7 +9,6 @@ const SignUpContainer = ({
   const [signUpData, setSignUpData] = useState({
     email: "",
     password: "",
-    rePassword: "",
     name: "",
   });
   
@@ -18,11 +19,20 @@ const SignUpContainer = ({
     });
   };
 
+  const onClickSignUpBtn = () => {
+    sendSignUpData(signUpData).then(res => {
+      alert(res.data.msg);
+    }).catch(err => {
+      alert(err.data.msg);
+    })
+  }
+
   return (
     <SignUpForm 
       setIsSignIn = {setIsSignIn}
       signUpData = {signUpData}
       onChangeSignUpData = {onChangeSignUpData}
+      onClickSignUpBtn = {onClickSignUpBtn}
     />
   )
 }

@@ -9,7 +9,6 @@ import BackToTopBtn from './components/common/BackToTopBtn';
 import BookDetailPage from './pages/BookDetailPage';
 import SurveyPage from './pages/SurveyPage';
 import GalleryPage from './pages/GalleryPage';
-import StorePage from './pages/StorePage';
 
 function App() {
 
@@ -20,11 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-
-        <Route path="/:user_id/gallery" element={<GalleryPage />} />
-        
-        <Route path="/store" element={<StorePage />} />
-
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path='/*' element={<NotFound />} />

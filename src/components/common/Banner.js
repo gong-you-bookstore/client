@@ -13,13 +13,23 @@ const Banner = ({setIsScrollTo}) => {
 
         {
           pathname === "/" ? (
+            <>
             <button
             className='color-btn'
             type="button"
-            onClick={()=>navigate("/bookstore")}
+            onClick={()=>navigate("/gallery")}
             >
               입장하기
             </button>
+
+            {/* <button
+            className='transparent-btn mt-10'
+            type="button"
+            onClick={()=>navigate("/bookstore")}
+            >
+            ABOUT US
+            </button> */}
+            </>
           ) : (<></>)
         }
           

@@ -1,15 +1,14 @@
 const SignUpForm = ({
   setIsSignIn,
   signUpData,
-  onChangeSignUpData
+  onChangeSignUpData,
+  onClickSignUpBtn
 })=>{
   return (
     <>
       <h1 className="mb-20">Sign Up</h1>
-      <div className="login-form flex-col-box-center">
-      
-        <label htmlFor="password" className="form-label"></label>
-
+      <form className="flex-col-box-center">
+        <label htmlFor="email" className="form-label"></label>
         <input
           id="email"
           name="email"
@@ -25,6 +24,7 @@ const SignUpForm = ({
           id="password"
           name="password"
           type="password"
+          autoComplete="off"
           placeholder="Password"
           value={signUpData.password}
           onChange={onChangeSignUpData}
@@ -36,12 +36,13 @@ const SignUpForm = ({
           id="rePassword"
           name="rePassword"
           type="password"
+          autoComplete="off"
           placeholder="re-Password"
-          value={signUpData.rePassword}
-          onChange={onChangeSignUpData}
+          // value={signUpData.rePassword}
+          // onChange={onChangeSignUpData}
           className="input-styled w-100p"
         />
-        <label htmlFor="password" className="form-label"></label>
+        <label htmlFor="name" className="form-label"></label>
         <input
           id="name"
           name="name"
@@ -53,7 +54,9 @@ const SignUpForm = ({
         />
         <button 
           type="button" 
-          onClick={()=>{}}
+          onClick={()=>{
+            onClickSignUpBtn();
+          }}
           className="mb-20 mt-20 color-btn w-100p"
         >
           Sign Up
@@ -69,7 +72,7 @@ const SignUpForm = ({
             }}>Let`s Sign In</strong>
         </span>
       </p>
-      </div>
+      </form>
     </>
   )
 }
