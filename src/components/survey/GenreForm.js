@@ -3,7 +3,7 @@ const GenreForm = () => {
     <>
       <div className="bg-dark-full-vh flex-col-box-center lh-2">
         <div className="container">
-          <div className=" white-box">
+          <div className=" desktop-box">
             <span className="fc-main fs-32 fw-bold">Step 2</span>
             <p className="fc-muted fs-28">
               좋아하는 장르를 선택해주세요

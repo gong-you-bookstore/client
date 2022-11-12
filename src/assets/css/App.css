@@ -110,6 +110,9 @@ input:-webkit-autofill:active {
 .m-5 {
   margin: 5px;
 }
+.mr-20 {
+  margin-right: 20px;
+}
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -226,6 +229,9 @@ input:-webkit-autofill:active {
 }
 .fs-28 {
   font-size: 28px;
+}
+.fs-20 {
+  font-size: 20px;
 }
 .fs-14 {
   font-size: 14px;
@@ -346,14 +352,17 @@ input:-webkit-autofill:active {
 }
 
 /* Delete IOS Style */
-input, textarea, button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
+@supports (-webkit-touch-callout: none) {
+  input, textarea, button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
 }
+
 
 /* device-width < device-height */
 @media (orientation: portrait) {
@@ -674,6 +683,16 @@ input, textarea, button {
   color: #eee;
   
 }
+
+.bg-white-full-vh {
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+}
+
 .bg-white-full-p {
   background-color: #f8f8f8;
   width: 100vw;
@@ -729,22 +748,24 @@ input, textarea, button {
   }
 }
 
-.white-box {
-  /* background-color: #2F4858; */
-  /* padding: 30px 40px; */
-  /* color: #333; */
-  /* border-radius: 20px; */
-  /* box-shadow: 3px 10px 15px 3px #1414147f; */
-  /* box-shadow: -10px 22px 29px 0px #7f818e; */
+.desktop-box {
+  padding: 0 200px;
 }
+/* tablet */
+@media screen and (max-width:991px) {
+  .desktop-box {
+    padding: 0;
+
+  }
+}
+
 .input-styled {
   border:#ddd solid 2px;
   /* border-bottom: #aaa 2px solid; */
-  margin-bottom: 8px;
   padding: 10px 10px;
   background: #fff;
   color: #333;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 .input-styled:focus {
   outline: #00C9A9;
@@ -912,5 +933,26 @@ video.drawingBuffer {
   box-shadow:0px 0px 0px 5px rgba(170, 170, 170, 0.3);
 }
 
+.form-row-flex {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.form-col-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* input {
+  margin: 0 !important;
+}
+ */
 
