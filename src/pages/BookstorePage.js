@@ -4,7 +4,7 @@ import useScrollTo from "../lib/hooks/useScrollTo";
 import { useEffect, useState } from "react";
 import CategoryBox from "../components/bookstore/CategoryBox";
 import Shelf from "../components/bookstore/Shelf";
-import { CATEGORIES } from "../lib/static";
+import { CATEGORIES } from "../lib/statics";
 
 const BookstorePage = () => {
   const [gallaryRef, setIsScrollTo] = useScrollTo();

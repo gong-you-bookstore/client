@@ -1,5 +1,5 @@
 import { onClickCategory } from "../../lib/utils";
-import { CATEGORIES } from "../../lib/static";
+import { CATEGORIES } from "../../lib/statics";
 
 const CategoryBox = ({
   isView,

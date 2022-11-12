@@ -1,7 +1,7 @@
 export const MENUS = [
   {name: "등록", address: "/register"},
   {name: "책방", address: "/bookstore"},
-  // {name: "설문", address: "/survey"},
+  {name: "설문", address: "/survey"},
   {name: "마이페이지", address: "/mypage"},
 ]
 

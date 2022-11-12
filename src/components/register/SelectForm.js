@@ -12,7 +12,6 @@ const SelectForm = ({
         ref={step2Ref}
       >
         <div className="container w-100p">
-          <div className="white-box">
             <span className="fc-main fs-32 fw-bold">Step 2</span>
             <p className="fc-muted fs-28">
             맞는 책을 고르세요
@@ -21,7 +20,6 @@ const SelectForm = ({
               searchResults = {searchResults} 
               onClickSelectImg = {onClickSelectImg}
             />
-          </div>
         </div>
       </div>
     </>
