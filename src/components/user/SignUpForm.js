@@ -2,7 +2,8 @@ const SignUpForm = ({
   setIsSignIn,
   signUpData,
   onChangeSignUpData,
-  onClickSignUpBtn
+  onClickSignUpBtn,
+  errorMsg
 })=>{
   return (
     <>
@@ -38,8 +39,8 @@ const SignUpForm = ({
           type="password"
           autoComplete="off"
           placeholder="re-Password"
-          // value={signUpData.rePassword}
-          // onChange={onChangeSignUpData}
+          value={signUpData.rePassword}
+          onChange={onChangeSignUpData}
           className="input-styled w-100p"
         />
         <label htmlFor="name" className="form-label"></label>
@@ -52,6 +53,7 @@ const SignUpForm = ({
           onChange={onChangeSignUpData}
           className="input-styled w-100p"
         />
+        <p className="error">{errorMsg}</p>
         <button 
           type="button" 
           onClick={()=>{

@@ -17,7 +17,7 @@ const Banner = ({setIsScrollTo}) => {
             <button
             className='color-btn'
             type="button"
-            onClick={()=>navigate("/gallery")}
+            onClick={()=>navigate("/bookstore")}
             >
               입장하기
             </button>

@@ -6,7 +6,7 @@ import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
 import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
 import LoginModal from "../../pages/LoginModal"
-import { MENUS } from "../../assets/data"
+import { MENUS } from "../../lib/static"
 const Nav = ()=>{
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [isOpen, setOpen] = useState(false);

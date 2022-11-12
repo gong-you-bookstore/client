@@ -8,7 +8,7 @@ import Footer from './components/common/Footer';
 import BackToTopBtn from './components/common/BackToTopBtn';
 import BookDetailPage from './pages/BookDetailPage';
 import SurveyPage from './pages/SurveyPage';
-import GalleryPage from './pages/GalleryPage';
+import BookstorePage from './pages/BookstorePage';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/bookstore" element={<BookstorePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path='/*' element={<NotFound />} />

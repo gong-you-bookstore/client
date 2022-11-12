@@ -16,7 +16,7 @@ const SearchForm = ({
             {
               // camera && <Scanner onDetected={onDetected} />
             }
-            <div className="mt-20" >
+            <div className="mt-20 " >
               <input
                 id="searchWord"
                 name="searchWord"
@@ -27,13 +27,13 @@ const SearchForm = ({
                 className="input-styled w-100p fc-white"
               />
                 
-              <button 
+              {/* <button 
                 type="button"
-                // onClick={() => setCamera(!camera)}
+                onClick={() => setCamera(!camera)}
                 className=" color-btn w-100p mtb-10"
               >
                 {camera ? "Stop" : "ISBN SCAN"}
-              </button>
+              </button> */}
 
               <button
                 type="button"

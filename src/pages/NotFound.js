@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <>
     <div className="bg-dark-full-vh flex-col-box-center ">
-      <Hinge triggerOnce duration={3000} delay={2000}>
+      <Hinge triggerOnce duration={3000} delay={1000}>
         <img src={logoColorImg} className="w-150" alt="img" />
       </Hinge>
       <div className="fc-white fs-32" title="404">
