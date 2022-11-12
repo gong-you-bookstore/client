@@ -1,8 +1,8 @@
-import books from './../assets/bookmini.json'
+import books from '../../assets/bookmini.json'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from 'react-router-dom';
-import { responsiveCarousel } from '../lib/styles';
+import { responsiveCarousel } from '../../lib/styles';
 
 const BookCarousel = () => {
   const navigate = useNavigate();

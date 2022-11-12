@@ -1,6 +1,8 @@
 export const MENUS = [
   {name: "등록", address: "/register"},
-  {name: "갤러리", address: "/gallery"},
+  {name: "책방", address: "/bookstore"},
+  // {name: "설문", address: "/survey"},
+  {name: "마이페이지", address: "/mypage"},
 ]
 
 export const CATEGORIES = [
@@ -14,5 +16,5 @@ export const CATEGORIES = [
   {name: "언어", code: "700"},
   {name: "문학", code: "800"},
   {name: "역사", code: "900"},
-  {name: "기타", code: ""},
+  {name: "기타", code: "111"},
 ]
