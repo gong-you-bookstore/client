@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CategoryBox from "../components/bookstore/CategoryBox";
 import Shelf from "../components/bookstore/Shelf";
 import { CATEGORIES } from "../lib/statics";
-
+import { getBooksList } from "../lib/api/book";
 const BookstorePage = () => {
   const [gallaryRef, setIsScrollTo] = useScrollTo();
   const [isView, setIsView] = useState({
@@ -22,9 +22,11 @@ const BookstorePage = () => {
     "111": true,
   });
 
-  // useEffect(()=>{
-  //   console.log(isView)
-  // },[isView])
+  useEffect(()=>{
+    getBooksList().then(res => {
+      console.log(res)
+    })
+  },[])
 
   useEffect(() => {
     setTimeout(() => {
