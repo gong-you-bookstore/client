@@ -7,7 +7,18 @@ const SelectContainer = ({
   setIsScrollToStep3
 }) => {
   const onClickSelectImg = (book) => {
-    setResult(book);
+    setResult({
+      isbn: String(book.isbn.substr(-13)),
+      title: book.title,
+      author: [...book.authors],
+      content: book.contents,
+      thumbnail: book.thumbnail,
+      publisher: book.publisher,
+      price: book.price,
+      kdc: 0,
+      latitude: "37.3973806",
+      longitude: "127.1109965"
+    });
     setIsScrollToStep3(true)
   }
   return (

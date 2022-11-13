@@ -5,15 +5,18 @@ import RegisterForm from "../../components/register/RegisterForm";
 
 const RegisterContainer = ({
   result,
+  setResult,
   step3Ref,
+  setIsScrollToStep4
 }) => {
-  const [kdc, setKdc] = useState(0);
+  const [KDC, setKDC] = useState(0);
 
   useEffect(()=>{
-    getBookByNLK(result.isbn.substr(-13))
+    console.log("11");
+    getBookByNLK(result.isbn)
       .then((res) => {
         if(res.data.total === 1){
-          setKdc(res.data.result[0].classNo.substr(0, 3))
+          setKDC(res.data.result[0].classNo.substr(0, 3))
         }
       })
       .catch((error) => {
@@ -25,7 +28,9 @@ const RegisterContainer = ({
       <RegisterForm
         step3Ref = {step3Ref}
         result = {result}
-        kdc = {kdc}
+        setResult = {setResult}
+        KDC = {KDC}
+        setIsScrollToStep4= {setIsScrollToStep4}
       />
   )
 }

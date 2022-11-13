@@ -3,22 +3,31 @@ import { useState } from "react";
 import { CATEGORIES } from "../../lib/statics";
 
 const PersonalInfoForm = () => {
-  const [inputs, setInputs] = useState({
+  const [userForm, setUserForm] = useState({
     birth: "",
     gender: "",
-    genre:[]
+    genres:[]
   })
 
+  const [genres, setGenres] = useState([])
+
   const onChangeForm = (event) => {
-    setInputs({
-      ...inputs,
+    setUserForm({
+      ...userForm,
       [event.target.name]: event.target.value
     })
   }
+  const onChangeGenres = (event) => {
+    setGenres([...genres, event.target.value])
+  }
 
   useEffect(()=>{
-    console.log(inputs)
-  }, [inputs])
+    console.log(userForm)
+  }, [userForm])
+
+  useEffect(()=>{
+    console.log(genres)
+  }, [genres])
 
   return (
     <>
@@ -30,9 +39,11 @@ const PersonalInfoForm = () => {
               인적사항을 체크해주세요
             </p>
             
-            <form className="form-col-flex">
-              <div className="form-row-flex">
-                <label htmlFor="gender" className="fs-20 fw-bold mr-20">성별</label>
+            <form className="survey-grid">
+                <label htmlFor="gender" className="fs-20 fw-bold mr-20">
+                  성별
+                </label>
+                <div className="form-row-flex">
                 <input 
                   type="radio" 
                   name="gender" 
@@ -45,50 +56,40 @@ const PersonalInfoForm = () => {
                   value="female" 
                   onChange={onChangeForm}
                 />여자
-              </div>
+                </div>
 
-              <div className="form-row-flex">
               <label htmlFor="password" className="fs-20 fw-bold mr-20">생년</label>
               <input 
                   type="text" 
                   name="birth" 
-                  value={inputs.birth}
+                  value={userForm.birth}
                   onChange={onChangeForm} 
                   placeholder="예시) 1995"
                   className="input-styled"
               />
-              </div>
 
-              <div className="form-row-flex">
               <label htmlFor="password" className="fs-20 fw-bold mr-20">좋아하는 장르</label>
-              <div className="form-row-flex flex-wrap">
-
+              <div className="genres-grid">
               {
                 CATEGORIES.map((category, index) => (
                   <>
                   <input 
                     type="checkbox" 
-                    name="birth" 
-                    value={inputs.genre}
-                    onChange={onChangeForm} 
-                    placeholder="예시) 1995"
-                    className="input-styled"
+                    name="genres" 
+                    value={category.name}
+                    onChange={onChangeGenres} 
                   /> {category.name}
                 </>
                 ))
               }
               </div>
-
-              </div>
-
-
-              <button
-                type="button"
-                className="mtb-10 color-btn w-100p"
-              >
-                제출하기
-              </button>
             </form>
+            <button
+              type="button"
+              className="mtb-10 color-btn w-100p"
+            >
+              제출하기
+            </button>
 
 
               
