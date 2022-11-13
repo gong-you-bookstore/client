@@ -5,7 +5,9 @@ import { getBooksByKakao } from "../../lib/services";
 
 const SearchContainer = ({
   setSearchResults, 
-  setIsScrollToStep2
+  setIsScrollToStep2,
+  isView,
+  setIsView
 }) => {
   const [searchWord, setSearchWord] = useState('');
   const [camera, setCamera] = useState(false);
@@ -22,6 +24,7 @@ const SearchContainer = ({
     getBooksByKakao(searchWord)
       .then((res) => {
         setSearchResults(res.data.documents)
+        setIsView({...isView, step2: true})
         setIsScrollToStep2(true)
       })
       .catch((error) => {

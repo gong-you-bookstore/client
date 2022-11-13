@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { getBookByNLK } from "../../lib/services";
 import RegisterForm from "../../components/register/RegisterForm";
@@ -7,30 +7,43 @@ const RegisterContainer = ({
   result,
   setResult,
   step3Ref,
-  setIsScrollToStep4
+  setIsScrollToStep4,
+  isView,
+  setIsView
 }) => {
-  const [KDC, setKDC] = useState(0);
+  const onChangeResult = (event) => {
+    setResult({
+      ...result,
+      [event.target.name]: event.target.value
+    })
+  }
 
-  useEffect(()=>{
-    console.log("11");
+  const onClickConfirmBtn = () => {
+    setIsView({...isView, step4: true})
+    setIsScrollToStep4(true);
+  }
+
+  useEffect(() => {
     getBookByNLK(result.isbn)
       .then((res) => {
-        if(res.data.total === 1){
-          setKDC(res.data.result[0].classNo.substr(0, 3))
+        if(res.data.total){
+          setResult({
+            ...result,
+            kdc:res.data.result[0].classNo.substr(0, 3)
+          })
         }
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [result])
+  }, [])
 
   return (
       <RegisterForm
         step3Ref = {step3Ref}
         result = {result}
-        setResult = {setResult}
-        KDC = {KDC}
-        setIsScrollToStep4= {setIsScrollToStep4}
+        onClickConfirmBtn= {onClickConfirmBtn}
+        onChangeResult = {onChangeResult}
       />
   )
 }
