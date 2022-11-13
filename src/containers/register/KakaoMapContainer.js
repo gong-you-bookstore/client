@@ -27,15 +27,30 @@ const KakaoMapContainer = ({
   return (
     <>
     <div className="bg-white-full-p flex-col-box-center lh-2" ref={step4Ref}>
-    {
-      result.latitude || result.longitude ? (
-        <KakaoMap
-          step4Ref = {step4Ref}
-          result = {result}
-          setResult = {setResult}
-        />
-      ) : (<></>)
-    }
+    <div className="container w-100p">
+        <span className="fc-main fs-32 fw-bold">
+            Step 4
+        </span>
+        <p className="fc-dark fs-28" >
+          위치를 확인해주세요
+        </p>
+        {
+          result.latitude || result.longitude ? (
+            <KakaoMap
+              step4Ref = {step4Ref}
+              result = {result}
+              setResult = {setResult}
+            />
+          ) : (<></>)
+        }
+        <button
+          type="button"
+          className="mtb-10 color-btn w-100p"
+        >
+          등록하기
+        </button>
+      </div>
+    
     </div>
     </>
     
