@@ -1,7 +1,7 @@
 import { useState } from "react";
 import $ from 'jquery'
 import SignUpForm from "../../components/user/SignUpForm";
-import { sendSignUpData } from "../../lib/api/user";
+import { postSignUpData } from "../../lib/api/user";
 
 const SignUpContainer = ({
   setIsSignIn
@@ -56,8 +56,9 @@ const SignUpContainer = ({
       $("#password").focus();
       return;
     }
-    sendSignUpData(signUpData).then(res => {
+    postSignUpData(signUpData).then(res => {
       alert(res.data.msg);
+      setIsSignIn(true)
     }).catch(err => {
       alert(err.data.msg);
     })

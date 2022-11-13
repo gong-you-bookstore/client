@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import useScrollTo from "../lib/hooks/useScrollTo";
 import SearchContainer from "../containers/register/SearchContainer";
 import SelectContainer from "../containers/register/SelectContainer";
 import RegisterContainer from "../containers/register/RegisterContainer";
-import { useEffect } from "react";
-
-import Kakaomap from '../components/register/Kakaomap'
+import KakaoMapContainer from "../containers/register/KakaoMapContainer"
 
 const RegisterPage = () => {
   const [step2Ref, setIsScrollToStep2] = useScrollTo();
@@ -16,38 +14,50 @@ const RegisterPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [result, setResult] = useState({})
 
-  useEffect(()=>{
-    console.log(result)
-  },[result])
+  const [isView, setIsView] = useState({
+    step2: false,
+    step3: false,
+    step4: false
+  })
+
+  // useEffect(()=>{
+  //   console.log(isView)
+  // },[isView])
   return (
     <>
       <SearchContainer 
         setSearchResults = {setSearchResults}
         setIsScrollToStep2 = {setIsScrollToStep2}
+        isView = {isView}
+        setIsView = {setIsView}
       />
       {
-        searchResults.length ? (
+        isView.step2 ? (
           <SelectContainer 
             searchResults = {searchResults}
             step2Ref = {step2Ref}
             setResult = {setResult}
             setIsScrollToStep3 = {setIsScrollToStep3}
+            isView = {isView}
+            setIsView = {setIsView}
           />
         ) : (<></>)
       }
       {
-        result.title ? (
+        isView.step3 ? (
           <RegisterContainer
             result = {result}
             setResult = {setResult}
             step3Ref = {step3Ref}
             setIsScrollToStep4 = {setIsScrollToStep4}
+            isView = {isView}
+            setIsView = {setIsView}
           />
         ) : (<></>)
       }
       {
-        result.status ? (
-          <Kakaomap
+        isView.step4 ? (
+          <KakaoMapContainer
             result = {result}
             setResult = {setResult}
             step4Ref = {step4Ref}

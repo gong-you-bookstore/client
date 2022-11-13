@@ -3,42 +3,12 @@ import SignUpContainer from "../containers/user/SignUpContainer";
 import $ from 'jquery'
 import { useState } from "react";
 import logoColorImg from '../assets/images/logo-color.png'
-
+import { customModal } from "../lib/styles";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
 
-const customStyles = {
-  content: {
-    backgroundColor: "#fff",
-    color: "#333",
-    // margin: "10px",
-    marginLeft: "auto",
-    marginRight: "auto",
-    border: "none",
-    borderRadius: "20px",
-    outline: "none",
-    padding: "50px 40px",
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-  overlay: {
-    background: "rgba(0, 0, 0, 0.4)",
-    display: "-webkit-box",
-    display: "-ms-flexbox",
-    display: "-webkit-flex",
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    justifyContent: "center",
-    zIndex:"99",
 
-  },
-};
 
 const LoginModal = ({
   isOpen, 
@@ -53,7 +23,7 @@ const LoginModal = ({
         $("body").css("overflow", "auto");
         setOpen(false);
       }}
-      style={customStyles}
+      style={customModal}
     >
       <div className="flex-col-box-center">
         <img 

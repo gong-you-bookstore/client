@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie"
 import { useState } from "react";
 import SignInForm from "../../components/user/SignInForm";
-import { sendSignInData } from "../../lib/api/user";
+import { postSignInData } from "../../lib/api/user";
 const SignInContainer = ({
   setOpen,
   setIsSignIn
@@ -21,7 +21,7 @@ const SignInContainer = ({
   };
 
   const onClickSignInBtn = () => {
-    sendSignInData(signInData).then(res => {
+    postSignInData(signInData).then(res => {
       alert(res.data.msg)
       setCookie("userData", res.data.data, { path: "/" });
       setOpen(false)

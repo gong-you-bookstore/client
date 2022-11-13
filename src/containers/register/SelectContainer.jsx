@@ -4,7 +4,9 @@ const SelectContainer = ({
   searchResults, 
   step2Ref,
   setResult,
-  setIsScrollToStep3
+  setIsScrollToStep3,
+  isView,
+  setIsView
 }) => {
   const onClickSelectImg = (book) => {
     setResult({
@@ -16,10 +18,13 @@ const SelectContainer = ({
       publisher: book.publisher,
       price: book.price,
       kdc: 0,
-      latitude: "37.3973806",
-      longitude: "127.1109965"
+      latitude: 0,
+      longitude: 0,
+      status: "",
+      token: ""
     });
-    setIsScrollToStep3(true)
+    setIsView({...isView, step3: true});
+    setIsScrollToStep3(true);
   }
   return (
     <>
