@@ -1,8 +1,5 @@
 /*global kakao */
-import {useEffect, useState} from "react";
-import { postBookData } from "../../lib/api/book";
-import { useCookies } from "react-cookie"
-
+import {useEffect} from "react";
 const { kakao } = window;
 
 const KakaoMap = ({
@@ -27,6 +24,7 @@ const KakaoMap = ({
   }, [])
 
   return (
+    <>
     <div className="container w-100p">
       <span className="fc-main fs-32 fw-bold">
         Step 4
@@ -36,12 +34,13 @@ const KakaoMap = ({
       </p>
       <div id="map" ></div>
       <button
-          type="button"
-          className="mtb-10 color-btn w-100p"
-        >
-          등록하기
-        </button>
+        type="button"
+        className="mtb-10 color-btn w-100p"
+      >
+        등록하기
+      </button>
     </div>
+    </>
   );
 }
 

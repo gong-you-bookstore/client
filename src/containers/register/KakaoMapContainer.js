@@ -21,16 +21,16 @@ const KakaoMapContainer = ({
   
   return (
     <div className="bg-white-full-vh flex-col-box-center lh-2" ref={step4Ref}>
-        {
-          result.latitude || result.longitude ? (
-            <>
-            <KakaoMap 
-              result = {result}
-              setResult = {setResult}
-            />
-            </>
-          ) : (<></>)
-        }
+      {
+        result.latitude || result.longitude ? (
+          <>
+          <KakaoMap 
+            result = {result}
+            setResult = {setResult}
+          />
+          </>
+        ) : (<></>)
+      }
     </div>
   )
 }
