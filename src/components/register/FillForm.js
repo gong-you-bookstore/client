@@ -1,12 +1,11 @@
-const RegisterForm = ({
+const FillForm = ({
   step3Ref,
   result,
   onClickConfirmBtn,
   onChangeResult
 }) => {
-
   return (
-    <div className="bg-white-full-p flex-col-box-center lh-2" ref={step3Ref}>
+    <div className="bg-white-full-vh flex-col-box-center lh-2" ref={step3Ref}>
       <div className="container w-100p">
           <span className="fc-main fs-32 fw-bold">
             Step 3
@@ -16,8 +15,8 @@ const RegisterForm = ({
           </p>
           <div className="flex-col-box-center mtb-50">
             <img src={result.thumbnail} alt="img" />
+            
             <form className="survey-grid w-100p mt-20">
-
             <label htmlFor="email" className="form-label" >Title</label>
             <input
               id="title"
@@ -25,29 +24,6 @@ const RegisterForm = ({
               type="text"
               placeholder="title"
               value={result.title}
-              disabled
-              className="input-styled w-100p"
-            />
-
-            {/* FIXME - isbn, kdc 지우기  */}
-            <label htmlFor="email" className="form-label">ISBN13</label>
-            <input
-              id="ISBN13"
-              name="ISBN13"
-              type="text"
-              placeholder="ISBN13"
-              value={result.isbn}
-              disabled
-              className="input-styled w-100p"
-            />
-
-            <label htmlFor="email" className="form-label">KDC</label>
-            <input
-              id="KDC"
-              name="KDC"
-              type="text"
-              placeholder="KDC"
-              value={result.kdc}
               disabled
               className="input-styled w-100p"
             />
@@ -130,4 +106,4 @@ const RegisterForm = ({
   )
 }
 
-export default RegisterForm;
+export default FillForm;

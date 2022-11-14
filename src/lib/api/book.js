@@ -2,17 +2,18 @@ import axios from "axios";
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-// TODO 사진 파일
-export const postBookData = async (bookData, accessToken) => {
+export const postBookData = async (formData, accessToken) => {
   return await axios({
     method: "post",
     url: `${SERVER_URL}/book`,
     headers: {
-      'X-AUTH-TOKEN': accessToken
+      'X-AUTH-TOKEN': accessToken,
+      'Content-Type': 'multipart/form-data'
     },
-    data: bookData
+    data: formData
   })
 };
+
 
 export const getBooks = async () => {
   return await axios({
