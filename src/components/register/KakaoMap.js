@@ -5,7 +5,7 @@ import { useCookies } from "react-cookie"
 
 const { kakao } = window;
 
-const MapMaker = ({
+const KakaoMap = ({
   result,
   setResult
 }) => {
@@ -45,6 +45,4 @@ const MapMaker = ({
   );
 }
 
-export default MapMaker;
-
-
+export default KakaoMap;

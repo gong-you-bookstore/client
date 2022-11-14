@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import MapMaker from "../../components/register/MapMaker";
+import KakaoMap from "../../components/register/KakaoMap";
 
-const Kakaomap = ({
+const KakaoMapContainer = ({
   setResult,
   step4Ref,
   result,
@@ -24,7 +24,7 @@ const Kakaomap = ({
         {
           result.latitude || result.longitude ? (
             <>
-            <MapMaker 
+            <KakaoMap 
               result = {result}
               setResult = {setResult}
             />
@@ -35,4 +35,4 @@ const Kakaomap = ({
   )
 }
 
-export default Kakaomap;
+export default KakaoMapContainer;

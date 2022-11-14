@@ -4,7 +4,7 @@ import useScrollTo from "../lib/hooks/useScrollTo";
 import SearchContainer from "../containers/register/SearchContainer";
 import SelectContainer from "../containers/register/SelectContainer";
 import RegisterContainer from "../containers/register/RegisterContainer";
-import Kakaomap from "../containers/register/Kakaomap";
+import KakaoMapContainer from "../containers/register/KakaoMapContainer";
 const RegisterPage = () => {
   const [step2Ref, setIsScrollToStep2] = useScrollTo();
   const [step3Ref, setIsScrollToStep3] = useScrollTo();
@@ -56,7 +56,7 @@ const RegisterPage = () => {
       }
       {
         isView.step4 ? (
-          <Kakaomap
+          <KakaoMapContainer
             result = {result}
             setResult = {setResult}
             step4Ref = {step4Ref}
