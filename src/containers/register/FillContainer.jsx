@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 import { getBookByNLK } from "../../lib/services";
-import RegisterForm from "../../components/register/RegisterForm";
+import FillForm from "../../components/register/FillForm";
 
-const RegisterContainer = ({
+const FillContainer = ({
   result,
   setResult,
   step3Ref,
@@ -11,6 +11,7 @@ const RegisterContainer = ({
   isView,
   setIsView
 }) => {
+
   const onChangeResult = (event) => {
     setResult({
       ...result,
@@ -39,7 +40,7 @@ const RegisterContainer = ({
   }, [])
 
   return (
-      <RegisterForm
+      <FillForm
         step3Ref = {step3Ref}
         result = {result}
         onClickConfirmBtn= {onClickConfirmBtn}
@@ -48,4 +49,4 @@ const RegisterContainer = ({
   )
 }
 
-export default RegisterContainer;
+export default FillContainer;

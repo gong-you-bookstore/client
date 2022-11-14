@@ -1,12 +1,15 @@
 import {useEffect, useState} from "react";
 import KakaoMap from "../../components/register/KakaoMap";
-
+import { useCookies } from "react-cookie"
+import { postBookData } from "../../lib/api/book";
 const KakaoMapContainer = ({
-  setResult,
-  step4Ref,
   result,
+  setResult,
+  step5Ref,
+  bookImage
 }) => {
-  // const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
+
   useEffect(()=>{
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -18,9 +21,37 @@ const KakaoMapContainer = ({
       });
     }
   }, [])
+
+  const onClickRegisterBtn = () => {
+    let formData = new FormData();
+
+    formData.append("imgs", bookImage);
+    formData.append(
+      "request", 
+      new Blob(
+        [JSON.stringify(result)], 
+        {type: "application/json"}
+      )
+    );
+    for (let key of formData.keys()) {
+      console.log(key, ":", formData.get(key));
+    }
+
+    postBookData(formData, cookies.userData.accessToken)
+      .then(res=>{
+        console.log(res)
+      })
+      .catch(err=>{
+        console.log(err)
+      })
+  }
+  
   
   return (
-    <div className="bg-white-full-vh flex-col-box-center lh-2" ref={step4Ref}>
+    <div 
+      className="bg-white-full-vh flex-col-box-center lh-2" 
+      ref={step5Ref}
+    >
       {
         result.latitude || result.longitude ? (
           <>
@@ -31,6 +62,15 @@ const KakaoMapContainer = ({
           </>
         ) : (<></>)
       }
+      <button
+        type="button"
+        className="mtb-10 color-btn w-100p"
+        onClick={()=>{
+          onClickRegisterBtn();
+        }}
+      >
+        등록하기
+      </button>
     </div>
   )
 }

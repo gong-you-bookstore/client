@@ -21,7 +21,7 @@ const SelectContainer = ({
       latitude: 0,
       longitude: 0,
       status: "",
-      token: ""
+      token: 0
     });
     setIsView({...isView, step3: true});
     setIsScrollToStep3(true);
