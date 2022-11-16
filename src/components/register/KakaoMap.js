@@ -4,7 +4,8 @@ const { kakao } = window;
 
 const KakaoMap = ({
   result,
-  setResult
+  setResult,
+  onClickRegisterBtn
 }) => {
 
   useEffect(()=>{
@@ -33,6 +34,16 @@ const KakaoMap = ({
         위치를 확인해주세요
       </p>
       <div id="map" ></div>
+
+      <button
+        type="button"
+        className="mtb-10 primary-btn btn-big w-100p"
+        onClick={()=>{
+          onClickRegisterBtn();
+        }}
+      >
+        등록하기
+      </button>
     </div>
     </>
   );

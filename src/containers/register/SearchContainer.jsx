@@ -12,9 +12,9 @@ const SearchContainer = ({
   const [searchWord, setSearchWord] = useState('');
   const [camera, setCamera] = useState(false);
 
-  // const onDetected = searchWord => {
-  //   setSearchWord(searchWord);
-  // };
+  const onDetected = searchWord => {
+    setSearchWord(searchWord);
+  };
 
   const onChangeSearchWord = (event) => {
     setSearchWord(event.target.value);
@@ -37,6 +37,8 @@ const SearchContainer = ({
       <SearchForm 
         searchWord = {searchWord}
         camera = {camera}
+        setCamera = {setCamera}
+        onDetected = {onDetected}
         onChangeSearchWord = {onChangeSearchWord}
         onClickSearchButton = {onClickSearchButton}
       />

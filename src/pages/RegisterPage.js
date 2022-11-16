@@ -14,7 +14,7 @@ const RegisterPage = () => {
 
   const [searchResults, setSearchResults] = useState([]);
   const [result, setResult] = useState({})
-  const [bookImage, setBookImage] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png")
+  
   const [isView, setIsView] = useState({
     step2: false,
     step3: false,
@@ -22,11 +22,13 @@ const RegisterPage = () => {
     step5: false,
   })
 
+  const [bookImage, setBookImage] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png")
+
 
 
   // useEffect(()=>{
-  //   console.log(isView)
-  // },[isView])
+  //   console.log(result)
+  // },[result])
 
   return (
     <>

@@ -31,7 +31,7 @@ const PersonalInfoForm = () => {
 
   return (
     <>
-      <div className="bg-white-full-vh flex-col-box-center lh-2">
+      <div className="full-vh-bg flex-col-box-center lh-2">
         <div className="container">
           <div className=" desktop-box">
             <span className="fc-main fs-32 fw-bold">Step 1</span>
@@ -86,7 +86,7 @@ const PersonalInfoForm = () => {
             </form>
             <button
               type="button"
-              className="mtb-10 color-btn w-100p"
+              className="mtb-10 primary-btn w-100p btn-big"
             >
               제출하기
             </button>

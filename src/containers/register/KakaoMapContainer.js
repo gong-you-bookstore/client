@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import KakaoMap from "../../components/register/KakaoMap";
 import { useCookies } from "react-cookie"
 import { postBookData } from "../../lib/api/book";
+import { useNavigate } from "react-router-dom";
 const KakaoMapContainer = ({
   result,
   setResult,
@@ -9,6 +10,7 @@ const KakaoMapContainer = ({
   bookImage
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     if (navigator.geolocation) {
@@ -39,7 +41,8 @@ const KakaoMapContainer = ({
 
     postBookData(formData, cookies.userData.accessToken)
       .then(res=>{
-        console.log(res)
+        alert(res.data.msg)
+        navigate("/bookstore")
       })
       .catch(err=>{
         console.log(err)
@@ -58,19 +61,12 @@ const KakaoMapContainer = ({
           <KakaoMap 
             result = {result}
             setResult = {setResult}
+            onClickRegisterBtn = {onClickRegisterBtn}
           />
           </>
         ) : (<></>)
       }
-      <button
-        type="button"
-        className="mtb-10 color-btn w-100p"
-        onClick={()=>{
-          onClickRegisterBtn();
-        }}
-      >
-        등록하기
-      </button>
+      
     </div>
   )
 }

@@ -1,10 +1,12 @@
 import { onClickCategory } from "../../lib/utils";
 import { CATEGORIES } from "../../lib/statics";
+import { useNavigate } from "react-router-dom";
 
 const CategoryBox = ({
-  isView,
-  setIsView
+  
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className=" mtb-50">
       <ul className="category-box">
@@ -12,15 +14,11 @@ const CategoryBox = ({
           CATEGORIES.map((category, index) => (
             <li key={index}>
               <button
-                name={category.code}
-                className='transparent-btn btn-shadow m-5 active'
                 type="button"
-                onClick={(event) => {
-                  onClickCategory(index)
-                  setIsView({
-                    ...isView,
-                    [event.target.name]: !isView[category.code]
-                  })
+                name={category.code}
+                className='transparent-btn btn-big m-5'
+                onClick = {() => {
+                  navigate(`/bookstore/genre/${category.code}`)
                 }}
               >
               # {category.name}

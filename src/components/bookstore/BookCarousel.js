@@ -4,7 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from 'react-router-dom';
 import { responsiveCarousel } from '../../lib/styles';
 
-const BookCarousel = () => {
+const BookCarousel = ({books}) => {
   const navigate = useNavigate();
   
   return (
@@ -13,11 +13,11 @@ const BookCarousel = () => {
         {books.map((book, index)=>(
             <img 
               key={index} 
-              src={book.img_url} 
+              src={book.thumbnail} 
               className="book-dynamic" 
               alt="img"
               onClick={()=>{
-                navigate(`/${book.isbn13}/detail`)
+                // navigate(`/${book.isbn13}/detail`)
               }} 
             />
         ))}

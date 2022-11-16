@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import { useState,useRef } from 'react';
-
+import addImg from "../../assets/images/add-image.png"
 const PictureContainer = ({
   step4Ref,
   setIsScrollToStep5,
@@ -10,14 +10,14 @@ const PictureContainer = ({
 }) => {
 
   const onClickConfirmBtn = () => {
-    setBookImage($("#fileUpload")[0].files[0]);
+    if ($("#fileUpload")[0].files[0]) {
+      setBookImage($("#fileUpload")[0].files[0]);
+    }
     setIsView({...isView, step5: true})
     setIsScrollToStep5(true)
   }
 
-  const [image, setImage] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
-  );
+  const [image, setImage] = useState(addImg);
   const fileInput = useRef(null);
 
   const onChangeImage = (event) => {
@@ -45,13 +45,14 @@ const PictureContainer = ({
 
           <div className='flex-col-box-center mt-10'>
               <img
+                className='register-img'
                 alt="UserPicture"
                 src={image}
                 id="image"
                 onClick={() => {
                   fileInput.current.click();
                 }}
-                height="250"
+                height="150"
               />
               <input
                 type="file"
@@ -65,7 +66,7 @@ const PictureContainer = ({
               
             <button
               type="button"
-              className="mtb-10 color-btn w-100p"
+              className="mtb-10 primary-btn btn-big w-100p"
               onClick={() => {
                 onClickConfirmBtn();
               }}

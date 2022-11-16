@@ -93,7 +93,7 @@ const FillForm = ({
 
             <button
               type="button"
-              className="mtb-10 color-btn w-100p"
+              className="mtb-10 primary-btn btn-big w-100p"
               onClick={() => {
                 onClickConfirmBtn();
               }}
