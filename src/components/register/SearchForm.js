@@ -1,6 +1,9 @@
+import Scanner from "./Scanner";
 const SearchForm = ({
   searchWord,
   camera,
+  setCamera,
+  onDetected,
   onChangeSearchWord, 
   onClickSearchButton
 }) => {
@@ -14,9 +17,10 @@ const SearchForm = ({
               등록하고 싶은 책을 검색하세요
             </p>
             {
-              // camera && <Scanner onDetected={onDetected} />
+              camera && <Scanner onDetected={onDetected} />
             }
             <div className="mt-20 " >
+              <div className="search-bar">
               <input
                 id="searchWord"
                 name="searchWord"
@@ -24,21 +28,20 @@ const SearchForm = ({
                 placeholder="검색어를 입력하세요"
                 value={searchWord}
                 onChange={onChangeSearchWord}
-                className="input-styled w-100p fc-white"
+                className="w-100p"
               />
-                
-              {/* <button 
-                type="button"
+              <span 
+                class="material-symbols-outlined"
                 onClick={() => setCamera(!camera)}
-                className=" color-btn w-100p mtb-10"
               >
-                {camera ? "Stop" : "ISBN SCAN"}
-              </button> */}
+                barcode_scanner
+              </span>
+              </div>
 
               <button
                 type="button"
                 onClick={() => onClickSearchButton()}
-                className="mtb-10 color-btn w-100p"
+                className="mtb-10 primary-btn btn-big w-100p"
               >
                 Search
               </button>

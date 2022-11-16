@@ -1,30 +1,18 @@
 import Banner from "../components/common/Banner"
-import BookCarousel from "../components/bookstore/BookCarousel";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import { useEffect, useState } from "react";
 import CategoryBox from "../components/bookstore/CategoryBox";
 import Shelf from "../components/bookstore/Shelf";
-import { CATEGORIES } from "../lib/statics";
 import { getBooks } from "../lib/api/book";
 const BookstorePage = () => {
   const [gallaryRef, setIsScrollTo] = useScrollTo();
-  const [isView, setIsView] = useState({
-    "000": true,
-    "100": true,
-    "200": true,
-    "300": true,
-    "400": true,
-    "500": true,
-    "600": true,
-    "700": true,
-    "800": true,
-    "900": true,
-    "111": true,
-  });
+  
+
+  const [registeredBooks, setRegisteredBooks] = useState([])
 
   useEffect(()=>{
     getBooks().then(res => {
-      console.log(res)
+      setRegisteredBooks(res.data.data)
     })
   },[])
 
@@ -34,6 +22,10 @@ const BookstorePage = () => {
     }, 1100)
   }, [])
 
+  const getCode = () => {
+
+  }
+
   return (
     <>
       <header className="header-shelf">
@@ -41,24 +33,11 @@ const BookstorePage = () => {
       </header>
 
       <div className="cement-wallpaper" ref={gallaryRef} >
-      <div className="gallery-area container" >
-        <CategoryBox
-          isView={isView}
-          setIsView={setIsView}
-        />
-        <div>
-          {
-            CATEGORIES.map((category, index) => {
-              return isView[category.code] ? (
-                <div key={index}>
-                  <Shelf 
-                    category = {category}
-                  />
-                </div>
-              ) : (<></>)
-            })
-          }
-        </div>
+        <div className="gallery-area container" >
+          <CategoryBox />
+          <Shelf books = {registeredBooks} />
+          <Shelf books = {registeredBooks} />
+          <Shelf books = {registeredBooks} />
       </div>
     </div>
     </>

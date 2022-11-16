@@ -5,11 +5,10 @@ import { useCookies } from "react-cookie";
 import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
 import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
-import LoginModal from "../../pages/LoginModal"
 import { MENUS } from "../../lib/statics"
+
 const Nav = ()=>{
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
-  const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
   
   useLocWizard();
@@ -59,11 +58,7 @@ const Nav = ()=>{
             <button
             className='ghost-btn'
             type="button"
-            onClick={() => {
-              setOpen(true);
-              onCloseHamburger();
-              $('body').css("overflow", "hidden");
-            }}
+            onClick={()=>{navigate("/login")}}
             >
               로그인
             </button>
@@ -75,7 +70,6 @@ const Nav = ()=>{
       </ul>
     </nav>
 
-    <LoginModal isOpen={isOpen} setOpen={setOpen} />
     </>
     )
 }

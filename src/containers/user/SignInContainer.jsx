@@ -2,12 +2,13 @@ import { useCookies } from "react-cookie"
 import { useState } from "react";
 import SignInForm from "../../components/user/SignInForm";
 import { postSignInData } from "../../lib/api/user";
+import { useNavigate } from "react-router-dom";
 const SignInContainer = ({
-  setOpen,
   setIsSignIn
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
 
+  const navigate = useNavigate();
   const [signInData, setSignInData] = useState({
     email: "",
     password: "",
@@ -24,7 +25,8 @@ const SignInContainer = ({
     postSignInData(signInData).then(res => {
       alert(res.data.msg)
       setCookie("userData", res.data.data, { path: "/" });
-      setOpen(false)
+      navigate("/")
+      
     }).catch(err => {
       alert(err.data.msg)
     })

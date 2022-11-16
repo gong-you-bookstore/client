@@ -15,20 +15,20 @@ const Banner = ({setIsScrollTo}) => {
           pathname === "/" ? (
             <>
             <button
-            className='color-btn'
+            className='primary-btn btn-big'
             type="button"
             onClick={()=>navigate("/bookstore")}
             >
-              입장하기
+              책방 입장하기
             </button>
 
-            {/* <button
-            className='transparent-btn mt-10'
+            <button
+            className='transparent-btn btn-big mt-10'
             type="button"
-            onClick={()=>navigate("/bookstore")}
+            onClick={()=>{setIsScrollTo(true)}}
             >
-            ABOUT US
-            </button> */}
+            튜토리얼 보기
+            </button>
             </>
           ) : (<></>)
         }
@@ -48,7 +48,7 @@ const Banner = ({setIsScrollTo}) => {
         )
       }
       
-      <div className="mouse-icon" onClick={()=>{setIsScrollTo(true)}}>
+      <div className="mouse-icon" >
         <div className="wheel">
         </div>
       </div>

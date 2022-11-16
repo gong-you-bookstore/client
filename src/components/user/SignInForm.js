@@ -34,7 +34,7 @@ const SignInForm = ({
           onClick={()=>{
             onClickSignInBtn();
           }}
-          className="mb-20 mt-20 color-btn w-100p"
+          className="mb-20 mt-20 primary-btn btn-big w-100p"
         >
           Login
         </button>
