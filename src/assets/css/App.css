@@ -442,7 +442,7 @@ input:-webkit-autofill:active {
   letter-spacing: 8px;
   word-spacing: 10px;
   text-align: center;
-  opacity: .8;
+  opacity: .9;
   color: #fff;
   margin: 10px 0;
 }
@@ -1116,8 +1116,4 @@ video.drawingBuffer {
   min-height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-
-.book-sd {
-  /* box-shadow: 0 0 150px  rgba(0, 0, 0, .2) */
 }
