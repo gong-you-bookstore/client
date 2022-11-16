@@ -35,7 +35,14 @@ const Nav = ()=>{
           MENUS.map((item, index)=>(
             <li 
               key={index}
-              onClick={()=>{navigate(item.address)}}
+              onClick={() => {
+                if (item.isAuth && !cookies.userData) {
+                  alert("로그인이 필요합니다")
+                  navigate('/login')
+                } else {
+                  navigate(item.address)
+                }
+              }}
             >
               {item.name}
             </li>

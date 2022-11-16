@@ -27,6 +27,8 @@ const KakaoMap = ({
   return (
     <>
     <div className="container w-100p">
+    <div className=" desktop-box">
+
       <span className="fc-main fs-32 fw-bold">
         Step 5
       </span>
@@ -44,6 +46,8 @@ const KakaoMap = ({
       >
         등록하기
       </button>
+    </div>
+
     </div>
     </>
   );

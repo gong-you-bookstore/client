@@ -7,6 +7,8 @@ const FillForm = ({
   return (
     <div className="bg-white-full-vh flex-col-box-center lh-2" ref={step3Ref}>
       <div className="container w-100p">
+      <div className=" desktop-box">
+
           <span className="fc-main fs-32 fw-bold">
             Step 3
           </span>
@@ -15,29 +17,9 @@ const FillForm = ({
           </p>
           <div className="flex-col-box-center mtb-50">
             <img src={result.thumbnail} alt="img" />
-            
+            <h1>{result.title}</h1>
+
             <form className="survey-grid w-100p mt-20">
-            <label htmlFor="email" className="form-label" >Title</label>
-            <input
-              id="title"
-              name="title"
-              type="text"
-              placeholder="title"
-              value={result.title}
-              disabled
-              className="input-styled w-100p"
-            />
-
-            <label htmlFor="content" className="form-label">Content</label>
-            <textarea
-              className="input-styled w-100p"
-              value={result.content}
-              name="content"
-              id="content"
-              rows="5"
-              disabled
-            ></textarea>
-
             <label htmlFor="content" className="form-label">Status</label>
             <div className="form-row-flex">
               <input 
@@ -93,7 +75,7 @@ const FillForm = ({
 
             <button
               type="button"
-              className="mtb-10 primary-btn btn-big w-100p"
+              className="primary-btn btn-big w-100p"
               onClick={() => {
                 onClickConfirmBtn();
               }}
@@ -101,6 +83,8 @@ const FillForm = ({
               다음
             </button>
           </div>
+          </div>
+
       </div>
     </div>
   )

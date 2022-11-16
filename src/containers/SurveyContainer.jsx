@@ -1,12 +1,13 @@
-import PersonalInfoForm from "../components/survey/PersonalInfoForm";
+import SurveyForm from "../components/survey/SurveyForm";
 import { useState } from "react";
 
-const SurveyContainer = () => {
+const SurveyContainer = ({formRef}) => {
   
 
   return (
     <>
-      <PersonalInfoForm 
+      <SurveyForm
+        formRef = {formRef}
       />
     </>
   )

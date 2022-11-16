@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CATEGORIES } from "../../lib/statics";
 
-const PersonalInfoForm = () => {
+const SurveyForm = ({formRef}) => {
   const [userForm, setUserForm] = useState({
     birth: "",
     gender: "",
@@ -31,7 +31,7 @@ const PersonalInfoForm = () => {
 
   return (
     <>
-      <div className="full-vh-bg flex-col-box-center lh-2">
+      <div className="full-vh-bg flex-col-box-center lh-2" ref={formRef}>
         <div className="container">
           <div className=" desktop-box">
             <span className="fc-main fs-32 fw-bold">Step 1</span>
@@ -100,4 +100,4 @@ const PersonalInfoForm = () => {
   )
 }
 
-export default PersonalInfoForm;
+export default SurveyForm;
