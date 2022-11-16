@@ -12,22 +12,16 @@ const StoreByGenrePage = () => {
   const [storeRef, setIsScrollToStore] = useScrollTo();
   
   useEffect(()=>{
-    console.log("1")
     $(".genre-header").addClass(`kdc${params.kdc}`)
   }, [])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsScrollToStore(true);
-    }, 1100)
-  }, [])
   
   return (
     <>
     <div className="genre-header">
     <div className="overlay">
     <h1 className="subtitle">#{state}</h1>
-        <img className="w-150 mb-20" src={logo} alt="img" />
+        <img className="w-150 mb-20 logo" src={logo} alt="img" />
     </div>
     </div>
     <div className="white-wallpaper" ref={storeRef}>
