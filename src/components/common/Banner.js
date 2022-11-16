@@ -27,7 +27,7 @@ const Banner = ({setIsScrollTo}) => {
             type="button"
             onClick={()=>{setIsScrollTo(true)}}
             >
-            튜토리얼 보기
+            공유책방 소개
             </button>
             </>
           ) : (<></>)

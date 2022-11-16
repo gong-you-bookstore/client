@@ -16,5 +16,5 @@ export const CATEGORIES = [
   {name: "언어", code: "700"},
   {name: "문학", code: "800"},
   {name: "역사", code: "900"},
-  {name: "기타", code: "111"},
+  // {name: "기타", code: "111"},
 ]
