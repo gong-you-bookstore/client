@@ -171,8 +171,19 @@ input:-webkit-autofill:active {
   border: none;
   font-size: 16px;
   font-weight: 700;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
+
+.btn-sm {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.4s;
+}
+
 .primary-btn {
   color: #fff;
   background-color: #00C9A9;
@@ -187,6 +198,7 @@ input:-webkit-autofill:active {
 }
 .transparent-btn:hover {
   box-shadow:0px 0px 0px 5px rgba(0,0,0, 0.2);
+  /* background-color: #00C9A9; */
 }
 .info-text {
   letter-spacing: 5px;
@@ -249,7 +261,7 @@ input:-webkit-autofill:active {
 .non-top{
   background-color: rgba(255,255,255,1); 
   color: #333;
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.3); */
 }
 
 .navbar-logo {
@@ -721,7 +733,7 @@ input:-webkit-autofill:active {
 .flex-col-box {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .flex-sp-box {
@@ -818,10 +830,8 @@ video {
 video.drawingBuffer {
   width: 100%;
   height: 200px;
-  position: absolute;
-  top: 35%;
-  left: 0
-
+  position: relative;
+  top:-100%;
 }
 
 .grey-full-bg {
@@ -869,14 +879,14 @@ video.drawingBuffer {
 }
 
 .book-dynamic {
-  height: 170px;
+  height: 210px;
   margin: 20px 10px 0 10px;
   background-color: white;
   transition: all .3s ease-in-out;
   transform-origin: left center 0px;
   transform-style: preserve-3d;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   -webkit-backface-visibility: hidden;
   overflow: hidden;
   box-shadow: 3px 10px 15px 3px #141414;
@@ -884,11 +894,10 @@ video.drawingBuffer {
 
 .book-static {
   cursor: pointer;
-  margin: 20px 10px;
-  height: 170px;
+  height: 210px;
   transition: all .2s ease-in-out;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /* .book-static:hover {
@@ -899,7 +908,7 @@ video.drawingBuffer {
 @media screen and (max-width:991px) {
   .book-static,
   .book-dynamic {
-    height: 140px;
+    height: 190px;
   }
   .wood-shelf {
     margin-bottom: 50px;
@@ -911,7 +920,7 @@ video.drawingBuffer {
 @media screen and (max-width:575px) {
   .book-static,
   .book-dynamic {
-    height: 125px;
+    height: 145px;
   }
   .wood-shelf {
     margin-bottom: 20px;
@@ -1003,90 +1012,69 @@ video.drawingBuffer {
   border-radius: 10px;
 }
 
-.genre-header.kdc000 {
-  /* background: url(./../images/kdc000.jpg) no-repeat ; */
+.kdc000 {
   background: url(./../images/kdc000.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
+  
 }
-.genre-header.kdc100 {
+.kdc100 {
   background: url(./../images/kdc100.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc200 {
+.kdc200 {
   background: url(./../images/kdc200.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc300 {
+.kdc300 {
   background: url(./../images/kdc300.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc400 {
+.kdc400 {
   background: url(./../images/kdc400.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc500 {
+.kdc500 {
   background: url(./../images/kdc500.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc600 {
+.kdc600 {
   background: url(./../images/kdc600.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc700 {
+.kdc700 {
   background: url(./../images/kdc700.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc800 {
+.kdc800 {
   background: url(./../images/kdc800.jpg)no-repeat center center fixed ;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
 }
-.genre-header.kdc900 {
+.kdc900 {
   background: url(./../images/kdc900.jpg)no-repeat center center fixed ;
+}
+.kdc000,
+.kdc100,
+.kdc200,
+.kdc300,
+.kdc400,
+.kdc500,
+.kdc600,
+.kdc700,
+.kdc800,
+.kdc900 {
   background-size: cover;
   -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-  overflow: hidden;
+  overflow: hidden; 	
+} 
+
+/* IOS Only */
+@supports (-webkit-touch-callout: none) {
+  .kdc000,
+  .kdc100,
+  .kdc200,
+  .kdc300,
+  .kdc400,
+  .kdc500,
+  .kdc600,
+  .kdc700,
+  .kdc800,
+  .kdc900 {
+    background-attachment: scroll; 	
+  } 
 }
-
-
-
 
 .genre-header {
   height: 90vh;
@@ -1097,7 +1085,7 @@ video.drawingBuffer {
   top: 0;
   width: 100%;
   height: 90%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   color: #eee;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1112,8 +1100,91 @@ video.drawingBuffer {
 }
 
 .grid-store {
-  padding: 50px 0;
+  padding: 50px 10px;
   min-height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 5px;
+  place-items: center;
+}
+
+/* tablet */
+@media screen and (max-width:991px) {
+  .grid-store {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+}
+/* phone */
+@media screen and (max-width:575px) {
+  .grid-store {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-grid-2 {
+  place-items: center;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 15px;
+}
+.card-grid-3 {
+  place-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+/* phone */
+@media screen and (max-width:575px) {
+  .card-grid-3,
+  .card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.genre-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+}
+
+.card000 {
+  background-image: url(./../images/kdc000.jpg);
+}
+.card100 {
+  background-image: url(./../images/kdc100.jpg);
+}
+.card200 {
+  background-image: url(./../images/kdc200.jpg);
+}
+.card300 {
+  background-image: url(./../images/kdc300.jpg);
+}
+.card400 {
+  background-image: url(./../images/kdc400.jpg);
+}
+.card500 {
+  background-image: url(./../images/kdc500.jpg);
+}
+.card600 {
+  background-image: url(./../images/kdc600.jpg);
+}
+.card700 {
+  background-image: url(./../images/kdc700.jpg);
+}
+.card800 {
+  background-image: url(./../images/kdc800.jpg);
+}
+.card900 {
+  background-image: url(./../images/kdc900.jpg);
 }

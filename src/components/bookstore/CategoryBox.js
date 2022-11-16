@@ -16,11 +16,11 @@ const CategoryBox = ({
               <button
                 type="button"
                 name={category.code}
-                className='transparent-btn btn-big m-5'
+                className='transparent-btn btn-sm m-5 btn-shadow'
                 onClick = {() => {
                   navigate(
                     `/bookstore/genre/${category.code}`, 
-                    { state: `${category.code} ${category.name}` }
+                    { state: category }
                   )
                 }}
               >

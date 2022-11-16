@@ -4,43 +4,50 @@ import books from "../assets/bookmini.json"
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
+import { Rotate, Fade } from "react-awesome-reveal";
 
 
 const StoreByGenrePage = () => {
   const {state} = useLocation();
-  const params = useParams();
   const [storeRef, setIsScrollToStore] = useScrollTo();
   
   useEffect(()=>{
-    $(".genre-header").addClass(`kdc${params.kdc}`)
+    $(".genre-header").addClass(`kdc${state.code}`)
   }, [])
 
   
   return (
     <>
-    <div className="genre-header">
-    <div className="overlay">
-    <h1 className="subtitle">#{state}</h1>
+    <header className="genre-header">
+      <div className="overlay">
+        <h1 className="subtitle">#{state.code} {state.name}</h1>
         <img className="w-150 mb-20 logo" src={logo} alt="img" />
-    </div>
-    </div>
+        <div className="mouse-icon" >
+          <div className="wheel">
+        </div>
+      </div>
+      </div>
+    </header>
+
     <div className="white-wallpaper" ref={storeRef}>
-    <div className="container grid-store">
-      
-    {
-      books.map((book, index) => (
-        <img 
-          key={index} 
-          src={book.thumbnail} 
-          className="book-static book-sd" 
-          alt="img"
-          onClick={()=>{
-            // navigate(`/${book.isbn13}/detail`)
-          }} 
-        />
-      ))
-    }
-    </div>
+      <div className="container grid-store">
+        <Fade direction="down" cascade triggerOnce damping={0.1}>
+        
+        {
+          books.map((book, index) => (
+            <img 
+              key={index} 
+              src={book.thumbnail} 
+              className="book-static book-sd" 
+              alt="img"
+              onClick={()=>{
+                // navigate(`/${book.isbn13}/detail`)
+              }} 
+            />
+          ))
+        }
+        </Fade>
+      </div>
     </div>
     </>
   )

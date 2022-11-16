@@ -17,26 +17,26 @@ const BookstorePage = () => {
     })
   },[])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsScrollTo(true);
-    }, 1100)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsScrollTo(true);
+  //   }, 1100)
+  // }, [])
 
-  const getCode = () => {
+  // const getCode = () => {
 
-  }
+  // }
 
   return (
     <>
-      <header className="header-shelf">
+      {/* <header className="header-shelf">
         <Banner />
-      </header>
+      </header> */}
 
       <div className="cement-wallpaper" ref={gallaryRef} >
         <div className="gallery-area container" >
           <CategoryBox />
-          <Shelf books = {books} />
+          <Shelf books = {registeredBooks} />
           <Shelf books = {books} />
           <Shelf books = {books} />
       </div>
