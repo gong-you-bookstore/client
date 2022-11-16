@@ -1036,6 +1036,55 @@ video.drawingBuffer {
 	-o-background-size: cover;
   overflow: hidden;
 }
+.genre-header.kdc400 {
+  background: url(./../images/kdc400.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+.genre-header.kdc500 {
+  background: url(./../images/kdc500.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+.genre-header.kdc600 {
+  background: url(./../images/kdc600.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+.genre-header.kdc700 {
+  background: url(./../images/kdc700.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+.genre-header.kdc800 {
+  background: url(./../images/kdc800.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+.genre-header.kdc900 {
+  background: url(./../images/kdc900.jpg)no-repeat center center fixed ;
+  background-size: cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  overflow: hidden;
+}
+
 
 
 
@@ -1048,7 +1097,7 @@ video.drawingBuffer {
   top: 0;
   width: 100%;
   height: 90%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   color: #eee;
   display: -webkit-box;
   display: -ms-flexbox;

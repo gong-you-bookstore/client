@@ -31,7 +31,7 @@ const SearchForm = ({
                 className="w-100p"
               />
               <span 
-                class="material-symbols-outlined"
+                className="material-symbols-outlined"
                 onClick={() => setCamera(!camera)}
               >
                 barcode_scanner

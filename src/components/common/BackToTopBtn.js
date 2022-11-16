@@ -8,7 +8,7 @@ const BackToTopBtn = () => {
         className="rounded-btn"
         onClick={()=>{scrollToTopSmooth();}}
       >
-        <span class="material-symbols-outlined">
+        <span className="material-symbols-outlined">
         arrow_upward
         </span>
       </button>
