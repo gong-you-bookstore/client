@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import CategoryBox from "../components/bookstore/CategoryBox";
 import Shelf from "../components/bookstore/Shelf";
 import { getBooks } from "../lib/api/book";
+import books from "../assets/bookmini.json"
 const BookstorePage = () => {
   const [gallaryRef, setIsScrollTo] = useScrollTo();
   
@@ -35,9 +36,9 @@ const BookstorePage = () => {
       <div className="cement-wallpaper" ref={gallaryRef} >
         <div className="gallery-area container" >
           <CategoryBox />
-          <Shelf books = {registeredBooks} />
-          <Shelf books = {registeredBooks} />
-          <Shelf books = {registeredBooks} />
+          <Shelf books = {books} />
+          <Shelf books = {books} />
+          <Shelf books = {books} />
       </div>
     </div>
     </>

@@ -31,7 +31,7 @@ const SurveyForm = ({formRef}) => {
 
   return (
     <>
-      <div className="full-vh-bg flex-col-box-center lh-2" ref={formRef}>
+      <div className="bg-white-full-vh flex-col-box-center lh-2" ref={formRef}>
         <div className="container">
           <div className=" desktop-box">
             <span className="fc-main fs-32 fw-bold">Step 1</span>
@@ -73,7 +73,8 @@ const SurveyForm = ({formRef}) => {
               {
                 CATEGORIES.map((category, index) => (
                   <>
-                  <input 
+                  <input
+                    key={index}
                     type="checkbox" 
                     name="genres" 
                     value={category.name}
