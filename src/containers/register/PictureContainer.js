@@ -36,6 +36,8 @@ const PictureContainer = ({
       ref={step4Ref}
     >
       <div className="container w-100p">
+    <div className=" desktop-box">
+
           <span className="fc-main fs-32 fw-bold">
             Step 4
           </span>
@@ -74,6 +76,8 @@ const PictureContainer = ({
               다음
             </button>
             </div>
+      </div>
+
       </div>
     </div>
 

@@ -18,7 +18,10 @@ const CategoryBox = ({
                 name={category.code}
                 className='transparent-btn btn-big m-5'
                 onClick = {() => {
-                  navigate(`/bookstore/genre/${category.code}`)
+                  navigate(
+                    `/bookstore/genre/${category.code}`, 
+                    { state: `${category.code} ${category.name}` }
+                  )
                 }}
               >
               # {category.name}

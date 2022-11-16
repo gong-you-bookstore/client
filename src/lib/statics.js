@@ -1,8 +1,8 @@
 export const MENUS = [
-  {name: "등록", address: "/register"},
-  {name: "책방", address: "/bookstore"},
-  {name: "설문", address: "/survey"},
-  {name: "마이페이지", address: "/mypage"},
+  {name: "등록", address: "/register", isAuth: false},
+  {name: "책방", address: "/bookstore", isAuth: false},
+  {name: "설문", address: "/survey", isAuth: false},
+  {name: "마이페이지", address: "/mypage", isAuth: false},
 ]
 
 export const CATEGORIES = [
