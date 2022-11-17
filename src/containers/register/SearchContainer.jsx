@@ -1,7 +1,7 @@
 import SearchForm from "../../components/register/SearchForm";
 import { useState } from "react";
 import { getBooksByKakao } from "../../lib/services";
-
+import { toastMaker } from "../../lib/utils";
 
 const SearchContainer = ({
   setSearchResults, 
@@ -22,13 +22,13 @@ const SearchContainer = ({
 
   const onClickSearchButton = () => {
     getBooksByKakao(searchWord)
-      .then((res) => {
-        setSearchResults(res.data.documents)
+      .then((response) => {
+        setSearchResults(response.data.documents)
         setIsView({...isView, step2: true})
         setIsScrollToStep2(true)
       })
       .catch((error) => {
-        console.log("작성실패", error);
+        toastMaker.error(error.message);
       });
   };
 

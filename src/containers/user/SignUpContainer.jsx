@@ -2,11 +2,10 @@ import { useState } from "react";
 import $ from 'jquery'
 import SignUpForm from "../../components/user/SignUpForm";
 import { postSignUpData } from "../../lib/api/user";
-
+import { toastMaker } from "../../lib/utils";
 const SignUpContainer = ({
   setIsSignIn
 }) => {
-  const [errorMsg, setErrorMsg] = useState("");
   const [signUpData, setSignUpData] = useState({
     email: "",
     password: "",
@@ -23,31 +22,31 @@ const SignUpContainer = ({
 
   const onClickSignUpBtn = () => {
     if (signUpData.email === "") {
-      setErrorMsg("이메일을 입력해주세요.");
+      toastMaker.error("이메일을 입력해주세요.");
       $("#email").focus();
       return;
     }
 
     if (signUpData.password === "") {
-      setErrorMsg("패스워드를 입력해주세요.");
+      toastMaker.error("패스워드를 입력해주세요.");
       $("#password").focus();
       return;
     }
 
     if (signUpData.rePassword === "") {
-      setErrorMsg("확인 패스워드를 입력해주세요.");
+      toastMaker.error("확인 패스워드를 입력해주세요.");
       $("#rePassword").focus();
       return;
     }
 
     if (signUpData.name === "") {
-      setErrorMsg("이름을 입력해주세요.");
+      toastMaker.error("이름을 입력해주세요.");
       $("#name").focus();
       return;
     }
 
     if (signUpData.password !== signUpData.rePassword) {
-      setErrorMsg("비밀번호와 확인 비밀번호가 같지 않습니다.");
+      toastMaker.error("비밀번호와 확인 비밀번호가 같지 않습니다.");
       setSignUpData({
         ...signUpData,
         password: "",
@@ -56,11 +55,11 @@ const SignUpContainer = ({
       $("#password").focus();
       return;
     }
-    postSignUpData(signUpData).then(res => {
-      alert(res.data.msg);
+    postSignUpData(signUpData).then(response => {
+      toastMaker.success(response.data.msg);
       setIsSignIn(true)
-    }).catch(err => {
-      alert(err.data.msg);
+    }).catch(error => {
+      toastMaker.error(error.data.msg);
     })
   }
 
@@ -70,7 +69,6 @@ const SignUpContainer = ({
       signUpData = {signUpData}
       onChangeSignUpData = {onChangeSignUpData}
       onClickSignUpBtn = {onClickSignUpBtn}
-      errorMsg = {errorMsg}
     />
   )
 }

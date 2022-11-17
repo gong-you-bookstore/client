@@ -26,11 +26,11 @@ const FillContainer = ({
 
   useEffect(() => {
     getBookByNLK(result.isbn)
-      .then((res) => {
-        if(res.data.total){
+      .then((response) => {
+        if(response.data.total){
           setResult({
             ...result,
-            kdc:res.data.result[0].classNo.substr(0, 3)
+            kdc:response.data.result[0].classNo.substr(0, 3)
           })
         }
       })

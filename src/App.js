@@ -11,7 +11,8 @@ import SurveyPage from './pages/SurveyPage';
 import BookstorePage from './pages/BookstorePage';
 import StoreByGenrePage from './pages/StoreByGenrePage';
 import LoginPage from './pages/LoginPage';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <Route path='/*' element={<NotFound />} />
         <Route path='/:isbn13/detail' element={<BookDetailPage />} />
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );
