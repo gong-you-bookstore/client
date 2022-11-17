@@ -1,14 +1,14 @@
-import Banner from "../components/common/Banner"
 import useScrollTo from "../lib/hooks/useScrollTo";
 import { useEffect, useState } from "react";
-import Shelf from "../components/bookstore/Shelf";
 import { getBooks } from "../lib/api/book";
 import books from "../assets/bookmini.json"
-import { CATEGORIES } from "../lib/statics";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/common/Loading";
 
 import React, { lazy, Suspense } from 'react';
+
 const CategoryCarousel = lazy(() => import('../components/bookstore/CategoryCarousel'));
+const Shelf = lazy(() => import('../components/bookstore/Shelf'));
 
 const BookstorePage = () => {
   const [gallaryRef, setIsScrollTo] = useScrollTo();
@@ -24,24 +24,17 @@ const BookstorePage = () => {
 
   return (
     <>
-      {/* <header className="header-shelf">
-        <Banner />
-      </header> */}
-
+      <Suspense fallback={<Loading />}>
       <div className="cement-wallpaper" ref={gallaryRef} >
         <div className="gallery-area container" >
-          
           {/* <Shelf books = {registeredBooks} /> */}
-          <Suspense fallback={<p>loading</p>}>
-            <CategoryCarousel />
-          </Suspense>
-            <Shelf books = {books} />
-            <Shelf books = {books} />
-            <Shelf books = {books} />
-          
-
+          <CategoryCarousel />
+          <Shelf books = {books} />
+          <Shelf books = {books} />
+          <Shelf books = {books} />
         </div>
       </div>
+      </Suspense>
     </>
       
   )
