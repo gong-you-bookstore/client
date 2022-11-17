@@ -17,11 +17,9 @@ function App() {
     <div className="App">
       <Nav />
       <BackToTopBtn />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-
         <Route path="/bookstore" element={<BookstorePage />} />
         <Route path="/bookstore/genre/:kdc" element={<StoreByGenrePage />} />
         <Route path="/register" element={<RegisterPage />} />
