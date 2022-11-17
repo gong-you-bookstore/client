@@ -20,6 +20,8 @@ html, body {
 }
 body {
   background-color: #f8f9fa;
+  /* background-image: url(../images/page-bg.png); */
+  /* background-size: cover; */
 }
 li {
   display: inline-block;
@@ -407,14 +409,11 @@ input:-webkit-autofill:active {
 @keyframes glare {
   from {
     opacity: .7;
-    /* height: 100vh; */
   }
   40% {
-    /* height: 100vh; */
   }
   to {
     opacity: 1;
-    /* height: 0vh; */
   }
 }
 
@@ -855,7 +854,7 @@ video.drawingBuffer {
 }
 
 .gallery-area {
-  padding: 70px 0px 170px 0;
+  padding: 100px 0px 170px 0;
   min-height: 900px;
   
 }
@@ -879,6 +878,7 @@ video.drawingBuffer {
 }
 
 .book-dynamic {
+  cursor: pointer;
   height: 210px;
   margin: 20px 10px 0 10px;
   background-color: white;
@@ -1012,71 +1012,15 @@ video.drawingBuffer {
   border-radius: 10px;
 }
 
-.kdc000 {
-  background: url(./../images/kdc000.jpg)no-repeat center center fixed ;
-  
-}
-.kdc100 {
-  background: url(./../images/kdc100.jpg)no-repeat center center fixed ;
-}
-.kdc200 {
-  background: url(./../images/kdc200.jpg)no-repeat center center fixed ;
-}
-.kdc300 {
-  background: url(./../images/kdc300.jpg)no-repeat center center fixed ;
-}
-.kdc400 {
-  background: url(./../images/kdc400.jpg)no-repeat center center fixed ;
-}
-.kdc500 {
-  background: url(./../images/kdc500.jpg)no-repeat center center fixed ;
-}
-.kdc600 {
-  background: url(./../images/kdc600.jpg)no-repeat center center fixed ;
-}
-.kdc700 {
-  background: url(./../images/kdc700.jpg)no-repeat center center fixed ;
-}
-.kdc800 {
-  background: url(./../images/kdc800.jpg)no-repeat center center fixed ;
-}
-.kdc900 {
-  background: url(./../images/kdc900.jpg)no-repeat center center fixed ;
-}
-.kdc000,
-.kdc100,
-.kdc200,
-.kdc300,
-.kdc400,
-.kdc500,
-.kdc600,
-.kdc700,
-.kdc800,
-.kdc900 {
+.genre-header {
+  background-attachment: scroll; 	
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-  overflow: hidden; 	
-} 
-
-/* IOS Only */
-@supports (-webkit-touch-callout: none) {
-  .kdc000,
-  .kdc100,
-  .kdc200,
-  .kdc300,
-  .kdc400,
-  .kdc500,
-  .kdc600,
-  .kdc700,
-  .kdc800,
-  .kdc900 {
-    background-attachment: scroll; 	
-  } 
-}
-
-.genre-header {
+  overflow: hidden; 
   height: 90vh;
 }
 .genre-header .overlay {
@@ -1145,19 +1089,27 @@ video.drawingBuffer {
 }
 
 .genre-card {
-  background-size: cover;
-  background-repeat: no-repeat;
   display: inline-block;
   border-radius: 20px;
   width: 100%;
-  min-height: 300px;
+  height: 300px;
   display: grid;
   place-items: center;
   cursor: pointer;
   text-align: center;
   padding: 20px;
-}
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: 1px 0px 13px rgba(0, 0, 0, .5);
 
+}
+/* phone */
+@media screen and (max-width:575px) {
+  .genre-card {
+    height: 180px;
+  }
+}
 .card000 {
   background-image: url(./../images/kdc000.jpg);
 }
@@ -1188,3 +1140,17 @@ video.drawingBuffer {
 .card900 {
   background-image: url(./../images/kdc900.jpg);
 }
+
+.category-card {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: 0px 0px 13px rgba(0, 0, 0, .8);
+}
+
+
+
+
