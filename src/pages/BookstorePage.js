@@ -17,8 +17,8 @@ const BookstorePage = () => {
 
 
   useEffect(()=>{
-    getBooks().then(res => {
-      setRegisteredBooks(res.data.data)
+    getBooks().then(response => {
+      setRegisteredBooks(response.data.data)
     })
   },[])
 

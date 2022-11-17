@@ -3,6 +3,8 @@ import { useState } from "react";
 import SignInForm from "../../components/user/SignInForm";
 import { postSignInData } from "../../lib/api/user";
 import { useNavigate } from "react-router-dom";
+import { toastMaker } from "../../lib/utils";
+import $ from 'jquery'
 const SignInContainer = ({
   setIsSignIn
 }) => {
@@ -22,13 +24,24 @@ const SignInContainer = ({
   };
 
   const onClickSignInBtn = () => {
-    postSignInData(signInData).then(res => {
-      alert(res.data.msg)
-      setCookie("userData", res.data.data, { path: "/" });
+    if (signInData.email === "") {
+      toastMaker.error("이메일을 입력해주세요.");
+      $("#email").focus();
+      return;
+    }
+
+    if (signInData.password === "") {
+      toastMaker.error("패스워드를 입력해주세요.");
+      $("#password").focus();
+      return;
+    }
+
+    postSignInData(signInData).then(response => {
+      toastMaker.success(response.data.msg);
+      setCookie("userData", response.data.data, { path: "/" });
       navigate("/")
-      
     }).catch(err => {
-      alert(err.data.msg)
+      toastMaker.error(err.data.msg)
     })
   }
 

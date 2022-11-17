@@ -6,7 +6,7 @@ import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
 import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
 import { MENUS } from "../../lib/statics"
-
+import { toastMaker } from "../../lib/utils";
 const Nav = ()=>{
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Nav = ()=>{
               key={index}
               onClick={() => {
                 if (item.isAuth && !cookies.userData) {
-                  alert("로그인이 필요합니다")
+                  toastMaker.error("로그인이 필요합니다");
                   navigate('/login')
                 } else {
                   navigate(item.address)
@@ -56,9 +56,10 @@ const Nav = ()=>{
             type="button"
             onClick={() => {
               removeCookie("userData", { path: "/" });
+              toastMaker.success("로그아웃 되었습니다.");
             }}
             >
-              {cookies.userData.email}님 로그아웃
+              로그아웃
             </button>
           ) : (
             <>

@@ -1,4 +1,5 @@
-import $ from 'jquery'
+import { toast } from 'react-toastify';
+
 // 스크롤 최상단 이동
 export const scrollToTop = () => {
   window.scrollTo(0, 0)
@@ -12,7 +13,32 @@ export const scrollToTopSmooth = () => {
   })
 }
 
+export const toastMaker = {
+  success(message) {
+    return toast.success(message, {
+      position: "bottom-right",
+      hideProgressBar: true,
+      draggable: true,
+      theme: "colored",
+    });
+  },
 
-export const onClickCategory = (index) => {
-  $(`.category-box li:nth-child(${index + 1}) button`).toggleClass("active");
-}
+  error(message) {
+    return toast.error(message, {
+      position: "bottom-right",
+      hideProgressBar: true,
+      draggable: true,
+      theme: "colored",
+    });
+  },
+
+  info(message) {
+    return toast.info(message, {
+      position: "bottom-right",
+      hideProgressBar: true,
+      draggable: true,
+      theme: "colored",
+    });
+  },
+  
+};

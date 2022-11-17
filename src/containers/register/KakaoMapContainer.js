@@ -3,6 +3,8 @@ import KakaoMap from "../../components/register/KakaoMap";
 import { useCookies } from "react-cookie"
 import { postBookData } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
+import { toastMaker } from "../../lib/utils";
+
 const KakaoMapContainer = ({
   result,
   setResult,
@@ -35,17 +37,17 @@ const KakaoMapContainer = ({
         {type: "application/json"}
       )
     );
-    for (let key of formData.keys()) {
-      console.log(key, ":", formData.get(key));
-    }
+    // for (let key of formData.keys()) {
+    //   console.log(key, ":", formData.get(key));
+    // }
 
     postBookData(formData, cookies.userData.accessToken)
-      .then(res=>{
-        alert(res.data.msg)
-        navigate("/bookstore")
+      .then(response => {
+        toastMaker.success(response.data.msg);
+        navigate("/bookstore");
       })
-      .catch(err=>{
-        console.log(err)
+      .catch(error => {
+        toastMaker.error(error.message);
       })
   }
   

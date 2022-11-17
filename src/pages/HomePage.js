@@ -3,6 +3,8 @@ import { Fade } from "react-awesome-reveal";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import React, { lazy, Suspense } from 'react';
 import Loading from '../components/common/Loading';
+import { toast } from 'react-toastify';
+
 const GenreCard = lazy(() => import('../components/home/GenreCard'));
 const About = lazy(() => import('../components/home/About'));
 
@@ -18,6 +20,7 @@ const HomePage = ()=>{
       </header>
       <span className="pointer" ref={introRef} />
       <About />
+      
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">

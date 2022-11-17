@@ -5,9 +5,9 @@ import Quagga from "quagga";
 const Scanner = ({onDetected}) => {
 
   useEffect(() => {
-    Quagga.init(config, err => {
-      if (err) {
-        console.log(err, "error msg");
+    Quagga.init(config, error => {
+      if (error) {
+        console.log(error, "error msg");
       }
       Quagga.start();
       return () => {

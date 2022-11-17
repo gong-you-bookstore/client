@@ -3,7 +3,6 @@ const SignUpForm = ({
   signUpData,
   onChangeSignUpData,
   onClickSignUpBtn,
-  errorMsg
 })=>{
   return (
     <>
@@ -53,7 +52,6 @@ const SignUpForm = ({
           onChange={onChangeSignUpData}
           className="input-styled w-100p"
         />
-        <p className="error">{errorMsg}</p>
         <button 
           type="button" 
           onClick={()=>{
