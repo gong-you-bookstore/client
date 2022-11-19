@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getBooks } from "../lib/api/book";
 import books from "../assets/bookmini.json"
-import { useNavigate } from "react-router-dom";
 import Loading from "../components/common/Loading";
 import logo from '../assets/images/logo_row_white.png'
 
@@ -9,17 +8,13 @@ import React, { lazy, Suspense } from 'react';
 import useScrollTo from "../lib/hooks/useScrollTo";
 
 const Shelf = lazy(() => import('../components/bookstore/Shelf'));
-const Banner = lazy(() => import('../components/common/Banner'));
-
 
 const GalleryPage = () => {
   const [registeredBooks, setRegisteredBooks] = useState([])
-  const navigate = useNavigate();
   const [galleryRef, setIsScrollToGallery] = useScrollTo()
 
   useEffect(()=>{
     getBooks().then(response => {
-      // console.log(response.data.data)
       setRegisteredBooks(response.data.data)
     })
 
@@ -40,7 +35,6 @@ const GalleryPage = () => {
           </div>
         </div>
       </header>
-
 
       <div className="dark-cement-bg" ref={galleryRef}>
         <div className="gallery-area container" >

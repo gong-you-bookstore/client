@@ -72,15 +72,15 @@ const SurveyForm = ({formRef}) => {
               <div className="genres-grid">
               {
                 CATEGORIES.map((category, index) => (
-                  <>
+                  <span key={index}>
                   <input
-                    key={index}
                     type="checkbox" 
                     name="genres" 
                     value={category.name}
                     onChange={onChangeGenres} 
-                  /> {category.name}
-                </>
+                  /> 
+                    {category.name}
+                  </span>
                 ))
               }
               </div>

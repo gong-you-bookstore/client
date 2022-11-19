@@ -1,7 +1,5 @@
 import { CATEGORIES } from '../../lib/statics';
 import { useNavigate } from 'react-router-dom';
-import Loading from '../common/Loading';
-import React, { lazy, Suspense } from 'react';
 import Card from '../bookstore/Card';
 
 const GenreCard = () => {
@@ -9,7 +7,6 @@ const GenreCard = () => {
 
   return (
     <>
-    <Suspense fallback={<Loading />}>
     <div className="content-section">
       <div className="container">
         <div className='card-grid'>
@@ -30,7 +27,6 @@ const GenreCard = () => {
         </div>
       </div>
     </div>
-    </Suspense>
     </>
   )
 }
