@@ -727,7 +727,7 @@ input:-webkit-autofill:active {
 .content-section {
   margin: 60px 0;
   padding: 20px 0;
-  /* height: 100%; */
+  min-height: 200px;
 }
 /* phone */
 @media screen and (max-width:575px) {
@@ -1103,6 +1103,7 @@ video.drawingBuffer {
 @media screen and (max-width:575px) {
   .home-card-grid,
   .card-grid {
+    gap: 10px;
     grid-template-columns: 1fr;
     grid-template-areas:
 		"gallery"
@@ -1267,6 +1268,51 @@ video.drawingBuffer {
   100% {
     stroke-dashoffset: 187;
     transform: rotate(450deg);
+  }
+}
+.slidesR {
+  margin: 0 0 30px 0;
+  position: relative;
+  display: flex;
+  gap: 15px;
+  animation-name: slideToRight;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes slideToRight {
+  0% {
+    left: -110%;
+  }
+  
+  100% {
+    left: 0%;
+  }
+}
+
+.slidesL {
+  margin: 0 0 30px 0;
+  position: relative;
+  display: flex;
+  gap: 15px;
+  animation-name: slideToLeft;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes slideToLeft {
+  0% {
+    right: 0%;
+  }
+  
+  100% {
+    right: 110%;
   }
 }
 
