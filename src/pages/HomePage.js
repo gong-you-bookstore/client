@@ -23,6 +23,7 @@ const HomePage = ()=>{
       </header>
         
       <span className="pointer" ref={introRef} />
+      <About />
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
@@ -54,7 +55,6 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
-      <About />
       <Slider />
       <div className="content-section">
       </div>
