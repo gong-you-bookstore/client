@@ -17,7 +17,7 @@ const Banner = ({setIsScrollTo}) => {
             <button
             className='primary-btn btn-big'
             type="button"
-            onClick={()=>navigate("/bookstore")}
+            onClick={()=>navigate("/store")}
             >
               책방 입장하기
             </button>
