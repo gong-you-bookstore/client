@@ -529,15 +529,7 @@ input:-webkit-autofill:active {
   transition: all .3s ease-in-out;
 }
 
-.main-book-2 {
-  position: relative;
-  top: 70px;
-  width: 200px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  box-shadow: -10px 22px 29px 0px rgba(0, 0, 0, 0.5);
-  transition: all .3s ease-in-out;
-}
+
 
 .border-top-line{
   width: 100%;
@@ -591,7 +583,6 @@ input:-webkit-autofill:active {
   .info-text {
     font-size: 24px;
   }
-  .main-book-2,
   .main-book-1 {
     width: 220px;
   }
@@ -604,7 +595,6 @@ input:-webkit-autofill:active {
 }
 /* phone */
 @media screen and (max-width:575px) {
-  .main-book-2,
   .main-book-1 {
     width: 200px;
   }
@@ -852,7 +842,7 @@ video.drawingBuffer {
   margin-bottom: 100px;
   background-image: url(./../images/wood2.jpg);
   /* background-color: #AE8A74; */
-  box-shadow: 2px 10px 20px 8px #141414;
+  box-shadow: 0px 8px 20px 8px #141414;
   height: 8px;
   /* width: 100%; */
   z-index: 99;
@@ -895,6 +885,8 @@ video.drawingBuffer {
   }
   .wood-shelf {
     margin-bottom: 50px;
+    height: 5px;
+
   }
   
 }
@@ -916,20 +908,6 @@ video.drawingBuffer {
   -webkit-backface-visibility: hidden;
   box-shadow: 3px 10px 15px 3px #141414, 20px 8px 0 #eee;
 }
-
-.store-banner {
-  grid-area: header;
-  height: 300px;
-  margin-bottom: 80px;
-  width: 100vw;
-  background-size: cover;
-}
-.store-banner-cover {
-  height: 100%;
-  backdrop-filter: blur(25px);
-  background-color: rgba(255,255,255, .1);
-}
-
 
 .rounded-btn {
   position: fixed; 
@@ -1285,7 +1263,7 @@ video.drawingBuffer {
 
 @keyframes slideToRight {
   0% {
-    left: -110%;
+    left: -50%;
   }
   
   100% {
@@ -1312,7 +1290,35 @@ video.drawingBuffer {
   }
   
   100% {
-    right: 110%;
+    right: 50%;
   }
 }
 
+.book-banner {
+  grid-area: header;
+  height: 30vh;
+  width: 100vw;
+  background-size: cover;
+}
+.book-banner-cover {
+  height: 100%;
+  backdrop-filter: blur(25px);
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.thumbnail {
+  width: 200px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 15px 10px 35px rgba(0, 0, 0, 0.5);
+  transition: all .3s ease-in-out;
+}
+
+.detail-grid {
+  position: relative;
+  gap: 20px;
+  bottom: 150px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  place-items: center;
+}

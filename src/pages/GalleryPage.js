@@ -19,6 +19,7 @@ const GalleryPage = () => {
 
   useEffect(()=>{
     getBooks().then(response => {
+      // console.log(response.data.data)
       setRegisteredBooks(response.data.data)
     })
 
@@ -43,7 +44,7 @@ const GalleryPage = () => {
 
       <div className="dark-cement-bg" ref={galleryRef}>
         <div className="gallery-area container" >
-          {/* <Shelf books = {registeredBooks} /> */}
+          <Shelf books = {registeredBooks} />
           <Shelf books = {books} />
           <Shelf books = {books} />
           <Shelf books = {books} />

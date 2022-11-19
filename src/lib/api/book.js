@@ -24,10 +24,10 @@ export const getBooks = async () => {
 }; 
 
 /**도서 상세 조회**/
-export const getBookDetails = async (isbn13, accessToken) => {
+export const getBookDetails = async (isbn, accessToken) => {
   return await axios({
     method: "get",
-    url: `${SERVER_URL}/book/${isbn13}`,
+    url: `${SERVER_URL}/book/${isbn}`,
     headers: {
       'X-AUTH-TOKEN': accessToken,
     }

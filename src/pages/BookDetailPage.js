@@ -1,54 +1,69 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import books from '../assets/bookmini.json'
+import { useCookies } from "react-cookie"
+
+import { getBookDetails } from "../lib/api/book";
 
 const BookDetailPage = () => {
   const params = useParams();
-
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [book, setBook] = useState({})
 
-  useEffect(()=>{
-    console.log(book);
-  }, [book])
 
   useEffect(() => {
-
-    books.map((item) => {
-      if (item.isbn13 === Number(params.isbn13)) {
-        setBook(item);
-      }
+    getBookDetails(params.isbn13, cookies.userData.accessToken)
+      .then(response => {
+      setBook(response.data.data)
     })
+      .catch(error => {
+      console.log(error)
+    })
+    
   }, [params])
 
-  return (
-    <>
-    <div 
-        className="store-banner"
+  if (book) {
+    return (
+      <>
+      <div 
+        className="book-banner"
         style={{
           backgroundImage:
-            `url(${book.img_url})`,
+            `url(${book.thumbnail})`,
         }}
       >
-        <div className='store-banner-cover '>
-          <div className='container flex-sp-box w-100p'>
-          <img 
-            src = {book.img_url}
-            className="main-book-2" 
-            alt="img" 
-          />
-          </div>
+        <div className='book-banner-cover '>
+          
         </div>
       </div>
+  
+      <div className='container'>
+        <div className="detail-grid">
+          <h1 className="fc-white">{book.title}</h1>
+          <img 
+            src = {book.thumbnail}
+            className="thumbnail" 
+            alt="img" 
+          />
+          <p>{book.author}</p>
+          <p>{book.content}</p>
+        </div>
+  
+        <h1 className="">등록한사람</h1>
+        {
+          book.userList ? (<>{
+            book.userList.map(user => (
+              <p>user</p>
+            ))
+          }</>) : (<></>)
+        }
+      </div>
+      </>
+    )
+  }
 
-      <h1>{book.title}</h1>
-      <p>{book.author}</p>
-      <p>{book.description}</p>
-
-
-
-    </>
-  )
+  return (<></>)
+  
 }
 
 export default BookDetailPage;
