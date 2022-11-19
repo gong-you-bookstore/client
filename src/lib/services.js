@@ -5,7 +5,11 @@ const KAKAO_REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY
 const NLK_HOST_URL = process.env.REACT_APP_NLK_HOST_URL
 const NLK_API_KEY = process.env.REACT_APP_NLK_API_KEY
 
-// 카카오 API: 검색어를 통하여 일치하는 책들의 리스트 얻음
+/**
+ * 카카오 API: 검색어를 통하여 일치하는 책들의 리스트 얻음
+ * @param {string} searchWord 
+ * @returns 
+ */
 export const getBooksByKakao = async (searchWord) => {
   return await axios({
     method: "get",
@@ -16,7 +20,11 @@ export const getBooksByKakao = async (searchWord) => {
   });
 };
 
-// 국립중앙도서관 API: isbn값을 통하여 책의 정보 얻음
+/**
+ * 국립중앙도서관 API: isbn값을 통하여 책의 정보 얻음
+ * @param {string} isbn13 
+ * @returns 
+ */
 export const getBookByNLK = async (isbn13) => {
   return await axios({
     method: "get",
@@ -24,7 +32,11 @@ export const getBookByNLK = async (isbn13) => {
   })
 }; 
 
-// 카카오 API: 검색을 통해 좌표값 수정
+/**
+ * 카카오 API: 검색을 통해 좌표값 수정
+ * @param {string} searchWord 
+ * @returns 
+ */
 export const getLocationsOnSearch = async (searchWord) => {
   return await axios({
     method: "get",

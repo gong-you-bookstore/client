@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 
-
 const useScrollTo = () => {
   const ref = useRef(null);
   const [isScrollTo, setIsScrollTo] = useState(false);

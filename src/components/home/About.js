@@ -14,10 +14,10 @@ const About = () => {
               </p>
             </Fade>
 
-              <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="main-book-1" alt="img" />
+              <img src="https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg" className="concept-book" alt="img" />
           </div>
           <div className="content-info-right">
-              <img src="https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg" className="main-book-1" alt="img" />
+              <img src="https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg" className="concept-book" alt="img" />
             <Fade direction="up" cascade triggerOnce>
 
               <p className="info-text fc-dark fs-28">
