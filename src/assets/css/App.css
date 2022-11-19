@@ -1,4 +1,4 @@
-@import "./reset.css";
+/* @import "./reset.css"; */
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@300&display=swap');
 /* @font-face { 
@@ -20,9 +20,20 @@ html, body {
 }
 body {
   background-color: #f8f9fa;
-  /* background-image: url(../images/page-bg.png); */
-  /* background-size: cover; */
 }
+/* preload images */
+body::after{
+	/* 소스만 다운받고 화면은 나태내지 않는다. (숨김 처리) */
+    position:absolute; 
+    width:0; 
+    height:0; 
+    overflow:hidden; 
+    z-index:-1;
+    
+    /* 필요한 이미지 소스들 다운 */
+    content:url(./../images/shelf.jpg) url(./../images/kdc000.jpg) url(./../images/kdc100.jpg) url(./../images/kdc200.jpg) url(./../images/kdc300.jpg) url(./../images/kdc400.jpg) url(./../images/kdc500.jpg) url(./../images/kdc600.jpg) url(./../images/kdc700.jpg) url(./../images/kdc800.jpg) url(./../images/kdc900.jpg); 
+}
+
 li {
   display: inline-block;
 }
@@ -377,7 +388,6 @@ input:-webkit-autofill:active {
 }
 /* IOS Only */
 @supports (-webkit-touch-callout: none) {
-  .header-shelf,
   .header-door {
     background-attachment: scroll; 	
   } 
@@ -393,38 +403,6 @@ input:-webkit-autofill:active {
   overflow: hidden;
 }
 
-
-.header-shelf {
-  position: relative;
-  height: 100vh;
-  /* height: 0vh; */
-  background: url(./../images/shelf.jpg) no-repeat center center fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-  overflow: hidden;
-  animation:glare 1s ease-in-out;
-}
-@keyframes glare {
-  from {
-    opacity: .7;
-  }
-  40% {
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* desktop */
-/* @media screen and (min-width: 992px) {
-  .header-door {
-    background-image: url(./../images/door-wide.jpg);
-  }
-} */
-
-.header-shelf .overlay,
 .header-door .overlay {
   position: absolute;
   left: 0;
@@ -847,12 +825,12 @@ video.drawingBuffer {
   background-size: cover;
 }
 
-.cement-wallpaper {
+.dark-cement-bg {
   height: 100%;
   background-image: url(./../images/cement-bg.jpg);
   background-size: contain;
 }
-.white-wallpaper {
+.white-cement-bg {
   height: 100%;
   background-image: url(./../images/page-bg.png);
   background-size: cover;
@@ -1017,6 +995,29 @@ video.drawingBuffer {
   border-radius: 10px;
 }
 
+@keyframes shrink {
+  from {
+    height: 100vh;
+  }
+  40% {
+    height: 90vh;
+  }
+  to {
+    height: 30vh;
+  }
+}
+@keyframes shrink2 {
+  from {
+    height: 100%;
+  }
+  40% {
+    height: 90%;
+  }
+  to {
+    height: 30%;
+  }
+}
+
 .genre-header {
   background-attachment: scroll; 	
   background-repeat: no-repeat;
@@ -1026,14 +1027,16 @@ video.drawingBuffer {
 	-moz-background-size: cover;
 	-o-background-size: cover;
   overflow: hidden; 
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
+  
 }
 .genre-header .overlay {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.2);
   color: #eee;
   display: -webkit-box;
@@ -1043,13 +1046,10 @@ video.drawingBuffer {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
-.genre-header .overlay .title {
-  margin: 0 0 0 30px;
+  
 }
 
 .grid-store {
-  padding: 50px 10px;
   min-height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -1072,29 +1072,114 @@ video.drawingBuffer {
   }
 }
 
-.card-grid-2 {
-  place-items: center;
+.home-card-grid {
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  gap: 15px;
-}
-.card-grid-3 {
+  grid-template-columns: repeat(6, 1fr);
   place-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px;
+  gap: 20px;
+  grid-template-areas:
+		"gallery gallery . . two two"
+		"zero zero one one . ."
+		"three three . . four four"
+		". . five five six six"
+		"seven seven eight eight nine nine"
+    ;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  gap: 20px;
+  grid-template-areas:
+		"gallery gallery gallery gallery gallery gallery"
+		"zero zero zero one one one"
+    "two two three three four four"  
+    "five five six six seven seven"
+    "eight eight eight nine nine nine"
+    ;
+}
 /* phone */
 @media screen and (max-width:575px) {
-  .card-grid-3,
-  .card-grid-2 {
+  .home-card-grid,
+  .card-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+		"gallery"
+		"zero"
+		"one"
+		"two"
+		"three"
+		"four"
+		"five"
+		"six"
+		"seven"
+		"eight"
+		"nine"
+    ;
   }
 }
 
+.card-gallery {
+  background-image: url(./../images/shelf.jpg);
+  grid-area: gallery;
+}
+.card000 {
+  background-image: url(./../images/kdc000.jpg);
+  grid-area: zero;
+}
+.card100 {
+  background-image: url(./../images/kdc100.jpg);
+  grid-area: one;
+}
+.card200 {
+  background-image: url(./../images/kdc200.jpg);
+  grid-area: two;
+
+}
+.card300 {
+  background-image: url(./../images/kdc300.jpg);
+  grid-area: three;
+
+}
+.card400 {
+  background-image: url(./../images/kdc400.jpg);
+  grid-area: four;
+
+}
+.card500 {
+  background-image: url(./../images/kdc500.jpg);
+  grid-area: five;
+
+}
+.card600 {
+  background-image: url(./../images/kdc600.jpg);
+  grid-area: six;
+
+}
+.card700 {
+  background-image: url(./../images/kdc700.jpg);
+  grid-area: seven;
+
+}
+.card800 {
+  background-image: url(./../images/kdc800.jpg);
+  grid-area: eight;
+
+}
+.card900 {
+  background-image: url(./../images/kdc900.jpg);
+  grid-area: nine;
+
+}
+
 .genre-card {
-  display: inline-block;
+  /* display: inline-block; */
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
   border-radius: 20px;
   width: 100%;
   height: 300px;
@@ -1103,61 +1188,16 @@ video.drawingBuffer {
   cursor: pointer;
   text-align: center;
   padding: 20px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  text-shadow: 1px 0px 13px rgba(0, 0, 0, .5);
-
+  font-size: 24px;
 }
 /* phone */
 @media screen and (max-width:575px) {
   .genre-card {
     height: 180px;
+    font-size: 16px;
+
   }
 }
-.card000 {
-  background-image: url(./../images/kdc000.jpg);
-}
-.card100 {
-  background-image: url(./../images/kdc100.jpg);
-}
-.card200 {
-  background-image: url(./../images/kdc200.jpg);
-}
-.card300 {
-  background-image: url(./../images/kdc300.jpg);
-}
-.card400 {
-  background-image: url(./../images/kdc400.jpg);
-}
-.card500 {
-  background-image: url(./../images/kdc500.jpg);
-}
-.card600 {
-  background-image: url(./../images/kdc600.jpg);
-}
-.card700 {
-  background-image: url(./../images/kdc700.jpg);
-}
-.card800 {
-  background-image: url(./../images/kdc800.jpg);
-}
-.card900 {
-  background-image: url(./../images/kdc900.jpg);
-}
-
-.category-card {
-  text-align: center;
-  display: grid;
-  place-items: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  text-shadow: 0px 0px 13px rgba(0, 0, 0, .8);
-}
-
-
-
 
 .spinner {
   animation: rotator 1.4s linear infinite;

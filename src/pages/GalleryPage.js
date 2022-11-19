@@ -1,34 +1,49 @@
-import useScrollTo from "../lib/hooks/useScrollTo";
 import { useEffect, useState } from "react";
 import { getBooks } from "../lib/api/book";
 import books from "../assets/bookmini.json"
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/common/Loading";
+import logo from '../assets/images/logo_row_white.png'
 
 import React, { lazy, Suspense } from 'react';
+import useScrollTo from "../lib/hooks/useScrollTo";
 
-const CategoryCarousel = lazy(() => import('../components/bookstore/CategoryCarousel'));
 const Shelf = lazy(() => import('../components/bookstore/Shelf'));
+const Banner = lazy(() => import('../components/common/Banner'));
 
-const BookstorePage = () => {
-  const [gallaryRef, setIsScrollTo] = useScrollTo();
+
+const GalleryPage = () => {
   const [registeredBooks, setRegisteredBooks] = useState([])
   const navigate = useNavigate();
-
+  const [galleryRef, setIsScrollToGallery] = useScrollTo()
 
   useEffect(()=>{
     getBooks().then(response => {
       setRegisteredBooks(response.data.data)
     })
+
+    setTimeout(() => {
+      setIsScrollToGallery(true);
+    }, 1100)
   },[])
 
   return (
     <>
       <Suspense fallback={<Loading />}>
-      <div className="cement-wallpaper" ref={gallaryRef} >
+      <header className="genre-header card-gallery">
+        <div className="overlay">
+          <h1 className="subtitle">우리가 만드는 공유책방</h1>
+          <img className="w-150 logo" src={logo} alt="img" />
+          <div className="mouse-icon" >
+            <div className="wheel" />
+          </div>
+        </div>
+      </header>
+
+
+      <div className="dark-cement-bg" ref={galleryRef}>
         <div className="gallery-area container" >
           {/* <Shelf books = {registeredBooks} /> */}
-          <CategoryCarousel />
           <Shelf books = {books} />
           <Shelf books = {books} />
           <Shelf books = {books} />
@@ -40,4 +55,4 @@ const BookstorePage = () => {
   )
 }
 
-export default BookstorePage;
+export default GalleryPage;

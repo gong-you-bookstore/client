@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import $ from 'jquery'
 import { useState } from "react"
 import { useCookies } from "react-cookie";
@@ -33,18 +33,8 @@ const Nav = ()=>{
       <ul className="navbar-menu">
         {
           MENUS.map((item, index)=>(
-            <li 
-              key={index}
-              onClick={() => {
-                if (item.isAuth && !cookies.userData) {
-                  toastMaker.error("로그인이 필요합니다");
-                  navigate('/login')
-                } else {
-                  navigate(item.address)
-                }
-              }}
-            >
-              {item.name}
+            <li key={index}>
+              <Link to={item.address}>{item.name}</Link>
             </li>
           ))
         }

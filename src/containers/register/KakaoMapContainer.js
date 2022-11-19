@@ -44,7 +44,7 @@ const KakaoMapContainer = ({
     postBookData(formData, cookies.userData.accessToken)
       .then(response => {
         toastMaker.success(response.data.msg);
-        navigate("/bookstore");
+        navigate("/store");
       })
       .catch(error => {
         toastMaker.error(error.message);

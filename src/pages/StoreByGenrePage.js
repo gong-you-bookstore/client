@@ -13,6 +13,10 @@ const StoreByGenrePage = () => {
   
   useEffect(()=>{
     $(".genre-header").addClass(`card${state.code}`)
+
+    setTimeout(() => {
+      setIsScrollToStore(true);
+    }, 1100)
   }, [])
 
   
@@ -21,16 +25,15 @@ const StoreByGenrePage = () => {
     <header className="genre-header">
       <div className="overlay">
         <h1 className="subtitle">#{state.code} {state.name}</h1>
-        <img className="w-150 mb-20 logo" src={logo} alt="img" />
+        <img className="w-150 logo" src={logo} alt="img" />
         <div className="mouse-icon" >
-          <div className="wheel">
+          <div className="wheel" />
         </div>
-      </div>
       </div>
     </header>
 
-    <div className="white-wallpaper" ref={storeRef}>
-      <div className="container grid-store">
+    <div className="white-cement-bg" ref={storeRef}>
+      <div className="container grid-store gallery-area">
         <Fade direction="down" cascade triggerOnce damping={0.1}>
         
         {
