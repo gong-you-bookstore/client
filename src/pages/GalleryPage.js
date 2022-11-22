@@ -26,7 +26,7 @@ const GalleryPage = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-      <header className="genre-header card-gallery">
+      <header className="genre-header card-gallery-bg">
         <div className="overlay">
           <h1 className="subtitle">우리가 만드는 공유책방</h1>
           <img className="w-150 logo" src={logo} alt="img" />

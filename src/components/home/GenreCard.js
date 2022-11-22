@@ -10,7 +10,7 @@ const GenreCard = () => {
     <div className="content-section">
       <div className="container">
         <div className='card-grid'>
-          <div className='card-gallery genre-card'
+          <div className='card-gallery'
             onClick={() => {
               navigate("/gallery")
             }}

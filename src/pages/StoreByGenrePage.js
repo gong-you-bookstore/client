@@ -12,7 +12,7 @@ const StoreByGenrePage = () => {
   const [storeRef, setIsScrollToStore] = useScrollTo();
   
   useEffect(()=>{
-    $(".genre-header").addClass(`card${state.code}`)
+    $(".genre-header").addClass(`card${state.code}-bg`)
 
     setTimeout(() => {
       setIsScrollToStore(true);

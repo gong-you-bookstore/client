@@ -38,7 +38,7 @@ const HomePage = ()=>{
       <div className="content-section">
         <div className="container">
           <div className='home-card-grid'>
-            <div className='card-gallery genre-card'
+            <div className='card-gallery'
               onClick={() => {
                 navigate("/gallery")
               }}

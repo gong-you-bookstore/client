@@ -4,7 +4,7 @@ const Card = ({category}) => {
   const navigate = useNavigate();
   return (
     <div
-      className={`card${category.code} genre-card`}
+      className={`card${category.code}`}
       onClick={() => {
         navigate(
           `/store/genre/${category.code}`, 

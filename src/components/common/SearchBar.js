@@ -43,8 +43,8 @@ const SearchBar = () => {
     </div>
     
     {
-      filteredBooks.map(filteredBook => (
-        <div>
+      filteredBooks.map((filteredBook, index) => (
+        <div key={index}>
           <span>
             {/* {filteredBook.title} */}
           </span>

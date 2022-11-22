@@ -24,11 +24,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/test" element={<Test />} />
-
         <Route path="/store" element={<StorePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/store/genre/:kdc" element={<StoreByGenrePage />} />
-
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path='/*' element={<NotFound />} />

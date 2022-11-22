@@ -999,61 +999,52 @@ video.drawingBuffer {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
 		"gallery zero"
-		". one"
+		"one one"
 		"two three"
-		"four ."
+		"four four"
 		"six five"
 		"eight seven"
-		". nine"
+		"nine nine"
     ;
   }
+}
+.card-gallery-bg {
+  background-image: url(./../images/shelf.jpg);
+}
+.card000-bg {
+  background-image: url(./../images/kdc000.jpg);
+}
+.card100-bg {
+  background-image: url(./../images/kdc100.jpg);
+}
+.card200-bg {
+  background-image: url(./../images/kdc200.jpg);
+}
+.card300-bg {
+  background-image: url(./../images/kdc300.jpg);
+}
+.card400-bg {
+  background-image: url(./../images/kdc400.jpg);
+}
+.card500-bg {
+  background-image: url(./../images/kdc500.jpg);
+}
+.card600-bg {
+  background-image: url(./../images/kdc600.jpg);
+}
+.card700-bg {
+  background-image: url(./../images/kdc700.jpg);
+}
+.card800-bg {
+  background-image: url(./../images/kdc800.jpg);
+}
+.card900-bg {
+  background-image: url(./../images/kdc900.jpg);
 }
 
 .card-gallery {
   background-image: url(./../images/shelf.jpg);
   grid-area: gallery;
-}
-.card000 {
-  background-image: url(./../images/kdc000.jpg);
-  grid-area: zero;
-}
-.card100 {
-  background-image: url(./../images/kdc100.jpg);
-  grid-area: one;
-}
-.card200 {
-  background-image: url(./../images/kdc200.jpg);
-  grid-area: two;
-}
-.card300 {
-  background-image: url(./../images/kdc300.jpg);
-  grid-area: three;
-}
-.card400 {
-  background-image: url(./../images/kdc400.jpg);
-  grid-area: four;
-}
-.card500 {
-  background-image: url(./../images/kdc500.jpg);
-  grid-area: five;
-}
-.card600 {
-  background-image: url(./../images/kdc600.jpg);
-  grid-area: six;
-}
-.card700 {
-  background-image: url(./../images/kdc700.jpg);
-  grid-area: seven;
-}
-.card800 {
-  background-image: url(./../images/kdc800.jpg);
-  grid-area: eight;
-}
-.card900 {
-  background-image: url(./../images/kdc900.jpg);
-  grid-area: nine;
-}
-.genre-card {
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
   background-size: cover;
@@ -1069,9 +1060,200 @@ video.drawingBuffer {
   padding: 20px;
   font-size: 24px;
 }
+.card000 {
+  background-image: url(./../images/kdc000.jpg);
+  grid-area: zero;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card100 {
+  background-image: url(./../images/kdc100.jpg);
+  grid-area: one;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card200 {
+  background-image: url(./../images/kdc200.jpg);
+  grid-area: two;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card300 {
+  background-image: url(./../images/kdc300.jpg);
+  grid-area: three;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card400 {
+  background-image: url(./../images/kdc400.jpg);
+  grid-area: four;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card500 {
+  background-image: url(./../images/kdc500.jpg);
+  grid-area: five;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card600 {
+  background-image: url(./../images/kdc600.jpg);
+  grid-area: six;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card700 {
+  background-image: url(./../images/kdc700.jpg);
+  grid-area: seven;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card800 {
+  background-image: url(./../images/kdc800.jpg);
+  grid-area: eight;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+.card900 {
+  background-image: url(./../images/kdc900.jpg);
+  grid-area: nine;
+  background-color: rgba(0, 0, 0, .3);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+
 /* phone */
 @media screen and (max-width:575px) {
-  .genre-card {
+  .card000,
+  .card100,
+  .card200,
+  .card300,
+  .card400,
+  .card500,
+  .card600,
+  .card700,
+  .card800,
+  .card900,
+  .card-gallery {
     height: 160px;
     font-size: 16px;
     padding: 10px;
