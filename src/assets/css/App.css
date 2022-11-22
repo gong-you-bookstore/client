@@ -1008,6 +1008,39 @@ video.drawingBuffer {
     ;
   }
 }
+.card-gallery-bg {
+  background-image: url(./../images/shelf.jpg);
+}
+.card000-bg {
+  background-image: url(./../images/kdc000.jpg);
+}
+.card100-bg {
+  background-image: url(./../images/kdc100.jpg);
+}
+.card200-bg {
+  background-image: url(./../images/kdc200.jpg);
+}
+.card300-bg {
+  background-image: url(./../images/kdc300.jpg);
+}
+.card400-bg {
+  background-image: url(./../images/kdc400.jpg);
+}
+.card500-bg {
+  background-image: url(./../images/kdc500.jpg);
+}
+.card600-bg {
+  background-image: url(./../images/kdc600.jpg);
+}
+.card700-bg {
+  background-image: url(./../images/kdc700.jpg);
+}
+.card800-bg {
+  background-image: url(./../images/kdc800.jpg);
+}
+.card900-bg {
+  background-image: url(./../images/kdc900.jpg);
+}
 
 .card-gallery {
   background-image: url(./../images/shelf.jpg);
