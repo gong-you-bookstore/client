@@ -689,7 +689,7 @@ input:-webkit-autofill:active {
   background: #fff;
   color: #333;
   font-size: 30px;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 .search-bar input {
   border: none;
@@ -852,7 +852,6 @@ video.drawingBuffer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(170, 170, 170, 1);
   background-color: #2F4858;
 }
 
@@ -1164,7 +1163,7 @@ video.drawingBuffer {
 
 @keyframes slideToRight {
   0% {
-    left: -70%;
+    left: -60%;
   }
   
   100% {
@@ -1191,7 +1190,7 @@ video.drawingBuffer {
   }
   
   100% {
-    right: 70%;
+    right: 60%;
   }
 }
 
