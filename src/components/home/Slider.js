@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 const Slider = () => {
   return (
     <>
-    <div className="content-section ">
+    <div className="content-section">
       <div className="container info-text center-text fc-muted fs-28 fw-bold mb-50">
         <Fade cascade damping={0.1}>
           <span>공유책방에서</span>
