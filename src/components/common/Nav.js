@@ -1,10 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
-import $ from 'jquery'
-import { useState } from "react"
 import { useCookies } from "react-cookie";
 import useLocWizard from "../../lib/hooks/useLocWizard"
 import favicon from './../../assets/images/favicon.png'
-import { onToggleHamburger, onCloseHamburger } from "../../lib/styles"
+import { onToggleHamburger } from "../../lib/styles"
 import { MENUS } from "../../lib/statics"
 import { toastMaker } from "../../lib/utils";
 const Nav = ()=>{
@@ -23,7 +21,7 @@ const Nav = ()=>{
         <img src={favicon} style={{width:"40px"}} className="hex-logo" alt="img" />
         <h1>공유책방</h1>
       </div>
-      
+
       <div className="hamburger" onClick={()=>onToggleHamburger()}>
         <span className="line"></span>
         <span className="line"></span>

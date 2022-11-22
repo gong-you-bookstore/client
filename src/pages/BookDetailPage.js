@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie"
 
 import { getBookDetails } from "../lib/api/book";
-
+import { toastMaker } from "../lib/utils";
 const BookDetailPage = () => {
   const params = useParams();
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
@@ -14,10 +14,12 @@ const BookDetailPage = () => {
   useEffect(() => {
     getBookDetails(params.isbn13, cookies.userData.accessToken)
       .then(response => {
+      console.log(response.data.data)
+
       setBook(response.data.data)
     })
       .catch(error => {
-      console.log(error)
+      toastMaker.error(error.message)
     })
     
   }, [params])
