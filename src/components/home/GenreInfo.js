@@ -14,7 +14,6 @@ const GenreInfo = () => {
                 className={`card${category.code} info-card`} />
                 <div className='info-form'>
                   <p className='info-title'>
-                    WHAT IS<br/>
                     {category.eng}
                   </p>
                   <p 
