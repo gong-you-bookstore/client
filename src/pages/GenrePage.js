@@ -6,10 +6,12 @@ import BooksContainer from "../containers/store/BooksContainer";
 import SearchBarContainer from "../containers/store/SeachBarContainer";
 import { useEffect, useState } from "react";
 import { getBooks } from "../lib/api/book";
+import { useNavigate } from 'react-router-dom';
 
 const GenrePage = () => {
   const {state} = useLocation();
   const [storeRef, setIsScrollToStore] = useScrollTo();
+  const navigate = useNavigate()
   
   useEffect(()=>{
     $(".genre-header").addClass(`bg${state.code}`)
@@ -19,9 +21,19 @@ const GenrePage = () => {
     }, 1100)
   }, [])
 
+
+
+
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-  
+
+  const filteredBooks = totalBooks.filter((book) => {
+    return book.title
+      .replace(" ","")
+      .toLocaleLowerCase()
+      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  })
+
   useEffect(() => {
     getBooks().then(response => {
       setTotalBooks(response.data.data);
@@ -29,7 +41,6 @@ const GenrePage = () => {
       console.log(error)
     })
   }, [])
-
   
   return (
     <>
@@ -49,15 +60,23 @@ const GenrePage = () => {
           searchWord = {searchWord}
           setSearchWord = {setSearchWord}
         />
-        {
-          Array.isArray(totalBooks) ? (
-            <BooksContainer 
-              searchWord = {searchWord}
-              totalBooks={totalBooks} 
-            />
-          ) : (<></>)
-        }
-        
+        <div className="content-section">
+              <div className='container grid-store'>
+                {
+                  filteredBooks.map((book, index) => (
+                    <img 
+                      key={index} 
+                      src={book.thumbnail} 
+                      className="book-static book-sd btn-shadow" 
+                      alt="img"
+                      onClick={()=>{
+                        navigate(`/${book.isbn}/detail`)
+                      }} 
+                    />
+                  ))
+                }
+              </div>
+            </div>
       </div>
     </div>
     </>
