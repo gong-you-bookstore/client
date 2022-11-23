@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+import { apiClient } from ".";
 
 /**
  * 회원가입
@@ -8,9 +7,9 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
  * @returns 
  */
 export const postSignUpData = async (signUpData) => {
-  return await axios({
+  return await apiClient({
     method: "post",
-    url: `api/user/signup`,
+    url: `/user/signup`,
     data: signUpData,
   })
 };
@@ -23,7 +22,7 @@ export const postSignUpData = async (signUpData) => {
 export const postSignInData = async (signInData) => {
   return await axios({
     method: "post",
-    url: `api/user/signin`,
+    url: `/user/signin`,
     data: signInData,
   })
 }; 
