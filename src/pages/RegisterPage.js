@@ -24,12 +24,6 @@ const RegisterPage = () => {
 
   const [bookImage, setBookImage] = useState("")
 
-
-
-  // useEffect(()=>{
-  //   console.log(result)
-  // },[result])
-
   return (
     <>
       <SearchContainer 

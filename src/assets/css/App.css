@@ -21,7 +21,7 @@ body {
   background-color: #f8f9fa;
 }
 /* preload images */
-/* body::after{
+body::after{
     position:absolute; 
     width:0; 
     height:0; 
@@ -29,7 +29,7 @@ body {
     z-index:-1;
     
     content:url(./../images/shelf.jpg) url(./../images/kdc000.jpg) url(./../images/kdc100.jpg) url(./../images/kdc200.jpg) url(./../images/kdc300.jpg) url(./../images/kdc400.jpg) url(./../images/kdc500.jpg) url(./../images/kdc600.jpg) url(./../images/kdc700.jpg) url(./../images/kdc800.jpg) url(./../images/kdc900.jpg) url(./../images/door-long.jpg) url(./../images/door-wide.jpg) url(../images/page-bg.png) url(./../images/cement-bg.jpg) url(./../images/wood2.jpg); 
-} */
+}
 
 li {
   display: inline-block;
@@ -763,7 +763,14 @@ video.drawingBuffer {
 .gallery-area {
   padding: 100px 0px 170px 0;
   min-height: 900px;
-  
+}
+
+/* phone */
+@media screen and (max-width:575px) {
+  .gallery-area {
+    padding: 60px 0px 170px 0;
+    min-height: 900px;
+  }
 }
 .gallery-area h1 {
   /* text-shadow: 1px 3px #333; */
@@ -926,7 +933,6 @@ video.drawingBuffer {
 }
 
 .grid-store {
-  min-height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   row-gap: 10px;
@@ -948,25 +954,24 @@ video.drawingBuffer {
   }
 }
 
-.home-card-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  gap: 20px;
-  grid-template-areas:
-		"gallery gallery . . two two"
-		"zero zero one one . ."
-		"three three . . four four"
-		". . five five six six"
-		"seven seven eight eight nine nine"
-    ;
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   place-items: center;
-  gap: 20px;
+  gap: 15px;
+  grid-template-areas:
+		"gallery  gallery gallery gallery zero zero"
+		"two two three three four four"
+		"five five six six seven seven"
+		"eight eight nine nine one one"
+    ;
+}
+
+.home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  gap: 15px;
   grid-template-areas:
 		"gallery gallery gallery gallery gallery gallery"
 		"zero zero zero one one one"
@@ -984,7 +989,7 @@ video.drawingBuffer {
 }
 /* phone */
 @media screen and (max-width:575px) {
-  .card-grid {
+  .home-card-grid {
     gap: 10px;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -1001,17 +1006,16 @@ video.drawingBuffer {
 		"nine"
     ;
   }
-  .home-card-grid {
+  .card-grid {
     gap: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-		"gallery zero"
-		"one one"
-		"two three"
-		"four four"
-		"six five"
-		"eight seven"
-		"nine nine"
+		"gallery gallery"
+		"zero one"
+		"three four"
+		"five two"
+		"six seven"
+		"eight nine"
     ;
   }
 }
