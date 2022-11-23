@@ -21,17 +21,15 @@ body {
   background-color: #f8f9fa;
 }
 /* preload images */
-body::after{
-	/* 소스만 다운받고 화면은 나태내지 않는다. (숨김 처리) */
+/* body::after{
     position:absolute; 
     width:0; 
     height:0; 
     overflow:hidden; 
     z-index:-1;
     
-    /* 필요한 이미지 소스들 다운 */
     content:url(./../images/shelf.jpg) url(./../images/kdc000.jpg) url(./../images/kdc100.jpg) url(./../images/kdc200.jpg) url(./../images/kdc300.jpg) url(./../images/kdc400.jpg) url(./../images/kdc500.jpg) url(./../images/kdc600.jpg) url(./../images/kdc700.jpg) url(./../images/kdc800.jpg) url(./../images/kdc900.jpg) url(./../images/door-long.jpg) url(./../images/door-wide.jpg) url(../images/page-bg.png) url(./../images/cement-bg.jpg) url(./../images/wood2.jpg); 
-}
+} */
 
 li {
   display: inline-block;
@@ -619,6 +617,8 @@ input:-webkit-autofill:active {
   
 }
 
+
+
 .bg-white-full-vh {
   background-color: #f8f8f8;
   width: 100vw;
@@ -975,6 +975,13 @@ video.drawingBuffer {
     "eight eight eight nine nine nine"
     ;
 }
+
+@media screen and (max-width:991px) {
+  .home-card-grid,
+  .card-grid {
+    gap: 10px;
+  }
+}
 /* phone */
 @media screen and (max-width:575px) {
   .card-grid {
@@ -1045,186 +1052,49 @@ video.drawingBuffer {
 .card-gallery {
   background-image: url(./../images/shelf.jpg);
   grid-area: gallery;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card000 {
   background-image: url(./../images/kdc000-sm.jpg);
   grid-area: zero;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card100 {
   background-image: url(./../images/kdc100-sm.jpg);
   grid-area: one;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card200 {
   background-image: url(./../images/kdc200-sm.jpg);
   grid-area: two;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card300 {
   background-image: url(./../images/kdc300-sm.jpg);
   grid-area: three;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card400 {
   background-image: url(./../images/kdc400-sm.jpg);
   grid-area: four;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card500 {
   background-image: url(./../images/kdc500-sm.jpg);
   grid-area: five;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card600 {
   background-image: url(./../images/kdc600-sm.jpg);
   grid-area: six;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card700 {
   background-image: url(./../images/kdc700-sm.jpg);
   grid-area: seven;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card800 {
   background-image: url(./../images/kdc800-sm.jpg);
   grid-area: eight;
-  background-color: rgba(0, 0, 0, .3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
 }
 .card900 {
   background-image: url(./../images/kdc900-sm.jpg);
   grid-area: nine;
+}
+
+.card {
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
   background-size: cover;
@@ -1241,19 +1111,15 @@ video.drawingBuffer {
   font-size: 24px;
 }
 
+@media screen and (max-width:991px) {
+  .card {
+    height: 200px;
+    font-size: 20px;
+  }
+}
 /* phone */
 @media screen and (max-width:575px) {
-  .card000,
-  .card100,
-  .card200,
-  .card300,
-  .card400,
-  .card500,
-  .card600,
-  .card700,
-  .card800,
-  .card900,
-  .card-gallery {
+  .card {
     height: 160px;
     font-size: 16px;
     padding: 10px;
@@ -1330,51 +1196,6 @@ video.drawingBuffer {
     transform: rotate(450deg);
   }
 }
-.slidesR {
-  margin: 0 0 30px 0;
-  position: relative;
-  display: flex;
-  gap: 15px;
-  animation-name: slideToRight;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-@keyframes slideToRight {
-  0% {
-    left: -60%;
-  }
-  
-  100% {
-    left: 0%;
-  }
-}
-
-.slidesL {
-  margin: 0 0 30px 0;
-  position: relative;
-  display: flex;
-  gap: 15px;
-  animation-name: slideToLeft;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-@keyframes slideToLeft {
-  0% {
-    right: 0%;
-  }
-  
-  100% {
-    right: 60%;
-  }
-}
 
 .book-banner {
   grid-area: header;
@@ -1403,4 +1224,83 @@ video.drawingBuffer {
   display: grid;
   grid-auto-columns: 1fr;
   place-items: center;
+}
+
+
+.bg-dark-full-px {
+  background-color: #26292F;
+  width: 100vw;
+  min-height: 800px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  color: #eee;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-wrapper {
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.message-wrapper:hover {
+  background-color: #2F4858;
+}
+
+.profile {
+  border-radius: 100%;
+}
+
+.message-info {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  text-align: right;
+}
+
+.my-info{
+  padding: 50px 10px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.info-box {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.info-item {
+  background-color: #2F4858;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 50px;
+}
+
+/* phone */
+@media screen and (max-width:575px) {
+  .info-box {
+    gap: 8px;
+  }
+  .info-item {
+    padding: 10px;
+  }
 }

@@ -1,20 +1,15 @@
 import Banner from './../components/common/Banner'
-import { Fade } from "react-awesome-reveal";
+import { Fade, Rotate } from "react-awesome-reveal";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import React, { lazy, Suspense } from 'react';
 import Loading from '../components/common/Loading';
-import { useNavigate } from 'react-router-dom';
-import { CATEGORIES } from '../lib/statics';
-
+import pop from '../assets/images/pop-coin.png'
 const About = lazy(() => import('../components/home/About'));
 const Slider = lazy(() => import('../components/home/Slider'));
-const Card = lazy(() => import('../components/bookstore/Card'));
-
+const Cards = lazy(() => import('../components/common/Cards'));
 
 const HomePage = ()=>{
   const [introRef, setIsScrollTo] = useScrollTo();
-  const navigate = useNavigate();
-
   return(
     <>
     <Suspense fallback={<Loading />}> 
@@ -23,7 +18,9 @@ const HomePage = ()=>{
       </header>
         
       <span className="pointer" ref={introRef} />
+
       <About />
+
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
@@ -35,27 +32,18 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
+
+
       <div className="content-section">
         <div className="container">
           <div className='home-card-grid'>
-            <div className='card-gallery'
-              onClick={() => {
-                navigate("/gallery")
-              }}
-            >
-              <h1 className='fc-white '>
-              MY GALLERY
-              </h1>
-            </div>
-            {
-              CATEGORIES.map((category, index) => (
-                <Card key={index} category={category}/>
-              ))
-            }
+            <Cards />
           </div>
         </div>
       </div>
-      <Slider />
+
+      
+
       <div className="content-section">
       </div>
 

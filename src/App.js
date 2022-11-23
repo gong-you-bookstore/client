@@ -9,11 +9,12 @@ import BackToTopBtn from './components/common/BackToTopBtn';
 import BookDetailPage from './pages/BookDetailPage';
 import SurveyPage from './pages/SurveyPage';
 import StorePage from './pages/StorePage';
-import StoreByGenrePage from './pages/StoreByGenrePage';
+import GenrePage from './pages/GenrePage';
 import LoginPage from './pages/LoginPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GalleryPage from './pages/GalleryPage';
+import MyPage from './pages/MyPage';
 import Test from './pages/Test';
 function App() {
   return (
@@ -26,11 +27,12 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/store/genre/:kdc" element={<StoreByGenrePage />} />
+        <Route path="/store/genre/:kdc" element={<GenrePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
-        <Route path='/*' element={<NotFound />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path='/:isbn13/detail' element={<BookDetailPage />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
       <ToastContainer />
       <Footer />
