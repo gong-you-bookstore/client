@@ -21,13 +21,6 @@ const GenrePage = () => {
 
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-
-  const filteredBooks = totalBooks.filter((book) => {
-    return book.title
-      .replace(" ","")
-      .toLocaleLowerCase()
-      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
-  })
   
   useEffect(() => {
     getBooks().then(response => {
@@ -56,7 +49,15 @@ const GenrePage = () => {
           searchWord = {searchWord}
           setSearchWord = {setSearchWord}
         />
-        <BooksContainer filteredBooks={filteredBooks} />
+        {
+          Array.isArray(totalBooks) ? (
+            <BooksContainer 
+              searchWord = {searchWord}
+              totalBooks={totalBooks} 
+            />
+          ) : (<></>)
+        }
+        
       </div>
     </div>
     </>

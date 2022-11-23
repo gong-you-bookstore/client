@@ -1,15 +1,18 @@
-import SearchBarContainer from "./SeachBarContainer"
-import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { getBooks } from "../../lib/api/book";
 
 // const filteredBooks
 const BooksContainer = ({
-  filteredBooks
+  totalBooks,
+  searchWord
 }) => {
   const navigate = useNavigate()
   
-
+  const filteredBooks = totalBooks.filter((book) => {
+    return book.title
+      .replace(" ","")
+      .toLocaleLowerCase()
+      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  })
   return (
     <>
       
