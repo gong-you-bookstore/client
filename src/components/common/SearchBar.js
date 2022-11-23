@@ -18,6 +18,7 @@ const SearchBar = () => {
   
   useEffect(() => {
     getBooks().then(response => {
+      console.log(response)
       setBooks(response.data.data);
     }).catch(error => {
       console.log(error)

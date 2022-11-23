@@ -7,7 +7,7 @@ import useScrollTo from "../lib/hooks/useScrollTo";
 import { Rotate, Fade } from "react-awesome-reveal";
 
 
-const StoreByGenrePage = () => {
+const GenrePage = () => {
   const {state} = useLocation();
   const [storeRef, setIsScrollToStore] = useScrollTo();
   
@@ -56,4 +56,4 @@ const StoreByGenrePage = () => {
   )
 }
 
-export default StoreByGenrePage;
+export default GenrePage;

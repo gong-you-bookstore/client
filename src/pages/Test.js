@@ -3,24 +3,22 @@ import axios from "axios";
 
 const Test = () => {
 
-  const [myBooks, setMyBooks] = useState([
-    "9791168150102", 
-    "9781956783001",
-    "9780578990385"
-  ])
+  const [myBooks, setMyBooks] = useState(['9788931462050', '9788960775329', '9788964213018', '9788966262113', '9788984753778'])
 
   const getSimilarBooks = async (isbn) => {
     return await axios({
       method: "get",
-      url: `http://127.0.0.1:5000/recommend/one?isbn=${isbn}`,
+      url: `http://13.125.237.104:5000/recommend/one?isbn=${isbn}`,
     })
   }
   
-  const getRecommendedBooks = async (data) => {
+  const getRecommendedBooks = async (books) => {
     return await axios({
       method: "post",
-      url: `http://127.0.0.1:5000/recommend/multi`,
-      data
+      url: `http://13.125.237.104:5000/recommend/multi`,
+      data: {
+        data: books
+      }
     })
   }
 
