@@ -9,15 +9,15 @@ const FillForm = ({
       <div className="container w-100p">
       <div className=" desktop-box">
 
-          <span className="fc-main fs-32 fw-bold">
+          <span className="fc-main fs-32">
             Step 3
           </span>
-          <p className="fc-dark fs-28" >
+          <p className="fc-dark fs-28 fw-300" >
             책을 확인하고 판매여부를 정해주세요.
           </p>
           <div className="flex-col-box-center mtb-50">
             <img src={result.thumbnail} alt="img" />
-            <h1>{result.title}</h1>
+            <p>{result.title}</p>
 
             <form className="survey-grid w-100p mt-20">
             <label htmlFor="content" className="form-label">Status</label>

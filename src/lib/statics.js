@@ -1,19 +1,69 @@
 export const MENUS = [
-  {name: "등록", address: "/register", isAuth: false},
-  {name: "책방", address: "/store", isAuth: false},
-  {name: "설문", address: "/survey", isAuth: false},
-  {name: "마이페이지", address: "/mypage", isAuth: false},
-]
+  { name: "책 등록", address: "/register", isAuth: false },
+  { name: "책방", address: "/store", isAuth: false },
+  { name: "설문", address: "/survey", isAuth: false },
+  { name: "마이페이지", address: "/mypage", isAuth: false },
+];
 
 export const CATEGORIES = [
-  {name: "총류", code: "000", eng: "COMPUTER SCIENCE, INFORMATION & GENERAL WORKS"},
-  {name: "철학", code: "100", eng: "PHILOSOPHY"},
-  {name: "종교", code: "200", eng: "RELIGION"},
-  {name: "사회과학", code: "300", eng: "SOCIAL SCIENCE"},
-  {name: "자연과학", code: "400", eng: "NATURAL SCIENCE"},
-  {name: "기술과학", code: "500", eng: "TECHNOLOGY"},
-  {name: "예술", code: "600", eng: "ART & RECREATION"},
-  {name: "언어", code: "700", eng: "LANGUAGE"},
-  {name: "문학", code: "800", eng: "LITERATURE"},
-  {name: "역사", code: "900", eng: "HISTORY & GEOGRAPHY"},
-]
+  {
+    name: "총류",
+    code: "000",
+    eng: "COMPUTER SCIENCE, INFORMATION & GENERAL WORKS",
+    desc: "000 총류	010 도서학, 서지학	020 문헌정보학	030 백과사전	040 강연집, 수필집, 연설문집 050 일반연속간행물	060 일반 학회, 단체, 협회, 기관, 연구기관	070 신문, 저널리즘	080 일반 전집, 총서	090 향토자료"
+  },
+  {
+    name: "철학",
+    code: "100",
+    eng: "PHILOSOPHY",
+    desc: "100 철학	110 형이상학	120 인식론, 인과론, 인간학	130 철학의 체계	140 경학 150 동양철학, 동양사상	160 서양철학	170 논리학	180 심리학	190 윤리학, 도덕철학"
+  },
+  {
+    name: "종교",
+    code: "200",
+    eng: "RELIGION",
+    desc: "200 종교	210 비교종교	220 불교	230 기독교	240 도교 250 천도교	270 힌두교, 브라만교	280 이슬람교(회교)	290 기타 제종교"
+  },
+  {
+    name: "사회과학",
+    code: "300",
+    eng: "SOCIAL SCIENCE",
+    desc: "300 사회과학	310 통계자료	320 경제학	330 사회학, 사회문제	340 정치학 350 행정학	360 법률, 법학	370 교육학	380 풍습, 예절, 민속학	390 국방, 군사학"
+  },
+  {
+    name: "자연과학",
+    code: "400",
+    eng: "NATURAL SCIENCE",
+    desc: "400 자연과학	410 수학	420 물리학	430 화학	440 천문학 450 지학	460 광물학	470 생명과학	480 식물학	490 동물학"
+  },
+  {
+    name: "기술과학",
+    code: "500",
+    eng: "TECHNOLOGY",
+    desc: "500 기술과학	510 의학	520 농업, 농학	530 공학, 공업일반, 토목공학, 환경공학	540 건축, 건축학 550 기계공학	560 전기공학, 통신공학, 전자공학	570 화학공학	580 제조업	590 생활과학"
+  },
+  {
+    name: "예술",
+    code: "600",
+    eng: "ART & RECREATION",
+    desc: "600 예술	620 조각, 조형미술	630 공예	640 서예 650 회화, 도화, 디자인	660 사진예술	670 음악	680 공연예술, 매체예술	690 오락, 스포츠"
+  },
+  {
+    name: "언어",
+    code: "700",
+    eng: "LANGUAGE",
+    desc: "700 언어	710 한국어	720 중국어	730 일본어 및 기타 아시아 제어	740 영어 750 독일어	760 프랑스어	770 스페인어 및 포르투갈어	780 이탈리아어	790 기타 제어"
+  },
+  {
+    name: "문학",
+    code: "800",
+    eng: "LITERATURE",
+    desc: "800 문학	810 한국문학	820 중국문학	830 일본문학 및 기타 아시아 제문학	840 영미문학 850 독일문학	860 프랑스 문학	870 스페인 및 포르투갈 문학	880 이탈리아 문학	890 기타 제문학"
+  },
+  {
+    name: "역사",
+    code: "900",
+    eng: "HISTORY & GEOGRAPHY",
+    desc: "900 역사	910 아시아	920 유럽	930 아프리카	940 북아메리카 950 남아메리카	960 오세아니아, 양극지방	970 [미사용]	980 지리	990 전기"
+  },
+];

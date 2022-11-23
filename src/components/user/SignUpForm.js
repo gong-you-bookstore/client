@@ -6,7 +6,7 @@ const SignUpForm = ({
 })=>{
   return (
     <>
-      <h1 className="mb-20">Sign Up</h1>
+      <p className="mb-20">Sign Up</p>
       <form className="flex-col-box-center">
         <label htmlFor="email" className="form-label"></label>
         <input

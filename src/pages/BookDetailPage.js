@@ -39,7 +39,7 @@ const BookDetailPage = () => {
         </div>
       </div>
   
-      <div className='container'>
+      <div className='container desktop-box lh-2'>
         <div className="detail-grid">
           <h1 className="fc-white">{book.title}</h1>
           <img 
@@ -51,14 +51,17 @@ const BookDetailPage = () => {
           <p>{book.content}</p>
         </div>
   
-        <h1 className="">등록한사람</h1>
-        {
-          book.userList ? (<>{
-            book.userList.map(user => (
-              <p>user</p>
-            ))
-          }</>) : (<></>)
-        }
+        <div className="bg-white-full-px">
+
+          <h1 className="">등록한사람</h1>
+          {
+            book.userList ? (<>{
+              book.userList.map(user => (
+                <p>user</p>
+              ))
+            }</>) : (<></>)
+          }
+        </div>
       </div>
       </>
     )

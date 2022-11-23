@@ -3,7 +3,7 @@ import profile from "../assets/images/profile.png"
 const MyPage = () => {
   return (
     <>
-    <div className="bg-dark-full-px">
+    <div className="bg-white-full-px">
       <div className="content-section">
         <div className="container desktop-box">
         <div className="my-info">

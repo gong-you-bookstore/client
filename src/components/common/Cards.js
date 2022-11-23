@@ -1,7 +1,6 @@
 import { CATEGORIES } from '../../lib/statics';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
-
 const Cards = () => {
   const navigate = useNavigate();
 
@@ -12,9 +11,9 @@ const Cards = () => {
         navigate("/gallery")
       }}
     >
-      <h1 className='fc-white '>
+      <p className='fc-white '>
       MY GALLERY
-      </h1>
+      </p>
     </div>
     {
       CATEGORIES.map((category, index) => (
