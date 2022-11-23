@@ -1,11 +1,9 @@
 import Banner from './../components/common/Banner'
-import { Fade, Rotate } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import React, { lazy, Suspense } from 'react';
 import Loading from '../components/common/Loading';
-import pop from '../assets/images/pop-coin.png'
 const About = lazy(() => import('../components/home/About'));
-const Slider = lazy(() => import('../components/home/Slider'));
 const Cards = lazy(() => import('../components/common/Cards'));
 
 const HomePage = ()=>{
@@ -13,14 +11,9 @@ const HomePage = ()=>{
   return(
     <>
     <Suspense fallback={<Loading />}> 
-      <header className="header-door">
-        <Banner setIsScrollTo={setIsScrollTo} />
-      </header>
-        
+      <Banner setIsScrollTo={setIsScrollTo} />
       <span className="pointer" ref={introRef} />
-
       <About />
-
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
@@ -32,8 +25,6 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
-
-
       <div className="content-section">
         <div className="container">
           <div className='home-card-grid'>
@@ -41,12 +32,8 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
-
-      
-
       <div className="content-section">
       </div>
-
     </Suspense>
     </>
     
