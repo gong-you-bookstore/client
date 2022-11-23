@@ -1,4 +1,3 @@
-import axios from "axios";
 import { apiClient } from ".";
 
 /**
@@ -20,7 +19,7 @@ export const postSignUpData = async (signUpData) => {
  * @returns 
  */
 export const postSignInData = async (signInData) => {
-  return await axios({
+  return await apiClient({
     method: "post",
     url: `/user/signin`,
     data: signInData,

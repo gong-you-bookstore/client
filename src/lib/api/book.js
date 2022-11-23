@@ -1,4 +1,3 @@
-import axios from "axios";
 import { apiClient } from ".";
 
 /**
@@ -24,7 +23,7 @@ export const postBookData = async (formData, accessToken) => {
  * @returns 
  */
 export const getBooks = async () => {
-  return await axios({
+  return await apiClient({
     method: "get",
     url: `/`,
   })
@@ -37,7 +36,7 @@ export const getBooks = async () => {
  * @returns 
  */
 export const getBookDetails = async (isbn, accessToken) => {
-  return await axios({
+  return await apiClient({
     method: "get",
     url: `/book/${isbn}`,
     headers: {
@@ -51,7 +50,7 @@ export const getBookDetails = async (isbn, accessToken) => {
  * @returns 
  */
 export const deleteBook = async () => {
-  return await axios({
+  return await apiClient({
     method: "delete",
     url: `/`,
   })
