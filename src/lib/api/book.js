@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+import { apiClient } from ".";
 
 /**
  * 도서 등록
@@ -9,9 +7,9 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
  * @returns 
  */
 export const postBookData = async (formData, accessToken) => {
-  return await axios({
+  return await apiClient({
     method: "post",
-    url: `api/book`,
+    url: `/book`,
     headers: {
       'X-AUTH-TOKEN': accessToken,
       'Content-Type': 'multipart/form-data'
@@ -25,9 +23,9 @@ export const postBookData = async (formData, accessToken) => {
  * @returns 
  */
 export const getBooks = async () => {
-  return await axios({
+  return await apiClient({
     method: "get",
-    url: `api`,
+    url: `/`,
   })
 }; 
 
@@ -38,9 +36,9 @@ export const getBooks = async () => {
  * @returns 
  */
 export const getBookDetails = async (isbn, accessToken) => {
-  return await axios({
+  return await apiClient({
     method: "get",
-    url: `api/book/${isbn}`,
+    url: `/book/${isbn}`,
     headers: {
       'X-AUTH-TOKEN': accessToken,
     }
@@ -52,8 +50,8 @@ export const getBookDetails = async (isbn, accessToken) => {
  * @returns 
  */
 export const deleteBook = async () => {
-  return await axios({
+  return await apiClient({
     method: "delete",
-    url: `api`,
+    url: `/`,
   })
 }; 

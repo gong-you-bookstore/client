@@ -59,7 +59,7 @@ const SignUpContainer = ({
       toastMaker.success(response.data.msg);
       setIsSignIn(true)
     }).catch(error => {
-      toastMaker.error(error.data.msg);
+      console.log(error)
     })
   }
 

@@ -40,8 +40,8 @@ const SignInContainer = ({
       toastMaker.success(response.data.msg);
       setCookie("userData", response.data.data, { path: "/" });
       navigate("/")
-    }).catch(err => {
-      toastMaker.error(err.data.msg)
+    }).catch(error => {
+      console.log(error)
     })
   }
 

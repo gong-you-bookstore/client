@@ -1008,37 +1008,37 @@ video.drawingBuffer {
     ;
   }
 }
-.card-gallery-bg {
+.bg-gallery {
   background-image: url(./../images/shelf.jpg);
 }
-.card000-bg {
+.bg000 {
   background-image: url(./../images/kdc000.jpg);
 }
-.card100-bg {
+.bg100 {
   background-image: url(./../images/kdc100.jpg);
 }
-.card200-bg {
+.bg200 {
   background-image: url(./../images/kdc200.jpg);
 }
-.card300-bg {
+.bg300 {
   background-image: url(./../images/kdc300.jpg);
 }
-.card400-bg {
+.bg400 {
   background-image: url(./../images/kdc400.jpg);
 }
-.card500-bg {
+.bg500 {
   background-image: url(./../images/kdc500.jpg);
 }
-.card600-bg {
+.bg600 {
   background-image: url(./../images/kdc600.jpg);
 }
-.card700-bg {
+.bg700 {
   background-image: url(./../images/kdc700.jpg);
 }
-.card800-bg {
+.bg800 {
   background-image: url(./../images/kdc800.jpg);
 }
-.card900-bg {
+.bg900 {
   background-image: url(./../images/kdc900.jpg);
 }
 
@@ -1061,7 +1061,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card000 {
-  background-image: url(./../images/kdc000.jpg);
+  background-image: url(./../images/kdc000-sm.jpg);
   grid-area: zero;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1079,7 +1079,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card100 {
-  background-image: url(./../images/kdc100.jpg);
+  background-image: url(./../images/kdc100-sm.jpg);
   grid-area: one;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1097,7 +1097,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card200 {
-  background-image: url(./../images/kdc200.jpg);
+  background-image: url(./../images/kdc200-sm.jpg);
   grid-area: two;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1115,7 +1115,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card300 {
-  background-image: url(./../images/kdc300.jpg);
+  background-image: url(./../images/kdc300-sm.jpg);
   grid-area: three;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1133,7 +1133,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card400 {
-  background-image: url(./../images/kdc400.jpg);
+  background-image: url(./../images/kdc400-sm.jpg);
   grid-area: four;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1151,7 +1151,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card500 {
-  background-image: url(./../images/kdc500.jpg);
+  background-image: url(./../images/kdc500-sm.jpg);
   grid-area: five;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1169,7 +1169,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card600 {
-  background-image: url(./../images/kdc600.jpg);
+  background-image: url(./../images/kdc600-sm.jpg);
   grid-area: six;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1187,7 +1187,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card700 {
-  background-image: url(./../images/kdc700.jpg);
+  background-image: url(./../images/kdc700-sm.jpg);
   grid-area: seven;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1205,7 +1205,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card800 {
-  background-image: url(./../images/kdc800.jpg);
+  background-image: url(./../images/kdc800-sm.jpg);
   grid-area: eight;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
@@ -1223,7 +1223,7 @@ video.drawingBuffer {
   font-size: 24px;
 }
 .card900 {
-  background-image: url(./../images/kdc900.jpg);
+  background-image: url(./../images/kdc900-sm.jpg);
   grid-area: nine;
   background-color: rgba(0, 0, 0, .3);
   background-position: center;
