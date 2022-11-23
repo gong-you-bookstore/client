@@ -1,9 +1,11 @@
-import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
 import BooksContainer from "../containers/store/BooksContainer";
+import SearchBarContainer from "../containers/store/SeachBarContainer";
+import { useEffect, useState } from "react";
+import { getBooks } from "../lib/api/book";
 
 const GenrePage = () => {
   const {state} = useLocation();
@@ -15,6 +17,24 @@ const GenrePage = () => {
     setTimeout(() => {
       setIsScrollToStore(true);
     }, 1100)
+  }, [])
+
+  const [totalBooks, setTotalBooks] = useState([]);
+  const [searchWord, setSearchWord] = useState("");
+
+  const filteredBooks = totalBooks.filter((book) => {
+    return book.title
+      .replace(" ","")
+      .toLocaleLowerCase()
+      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  })
+  
+  useEffect(() => {
+    getBooks().then(response => {
+      setTotalBooks(response.data.data);
+    }).catch(error => {
+      console.log(error)
+    })
   }, [])
 
   
@@ -32,7 +52,11 @@ const GenrePage = () => {
 
     <div className="white-cement-bg" ref={storeRef}>
       <div className="gallery-area">
-        <BooksContainer />
+        <SearchBarContainer 
+          searchWord = {searchWord}
+          setSearchWord = {setSearchWord}
+        />
+        <BooksContainer filteredBooks={filteredBooks} />
       </div>
     </div>
     </>
