@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import books from "../assets/bookmini.json"
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { Rotate, Fade } from "react-awesome-reveal";
-
+import BooksContainer from "../containers/store/BooksContainer";
 
 const GenrePage = () => {
   const {state} = useLocation();
@@ -33,23 +31,8 @@ const GenrePage = () => {
     </header>
 
     <div className="white-cement-bg" ref={storeRef}>
-      <div className="container grid-store gallery-area">
-        <Fade direction="down" cascade triggerOnce damping={0.1}>
-        
-        {
-          books.map((book, index) => (
-            <img 
-              key={index} 
-              src={book.thumbnail} 
-              className="book-static book-sd" 
-              alt="img"
-              onClick={()=>{
-                // navigate(`/${book.isbn13}/detail`)
-              }} 
-            />
-          ))
-        }
-        </Fade>
+      <div className="gallery-area">
+        <BooksContainer />
       </div>
     </div>
     </>

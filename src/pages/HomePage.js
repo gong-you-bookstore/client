@@ -5,7 +5,6 @@ import React, { lazy, Suspense } from 'react';
 import Loading from '../components/common/Loading';
 import GenreInfo from '../components/home/GenreInfo';
 const About = lazy(() => import('../components/home/About'));
-const Cards = lazy(() => import('../components/common/Cards'));
 
 const HomePage = ()=>{
   const [introRef, setIsScrollTo] = useScrollTo();
@@ -26,14 +25,6 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
-      {/* <div className="content-section">
-        <div className="container">
-          <div className='home-card-grid'>
-            <Cards />
-          </div>
-        </div>
-      </div> */}
-
       <GenreInfo />
       <div className="content-section">
       </div>

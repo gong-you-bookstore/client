@@ -961,20 +961,9 @@ video.drawingBuffer {
   grid-template-columns: repeat(6, 1fr);
   place-items: center;
   gap: 15px;
+  font-weight: bold;
   grid-template-areas:
-    "gallery  gallery gallery gallery zero zero"
-    "two two three three four four"
-    "five five six six seven seven"
-    "eight eight nine nine one one";
-}
-
-.home-card-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  place-items: center;
-  gap: 15px;
-  grid-template-areas:
-    "gallery gallery gallery gallery gallery gallery"
+    "full full gallery gallery gallery gallery"
     "zero zero zero one one one"
     "two two three three four four"
     "five five six six seven seven"
@@ -982,17 +971,17 @@ video.drawingBuffer {
 }
 
 @media screen and (max-width: 991px) {
-  .home-card-grid,
   .card-grid {
     gap: 10px;
   }
 }
 /* phone */
 @media screen and (max-width: 575px) {
-  .home-card-grid {
+  .card-grid {
     gap: 10px;
     grid-template-columns: 1fr;
     grid-template-areas:
+      "full"
       "gallery"
       "zero"
       "one"
@@ -1004,17 +993,6 @@ video.drawingBuffer {
       "seven"
       "eight"
       "nine";
-  }
-  .card-grid {
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "gallery gallery"
-      "zero one"
-      "three four"
-      "five two"
-      "six seven"
-      "eight nine";
   }
 }
 .bg-gallery {
@@ -1054,6 +1032,10 @@ video.drawingBuffer {
 .card-gallery {
   background-image: url(./../images/shelf.jpg);
   grid-area: gallery;
+}
+.card-full {
+  background-image: url(./../images/full-sm.jpg);
+  grid-area: full;
 }
 .card000 {
   background-image: url(./../images/kdc000-sm.jpg);
@@ -1189,7 +1171,7 @@ video.drawingBuffer {
   .home-info-grid {
     row-gap: 70px;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
     grid-template-areas:
       "zero"
       "i000"
