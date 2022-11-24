@@ -1116,112 +1116,43 @@ video.drawingBuffer {
 }
 .home-info-grid {
   display: grid;
-  row-gap: 40px;
-  column-gap: 10px;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-areas:
-    "i000 zero"
-    "one i100"
-    "i200 two"
-    "three i300"
-    "i400 four"
-    "five i500"
-    "i600 six"
-    "seven i700"
-    "i800 eight"
-    "nine i900";
-}
-.info-card {
-  background-color: rgba(0, 0, 0, 0.3);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-blend-mode: multiply;
-  border-radius: 20px;
-  width: 350px;
-  height: 350px;
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-}
-.info-form {
-  display: flex;
-  flex-direction: column;
   gap: 20px;
-  justify-content: flex-end;
-  padding-bottom: 5px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "zero zero . . one one"
+    ". . two two three three"
+    "four four five five six six"
+    "seven seven nine nine . ."
+    ". . . . eight eight";
 }
-
-.info-title {
-  color: #444;
+.card p {
   font-weight: bold;
-  font-size: 30px;
-  line-height: 1.2;
 }
 /* tablet */
 @media screen and (max-width: 991px) {
-  .info-title {
-    font-size: 25px;
-  }
-  .info-card {
-    width: 290px;
-    height: 290px;
-  }
   .home-info-grid {
-    row-gap: 30px;
-    column-gap: 10px;
+    gap: 10px;
+    grid-template-areas:
+      "zero zero . . one one"
+      ". . two two three three"
+      "four four five five seven seven"
+      "eight eight six six nine nine"
+      "eight eight six six nine nine";
   }
 }
 /* phone */
 @media screen and (max-width: 575px) {
-  .info-form {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-align: left;
-  }
-  .info-title {
-    font-size: 18px;
-  }
-  .info-card {
-    height: 160px;
-    width: 100%;
-  }
   .home-info-grid {
-    row-gap: 8px;
-    column-gap: 5px;
+    gap: 7px;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "zero one"
+      "two three"
+      "four  ."
+      ". five"
+      "six seven"
+      "eight nine";
   }
-}
-.info000 {
-  grid-area: i000;
-}
-.info100 {
-  grid-area: i100;
-}
-.info200 {
-  grid-area: i200;
-}
-.info300 {
-  grid-area: i300;
-}
-.info400 {
-  grid-area: i400;
-}
-.info500 {
-  grid-area: i500;
-}
-.info600 {
-  grid-area: i600;
-}
-.info700 {
-  grid-area: i700;
-}
-.info800 {
-  grid-area: i800;
-}
-.info900 {
-  grid-area: i900;
 }
 
 @media screen and (max-width: 991px) {
