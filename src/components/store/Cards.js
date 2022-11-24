@@ -30,7 +30,7 @@ const Cards = () => {
           className={`card${category.code} card `}
           onClick={() => {
             navigate(
-              `/genre`, 
+              `/store/genre/${category.code}`, 
               { state: category }
             )
           }}

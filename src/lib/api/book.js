@@ -9,7 +9,7 @@ import { apiClient } from ".";
 export const postBookData = async (formData, accessToken) => {
   return await apiClient({
     method: "post",
-    url: `/book`,
+    url: `book`,
     headers: {
       'X-AUTH-TOKEN': accessToken,
       'Content-Type': 'multipart/form-data'
@@ -37,7 +37,7 @@ export const getBooks = async () => {
 export const getBookDetails = async (isbn, accessToken) => {
   return await apiClient({
     method: "get",
-    url: `/book/${isbn}`,
+    url: `book/${isbn}`,
     headers: {
       'X-AUTH-TOKEN': accessToken,
     }
