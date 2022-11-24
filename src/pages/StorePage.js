@@ -6,7 +6,6 @@ import { getBooks } from '../lib/api/book';
 import { useNavigate } from 'react-router-dom';
 import Cards from '../components/store/Cards';
 const SearchBarContainer = lazy(() => import('../containers/store/SeachBarContainer'));
-const BooksContainer = lazy(() => import('../containers/store/BooksContainer'));
 
 const StorePage = () => {
   const navigate = useNavigate()

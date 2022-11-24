@@ -1,8 +1,7 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import BooksContainer from "../containers/store/BooksContainer";
 import SearchBarContainer from "../containers/store/SeachBarContainer";
 import { useEffect, useState } from "react";
 import { getBooks } from "../lib/api/book";
@@ -14,15 +13,12 @@ const GenrePage = () => {
   const navigate = useNavigate()
   
   useEffect(()=>{
-    $(".genre-header").addClass(`bg${state.code}`)
+    // $(".genre-header").addClass(`bg${state.code}`)
 
     setTimeout(() => {
       setIsScrollToStore(true);
     }, 1100)
   }, [])
-
-
-
 
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
@@ -36,6 +32,8 @@ const GenrePage = () => {
 
   useEffect(() => {
     getBooks().then(response => {
+      console.log(response.data.data);
+
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)
@@ -61,22 +59,22 @@ const GenrePage = () => {
           setSearchWord = {setSearchWord}
         />
         <div className="content-section">
-              <div className='container grid-store'>
-                {
-                  filteredBooks.map((book, index) => (
-                    <img 
-                      key={index} 
-                      src={book.thumbnail} 
-                      className="book-static book-sd btn-shadow" 
-                      alt="img"
-                      onClick={()=>{
-                        navigate(`/${book.isbn}/detail`)
-                      }} 
-                    />
-                  ))
-                }
-              </div>
-            </div>
+          <div className='container grid-store'>
+            {
+              filteredBooks.map((book, index) => (
+                <img 
+                  key={index} 
+                  src={book.thumbnail} 
+                  className="book-static book-sd btn-shadow" 
+                  alt="img"
+                  onClick={()=>{
+                    navigate(`/${book.isbn}/detail`)
+                  }} 
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
     </>

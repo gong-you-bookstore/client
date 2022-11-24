@@ -14,12 +14,12 @@ const BookDetailPage = () => {
   useEffect(() => {
     getBookDetails(params.isbn13, cookies.userData.accessToken)
       .then(response => {
-      console.log(response.data.data)
+      console.log(response)
 
       setBook(response.data.data)
     })
       .catch(error => {
-      toastMaker.error(error.message)
+        console.log(error)
     })
     
   }, [params])

@@ -291,7 +291,7 @@ input:-webkit-autofill:active {
   margin: 0 8px;
   padding: 12px 10px;
   border-radius: 12px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .navbar-menu li:hover {
@@ -1161,6 +1161,7 @@ video.drawingBuffer {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-align: center;
   }
   .info-title {
     font-size: 20px;
