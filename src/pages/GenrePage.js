@@ -1,13 +1,15 @@
-import React, { lazy, Suspense } from 'react';
-import Loading from "../components/common/Loading";
-import { Rotate, Fade } from "react-awesome-reveal";
-import { useEffect, useState } from "react";
-import { getBooks } from '../lib/api/book';
+import { useEffect,useState } from "react";
+import { useLocation } from "react-router-dom";
+import logo from '../assets/images/logo_row_white.png'
+import $ from 'jquery'
+import useScrollTo from "../lib/hooks/useScrollTo";
 import { useNavigate } from 'react-router-dom';
-import Cards from '../components/store/Cards';
-const SearchBarContainer = lazy(() => import('../containers/store/SeachBarContainer'));
+import SearchBarContainer from "../containers/store/SeachBarContainer";
+import { getBooks } from '../lib/api/book';
 
 const GenrePage = () => {
+  const {state} = useLocation();
+  const [storeRef, setIsScrollToStore] = useScrollTo();
   const navigate = useNavigate()
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
@@ -25,50 +27,53 @@ const GenrePage = () => {
     }).catch(error => {
       console.log(error)
     })
+
+    $(".genre-header").addClass(`bg${state.code}`)
+    setTimeout(() => {
+      setIsScrollToStore(true);
+    }, 1100)
   }, [])
+
+  
   return (
     <>
-    <Suspense fallback={<Loading />}>
-      <div className="white-cement-bg">
-        <div className="gallery-area">
+    <header className="genre-header">
+      <div className="overlay">
+        <h1 className="subtitle">#{state.code} {state.name}</h1>
+        <img className="w-150 logo" src={logo} alt="img" />
+        <div className="mouse-icon" >
+          <div className="wheel" />
+        </div>
+      </div>
+    </header>
 
+    <div className="white-cement-bg" ref={storeRef}>
+      <div className="gallery-area">
         <SearchBarContainer 
-            searchWord = {searchWord}
-            setSearchWord = {setSearchWord}
-          />
-
-            <div className="content-section">
-              <div className='container grid-store'>
-                {
-                  filteredBooks.map((book, index) => (
-                    <img 
-                      key={index} 
-                      src={book.thumbnail} 
-                      className="book-static book-sd btn-shadow" 
-                      alt="img"
-                      onClick={()=>{
-                        navigate(`/${book.isbn}/detail`)
-                      }} 
-                    />
-                  ))
-                }
-              </div>
-            </div>
-
-
-
-          <div className="content-section">
-            <div className="container">
-              <div className='card-grid'>
-                <Cards />
-              </div>
-            </div>
+          searchWord = {searchWord}
+          setSearchWord = {setSearchWord}
+        />
+        <div className="content-section">
+          <div className='container grid-store'>
+            {
+              filteredBooks.map((book, index) => (
+                <img 
+                  key={index} 
+                  src={book.thumbnail} 
+                  className="book-static book-sd btn-shadow" 
+                  alt="img"
+                  onClick={()=>{
+                    navigate(`/${book.isbn}/detail`)
+                  }} 
+                />
+              ))
+            }
           </div>
         </div>
       </div>
-    </Suspense>
+    </div>
     </>
   )
 }
 
-export default GenrePage
+export default GenrePage;
