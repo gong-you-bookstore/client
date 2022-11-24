@@ -25,7 +25,6 @@ export const postBookData = async (formData, accessToken) => {
 export const getBooks = async () => {
   return await apiClient({
     method: "get",
-    url: `/`,
   })
 }; 
 
