@@ -27,7 +27,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/store" element={<StorePage />} />
         <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/genre/:kdc" element={<GenrePage />} />
+        <Route path="/genre" element={<GenrePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path="/mypage" element={<MyPage />} />
