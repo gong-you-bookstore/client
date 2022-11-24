@@ -1,42 +1,31 @@
-import { useLocation } from "react-router-dom";
-import logo from '../assets/images/logo_row_white.png'
-import $ from 'jquery'
-import useScrollTo from "../lib/hooks/useScrollTo";
-import { useEffect, useState } from "react";
-import { getBooks } from "../lib/api/book";
 import React, { lazy, Suspense } from 'react';
 import Loading from "../components/common/Loading";
+import { Rotate, Fade } from "react-awesome-reveal";
+import { useEffect, useState } from "react";
+import { getBooks } from '../lib/api/book';
 import { useNavigate } from 'react-router-dom';
-
-
-
+import Cards from '../components/store/Cards';
 const SearchBarContainer = lazy(() => import('../containers/store/SeachBarContainer'));
 
 const GenrePage = () => {
   const navigate = useNavigate()
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
+
   const filteredBooks = totalBooks.filter((book) => {
     return book.title
       .replace(" ","")
       .toLocaleLowerCase()
       .includes(searchWord.toLocaleLowerCase().replace(" ",""))
   })
+
   useEffect(() => {
-    // $(".genre-header").addClass(`bg${state.code}`)
-
-    // setTimeout(() => {
-    //   setIsScrollToStore(true);
-    // }, 1100)
-
     getBooks().then(response => {
-      console.log(response);
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)
     })
   }, [])
-  
   return (
     <>
     <Suspense fallback={<Loading />}>
@@ -71,15 +60,15 @@ const GenrePage = () => {
           <div className="content-section">
             <div className="container">
               <div className='card-grid'>
+                <Cards />
               </div>
             </div>
           </div>
         </div>
       </div>
     </Suspense>
-
     </>
   )
 }
 
-export default GenrePage;
+export default GenrePage
