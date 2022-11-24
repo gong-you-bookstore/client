@@ -3,31 +3,30 @@ import { getMultiRecommendedBook } from "../../lib/api/recommend";
 import Shelf from "../../components/gallery/Shelf";
 import books from '../../assets/bookmini.json'
 
-const RecommendedBookContainer = ({registeredBooks}) => {
+const MultiRecommendedBookContainer = ({books}) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
-
+  const isbns = [];
   useEffect(()=>{
-    if (registeredBooks.length !== 0) {
-      getMultiRecommendedBook(registeredBooks).then(response => {
+    books.map(book => {
+      isbns.push(book.isbn)
+    })
+
+    if (isbns.length !== 0) {
+      getMultiRecommendedBook(isbns).then(response => {
         setRecommendedBooks(response.data.data)
       }).catch(error => {
+        setRecommendedBooks(books)
         console.log(error)
       })    
     }
-  },[registeredBooks])
+  },[books])
 
   return (
     <>
-      {
-        recommendedBooks.length !== 0 ? (
-          <Shelf books = {recommendedBooks} />
-        ) : (
-          <Shelf books = {books} />
-        )
-      }
+      <Shelf books = {recommendedBooks} />
     </>
     
   )
 }
 
-export default RecommendedBookContainer;
+export default MultiRecommendedBookContainer;

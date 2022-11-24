@@ -29,9 +29,9 @@ const KakaoMap = ({
     <div className="container w-100p">
     <div className=" desktop-box">
 
-      <span className="fc-main fs-32">
+      <h1 className="fc-main fs-32">
         Step 5
-      </span>
+      </h1>
       <p className="fc-dark fs-28 fw-300" >
         위치를 확인해주세요
       </p>

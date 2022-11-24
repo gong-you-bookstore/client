@@ -8,7 +8,7 @@ import { apiClient } from ".";
 export const postSignUpData = async (signUpData) => {
   return await apiClient({
     method: "post",
-    url: `user/signup`,
+    url: `/user/signup`,
     data: signUpData,
   })
 };
@@ -21,7 +21,7 @@ export const postSignUpData = async (signUpData) => {
 export const postSignInData = async (signInData) => {
   return await apiClient({
     method: "post",
-    url: `user/signin`,
+    url: `/user/signin`,
     data: signInData,
   })
 }; 

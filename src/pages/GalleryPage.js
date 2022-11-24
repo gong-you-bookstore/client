@@ -3,7 +3,7 @@ import Loading from "../components/common/Loading";
 import logo from '../assets/images/logo_row_white.png'
 import React, { lazy, Suspense } from 'react';
 import useScrollTo from "../lib/hooks/useScrollTo";
-const RecommendedBookContainer = lazy(() => import('../containers/gallery/RecommendedBookContainer'));
+const MultiRecommendedBookContainer = lazy(() => import('../containers/gallery/MultiRecommendedBookContainer'));
 const RegisteredBookContainer = lazy(() => import('../containers/gallery/RegisteredBookContainer'));
 
 const GalleryPage = () => {
@@ -35,8 +35,8 @@ const GalleryPage = () => {
             registeredBooks = {registeredBooks}
             setRegisteredBooks = {setRegisteredBooks}
           />
-          <RecommendedBookContainer 
-            registeredBooks = {registeredBooks} 
+          <MultiRecommendedBookContainer 
+            books = {registeredBooks} 
           />
         </div>
       </div>

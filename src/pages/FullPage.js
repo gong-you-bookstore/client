@@ -7,8 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import SearchBarContainer from "../containers/store/SeachBarContainer";
 import { getBooks } from '../lib/api/book';
 
-const GenrePage = () => {
-  const {state} = useLocation();
+const FullPage = () => {
   const [storeRef, setIsScrollToStore] = useScrollTo();
   const navigate = useNavigate()
   const [totalBooks, setTotalBooks] = useState([]);
@@ -28,7 +27,6 @@ const GenrePage = () => {
       console.log(error)
     })
 
-    $(".genre-header").addClass(`bg${state.code}`)
     setTimeout(() => {
       setIsScrollToStore(true);
     }, 1100)
@@ -37,9 +35,9 @@ const GenrePage = () => {
   
   return (
     <>
-    <header className="genre-header">
+    <header className="genre-header bg-full">
       <div className="overlay">
-        <h1 className="subtitle">#{state.code} {state.name}</h1>
+        <h1 className="subtitle">우리가 만드는 공유책방</h1>
         <img className="w-150 logo" src={logo} alt="img" />
         <div className="mouse-icon" >
           <div className="wheel" />
@@ -79,4 +77,4 @@ const GenrePage = () => {
   )
 }
 
-export default GenrePage;
+export default FullPage;
