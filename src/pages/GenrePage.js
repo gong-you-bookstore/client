@@ -13,22 +13,15 @@ import { useNavigate } from 'react-router-dom';
 const SearchBarContainer = lazy(() => import('../containers/store/SeachBarContainer'));
 
 const GenrePage = () => {
-  const {state} = useLocation();
-  const [storeRef, setIsScrollToStore] = useScrollTo();
   const navigate = useNavigate()
-  
-
-
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-
   // const filteredBooks = totalBooks.filter((book) => {
   //   return book.title
   //     .replace(" ","")
   //     .toLocaleLowerCase()
   //     .includes(searchWord.toLocaleLowerCase().replace(" ",""))
   // })
-
   useEffect(() => {
     // $(".genre-header").addClass(`bg${state.code}`)
 
@@ -38,7 +31,6 @@ const GenrePage = () => {
 
     getBooks().then(response => {
       console.log(response.data.data);
-
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)
@@ -50,7 +42,7 @@ const GenrePage = () => {
     <Suspense fallback={<Loading />}>
     <header className="genre-header">
       <div className="overlay">
-        <h1 className="subtitle">#{state.code} {state.name}</h1>
+        {/* <h1 className="subtitle">#{state.code} {state.name}</h1> */}
         <img className="w-150 logo" src={logo} alt="img" />
         <div className="mouse-icon" >
           <div className="wheel" />
@@ -58,7 +50,7 @@ const GenrePage = () => {
       </div>
     </header>
 
-    <div className="white-cement-bg" ref={storeRef}>
+    <div className="white-cement-bg" >
       <div className="gallery-area">
         <SearchBarContainer 
           searchWord = {searchWord}
