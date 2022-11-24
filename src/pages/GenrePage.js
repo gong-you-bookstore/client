@@ -16,12 +16,12 @@ const GenrePage = () => {
   const navigate = useNavigate()
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-  // const filteredBooks = totalBooks.filter((book) => {
-  //   return book.title
-  //     .replace(" ","")
-  //     .toLocaleLowerCase()
-  //     .includes(searchWord.toLocaleLowerCase().replace(" ",""))
-  // })
+  const filteredBooks = totalBooks.filter((book) => {
+    return book.title
+      .replace(" ","")
+      .toLocaleLowerCase()
+      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  })
   useEffect(() => {
     // $(".genre-header").addClass(`bg${state.code}`)
 
@@ -40,41 +40,42 @@ const GenrePage = () => {
   return (
     <>
     <Suspense fallback={<Loading />}>
-    <header className="genre-header">
-      <div className="overlay">
-        {/* <h1 className="subtitle">#{state.code} {state.name}</h1> */}
-        <img className="w-150 logo" src={logo} alt="img" />
-        <div className="mouse-icon" >
-          <div className="wheel" />
-        </div>
-      </div>
-    </header>
+      <div className="white-cement-bg">
+        <div className="gallery-area">
 
-    <div className="white-cement-bg" >
-      <div className="gallery-area">
         <SearchBarContainer 
-          searchWord = {searchWord}
-          setSearchWord = {setSearchWord}
-        />
-        <div className="content-section">
-          <div className='container grid-store'>
-            {
-              totalBooks.map((book, index) => (
-                <img 
-                  key={index} 
-                  src={book.thumbnail} 
-                  className="book-static book-sd btn-shadow" 
-                  alt="img"
-                  onClick={()=>{
-                    navigate(`/${book.isbn}/detail`)
-                  }} 
-                />
-              ))
-            }
+            searchWord = {searchWord}
+            setSearchWord = {setSearchWord}
+          />
+
+            <div className="content-section">
+              <div className='container grid-store'>
+                {
+                  filteredBooks.map((book, index) => (
+                    <img 
+                      key={index} 
+                      src={book.thumbnail} 
+                      className="book-static book-sd btn-shadow" 
+                      alt="img"
+                      onClick={()=>{
+                        navigate(`/${book.isbn}/detail`)
+                      }} 
+                    />
+                  ))
+                }
+              </div>
+            </div>
+
+
+
+          <div className="content-section">
+            <div className="container">
+              <div className='card-grid'>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </Suspense>
 
     </>
