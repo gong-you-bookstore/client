@@ -34,7 +34,7 @@ const Nav = ()=>{
             <li 
               key={index}
               onClick={() => {
-                if(item.isAuth && !cookies.userData) {
+                if (item.isAuth && !cookies.userData) {
                   toastMaker.error("로그인이 필요합니다.")
                   navigate('/login');
                   return;
