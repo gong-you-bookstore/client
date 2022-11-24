@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMultiRecommendedBook } from "../../lib/api/recommend";
 import Shelf from "../../components/gallery/Shelf";
-import books from '../../assets/bookmini.json'
+import tempBooks from '../../assets/bookmini.json'
 
 const MultiRecommendedBookContainer = ({books}) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
@@ -15,7 +15,7 @@ const MultiRecommendedBookContainer = ({books}) => {
       getMultiRecommendedBook(isbns).then(response => {
         setRecommendedBooks(response.data.data)
       }).catch(error => {
-        setRecommendedBooks(books)
+        setRecommendedBooks(tempBooks)
         console.log(error)
       })    
     }

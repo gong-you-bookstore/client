@@ -11,7 +11,7 @@ const Cards = () => {
       }}
     >
       <p className='fc-white '>
-        FULL
+        VIEW ALL
       </p>
     </div>
     <div className='card-gallery card'

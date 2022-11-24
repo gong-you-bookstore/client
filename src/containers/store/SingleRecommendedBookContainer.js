@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getOneRecommendedBook } from "../../lib/api/recommend";
-import books from '../../assets/bookmini.json'
+import tempBooks from '../../assets/bookmini.json'
 import SingleRecommendedBook from "../../components/store/SingleRecommendedBook";
 
 const SingleRecommendedBookContainer = ({isbn}) => {
@@ -10,7 +10,7 @@ const SingleRecommendedBookContainer = ({isbn}) => {
     getOneRecommendedBook(isbn).then(response => {
       setRecommendedBooks(response.data.data);
     }).catch(error => {
-      setRecommendedBooks(books);
+      setRecommendedBooks(tempBooks);
       console.log(error);
     })
   })

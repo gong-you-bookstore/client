@@ -3,23 +3,15 @@ import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { useNavigate } from 'react-router-dom';
-import SearchBarContainer from "../containers/store/SeachBarContainer";
 import { getBooks } from '../lib/api/book';
+import SearchBarContainer from "../containers/store/SeachBarContainer";
+import BooksContainer from "../containers/store/BooksContainer";
 
 const GenrePage = () => {
   const {state} = useLocation();
   const [storeRef, setIsScrollToStore] = useScrollTo();
-  const navigate = useNavigate()
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-
-  const filteredBooks = totalBooks.filter((book) => {
-    return book.title
-      .replace(" ","")
-      .toLocaleLowerCase()
-      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
-  })
 
   useEffect(() => {
     getBooks().then(response => {
@@ -53,26 +45,10 @@ const GenrePage = () => {
           searchWord = {searchWord}
           setSearchWord = {setSearchWord}
         />
-        <div className="content-section">
-          <div className='container grid-store'>
-            {
-              filteredBooks.map((book, index) => (
-                <img 
-                  key={index} 
-                  src={book.thumbnail} 
-                  className="book-static book-sd btn-shadow" 
-                  alt="img"
-                  onClick={()=>{
-                    navigate(
-                      `/detail`,
-                      { state: book.isbn }
-                    )
-                  }} 
-                />
-              ))
-            }
-          </div>
-        </div>
+        <BooksContainer 
+          totalBooks = {totalBooks}
+          searchWord = {searchWord}
+        />
       </div>
     </div>
     </>

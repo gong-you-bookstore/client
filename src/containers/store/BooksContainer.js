@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-// const filteredBooks
 const BooksContainer = ({
   totalBooks,
   searchWord
@@ -15,8 +14,6 @@ const BooksContainer = ({
   })
   return (
     <>
-      
-
       <div className="content-section">
         <div className='container grid-store'>
           {
@@ -27,7 +24,10 @@ const BooksContainer = ({
                 className="book-static book-sd btn-shadow" 
                 alt="img"
                 onClick={()=>{
-                  navigate(`/${book.isbn}/detail`)
+                  navigate(
+                    `/detail`,
+                    { state: book.isbn }
+                  )
                 }} 
               />
             ))
