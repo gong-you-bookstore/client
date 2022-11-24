@@ -3,8 +3,8 @@ import { Fade } from "react-awesome-reveal";
 import useScrollTo from "../lib/hooks/useScrollTo";
 import React, { lazy, Suspense } from 'react';
 import Loading from '../components/common/Loading';
+import GenreInfo from '../components/home/GenreInfo';
 const About = lazy(() => import('../components/home/About'));
-const Cards = lazy(() => import('../components/common/Cards'));
 
 const HomePage = ()=>{
   const [introRef, setIsScrollTo] = useScrollTo();
@@ -17,7 +17,7 @@ const HomePage = ()=>{
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
-            <div className="info-text center-text fc-dark fs-28 fw-bold">
+            <div className="info-text center-text fc-dark fs-28">
               <Fade cascade damping={0.1}>
                 다양한 장르의 책들을 찾아보세요
               </Fade>
@@ -25,13 +25,7 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
-      <div className="content-section">
-        <div className="container">
-          <div className='home-card-grid'>
-            <Cards />
-          </div>
-        </div>
-      </div>
+      <GenreInfo />
       <div className="content-section">
       </div>
     </Suspense>

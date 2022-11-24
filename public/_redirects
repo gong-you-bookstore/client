@@ -1,5 +1,5 @@
 /api/* http://43.200.171.144:8080/:splat 200
-/recommend/* http://13.125.237.104:5000/:splat 200
 
+/recommend/* http://13.125.237.104:5000/:splat 200
 
 /* /index.html 200

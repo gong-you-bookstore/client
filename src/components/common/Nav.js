@@ -19,7 +19,7 @@ const Nav = ()=>{
         className="navbar-logo"
         >
         <img src={favicon} style={{width:"40px"}} className="hex-logo" alt="img" />
-        <h1>공유책방</h1>
+        <p className="fw-bold">공유책방</p>
       </div>
 
       <div className="hamburger" onClick={()=>onToggleHamburger()}>

@@ -12,8 +12,8 @@ const SearchForm = ({
       <div className="bg-dark-full-vh flex-col-box-center lh-2">
         <div className="container">
           <div className=" desktop-box">
-            <span className="fc-main fs-32 fw-bold">Step 1</span>
-            <p className="fc-muted fs-28">
+            <span className="fc-main fs-32">Step 1</span>
+            <p className="fc-muted fs-28 fw-300">
               등록하고 싶은 책을 검색하세요
             </p>
             {

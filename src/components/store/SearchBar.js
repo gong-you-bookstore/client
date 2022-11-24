@@ -11,6 +11,9 @@ const SearchBar = ({
     <div className='container'>
       <div className="desktop-box">
     <div className="search-bar ">
+      <span className="material-symbols-outlined">
+        search
+      </span>
       <input
         id="searchWord"
         name="searchWord"
@@ -20,9 +23,6 @@ const SearchBar = ({
         onChange={onChangeSearchWord}
         className="w-100p"
       />
-        <span className="material-symbols-outlined">
-          search
-        </span>
     </div>
     </div>
     </div>

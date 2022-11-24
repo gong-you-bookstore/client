@@ -1,19 +1,34 @@
-import { useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import books from "../assets/bookmini.json"
+import { useEffect,useState } from "react";
+import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { Rotate, Fade } from "react-awesome-reveal";
-
+import { useNavigate } from 'react-router-dom';
+import SearchBarContainer from "../containers/store/SeachBarContainer";
+import { getBooks } from '../lib/api/book';
 
 const GenrePage = () => {
   const {state} = useLocation();
   const [storeRef, setIsScrollToStore] = useScrollTo();
-  
-  useEffect(()=>{
-    $(".genre-header").addClass(`bg${state.code}`)
+  const navigate = useNavigate()
+  const [totalBooks, setTotalBooks] = useState([]);
+  const [searchWord, setSearchWord] = useState("");
 
+  const filteredBooks = totalBooks.filter((book) => {
+    return book.title
+      .replace(" ","")
+      .toLocaleLowerCase()
+      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  })
+
+  useEffect(() => {
+    getBooks().then(response => {
+      setTotalBooks(response.data.data);
+    }).catch(error => {
+      console.log(error)
+    })
+
+    $(".genre-header").addClass(`bg${state.code}`)
     setTimeout(() => {
       setIsScrollToStore(true);
     }, 1100)
@@ -33,23 +48,28 @@ const GenrePage = () => {
     </header>
 
     <div className="white-cement-bg" ref={storeRef}>
-      <div className="container grid-store gallery-area">
-        <Fade direction="down" cascade triggerOnce damping={0.1}>
-        
-        {
-          books.map((book, index) => (
-            <img 
-              key={index} 
-              src={book.thumbnail} 
-              className="book-static book-sd" 
-              alt="img"
-              onClick={()=>{
-                // navigate(`/${book.isbn13}/detail`)
-              }} 
-            />
-          ))
-        }
-        </Fade>
+      <div className="gallery-area">
+        <SearchBarContainer 
+          searchWord = {searchWord}
+          setSearchWord = {setSearchWord}
+        />
+        <div className="content-section">
+          <div className='container grid-store'>
+            {
+              filteredBooks.map((book, index) => (
+                <img 
+                  key={index} 
+                  src={book.thumbnail} 
+                  className="book-static book-sd btn-shadow" 
+                  alt="img"
+                  onClick={()=>{
+                    navigate(`/${book.isbn}/detail`)
+                  }} 
+                />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
     </>
