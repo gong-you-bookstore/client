@@ -23,12 +23,12 @@ const GenrePage = () => {
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
 
-  const filteredBooks = totalBooks.filter((book) => {
-    return book.title
-      .replace(" ","")
-      .toLocaleLowerCase()
-      .includes(searchWord.toLocaleLowerCase().replace(" ",""))
-  })
+  // const filteredBooks = totalBooks.filter((book) => {
+  //   return book.title
+  //     .replace(" ","")
+  //     .toLocaleLowerCase()
+  //     .includes(searchWord.toLocaleLowerCase().replace(" ",""))
+  // })
 
   useEffect(() => {
     getBooks().then(response => {
@@ -61,7 +61,7 @@ const GenrePage = () => {
         <div className="content-section">
           <div className='container grid-store'>
             {
-              filteredBooks.map((book, index) => (
+              totalBooks.map((book, index) => (
                 <img 
                   key={index} 
                   src={book.thumbnail} 
