@@ -30,7 +30,7 @@ const GenrePage = () => {
     // }, 1100)
 
     getBooks().then(response => {
-      console.log(response.data.data);
+      console.log(response);
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)
