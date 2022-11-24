@@ -12,13 +12,7 @@ const GenrePage = () => {
   const [storeRef, setIsScrollToStore] = useScrollTo();
   const navigate = useNavigate()
   
-  useEffect(()=>{
-    // $(".genre-header").addClass(`bg${state.code}`)
 
-    setTimeout(() => {
-      setIsScrollToStore(true);
-    }, 1100)
-  }, [])
 
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
@@ -31,6 +25,12 @@ const GenrePage = () => {
   // })
 
   useEffect(() => {
+    $(".genre-header").addClass(`bg${state.code}`)
+
+    setTimeout(() => {
+      setIsScrollToStore(true);
+    }, 1100)
+
     getBooks().then(response => {
       console.log(response.data.data);
 

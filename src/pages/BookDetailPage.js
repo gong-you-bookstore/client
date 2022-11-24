@@ -15,14 +15,12 @@ const BookDetailPage = () => {
     getBookDetails(params.isbn13, cookies.userData.accessToken)
       .then(response => {
       console.log(response)
-
       setBook(response.data.data)
     })
       .catch(error => {
         console.log(error)
     })
-    
-  }, [params])
+  }, [])
 
   if (book) {
     return (
