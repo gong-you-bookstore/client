@@ -1,17 +1,14 @@
 import { useEffect,useState } from "react";
-import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
-import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { getBooks } from '../lib/api/book';
 import SearchBarContainer from "../containers/store/SeachBarContainer";
+import { getBooks } from '../lib/api/book';
 import BooksContainer from "../containers/store/BooksContainer";
-
-const GenrePage = () => {
-  const {state} = useLocation();
+const FullPage = () => {
   const [storeRef, setIsScrollToStore] = useScrollTo();
   const [totalBooks, setTotalBooks] = useState([]);
   const [searchWord, setSearchWord] = useState("");
+
 
   useEffect(() => {
     getBooks().then(response => {
@@ -20,7 +17,6 @@ const GenrePage = () => {
       console.log(error)
     })
 
-    $(".genre-header").addClass(`bg${state.code}`)
     setTimeout(() => {
       setIsScrollToStore(true);
     }, 1100)
@@ -29,9 +25,9 @@ const GenrePage = () => {
   
   return (
     <>
-    <header className="genre-header">
+    <header className="genre-header bg-full">
       <div className="overlay">
-        <h1 className="subtitle">#{state.code} {state.name}</h1>
+        <h1 className="subtitle">우리가 만드는 공유책방</h1>
         <img className="w-150 logo" src={logo} alt="img" />
         <div className="mouse-icon" >
           <div className="wheel" />
@@ -55,4 +51,4 @@ const GenrePage = () => {
   )
 }
 
-export default GenrePage;
+export default FullPage;

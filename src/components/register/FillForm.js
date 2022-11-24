@@ -9,9 +9,9 @@ const FillForm = ({
       <div className="container w-100p">
       <div className=" desktop-box">
 
-          <span className="fc-main fs-32">
+          <h1 className="fc-main fs-32">
             Step 3
-          </span>
+          </h1>
           <p className="fc-dark fs-28 fw-300" >
             책을 확인하고 판매여부를 정해주세요.
           </p>

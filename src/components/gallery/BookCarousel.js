@@ -16,7 +16,10 @@ const BookCarousel = ({books}) => {
               className="book-dynamic" 
               alt="img"
               onClick={()=>{
-                navigate(`/${book.isbn}/detail`)
+                navigate(
+                  `/detail`,
+                  { state: book.isbn }
+                )
               }} 
             />
         ))}

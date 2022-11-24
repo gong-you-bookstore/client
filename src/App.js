@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GalleryPage from './pages/GalleryPage';
 import MyPage from './pages/MyPage';
+import FullPage from './pages/FullPage';
 import Test from './pages/Test';
 function App() {
   return (
@@ -26,12 +27,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/test" element={<Test />} />
         <Route path="/store" element={<StorePage />} />
+        <Route path="/full" element={<FullPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/genre" element={<GenrePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path="/mypage" element={<MyPage />} />
-        <Route path='/:isbn13/detail' element={<BookDetailPage />} />
+        <Route path='/detail' element={<BookDetailPage />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>
       <ToastContainer />

@@ -19,7 +19,6 @@ const GenreInfo = () => {
                   <p 
                     className={`info-content info${category.code}`}
                   >
-                    {/* {category.desc} */}
                   </p>
                 </div>
               </React.Fragment>

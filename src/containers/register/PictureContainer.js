@@ -17,7 +17,7 @@ const PictureContainer = ({
     setIsScrollToStep5(true)
   }
 
-  const [image, setImage] = useState(addImg);
+  const [image, setImage] = useState("");
   const fileInput = useRef(null);
 
   const onChangeImage = (event) => {
