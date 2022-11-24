@@ -2,10 +2,15 @@ import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import SearchBarContainer from "../containers/store/SeachBarContainer";
 import { useEffect, useState } from "react";
 import { getBooks } from "../lib/api/book";
+import React, { lazy, Suspense } from 'react';
+import Loading from "../components/common/Loading";
 import { useNavigate } from 'react-router-dom';
+
+
+
+const SearchBarContainer = lazy(() => import('../containers/store/SeachBarContainer'));
 
 const GenrePage = () => {
   const {state} = useLocation();
@@ -25,11 +30,11 @@ const GenrePage = () => {
   // })
 
   useEffect(() => {
-    $(".genre-header").addClass(`bg${state.code}`)
+    // $(".genre-header").addClass(`bg${state.code}`)
 
-    setTimeout(() => {
-      setIsScrollToStore(true);
-    }, 1100)
+    // setTimeout(() => {
+    //   setIsScrollToStore(true);
+    // }, 1100)
 
     getBooks().then(response => {
       console.log(response.data.data);
@@ -42,6 +47,7 @@ const GenrePage = () => {
   
   return (
     <>
+    <Suspense fallback={<Loading />}>
     <header className="genre-header">
       <div className="overlay">
         <h1 className="subtitle">#{state.code} {state.name}</h1>
@@ -77,6 +83,8 @@ const GenrePage = () => {
         </div>
       </div>
     </div>
+    </Suspense>
+
     </>
   )
 }
