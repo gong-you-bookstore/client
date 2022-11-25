@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie"
 import { useLocation } from "react-router-dom";
+import MessageLogContainer from "../containers/message/MessageLogContainer";
+import MessageToolContainer from "../containers/message/MessageToolContainer";
 
 import { getMessages, postMessage } from "../lib/api/message";
 
 const MessagePage = () => {
   const {state} = useLocation();
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
-  const [messages, setMessages] = useState([])
-  
-  const requestMessage = () => {
-    
-  }
-  useEffect(() => {
-    console.log(state.userData.shelfId)
+  const [messagesLog, setMessagesLog] = useState([])
+
+  const loadMessagelog = () => {
     getMessages(
       cookies.userData.accessToken, {
         shelfId: state.userData.shelfId,
@@ -21,11 +19,11 @@ const MessagePage = () => {
         email2: state.myEmail
       }
     ).then(response => {
-      console.log(response)
+      setMessagesLog(response.data.data)
     }).catch(error => {
       console.log(error)
     })
-  }, [])
+  }
 
   return (
     <div className="bg-dark-full-px">
@@ -33,25 +31,14 @@ const MessagePage = () => {
       <div className="container desktop-box">
         <div className="content-section">
           <div className="maessage-area">
-            <ul className="message-log">
-            {
-              messages.map((message, index) => (
-                <li key={index} className="message" >
-                  <div>
-                    {message.content}
-                  </div>
-                </li>
-              ))
-            }
-            </ul>
-            <div className="chat-tools">
-              <textarea 
-                className="input-styled w-100p"
-              > 
-              </textarea>
-              <button>거래신청</button>
-              <button>전송</button>
-            </div>
+            <MessageLogContainer 
+              messagesLog = {messagesLog}
+              loadMessagelog = {loadMessagelog}
+            />
+            <MessageToolContainer 
+              info = {state}
+              loadMessagelog = {loadMessagelog}
+            />
           </div>
         </div>
       </div>
