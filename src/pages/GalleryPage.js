@@ -5,6 +5,7 @@ import React, { lazy, Suspense } from 'react';
 import useScrollTo from "../lib/hooks/useScrollTo";
 import books from '../assets/bookmini.json'
 import Shelf from "../components/gallery/Shelf";
+import useAuth from "../lib/hooks/useAuth";
 const MultiRecommendedBookContainer = lazy(() => import('../containers/gallery/MultiRecommendedBookContainer'));
 const RegisteredBookContainer = lazy(() => import('../containers/gallery/RegisteredBookContainer'));
 
@@ -12,6 +13,8 @@ const GalleryPage = () => {
   const [registeredBooks, setRegisteredBooks] = useState([])
   const [galleryRef, setIsScrollToGallery] = useScrollTo()
 
+  useAuth();
+  
   useEffect(()=>{
     setTimeout(() => {
       setIsScrollToGallery(true);

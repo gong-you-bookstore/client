@@ -16,11 +16,6 @@ const Banner = ({setIsScrollTo}) => {
             className='primary-btn btn-big'
             type="button"
             onClick={() => {
-              if (!cookies.userData) {
-                toastMaker.error("로그인이 필요합니다.")
-                navigate('/login');
-                return;
-              }
               navigate("/store")
             }}
           >

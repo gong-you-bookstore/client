@@ -18,11 +18,6 @@ const GenreInfo = () => {
                 key={index}
                 className={`card${category.code} card `}
                 onClick={() => {
-                  if (!cookies.userData) {
-                    toastMaker.error("로그인이 필요합니다.")
-                    navigate('/login');
-                    return;
-                  }
                   navigate(
                     `/genre`, 
                     { state: category }

@@ -1,7 +1,10 @@
 import { CATEGORIES } from '../../lib/statics';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from "react-cookie";
+import { toastMaker } from '../../lib/utils';
 const Cards = () => {
   const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
 
   return (
     <>
@@ -16,6 +19,7 @@ const Cards = () => {
     </div>
     <div className='card-gallery card'
       onClick={() => {
+        
         navigate("/gallery")
       }}
     >
