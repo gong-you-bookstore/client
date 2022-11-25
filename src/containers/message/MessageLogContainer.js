@@ -4,24 +4,34 @@ import { getMessages } from "../../lib/api/message";
 
 const MessageLogContainer = ({
   messagesLog,
-  loadMessagelog
+  loadMessagelog,
+  me,
+  you  
 }) => {
   useEffect(() => {
     loadMessagelog();
   }, [])
 
   return (
+    <>
+    <div className="fc-muted mb-10">
+      {you}님과의대화방입니다.
+    </div>
     <ul className="message-log">
     {
       messagesLog.map((message, index) => (
         <li key={index} className="message" >
-          <div>
-            {message.content}
-          </div>
+          <span className="ww">
+            {me === message.email ? "나" : "상대방"}: {message.content}
+          </span>
+          <span className="fc-muted date">
+            {message.createdAt}
+          </span>
         </li>
       ))
     }
     </ul>
+    </>  
   )
 }
 

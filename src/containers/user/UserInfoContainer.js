@@ -5,32 +5,33 @@ import { useNavigate } from "react-router-dom";
 
 const UserInfoContainer = ({
   accessToken,
-  onToggleMessageBox
 }) => {
   const [userInfo, setUserInfo] = useState({});
   const navigation = useNavigate();
   useEffect(() => {
     getUserInfo(accessToken).then(response => {
-      console.log(response);
       setUserInfo(response.data.data);
     }).catch(error => {
       console.log(error)
     })
-  })
+  }, [])
 
   return (
     <>
-    <div className="content-section">
+      <div className="mypage-banner">
         <div className="container desktop-box">
         <div className="my-info">
-          <img src={profile} width="100px" className="profile"/>
-          {userInfo.email}
-          {userInfo.name}
-
-
+          <img src={profile} width="100px" className="profile" alt="img"/>
+          <h1 className="fc-white fs-28">{userInfo.name}님의 페이지</h1>
+          <p>{userInfo.email}</p>
           <div className="info-box">
             <div className="info-item">
-              토큰
+              <p>
+                토큰
+              </p>
+              <p className="fc-main fs-28">
+                {userInfo.token}
+              </p>
             </div>
             <div 
               onClick={() => {
@@ -38,20 +39,17 @@ const UserInfoContainer = ({
               }}
               className="info-item"
             >
-              내 책방 바로가기
-            </div>
-            <div 
-              onClick={() => {
-                onToggleMessageBox();
-              }}
-              className="info-item"
-            >
-              메일함
+              <p>
+              내 책방
+              </p>
+              <p className="">
+              바로가기
+              </p>
             </div>
           </div>
         </div>
         </div>
-      </div>
+        </div>
     </>
   )
 }

@@ -6,30 +6,16 @@ import { useState } from "react";
 
 const MyPage = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
-  const [isView, setIsView] = useState(false);
-
-  const onToggleMessageBox = () => {
-    setIsView(!isView);
-  }
 
   return (
     <>
     <div className="bg-white-full-px">
-      
-
       <UserInfoContainer 
         accessToken = {cookies.userData.accessToken}
-        onToggleMessageBox = {onToggleMessageBox}
       />
-      {
-        isView ? (
-          <MessageBoxContainer 
-            accessToken = {cookies.userData.accessToken}
-          />
-        ) : (<></>)
-      }
-      
-      
+      <MessageBoxContainer 
+        accessToken = {cookies.userData.accessToken}
+      />
     </div>
     </>
   )

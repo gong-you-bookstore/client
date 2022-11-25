@@ -29,18 +29,18 @@ const MessagePage = () => {
     <div className="bg-dark-full-px">
       <div className="gallery-area">
       <div className="container desktop-box">
-        <div className="content-section">
           <div className="maessage-area">
-            <MessageLogContainer 
-              messagesLog = {messagesLog}
-              loadMessagelog = {loadMessagelog}
-            />
             <MessageToolContainer 
               info = {state}
               loadMessagelog = {loadMessagelog}
             />
+            <MessageLogContainer 
+              messagesLog = {messagesLog}
+              loadMessagelog = {loadMessagelog}
+              me = {state.myEmail}
+              you = {state.userEmail}
+            />
           </div>
-        </div>
       </div>
       </div>
     </div>

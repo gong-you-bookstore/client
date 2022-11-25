@@ -6,7 +6,7 @@ import { postMessage } from "../../lib/api/message";
 import {toastMaker} from "../../lib/utils"
 const MessageToolContainer = ({
   info,
-  loadMessagelog
+  loadMessagelog,
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [myMessage, setMyMessage] = useState({
@@ -38,6 +38,7 @@ const MessageToolContainer = ({
   }
   return (
     <>
+    <div className="content-section">
     <div className="chat-tools">
       <textarea
         name="content"
@@ -55,6 +56,7 @@ const MessageToolContainer = ({
       >
         전송
       </button>
+    </div>
     </div>
     </>
   )

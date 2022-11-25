@@ -72,3 +72,18 @@ export const getUserBook = async (isbn, userEmail, accessToken) => {
     }
   })
 }
+
+/**
+ * 내가 등록한 책
+ * @param {*} accessToken 
+ * @returns 
+ */
+export const getMyBooks = async (accessToken) => {
+  return await apiClient({
+    method: "get",
+    url: "/book/my",
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    }
+  })
+}

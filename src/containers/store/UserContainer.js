@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie"
 import UserListForm from "../../components/store/UserListForm";
 import UserItemForm from "../../components/store/UserItemForm";
-
+import { toastMaker } from "../../lib/utils";
 import { getUserBook } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
 const UserContainer = ({
@@ -25,6 +25,10 @@ const UserContainer = ({
   }
 
   const onClickMessage = (userData, userEmail, myEmail) => {
+    if (selectedUserEmail === cookies.userData.email) {
+      toastMaker.error("자신한테 메시지를 보낼 수 없습니다.")
+      return;
+    }
     navigate(
       '/message',
       {state: {
