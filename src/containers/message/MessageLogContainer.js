@@ -1,37 +1,49 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCookies } from "react-cookie"
-import { getMessages } from "../../lib/api/message";
+import { respondTrade } from "../../lib/api/book";
+import {toastMaker} from "../../lib/utils"
+import { useNavigate } from "react-router-dom";
+import MessageLog from "../../components/message/MessageLog";
 
 const MessageLogContainer = ({
   messagesLog,
   loadMessagelog,
   me,
-  you  
+  you,
+  state
 }) => {
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
+  const navigate = useNavigate();
   useEffect(() => {
     loadMessagelog();
   }, [])
 
+  const onClickRespondTrade = () => {
+    respondTrade(
+      cookies.userData.accessToken, {
+        shelfId: state.shelfId,
+        receiverEmail: state.userEmail,
+      }
+    ).then(response => {
+      toastMaker.success(response.data.msg);
+      loadMessagelog();
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
+  const onClickGoToHome = () => {
+    navigate('/')
+  }
+
   return (
-    <>
-    <div className="fc-muted mb-10">
-      {you}님과의대화방입니다.
-    </div>
-    <ul className="message-log">
-    {
-      messagesLog.map((message, index) => (
-        <li key={index} className="message" >
-          <span className="ww">
-            {me === message.email ? "나" : "상대방"}: {message.content}
-          </span>
-          <span className="fc-muted date">
-            {message.createdAt}
-          </span>
-        </li>
-      ))
-    }
-    </ul>
-    </>  
+    <MessageLog
+      messagesLog = {messagesLog}
+      you = {you}
+      me = {me}
+      onClickRespondTrade = {onClickRespondTrade}
+      onClickGoToHome = {onClickGoToHome}
+    />
   )
 }
 

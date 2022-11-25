@@ -1,64 +1,63 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCookies } from "react-cookie"
 import { postMessage } from "../../lib/api/message";
-
-
+import { requestTrade } from "../../lib/api/book";
 import {toastMaker} from "../../lib/utils"
+import MessageTool from "../../components/message/MessageTool";
+
 const MessageToolContainer = ({
   state,
   loadMessagelog,
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
-  const [myMessage, setMyMessage] = useState({
+  const [sendMessage, setSendMessage] = useState({
     shelfId: state.shelfId,
     receiverEmail: state.userEmail,
     content: ""
   })
   const onChangeMyMessage = (event) => {
-    setMyMessage({
-      ...myMessage,
+    setSendMessage({
+      ...sendMessage,
       [event.target.name]: event.target.value
     })
   }
 
-  const onClickSendMail = () => {
+  const onClickSendMessage = () => {
     postMessage(
       cookies.userData.accessToken,
-      myMessage
+      sendMessage
     ).then(response => {
       toastMaker.success(response.data.msg);
-      setMyMessage({
-        ...myMessage,
+      setSendMessage({
+        ...sendMessage,
         content: ""
       })
-      loadMessagelog()
+      loadMessagelog();
     }).catch(error => {
       console.log(error)
     })
   }
+
+  const onClickRequestTrade = () => {
+    requestTrade(
+      cookies.userData.accessToken, {
+        shelfId: state.shelfId,
+        receiverEmail: state.userEmail,
+      }
+    ).then(response => {
+      toastMaker.success(response.data.msg);
+      loadMessagelog();
+    }).catch(error => {
+      console.log(error);
+    })
+  }
   return (
-    <>
-    <div className="content-section">
-    <div className="chat-tools">
-      <textarea
-        name="content"
-        id="content"
-        rows="4"
-        placeholder="Content Here"
-        value={myMessage.content}
-        onChange={onChangeMyMessage}
-        className="input-styled w-100p"
-      ></textarea>
-      <button>거래신청</button>
-      <button
-        type="button"
-        onClick={onClickSendMail}
-      >
-        전송
-      </button>
-    </div>
-    </div>
-    </>
+    <MessageTool
+      sendMessage = {sendMessage}
+      onChangeMyMessage = {onChangeMyMessage}
+      onClickRequestTrade = {onClickRequestTrade}
+      onClickSendMessage = {onClickSendMessage}
+    />
   )
 }
 
