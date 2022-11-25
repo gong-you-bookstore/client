@@ -1,8 +1,6 @@
 import { useCookies } from "react-cookie"
-import profile from "../assets/images/profile.png"
-import UserInfoContainer from "../containers/user/UserInfoContainer";
+import MyInfoContainer from "../containers/user/MyInfoContainer";
 import MyMessageBoxContainer from "../containers/user/MyMessageBoxContainer";
-import { useState } from "react";
 
 const MyPage = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
@@ -10,7 +8,7 @@ const MyPage = () => {
   return (
     <>
     <div className="bg-white-full-px">
-      <UserInfoContainer 
+      <MyInfoContainer 
         accessToken = {cookies.userData.accessToken}
       />
       <MyMessageBoxContainer 

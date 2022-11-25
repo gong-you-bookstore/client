@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
-import { getUserInfo } from "../../lib/api/user";
 import profile from "../../assets/images/profile.png"
-import { useNavigate } from "react-router-dom";
 
-const UserInfoContainer = ({
-  accessToken,
+const MyInfo = ({
+  userInfo,
+  goToGallery
 }) => {
-  const [userInfo, setUserInfo] = useState({});
-  const navigation = useNavigate();
-  useEffect(() => {
-    getUserInfo(accessToken).then(response => {
-      setUserInfo(response.data.data);
-    }).catch(error => {
-      console.log(error)
-    })
-  }, [])
-
   return (
-    <>
-      <div className="mypage-banner">
-        <div className="container desktop-box">
+    <div className="mypage-banner">
+      <div className="container desktop-box">
         <div className="my-info">
           <img src={profile} width="100px" className="profile" alt="img"/>
           <h1 className="fc-white fs-28">{userInfo.name}님의 페이지</h1>
@@ -35,23 +22,22 @@ const UserInfoContainer = ({
             </div>
             <div 
               onClick={() => {
-                navigation('/gallery');
+                goToGallery();
               }}
               className="info-item"
             >
-              <p>
-              내 책방
+              <p className="fc-main">
+                내 책방
               </p>
-              <p className="">
-              바로가기
+              <p>
+                바로가기
               </p>
             </div>
           </div>
         </div>
-        </div>
-        </div>
-    </>
+      </div>
+    </div>
   )
 }
 
-export default UserInfoContainer;
+export default MyInfo;
