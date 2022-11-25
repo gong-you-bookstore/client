@@ -24,15 +24,15 @@ const UserContainer = ({
     onToggleView();
   }
 
-  const onClickMessage = (userData, userEmail, myEmail) => {
-    if (selectedUserEmail === cookies.userData.email) {
+  const onClickMessage = (shelfId, userEmail, myEmail) => {
+    if (userEmail === myEmail) {
       toastMaker.error("자신한테 메시지를 보낼 수 없습니다.")
       return;
     }
     navigate(
       '/message',
       {state: {
-        userData,
+        shelfId,
         userEmail,
         myEmail
       }}

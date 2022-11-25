@@ -26,7 +26,7 @@ const UserItemForm = ({
       className="btn-big primary-btn"
       onClick={() => {
         onClickMessage(
-          selectedUserData,
+          selectedUserData.shelfId,
           selectedUserEmail,
           cookies.userData.email
         );

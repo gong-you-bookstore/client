@@ -5,13 +5,13 @@ import { postMessage } from "../../lib/api/message";
 
 import {toastMaker} from "../../lib/utils"
 const MessageToolContainer = ({
-  info,
+  state,
   loadMessagelog,
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [myMessage, setMyMessage] = useState({
-    shelfId: info.userData.shelfId,
-    receiverEmail: info.userEmail,
+    shelfId: state.shelfId,
+    receiverEmail: state.userEmail,
     content: ""
   })
   const onChangeMyMessage = (event) => {

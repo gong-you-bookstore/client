@@ -14,7 +14,7 @@ const MessagePage = () => {
   const loadMessagelog = () => {
     getMessages(
       cookies.userData.accessToken, {
-        shelfId: state.userData.shelfId,
+        shelfId: state.shelfId,
         email1: state.userEmail,
         email2: state.myEmail
       }
@@ -31,7 +31,7 @@ const MessagePage = () => {
       <div className="container desktop-box">
           <div className="maessage-area">
             <MessageToolContainer 
-              info = {state}
+              state = {state}
               loadMessagelog = {loadMessagelog}
             />
             <MessageLogContainer 

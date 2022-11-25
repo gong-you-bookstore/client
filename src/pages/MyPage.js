@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie"
 import profile from "../assets/images/profile.png"
 import UserInfoContainer from "../containers/user/UserInfoContainer";
-import MessageBoxContainer from "../containers/user/MessageBoxContainer";
+import MyMessageBoxContainer from "../containers/user/MyMessageBoxContainer";
 import { useState } from "react";
 
 const MyPage = () => {
@@ -13,7 +13,7 @@ const MyPage = () => {
       <UserInfoContainer 
         accessToken = {cookies.userData.accessToken}
       />
-      <MessageBoxContainer 
+      <MyMessageBoxContainer 
         accessToken = {cookies.userData.accessToken}
       />
     </div>
