@@ -7,14 +7,12 @@ const MyPage = () => {
 
   return (
     <>
-    <div className="bg-white-full-px">
       <MyInfoContainer 
         accessToken = {cookies.userData.accessToken}
       />
       <MyMessageBoxContainer 
         accessToken = {cookies.userData.accessToken}
       />
-    </div>
     </>
   )
 }

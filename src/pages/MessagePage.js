@@ -39,6 +39,7 @@ const MessagePage = () => {
               loadMessagelog = {loadMessagelog}
               me = {state.myEmail}
               you = {state.userEmail}
+              state = {state}
             />
           </div>
       </div>

@@ -5,6 +5,7 @@ const MyMessageBox = ({
   onClickMessage
 }) => {
   return (
+    <div className="bg-white-full-px">
     <div className=" my-message-box">
       {
         myMessages.map((myMessage, index) => (
@@ -33,6 +34,8 @@ const MyMessageBox = ({
         ))
       }
       </div>
+      </div>
+
   )
 }
 

@@ -87,3 +87,37 @@ export const getMyBooks = async (accessToken) => {
     }
   })
 }
+
+/**
+ * 책 거래 요청
+ * @param {*} accessToken 
+ * @param {*} data {shelfId, receiverEmail}
+ * @returns 
+ */
+export const requestTrade = async (accessToken, data) => {
+  return await apiClient({
+    method: 'post',
+    url: 'book/trade/request',
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    },
+    data
+  })
+}
+
+/**
+ * 책 거래 수락
+ * @param {*} accessToken 
+ * @param {*} data {shelfId, receiverEmail}
+ * @returns 
+ */
+export const respondTrade = async (accessToken, data) => {
+  return await apiClient({
+    method: 'post',
+    url: 'book/trade/respond',
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    },
+    data
+  })
+}
