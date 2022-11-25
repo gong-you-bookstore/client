@@ -4,12 +4,13 @@ import { useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie"
 import { getBookDetails } from "../lib/api/book";
 import { toastMaker } from "../lib/utils";
+
 import SingleRecommendedBookContainer from "../containers/store/SingleRecommendedBookContainer";
 const BookDetailPage = () => {
   const {state} = useLocation();
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [book, setBook] = useState({})
-
+  
   useEffect(() => {
     getBookDetails(state, cookies.userData.accessToken)
       .then(response => {

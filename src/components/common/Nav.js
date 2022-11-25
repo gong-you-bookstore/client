@@ -15,7 +15,7 @@ const Nav = ()=>{
     <>
     <nav className="navbar">
       <div 
-        onClick={()=>{navigate("/");}}
+        onClick={() => {navigate("/");}}
         className="navbar-logo"
         >
         <img src={favicon} style={{width:"40px"}} className="hex-logo" alt="img" />
@@ -31,10 +31,9 @@ const Nav = ()=>{
       <ul className="navbar-menu">
         {
           MENUS.map((item, index)=>(
-            <li 
-              key={index}
+            <li key={index}
               onClick={() => {
-                if (item.isAuth && !cookies.userData) {
+                if (!cookies.userData && item.isAuth) {
                   toastMaker.error("로그인이 필요합니다.")
                   navigate('/login');
                   return;
@@ -43,6 +42,7 @@ const Nav = ()=>{
               }}
             >
               {item.name}
+              {/* <Link to={item.address}>{item.name}</Link> */}
             </li>
           ))
         }
@@ -64,7 +64,7 @@ const Nav = ()=>{
             <button
             className='ghost-btn'
             type="button"
-            onClick={()=>{navigate("/login")}}
+            onClick={() => {navigate("/login")}}
             >
               로그인
             </button>

@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-
+import { useCookies } from "react-cookie";
+import { toastMaker } from '../../lib/utils';
 const BooksContainer = ({
   totalBooks,
   searchWord
 }) => {
   const navigate = useNavigate()
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   
   const filteredBooks = totalBooks.filter((book) => {
     return book.title
@@ -24,6 +26,12 @@ const BooksContainer = ({
                 className="book-static book-sd btn-shadow" 
                 alt="img"
                 onClick={()=>{
+                  if (!cookies.userData) {
+                    toastMaker.error("로그인이 필요합니다.")
+                    navigate('/login');
+                    return;
+                  }
+                  
                   navigate(
                     `/detail`,
                     { state: book.isbn }
