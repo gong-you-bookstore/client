@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCookies } from "react-cookie"
 import { postMessage } from "../../lib/api/message";
 import { requestTrade } from "../../lib/api/book";
-
-
 import {toastMaker} from "../../lib/utils"
+import MessageTool from "../../components/message/MessageTool";
+
 const MessageToolContainer = ({
   state,
   loadMessagelog,
@@ -52,37 +52,12 @@ const MessageToolContainer = ({
     })
   }
   return (
-    <>
-    <div className="content-section">
-    <div className="chat-tools">
-      <textarea
-        name="content"
-        id="content"
-        rows="4"
-        placeholder="Content Here"
-        value={sendMessage.content}
-        onChange={onChangeMyMessage}
-        className="input-styled w-100p"
-      ></textarea>
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn-big blue-btn fw-bold"
-          onClick={onClickRequestTrade}
-        >
-          도서 거래를 요청합니다.
-        </button>
-        <button
-          type="button"
-          className="btn-big primary-btn fw-bold"
-          onClick={onClickSendMessage}
-        >
-          전송
-        </button>
-      </div>
-    </div>
-    </div>
-    </>
+    <MessageTool
+      sendMessage = {sendMessage}
+      onChangeMyMessage = {onChangeMyMessage}
+      onClickRequestTrade = {onClickRequestTrade}
+      onClickSendMessage = {onClickSendMessage}
+    />
   )
 }
 
