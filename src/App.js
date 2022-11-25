@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import GalleryPage from './pages/GalleryPage';
 import MyPage from './pages/MyPage';
 import FullPage from './pages/FullPage';
+import MessagePage from './pages/MessagePage';
 import Test from './pages/Test';
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/survey" element={<SurveyPage />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/message" element={<MessagePage />} />
         <Route path='/detail' element={<BookDetailPage />} />
         <Route path='/*' element={<NotFound />} />
       </Routes>

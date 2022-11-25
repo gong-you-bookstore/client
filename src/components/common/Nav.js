@@ -55,6 +55,7 @@ const Nav = ()=>{
             onClick={() => {
               removeCookie("userData", { path: "/" });
               toastMaker.success("로그아웃 되었습니다.");
+              navigate('/')
             }}
             >
               로그아웃

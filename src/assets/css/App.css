@@ -191,10 +191,10 @@ input:-webkit-autofill:active {
 
 .btn-sm {
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 10px;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   transition: all 0.4s;
 }
@@ -1122,8 +1122,7 @@ video.drawingBuffer {
     "zero zero . . one one"
     ". . two two three three"
     "four four five five six six"
-    "seven seven nine nine . ."
-    ". . . . eight eight";
+    "seven seven eight eight nine nine";
 }
 .card p {
   font-weight: bold;
@@ -1357,4 +1356,56 @@ video.drawingBuffer {
   .info-item {
     padding: 10px;
   }
+}
+
+.register-users-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-users {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.register-user {
+  background-color: #7f818e;
+  color: #fff;
+  border-radius: 15px;
+  padding: 7px 8px;
+  transition: all 0.2s;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.register-user:hover {
+  background-color: #00c9a9;
+}
+
+.maessage-area {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.message-log {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 5px;
+}
+.chat-tools {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 50px 15px;
+  z-index: 100;
 }
