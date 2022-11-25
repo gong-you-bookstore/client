@@ -3,13 +3,14 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie"
 import { getBookDetails } from "../lib/api/book";
-import { toastMaker } from "../lib/utils";
+import UserContainer from "../containers/store/UserContainer";
+
 import SingleRecommendedBookContainer from "../containers/store/SingleRecommendedBookContainer";
 const BookDetailPage = () => {
   const {state} = useLocation();
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   const [book, setBook] = useState({})
-
+  
   useEffect(() => {
     getBookDetails(state, cookies.userData.accessToken)
       .then(response => {
@@ -21,9 +22,11 @@ const BookDetailPage = () => {
     })
   }, [])
 
+  
+
   if (book) {
     return (
-      <>
+      <div className="white-cement-bg">
       <div 
         className="book-banner"
         style={{
@@ -32,7 +35,6 @@ const BookDetailPage = () => {
         }}
       >
         <div className='book-banner-cover '>
-          
         </div>
       </div>
   
@@ -47,19 +49,24 @@ const BookDetailPage = () => {
           <p>{book.author}</p>
           <p>{book.content}</p>
         </div>
+
         <SingleRecommendedBookContainer isbn = {book.isbn}/>
-        <div className="bg-white-full-px">
-          <h1 className="">등록한사람</h1>
-          {
-            book.userList ? (<>{
-              book.userList.map(user => (
-                <p>{user}</p>
-              ))
-            }</>) : (<></>)
-          }
-        </div>
+        <div className="gallery-area">
+
+          <div className="register-users-area content-section">
+            
+            {
+              book.userList ? (
+                <UserContainer 
+                  users = {book.userList} 
+                  isbn = {book.isbn}
+                />
+              ) : (<></>)
+            }
+          </div>
       </div>
-      </>
+      </div>
+      </div>
     )
   }
 

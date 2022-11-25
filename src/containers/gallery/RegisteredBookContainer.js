@@ -1,13 +1,16 @@
 import { useEffect } from "react";
+import { useCookies } from "react-cookie"
 import Shelf from "../../components/gallery/Shelf";
-import { getBooks } from "../../lib/api/book";
+import { getMyBooks } from "../../lib/api/book";
 const RegisteredBookContainer = ({
   registeredBooks,
   setRegisteredBooks
 }) => {
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
+
 
   useEffect(()=>{
-    getBooks().then(response => {
+    getMyBooks(cookies.userData.accessToken).then(response => {
       setRegisteredBooks(response.data.data)
     }).catch(error => {
       console.log(error);

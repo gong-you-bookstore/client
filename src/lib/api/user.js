@@ -25,3 +25,13 @@ export const postSignInData = async (signInData) => {
     data: signInData,
   })
 }; 
+
+export const getUserInfo = async (accessToken) => {
+  return await apiClient({
+    method: "get",
+    url: 'user/info',
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    }
+  })
+}

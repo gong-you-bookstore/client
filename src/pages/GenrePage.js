@@ -6,6 +6,7 @@ import useScrollTo from "../lib/hooks/useScrollTo";
 import { getBooks } from '../lib/api/book';
 import SearchBarContainer from "../containers/store/SeachBarContainer";
 import BooksContainer from "../containers/store/BooksContainer";
+import { getBooksByGenre } from "../lib/api/book";
 
 const GenrePage = () => {
   const {state} = useLocation();
@@ -14,7 +15,8 @@ const GenrePage = () => {
   const [searchWord, setSearchWord] = useState("");
 
   useEffect(() => {
-    getBooks().then(response => {
+    getBooksByGenre(state.code).then(response => {
+      console.log(response)
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)

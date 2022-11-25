@@ -11,7 +11,7 @@ const RegisteredBookContainer = lazy(() => import('../containers/gallery/Registe
 const GalleryPage = () => {
   const [registeredBooks, setRegisteredBooks] = useState([])
   const [galleryRef, setIsScrollToGallery] = useScrollTo()
-
+  
   useEffect(()=>{
     setTimeout(() => {
       setIsScrollToGallery(true);

@@ -11,7 +11,6 @@ const SingleRecommendedBookContainer = ({isbn}) => {
       setRecommendedBooks(response.data.data);
     }).catch(error => {
       setRecommendedBooks(tempBooks);
-      console.log(error);
     })
   })
   return (

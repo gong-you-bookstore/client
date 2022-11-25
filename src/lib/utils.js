@@ -27,6 +27,10 @@ export const toastMaker = {
       hideProgressBar: true,
       draggable: true,
       theme: "colored",
+      limit: 1,
+      closeOnClick: true,
+
+
     });
   },
 
@@ -35,7 +39,9 @@ export const toastMaker = {
       position: "bottom-right",
       hideProgressBar: true,
       draggable: true,
+      closeOnClick: true,
       theme: "colored",
+      limit: 1,
     });
   },
 
@@ -45,6 +51,8 @@ export const toastMaker = {
       hideProgressBar: true,
       draggable: true,
       theme: "colored",
+      limit: 1,
+      closeOnClick: true,
     });
   },
   

@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import logoRowImg from './../../assets/images/logo_row_white.png'
-
+import { useCookies } from "react-cookie";
+import { toastMaker } from '../../lib/utils';
 const Banner = ({setIsScrollTo}) => {
   const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
 
   return (
     <>
@@ -13,7 +15,9 @@ const Banner = ({setIsScrollTo}) => {
           <button
             className='primary-btn btn-big'
             type="button"
-            onClick={()=>navigate("/store")}
+            onClick={() => {
+              navigate("/store")
+            }}
           >
               책방 입장하기
           </button>

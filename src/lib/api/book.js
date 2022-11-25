@@ -46,12 +46,44 @@ export const getBookDetails = async (isbn, accessToken) => {
 };
 
 /**
- * 도서 삭제
+ * 장르별 조회
+ * @param {`*`} genre 
  * @returns 
  */
-export const deleteBook = async () => {
+export const getBooksByGenre = async (kdc) => {
   return await apiClient({
-    method: "delete",
-    url: `/`,
+    method: "get",
+    url: `/genre?kdc=${kdc}`,
   })
-}; 
+}
+
+/**
+ * 사용자 등록 게시물 조회
+ * @param {*} data {isbn: "2222222", userEmail: "aaa@email.com"}
+ * @param {*} accessToken 
+ * @returns 
+ */
+export const getUserBook = async (isbn, userEmail, accessToken) => {
+  return await apiClient({
+    method: "get",
+    url: `/book/shelf?isbn=${isbn}&userEmail=${userEmail}`,
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    }
+  })
+}
+
+/**
+ * 내가 등록한 책
+ * @param {*} accessToken 
+ * @returns 
+ */
+export const getMyBooks = async (accessToken) => {
+  return await apiClient({
+    method: "get",
+    url: "/book/my",
+    headers: {
+      'X-AUTH-TOKEN': accessToken
+    }
+  })
+}

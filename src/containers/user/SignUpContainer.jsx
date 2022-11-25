@@ -4,7 +4,7 @@ import SignUpForm from "../../components/user/SignUpForm";
 import { postSignUpData } from "../../lib/api/user";
 import { toastMaker } from "../../lib/utils";
 const SignUpContainer = ({
-  setIsSignIn
+  setIsSignIn,
 }) => {
   const [signUpData, setSignUpData] = useState({
     email: "",
@@ -56,7 +56,7 @@ const SignUpContainer = ({
       return;
     }
     postSignUpData(signUpData).then(response => {
-      toastMaker.success(response.data.msg);
+      toastMaker.success("환영합니다. 가입 선물로 토큰 3개가 지급되었습니다.");
       setIsSignIn(true)
     }).catch(error => {
       console.log(error)
