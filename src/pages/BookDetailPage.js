@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useCookies } from "react-cookie"
 import { getBookDetails } from "../lib/api/book";
-import UserContainer from "../containers/store/UserContainer";
+import SellerContainer from "../containers/store/SellerContainer";
 
 import SingleRecommendedBookContainer from "../containers/store/SingleRecommendedBookContainer";
 const BookDetailPage = () => {
@@ -14,7 +14,6 @@ const BookDetailPage = () => {
   useEffect(() => {
     getBookDetails(state, cookies.userData.accessToken)
       .then(response => {
-      console.log(response)
       setBook(response.data.data)
     })
       .catch(error => {
@@ -55,8 +54,8 @@ const BookDetailPage = () => {
           <div className="register-users-area">
             {
               book.userList ? (
-                <UserContainer 
-                  users = {book.userList} 
+                <SellerContainer 
+                  sellers = {book.userList} 
                   isbn = {book.isbn}
                 />
               ) : (<></>)

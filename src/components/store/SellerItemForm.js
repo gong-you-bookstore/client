@@ -1,4 +1,4 @@
-const UserItemForm = ({
+const SellerItemForm = ({
   selectedUserEmail,
   onToggleView,
   selectedUserData,
@@ -39,4 +39,4 @@ const UserItemForm = ({
   )
 }
 
-export default UserItemForm
+export default SellerItemForm;

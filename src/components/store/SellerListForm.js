@@ -1,5 +1,5 @@
-const UserListForm = ({
-  users,
+const SellerListForm = ({
+  sellers,
   onClickUser
 }) => {
   return (
@@ -9,15 +9,15 @@ const UserListForm = ({
     </h1>
     <div className="register-users">
       {
-        users.map((user, index) => (
+        sellers.map((seller, index) => (
           <div 
             key={index}
             className="transparent-btn btn-xxl"
             onClick={() => {
-              onClickUser(user);
+              onClickUser(seller);
             }}
           >
-            {user}
+            {seller}
           </div>
         ))
       }
@@ -26,4 +26,4 @@ const UserListForm = ({
   )
 }
 
-export default UserListForm;
+export default SellerListForm;

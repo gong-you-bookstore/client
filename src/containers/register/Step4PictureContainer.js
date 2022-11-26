@@ -1,8 +1,7 @@
 import $ from 'jquery'
 import { useState,useRef } from 'react';
 import PictureForm from '../../components/register/PictureForm';
-import addImg from "../../assets/images/add-image.png"
-const PictureContainer = ({
+const Step4PictureContainer = ({
   step4Ref,
   setIsScrollToStep5,
   isView,
@@ -41,4 +40,4 @@ const PictureContainer = ({
   )
 }
 
-export default PictureContainer;
+export default Step4PictureContainer;

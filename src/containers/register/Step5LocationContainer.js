@@ -1,11 +1,10 @@
-import {useEffect, useState} from "react";
-import KakaoMap from "../../components/register/KakaoMap";
+import {useEffect} from "react";
 import { useCookies } from "react-cookie"
 import { postBookData } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
 import { toastMaker } from "../../lib/utils";
-
-const KakaoMapContainer = ({
+import LocationForm from "../../components/register/LocationForm";
+const Step5LocationContainer = ({
   result,
   setResult,
   step5Ref,
@@ -28,7 +27,6 @@ const KakaoMapContainer = ({
 
   const onClickRegisterBtn = () => {
     let formData = new FormData();
-
     formData.append("imgs", bookImage);
     formData.append(
       "request", 
@@ -37,9 +35,6 @@ const KakaoMapContainer = ({
         {type: "application/json"}
       )
     );
-    // for (let key of formData.keys()) {
-    //   console.log(key, ":", formData.get(key));
-    // }
 
     postBookData(formData, cookies.userData.accessToken)
       .then(response => {
@@ -51,26 +46,13 @@ const KakaoMapContainer = ({
       })
   }
   
-  
   return (
-    <div 
-      className="bg-white-full-vh flex-col-box-center lh-2" 
-      ref={step5Ref}
-    >
-      {
-        result.latitude || result.longitude ? (
-          <>
-          <KakaoMap 
-            result = {result}
-            setResult = {setResult}
-            onClickRegisterBtn = {onClickRegisterBtn}
-          />
-          </>
-        ) : (<></>)
-      }
-      
-    </div>
+    <LocationForm
+      step5Ref = {step5Ref}
+      result = {result}
+      onClickRegisterBtn = {onClickRegisterBtn}
+    />
   )
 }
 
-export default KakaoMapContainer;
+export default Step5LocationContainer;

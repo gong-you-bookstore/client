@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { getBookByNLK } from "../../lib/services";
 import FillForm from "../../components/register/FillForm";
 
-const FillContainer = ({
+const Step3FillContainer = ({
   result,
   setResult,
   step3Ref,
@@ -49,4 +49,4 @@ const FillContainer = ({
   )
 }
 
-export default FillContainer;
+export default Step3FillContainer;

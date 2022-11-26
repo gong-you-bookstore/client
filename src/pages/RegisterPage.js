@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 import useScrollTo from "../lib/hooks/useScrollTo";
-import SearchContainer from "../containers/register/SearchContainer";
-import SelectContainer from "../containers/register/SelectContainer";
-import FillContainer from "../containers/register/FillContainer";
-import PictureContainer from "../containers/register/PictureContainer";
-import KakaoMapContainer from "../containers/register/KakaoMapContainer";
+import Step1SearchContainer from "../containers/register/Step1SearchContainer";
+import Step2SelectContainer from "../containers/register/Step2SelectContainer";
+import Step3FillContainer from "../containers/register/Step3FillContainer";
+import Step4PictureContainer from "../containers/register/Step4PictureContainer";
+import Step5LocationContainer from "../containers/register/Step5LocationContainer";
 const RegisterPage = () => {
   const [step2Ref, setIsScrollToStep2] = useScrollTo();
   const [step3Ref, setIsScrollToStep3] = useScrollTo();
@@ -26,7 +26,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <SearchContainer 
+      <Step1SearchContainer 
         setSearchResults = {setSearchResults}
         setIsScrollToStep2 = {setIsScrollToStep2}
         isView = {isView}
@@ -34,7 +34,7 @@ const RegisterPage = () => {
       />
       {
         isView.step2 ? (
-          <SelectContainer 
+          <Step2SelectContainer 
             searchResults = {searchResults}
             setResult = {setResult}
             step2Ref = {step2Ref}
@@ -46,7 +46,7 @@ const RegisterPage = () => {
       }
       {
         isView.step3 ? (
-          <FillContainer
+          <Step3FillContainer
             result = {result}
             setResult = {setResult}
             step3Ref = {step3Ref}
@@ -58,7 +58,7 @@ const RegisterPage = () => {
       }
       {
         isView.step4 ? (
-          <PictureContainer
+          <Step4PictureContainer
             step4Ref = {step4Ref}
             setIsScrollToStep5 = {setIsScrollToStep5}
             isView = {isView}
@@ -70,7 +70,7 @@ const RegisterPage = () => {
       }
       {
         isView.step5 ? (
-          <KakaoMapContainer
+          <Step5LocationContainer
             result = {result}
             setResult = {setResult}
             bookImage = {bookImage}

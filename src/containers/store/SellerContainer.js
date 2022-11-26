@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie"
-import UserListForm from "../../components/store/UserListForm";
-import UserItemForm from "../../components/store/UserItemForm";
+import SellerListForm from "../../components/store/SellerListForm";
+import SellerItemForm from "../../components/store/SellerItemForm";
 import { toastMaker } from "../../lib/utils";
 import { getUserBook } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
-const UserContainer = ({
-  users,
+const SellerContainer = ({
+  sellers,
   isbn
 }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
@@ -55,12 +55,12 @@ const UserContainer = ({
     <>
     {
       isViewList ? (
-        <UserListForm
-          users = {users}
+        <SellerListForm
+          sellers = {sellers}
           onClickUser = {onClickUser}
         />
       ) : (
-        <UserItemForm 
+        <SellerItemForm 
           selectedUserEmail = {selectedUserEmail}
           onToggleView = {onToggleView}
           selectedUserData = {selectedUserData}
@@ -73,4 +73,4 @@ const UserContainer = ({
   )
 }
 
-export default UserContainer;
+export default SellerContainer;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getBooksByKakao } from "../../lib/services";
 import { toastMaker } from "../../lib/utils";
 
-const SearchContainer = ({
+const Step1SearchContainer = ({
   setSearchResults, 
   setIsScrollToStep2,
   isView,
@@ -46,4 +46,4 @@ const SearchContainer = ({
   )
 }
 
-export default SearchContainer;
+export default Step1SearchContainer;

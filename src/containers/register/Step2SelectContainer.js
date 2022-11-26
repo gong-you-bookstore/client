@@ -1,6 +1,6 @@
 import SelectForm from "../../components/register/SelectForm";
 
-const SelectContainer = ({
+const Step2SelectContainer = ({
   searchResults, 
   step2Ref,
   setResult,
@@ -37,4 +37,4 @@ const SelectContainer = ({
   )
 }
 
-export default SelectContainer;
+export default Step2SelectContainer;
