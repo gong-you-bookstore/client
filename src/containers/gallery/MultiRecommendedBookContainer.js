@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMultiRecommendedBook } from "../../lib/api/recommend";
-import Shelf from "../../components/gallery/Shelf";
 import Empty from "../../components/common/Empty";
+import BookCarousel from "../../components/gallery/BookCarousel";
 const MultiRecommendedBookContainer = ({books}) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
   const isbns = [];
@@ -23,7 +23,7 @@ const MultiRecommendedBookContainer = ({books}) => {
       {
         recommendedBooks.length !== 0 ? (
           <>
-          <Shelf 
+          <BookCarousel 
             books = {recommendedBooks}
             isRecommended = {true}
           />

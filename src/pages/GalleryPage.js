@@ -3,8 +3,6 @@ import Loading from "../components/common/Loading";
 import logo from '../assets/images/logo_row_white.png'
 import React, { lazy, Suspense } from 'react';
 import useScrollTo from "../lib/hooks/useScrollTo";
-import books from '../assets/bookmini.json'
-import Shelf from "../components/gallery/Shelf";
 const MultiRecommendedBookContainer = lazy(() => import('../containers/gallery/MultiRecommendedBookContainer'));
 const RegisteredBookContainer = lazy(() => import('../containers/gallery/RegisteredBookContainer'));
 
