@@ -19,12 +19,10 @@ const LocationForm = ({
           </p>
           {
             result.latitude || result.longitude ? (
-              <>
               <KakaoMap
                 latitude = {result.latitude}
                 longitude = {result.longitude}
               />
-              </>
             ) : (<></>)
           }
 

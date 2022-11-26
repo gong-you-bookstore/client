@@ -1,3 +1,4 @@
+import KakaoMap from "../register/KakaoMap";
 const SellerItemForm = ({
   selectedUserEmail,
   onToggleView,
@@ -7,13 +8,44 @@ const SellerItemForm = ({
 }) => {
   return (
     <>
+    <div className="register-users-area">
     <h1 className="">
-      {selectedUserEmail}님이 올릭 책입니다
+      {selectedUserEmail}님이 등록하신 책입니다
     </h1>
-    <p>{selectedUserData.shelfId}</p>
-    <p>{selectedUserData.status}</p>
-    <p>{selectedUserData.token}</p>
-    <div>
+    <div className="flex-sp-box">
+      <div className="fw-bold">
+        게시글 번호
+      </div>
+      <div>
+        {selectedUserData.shelfId}
+      </div>
+    </div>
+    <div className="flex-sp-box">
+      <div className="fw-bold">
+        상태
+      </div>
+      <div>
+        {selectedUserData.status}
+      </div>
+    </div>
+    <div className="flex-sp-box">
+      <div className="fw-bold">
+        토큰개수
+      </div>
+      <div>
+        {selectedUserData.token}
+      </div>
+    </div>
+
+    {
+      selectedUserData.latitude || selectedUserData.longitude ? (
+        <KakaoMap 
+          latitude  = {selectedUserData.latitude}
+          longitude = {selectedUserData.longitude}
+        />
+      ) : (<></>)
+    }
+    <div className="btn-group">
     <button
       className="btn-big transparent-btn"
       onClick={() => {
@@ -34,6 +66,7 @@ const SellerItemForm = ({
     >
       메시지
     </button>
+    </div>
     </div>
     </>
   )

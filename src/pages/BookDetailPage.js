@@ -26,32 +26,31 @@ const BookDetailPage = () => {
   if (book) {
     return (
       <div className="white-cement-bg">
-      <div 
-        className="book-banner"
-        style={{
-          backgroundImage:
-            `url(${book.thumbnail})`,
-        }}
-      >
-        <div className='book-banner-cover '>
-        </div>
-      </div>
-  
-      <div className='container lh-2'>
-        <div className="detail-grid">
-          <h1 className="fc-white">{book.title}</h1>
-          <img 
-            src = {book.thumbnail}
-            className="thumbnail" 
-            alt="img" 
-          />
-          <p>{book.author}</p>
-          <p>{book.content}</p>
-        </div>
+        
+        <div 
+          className="book-banner"
+          style={{
+            backgroundImage:
+              `url(${book.thumbnail})`,
+          }}
+        >
+          <div className='book-banner-cover'>
+            <div className="book-info-grid container lh-2">
+              <img 
+                src = {book.thumbnail}
+                className="thumbnail" 
+                alt="img" 
+              />
+              <h1>{book.title}</h1>
 
-        <SingleRecommendedBookContainer isbn = {book.isbn}/>
-        <div className="gallery-area">
-          <div className="register-users-area">
+              <p>{book.author}</p>
+              <p className="">{book.content}</p>
+            </div>
+          </div>
+        </div>
+  
+        <div className='container'>
+          <div className="gallery-area">
             {
               book.userList ? (
                 <SellerContainer 
@@ -60,9 +59,10 @@ const BookDetailPage = () => {
                 />
               ) : (<></>)
             }
+            <SingleRecommendedBookContainer isbn = {book.isbn}/>
+
           </div>
-      </div>
-      </div>
+        </div>
       </div>
     )
   }

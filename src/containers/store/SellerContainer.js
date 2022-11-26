@@ -42,6 +42,7 @@ const SellerContainer = ({
   useEffect(() => {
     if (selectedUserEmail) {
       getUserBook(isbn, selectedUserEmail, cookies.userData.accessToken).then(response => {
+        console.log(response)
         setSelectedUserData(response.data.data);
       }).catch(error => {
         console.log(error)
