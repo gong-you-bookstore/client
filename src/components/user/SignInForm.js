@@ -38,7 +38,7 @@ const SignInForm = ({
         >
           Login
         </button>
-        <p className="message">
+        <p>
           Not registered?{"  "}
           <span>
             <strong

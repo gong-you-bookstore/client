@@ -62,7 +62,7 @@ const SignUpForm = ({
           Sign Up
         </button>
 
-      <p className="message">
+      <p>
         Already registered?{" "}
         <span>
           <strong

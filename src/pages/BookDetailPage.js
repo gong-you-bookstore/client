@@ -52,9 +52,7 @@ const BookDetailPage = () => {
 
         <SingleRecommendedBookContainer isbn = {book.isbn}/>
         <div className="gallery-area">
-
-          <div className="register-users-area content-section">
-            
+          <div className="register-users-area">
             {
               book.userList ? (
                 <UserContainer 

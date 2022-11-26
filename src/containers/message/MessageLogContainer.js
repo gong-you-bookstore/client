@@ -18,7 +18,11 @@ const MessageLogContainer = ({
     loadMessagelog();
   }, [])
 
-  const onClickRespondTrade = () => {
+  const onClickRespondTrade = (viewer, origin) => {
+    if (viewer === origin) {
+      toastMaker.error("잘못된 접근입니다.")
+      return;
+    }
     respondTrade(
       cookies.userData.accessToken, {
         shelfId: state.shelfId,

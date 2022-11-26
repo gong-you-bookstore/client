@@ -1,5 +1,4 @@
 import Message from "./Message";
-
 const RequestCard = ({
   me,
   message,
@@ -21,7 +20,7 @@ const RequestCard = ({
         type="button"
         className="btn-sm blue-btn fw-bold"
         onClick={() => {
-          onClickRespondTrade();
+          onClickRespondTrade(me, message.email);
         }}
       >
         수락합니다.

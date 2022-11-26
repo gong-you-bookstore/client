@@ -12,7 +12,7 @@ const UserListForm = ({
         users.map((user, index) => (
           <div 
             key={index}
-            className="register-user"
+            className="transparent-btn btn-xxl"
             onClick={() => {
               onClickUser(user);
             }}

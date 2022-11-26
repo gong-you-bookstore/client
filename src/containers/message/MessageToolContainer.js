@@ -23,6 +23,7 @@ const MessageToolContainer = ({
   }
 
   const onClickSendMessage = () => {
+    console.log(state)
     postMessage(
       cookies.userData.accessToken,
       sendMessage

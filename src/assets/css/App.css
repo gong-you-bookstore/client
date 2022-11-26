@@ -195,6 +195,16 @@ input:-webkit-autofill:active {
   transition: all 0.4s;
 }
 
+.btn-xxl {
+  cursor: pointer;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.4s;
+}
+
 .btn-sm {
   cursor: pointer;
   padding: 6px 10px;
@@ -1310,6 +1320,7 @@ video.drawingBuffer {
 }
 
 .register-users-area {
+  gap: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1320,20 +1331,8 @@ video.drawingBuffer {
   gap: 10px;
   width: 100%;
   flex-wrap: wrap;
-}
-
-.register-user {
-  background-color: #7f818e;
-  color: #fff;
-  border-radius: 15px;
-  padding: 7px 8px;
-  transition: all 0.2s;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.register-user:hover {
-  background-color: #00c9a9;
+  justify-content: center;
+  align-items: center;
 }
 
 .maessage-area {
