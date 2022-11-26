@@ -1,6 +1,6 @@
 import empty from '../../assets/images/empty.png'
 
-const Empty = () => {
+const Empty = ({message}) => {
   return (
       <div className="empty-info">
         <img 
@@ -8,7 +8,7 @@ const Empty = () => {
           width="180px"
           alt="img"
         />
-        <span>추천책이 없습니다..</span>
+        <span>{message}</span>
       </div>
   )
 }

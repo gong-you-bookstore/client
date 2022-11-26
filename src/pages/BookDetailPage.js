@@ -17,7 +17,7 @@ const BookDetailPage = () => {
       setBook(response.data.data)
     })
       .catch(error => {
-        setBook(state.norRegistered)
+        setBook(state.notRegistered)
         console.log(error)
     })
   }, [])

@@ -22,9 +22,14 @@ const MultiRecommendedBookContainer = ({books}) => {
     <>
       {
         recommendedBooks.length !== 0 ? (
-          <Shelf books = {recommendedBooks} />
+          <>
+          <Shelf 
+            books = {recommendedBooks}
+            isRecommended = {true}
+          />
+          </>
         ) : (
-          <Empty />
+          <Empty message = {"추천책이 없습니다.."}/>
         )
       }
     </>

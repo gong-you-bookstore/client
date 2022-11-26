@@ -38,9 +38,13 @@ const GalleryPage = () => {
             registeredBooks = {registeredBooks}
             setRegisteredBooks = {setRegisteredBooks}
           />
+          <div className="wood-shelf" />
+
           <MultiRecommendedBookContainer 
             books = {registeredBooks} 
-          /> 
+          />
+          <div className="wood-shelf" />
+
           
           </>
         </div>
