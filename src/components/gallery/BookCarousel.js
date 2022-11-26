@@ -3,7 +3,10 @@ import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from 'react-router-dom';
 import { responsiveCarousel } from '../../lib/styles';
 
-const BookCarousel = ({books}) => {
+const BookCarousel = ({
+  books,
+  isRecommended,
+}) => {
   const navigate = useNavigate();
   
   return (
@@ -16,9 +19,20 @@ const BookCarousel = ({books}) => {
               className="book-dynamic" 
               alt="img"
               onClick={()=>{
+                if (isRecommended) {
+                  navigate(
+                    `/detail`,
+                    { state: {
+                      notRegistered: book
+                    } }
+                  )
+                  return
+                }
                 navigate(
                   `/detail`,
-                  { state: book.isbn }
+                  { state: {
+                    registered: book.isbn
+                  } }
                 )
               }} 
             />

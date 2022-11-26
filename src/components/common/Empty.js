@@ -8,7 +8,6 @@ const Empty = () => {
           width="180px"
           alt="img"
         />
-        <span>추천책이 없습니다..</span>
       </div>
   )
 }

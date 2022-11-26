@@ -3,6 +3,7 @@ import { getMyMessage } from "../../lib/api/message";
 import { useNavigate } from "react-router-dom";
 import { toastMaker } from "../../lib/utils";
 import MyMessageBox from "../../components/user/MyMessageBox";
+import Empty from "../../components/common/Empty";
 const MyMessageBoxContainer = ({
   accessToken
 }) => {
@@ -32,10 +33,25 @@ const MyMessageBoxContainer = ({
   }
 
   return (
-    <MyMessageBox
-      myMessages = {myMessages}
-      onClickMessage = {onClickMessage}
-    />
+    <>
+    <div className="gallery-area">
+      <div className="container">
+        <div className="my-message-box">
+          {
+            myMessages.length !== 0 ? (
+              <MyMessageBox
+                myMessages = {myMessages}
+                onClickMessage = {onClickMessage}
+              />
+            ) : (
+              <Empty />
+            )
+          }
+        </div>
+      </div>
+    </div>
+    </>
+    
   )
 }
 

@@ -12,11 +12,12 @@ const BookDetailPage = () => {
   const [book, setBook] = useState({})
   
   useEffect(() => {
-    getBookDetails(state, cookies.userData.accessToken)
+    getBookDetails(state.registered, cookies.userData.accessToken)
       .then(response => {
       setBook(response.data.data)
     })
       .catch(error => {
+        setBook(state.notRegistered)
         console.log(error)
     })
   }, [])
@@ -26,7 +27,6 @@ const BookDetailPage = () => {
   if (book) {
     return (
       <div className="white-cement-bg">
-        
         <div 
           className="book-banner"
           style={{
@@ -59,8 +59,10 @@ const BookDetailPage = () => {
                 />
               ) : (<></>)
             }
-            <SingleRecommendedBookContainer isbn = {book.isbn}/>
-
+            <SingleRecommendedBookContainer 
+              isbn = {book.isbn}
+              setBook = {setBook}  
+            />
           </div>
         </div>
       </div>

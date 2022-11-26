@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 const About = () => {
   return (
     <div className="content-section" >
-      <div className="container">
+      <div className="container desktop-bo">
         <div className="flex-box">
           <div className="content-info-left">
             <Fade direction="up" cascade triggerOnce>

@@ -20,7 +20,7 @@ const MessageLogContainer = ({
 
   const onClickRespondTrade = (viewer, origin) => {
     if (viewer === origin) {
-      toastMaker.error("잘못된 접근입니다.")
+      toastMaker.info("상대방이 고민중입니다..!")
       return;
     }
     respondTrade(
@@ -29,7 +29,7 @@ const MessageLogContainer = ({
         receiverEmail: state.userEmail,
       }
     ).then(response => {
-      toastMaker.success(response.data.msg);
+      toastMaker.info("거래가 완료 되었습니다..!");
       loadMessagelog();
     }).catch(error => {
       console.log(error);

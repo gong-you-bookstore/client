@@ -4,7 +4,10 @@ import tempBooks from '../../assets/bookmini.json'
 import SingleRecommendedBook from "../../components/store/SingleRecommendedBook";
 import { toastMaker } from '../../lib/utils'
 import Empty from "../../components/common/Empty";
-const SingleRecommendedBookContainer = ({isbn}) => {
+const SingleRecommendedBookContainer = ({
+  isbn,
+  setBook
+}) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
 
   useEffect(() => {
@@ -21,7 +24,10 @@ const SingleRecommendedBookContainer = ({isbn}) => {
     <>
     {
       recommendedBooks.length !== 0 ? (
-        <SingleRecommendedBook books = {recommendedBooks} />
+        <SingleRecommendedBook 
+          books = {recommendedBooks} 
+          setBook = {setBook}
+        />
       ) : (
         <Empty />
       )

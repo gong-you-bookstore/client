@@ -6,13 +6,12 @@ const MyMessageBox = ({
   onClickMessage
 }) => {
   return (
-    <div className="bg-white-full-px">
-      <div className=" my-message-box">
+    <>
         {
           myMessages.map((myMessage, index) => (
             <React.Fragment key={index}>
             <div 
-              className="my-message-wrapper container desktop-box"
+              className="my-message-wrapper"
               onClick={() => {
                 onClickMessage(
                   myMessage.shelfId,
@@ -33,8 +32,7 @@ const MyMessageBox = ({
             </React.Fragment>
           ))
         }
-        </div>
-      </div>
+      </>
   )
 }
 
