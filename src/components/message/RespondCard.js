@@ -1,13 +1,13 @@
 import Message from "./Message";
 const RespondCard = ({
-  me,
+  state,
   message,
   onClickGoToHome
 }) => {
   return (
     <div className="message-system-card">
       <Message 
-        me = {me}
+        state = {state}
         message = {message}
       />
       <div>

@@ -195,6 +195,16 @@ input:-webkit-autofill:active {
   transition: all 0.4s;
 }
 
+.btn-xxl {
+  cursor: pointer;
+  padding: 20px 25px;
+  border-radius: 20px;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.4s;
+}
+
 .btn-sm {
   cursor: pointer;
   padding: 6px 10px;
@@ -588,12 +598,6 @@ input:-webkit-autofill:active {
   .concept-book {
     width: 220px;
   }
-  .flex-sp-box {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-self: center;
-    gap: 50px;
-  }
 }
 /* phone */
 @media screen and (max-width: 575px) {
@@ -804,7 +808,7 @@ video.drawingBuffer {
 }
 
 .gallery-area {
-  padding: 100px 0px 170px 0;
+  padding: 80px 0px 170px 0;
   min-height: 900px;
 }
 
@@ -1263,16 +1267,20 @@ video.drawingBuffer {
 
 .book-banner {
   grid-area: header;
-  height: 30vh;
+  /* height: 30vh; */
   width: 100vw;
   background-size: cover;
+  color: #fff;
 }
 .book-banner-cover {
+  padding: 120px 0;
   height: 100%;
   backdrop-filter: blur(25px);
   background-color: rgba(0, 0, 0, 0.3);
 }
-
+.book-banner h1 {
+  font-size: 24px;
+}
 .thumbnail {
   width: 200px;
   border-top-right-radius: 10px;
@@ -1281,10 +1289,8 @@ video.drawingBuffer {
   transition: all 0.3s ease-in-out;
 }
 
-.detail-grid {
-  position: relative;
+.book-info-grid {
   gap: 20px;
-  bottom: 150px;
   display: grid;
   grid-auto-columns: 1fr;
   place-items: center;
@@ -1310,9 +1316,21 @@ video.drawingBuffer {
 }
 
 .register-users-area {
+  padding: 50px 0;
+  gap: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff;
+  padding: 50px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  box-shadow: -3px -3px 2px rgba(255, 255, 255, 0.1),
+    5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-users-area h1 {
+  font-size: 24px;
 }
 
 .register-users {
@@ -1320,20 +1338,8 @@ video.drawingBuffer {
   gap: 10px;
   width: 100%;
   flex-wrap: wrap;
-}
-
-.register-user {
-  background-color: #7f818e;
-  color: #fff;
-  border-radius: 15px;
-  padding: 7px 8px;
-  transition: all 0.2s;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.register-user:hover {
-  background-color: #00c9a9;
+  justify-content: center;
+  align-items: center;
 }
 
 .maessage-area {
@@ -1478,4 +1484,22 @@ video.drawingBuffer {
   justify-content: flex-end;
   gap: 10px;
   margin: 20px 0px;
+}
+
+.empty-info {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #444;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2;
+}
+
+.flex-sp-box {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  gap: 20px;
 }

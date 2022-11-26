@@ -27,7 +27,6 @@ const MessageToolContainer = ({
       cookies.userData.accessToken,
       sendMessage
     ).then(response => {
-      toastMaker.success(response.data.msg);
       setSendMessage({
         ...sendMessage,
         content: ""

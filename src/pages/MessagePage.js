@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCookies } from "react-cookie"
 import { useLocation } from "react-router-dom";
 import MessageLogContainer from "../containers/message/MessageLogContainer";
 import MessageToolContainer from "../containers/message/MessageToolContainer";
 
-import { getMessages, postMessage } from "../lib/api/message";
+import { getMessages } from "../lib/api/message";
 
 const MessagePage = () => {
   const {state} = useLocation();
@@ -37,8 +37,6 @@ const MessagePage = () => {
             <MessageLogContainer 
               messagesLog = {messagesLog}
               loadMessagelog = {loadMessagelog}
-              me = {state.myEmail}
-              you = {state.userEmail}
               state = {state}
             />
           </div>

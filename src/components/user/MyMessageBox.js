@@ -1,3 +1,4 @@
+import React from "react";
 import profile from "../../assets/images/profile.png"
 
 const MyMessageBox = ({
@@ -9,9 +10,8 @@ const MyMessageBox = ({
       <div className=" my-message-box">
         {
           myMessages.map((myMessage, index) => (
-            <>
+            <React.Fragment key={index}>
             <div 
-              key={index}
               className="my-message-wrapper container desktop-box"
               onClick={() => {
                 onClickMessage(
@@ -30,7 +30,7 @@ const MyMessageBox = ({
               </div>
             </div>
             <div className="my-message-line"></div>
-            </>
+            </React.Fragment>
           ))
         }
         </div>

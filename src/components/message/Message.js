@@ -1,10 +1,10 @@
 const Message = ({
-  me,
+  state,
   message
 }) => {
   return (
     <div>
-      {me === message.email ? "나" : "상대방"}: {message.content}
+      {state.myEmail === message.email ? "나" : "상대방"}: {message.content}
     </div>
   )
 }

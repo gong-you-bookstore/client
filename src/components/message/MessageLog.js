@@ -3,27 +3,26 @@ import RespondCard from './RespondCard'
 import Message from './Message'
 
 const MessageLog = ({
+  state,
   messagesLog,
-  you,
-  me,
   onClickRespondTrade,
   onClickGoToHome
 }) => {
   return (
     <>
     <div className="fc-muted mb-30 fs-14 t-c lh-2">
-      <span className="fw-bold fc-white">{you}</span>님과의대화방입니다.<br/>
+      <span className="fw-bold fc-white">{state.userEmail}</span>님과의대화방입니다.<br/>
       책의 상태를 잘 확인하시고 거래하시기 바랍니다.<br/>
     </div>
     <ul className="message-log">
     {
       messagesLog.map((message, index) => (
         <li key={index} className="message" >
-          <span className="ww">
+          <span>
             {
               message.content === "도서 거래를 요청합니다." ? (
-                <RequestCard 
-                  me = {me}
+                <RequestCard
+                  state = {state}
                   message = {message}
                   onClickRespondTrade = {onClickRespondTrade}
                 />
@@ -31,14 +30,14 @@ const MessageLog = ({
                 <>
                 {
                   message.content === "도서 거래를 수락합니다." ? (
-                    <RespondCard 
-                      me = {me}
+                    <RespondCard
+                      state = {state}
                       message = {message}
                       onClickGoToHome = {onClickGoToHome}
                     />
                   ) : (
-                    <Message 
-                      me = {me}
+                    <Message
+                      state = {state}
                       message = {message}
                     />
                   )

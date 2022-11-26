@@ -1,7 +1,6 @@
 import Message from "./Message";
-
 const RequestCard = ({
-  me,
+  state,
   message,
   onClickRespondTrade
 }) => {
@@ -9,8 +8,8 @@ const RequestCard = ({
     <>
     <div className="message-system-card">
       <div>
-      <Message 
-        me = {me}
+      <Message
+        state = {state}
         message = {message}
       />
       </div>
@@ -21,7 +20,7 @@ const RequestCard = ({
         type="button"
         className="btn-sm blue-btn fw-bold"
         onClick={() => {
-          onClickRespondTrade();
+          onClickRespondTrade(state.myEmail, message.email);
         }}
       >
         수락합니다.

@@ -8,7 +8,7 @@ const SingleRecommendedBook = ({books}) => {
   useEffect(() => {
   }, [books])
   return (
-    <div className="content-">
+    <div className="content-section">
       <Carousel responsive={responsiveCarousel}>
       {
         books.map((book, index) => (

@@ -12,9 +12,7 @@ const LoginPage = () => {
         cookies.userData ? (<></>) : (
           <>
           <div className="full-vh-bg flex-col-box-center">
-          
             <div className="flex-col-box-center">
-            
               <img 
                 src={logoColorImg} 
                 className="w-120 mb-10 c-p"

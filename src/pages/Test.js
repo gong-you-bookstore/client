@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getOneRecommendedBook, getMultiRecommendedBook } from "../lib/api/recommend";
 const Test = () => {
 
-  const [myBooks, setMyBooks] = useState(['9788931462050', '9788960775329', '9788964213018', '9788966262113'])
+  const [myBooks, setMyBooks] = useState(['9791156759270'])
 
   return (
     <>
