@@ -23,12 +23,10 @@ const MessageToolContainer = ({
   }
 
   const onClickSendMessage = () => {
-    console.log(state)
     postMessage(
       cookies.userData.accessToken,
       sendMessage
     ).then(response => {
-      toastMaker.success(response.data.msg);
       setSendMessage({
         ...sendMessage,
         content: ""

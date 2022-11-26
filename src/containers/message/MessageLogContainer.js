@@ -42,6 +42,7 @@ const MessageLogContainer = ({
 
   return (
     <MessageLog
+      state = {state}
       messagesLog = {messagesLog}
       you = {you}
       me = {me}
