@@ -25,7 +25,7 @@ const RegisteredBookContainer = ({
           <BookCarousel books = {registeredBooks} />
           </>
         ) : (
-          <Empty message = {"등록된 책이 없습니다.."}/>
+          <Empty />
         )
       }
     </>

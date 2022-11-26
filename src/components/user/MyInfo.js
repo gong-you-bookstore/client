@@ -5,13 +5,14 @@ const MyInfo = ({
   goToGallery
 }) => {
   return (
+    <>
     <div className="mypage-banner">
       <div className="container desktop-box">
         <div className="my-info">
-          <img src={profile} width="100px" className="profile" alt="img"/>
-          <h1 className="fc-white fs-28">{userInfo.name}님의 페이지</h1>
-          <p>{userInfo.email}</p>
+          
           <div className="info-box">
+            <img src={profile} width="100px" className="profile" alt="img"/>
+
             <div className="info-item">
               <p>
                 토큰
@@ -34,9 +35,14 @@ const MyInfo = ({
               </p>
             </div>
           </div>
+
+          <h1 className="fc-white fs-28">{userInfo.name}님의 페이지</h1>
+          <p>{userInfo.email}</p>
         </div>
       </div>
     </div>
+    <div className="radius-banner"></div>
+    </>
   )
 }
 

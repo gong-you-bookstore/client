@@ -59,6 +59,10 @@ const SellerContainer = ({
         <SellerListForm
           sellers = {sellers}
           onClickUser = {onClickUser}
+          cookies = {cookies}
+          onClickMessage = {onClickMessage}
+          selectedUserData = {selectedUserData}
+          selectedUserEmail = {selectedUserEmail}
         />
       ) : (
         <SellerItemForm 

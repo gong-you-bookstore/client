@@ -29,7 +29,7 @@ const MultiRecommendedBookContainer = ({books}) => {
           />
           </>
         ) : (
-          <Empty message = {"추천책이 없습니다.."}/>
+          <Empty/>
         )
       }
     </>

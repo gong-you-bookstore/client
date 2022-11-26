@@ -29,7 +29,7 @@ const SingleRecommendedBookContainer = ({
           setBook = {setBook}
         />
       ) : (
-        <Empty message = {"추천책이 없습니다.."}/>
+        <Empty />
       )
     }
     </>

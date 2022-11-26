@@ -27,7 +27,6 @@ const BookDetailPage = () => {
   if (book) {
     return (
       <div className="white-cement-bg">
-        
         <div 
           className="book-banner"
           style={{
@@ -64,7 +63,6 @@ const BookDetailPage = () => {
               isbn = {book.isbn}
               setBook = {setBook}  
             />
-
           </div>
         </div>
       </div>
