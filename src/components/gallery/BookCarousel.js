@@ -18,7 +18,9 @@ const BookCarousel = ({books}) => {
               onClick={()=>{
                 navigate(
                   `/detail`,
-                  { state: book.isbn }
+                  { state: {
+                    registered: book.isbn
+                  } }
                 )
               }} 
             />

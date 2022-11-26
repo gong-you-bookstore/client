@@ -33,16 +33,16 @@ const GalleryPage = () => {
 
       <div className="dark-cement-bg" ref={galleryRef}>
         <div className="gallery-area container" >
+          <>
           <RegisteredBookContainer 
             registeredBooks = {registeredBooks}
             setRegisteredBooks = {setRegisteredBooks}
           />
           <MultiRecommendedBookContainer 
             books = {registeredBooks} 
-          />
-          <Shelf 
-            books = {books}
-          />
+          /> 
+          
+          </>
         </div>
       </div>
       </Suspense>

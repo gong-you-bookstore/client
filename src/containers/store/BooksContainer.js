@@ -34,7 +34,9 @@ const BooksContainer = ({
                   
                   navigate(
                     `/detail`,
-                    { state: book.isbn }
+                    { state: {
+                      registered: book.isbn
+                    } }
                   )
                 }} 
               />

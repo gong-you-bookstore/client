@@ -3,7 +3,12 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useNavigate } from 'react-router-dom';
 import { responsiveCarousel } from "../../lib/styles";
-const SingleRecommendedBook = ({books}) => {
+import { scrollToTop } from "../../lib/utils";
+const SingleRecommendedBook = ({
+  books,
+  setBook
+}) => {
+  const navigate = useNavigate();
 
   useEffect(() => {
   }, [books])
@@ -16,7 +21,11 @@ const SingleRecommendedBook = ({books}) => {
             key={index}
             src={book.thumbnail}
             alt="img"
-            className="book-static btn-shadow" 
+            className="book-static btn-shadow"
+            onClick={()=>{
+              setBook(book);
+              scrollToTop();
+            }} 
           />
         ))
       }

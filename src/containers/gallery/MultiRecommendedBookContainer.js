@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMultiRecommendedBook } from "../../lib/api/recommend";
 import Shelf from "../../components/gallery/Shelf";
-import tempBooks from '../../assets/bookmini.json'
-
+import Empty from "../../components/common/Empty";
 const MultiRecommendedBookContainer = ({books}) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
   const isbns = [];
@@ -15,15 +14,19 @@ const MultiRecommendedBookContainer = ({books}) => {
       getMultiRecommendedBook(isbns).then(response => {
         setRecommendedBooks(response.data.data)
       }).catch(error => {
-        setRecommendedBooks(tempBooks)
-        console.log(error)
       })    
     }
   },[books])
 
   return (
     <>
-      <Shelf books = {recommendedBooks} />
+      {
+        recommendedBooks.length !== 0 ? (
+          <Shelf books = {recommendedBooks} />
+        ) : (
+          <Empty />
+        )
+      }
     </>
     
   )
