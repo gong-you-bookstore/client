@@ -21,9 +21,6 @@ const BookDetailPage = () => {
         console.log(error)
     })
   }, [])
-
-  
-
   if (book) {
     return (
       <div className="white-cement-bg">
@@ -42,7 +39,6 @@ const BookDetailPage = () => {
                 alt="img" 
               />
               <h1>{book.title}</h1>
-
               <p>{book.author}</p>
               <p className="">{book.content}</p>
             </div>
@@ -59,11 +55,17 @@ const BookDetailPage = () => {
                 />
               ) : (<></>)
             }
-            <div className="type-info fc-dark">이 책과 유사한 책</div>
-            <SingleRecommendedBookContainer 
-              isbn = {book.isbn}
-              setBook = {setBook}  
-            />
+            <div className="type-info fc-dark">
+              이 책과 유사한 책
+            </div>
+            {
+              book.isbn ? (
+                <SingleRecommendedBookContainer 
+                    isbn = {book.isbn}
+                    setBook = {setBook}  
+                  />
+              ) : (<></>)
+            }
           </div>
         </div>
       </div>

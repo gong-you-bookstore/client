@@ -9,10 +9,13 @@ const SingleRecommendedBookContainer = ({
   const [recommendedBooks, setRecommendedBooks] = useState([])
 
   useEffect(() => {
+    console.log(isbn)
+
     if(isbn) {
       getOneRecommendedBook(isbn).then(response => {
         setRecommendedBooks(response.data.data);
       }).catch(error => {
+
       })
     }
   }, [])
