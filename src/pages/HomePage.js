@@ -15,9 +15,7 @@ const HomePage = ()=>{
       <span className="pointer" ref={introRef} />
 
       <About />
-      <div className="content-section">
-      </div>
-
+      
       <div className="content-section bg-gallery home-gallery">
         <div className="container">
           <Fade cascade damping={0.1}>
@@ -30,10 +28,10 @@ const HomePage = ()=>{
             </Fade>
           </div>
       </div>
+
       <div className="content-section">
       </div>
 
-      
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">

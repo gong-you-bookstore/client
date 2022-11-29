@@ -23,7 +23,7 @@ const BooksContainer = ({
               <img 
                 key={index} 
                 src={book.thumbnail} 
-                className="book-static book-sd btn-shadow" 
+                className="book-static" 
                 alt="img"
                 onClick={()=>{
                   if (!cookies.userData) {
