@@ -1021,7 +1021,8 @@ video.drawingBuffer {
   gap: 15px;
   font-weight: bold;
   grid-template-areas:
-    "full full gallery gallery gallery gallery"
+    "full full full full full full"
+    "gallery gallery gallery gallery gallery gallery"
     "zero zero zero one one one"
     "two two three three four four"
     "five five six six seven seven"
