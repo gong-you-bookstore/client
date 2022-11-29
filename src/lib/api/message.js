@@ -3,7 +3,7 @@ import { apiClient } from ".";
 /**
  * 메시지 전송
  * @param {*} accessToken 
- * @param {*} data {receiverEmail, content}
+ * @param {*} data {shelfId, receiverEmail, content}
  * @returns 
  */
 export const postMessage = async (accessToken, data) => {

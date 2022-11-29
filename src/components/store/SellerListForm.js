@@ -33,7 +33,7 @@ const SellerListForm = ({
                     onClickUser(seller);
                   }}
                 >상세보기</button>
-                <button
+                {/* <button
                   type="button"
                   className="btn-sm primary-btn"
                   onClick={() => {
@@ -43,7 +43,7 @@ const SellerListForm = ({
                       cookies.userData.email
                     );
                   }}
-                >메시지</button>
+                >메시지</button> */}
               </div>
             </div>
             <div className="my-message-line"></div>

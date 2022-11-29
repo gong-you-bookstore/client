@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie"
 import { postMessage } from "../../lib/api/message";
 import { requestTrade } from "../../lib/api/book";
@@ -21,6 +21,9 @@ const MessageToolContainer = ({
       [event.target.name]: event.target.value
     })
   }
+  useEffect(()=>{
+    console.log(state)
+  }, [sendMessage])
 
   const onClickSendMessage = () => {
     postMessage(
