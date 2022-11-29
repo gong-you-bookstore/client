@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
-import { getBooks } from "../../lib/api/book";
-
 const SearchBar = ({
   searchWord,
   onChangeSearchWord,
-  filteredBooks
 }) => {
-  
   return (
     <div className='container'>
       <div className="desktop-box">
