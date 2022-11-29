@@ -28,7 +28,8 @@ const HomePage = ()=>{
             </Fade>
           </div>
       </div>
-
+      <div className="content-section">
+      </div>
 
       
       <div className="content-section">
