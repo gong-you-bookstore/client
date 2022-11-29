@@ -22,8 +22,10 @@ const HomePage = ()=>{
         <div className="container">
           <Fade cascade damping={0.1}>
             <div className="info-text center-text fs-28 fw-bold">
-                갤러리에서 내 책을 관리하고,<br/>
-                새로운 책을 추천받아보세요
+                갤러리에서<br/>
+                내 책을 관리하고<br/>
+                새로운 책을<br/>
+                만나보세요
             </div>
             </Fade>
           </div>

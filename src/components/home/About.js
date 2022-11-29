@@ -21,9 +21,9 @@ const About = () => {
             <Fade direction="up" cascade triggerOnce>
 
               <p className="info-text fc-dark fs-28">
-              주변 친구들과<br/>
-              책을 <span className="fc-main fw-bold">공유</span> 하고<br/>
-              새로운 책을<br/><span className="fc-main fw-bold">추천</span> 받으세요
+                주변 친구들과<br/>
+                책을 <span className="fc-main fw-bold">공유</span> 하고<br/>
+                토큰으로<br/> 책을 <span className="fc-main fw-bold">교환</span> 해보세요
               </p>
             </Fade>
           </div>
