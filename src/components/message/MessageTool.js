@@ -20,14 +20,14 @@ const MessageTool = ({
         <div className="btn-group">
           <button
             type="button"
-            className="btn-big blue-btn fw-bold"
+            className="btn-sm blue-btn fw-bold"
             onClick={onClickRequestTrade}
           >
-            도서 거래를 요청합니다.
+            거래를 요청합니다.
           </button>
           <button
             type="button"
-            className="btn-big primary-btn fw-bold"
+            className="btn-sm primary-btn fw-bold"
             onClick={onClickSendMessage}
           >
             전송

@@ -852,7 +852,8 @@ video.drawingBuffer {
 
 .book-dynamic {
   cursor: pointer;
-  height: 210px;
+  height: 190px;
+  width: 130px;
   margin: 20px 10px 0 10px;
   background-color: white;
   transition: all 0.3s ease-in-out;
@@ -867,7 +868,8 @@ video.drawingBuffer {
 
 .book-static {
   cursor: pointer;
-  height: 210px;
+  height: 190px;
+  width: 130px;
   transition: all 0.2s ease-in-out;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -877,7 +879,8 @@ video.drawingBuffer {
 @media screen and (max-width: 991px) {
   .book-static,
   .book-dynamic {
-    height: 190px;
+    height: 170px;
+    width: 117px;
   }
   .wood-shelf {
     margin-bottom: 50px;
@@ -888,6 +891,7 @@ video.drawingBuffer {
   .book-static,
   .book-dynamic {
     height: 145px;
+    width: 100px;
   }
   .wood-shelf {
     margin-bottom: 20px;
@@ -1328,12 +1332,14 @@ video.drawingBuffer {
 }
 
 .register-users-area {
+  position: relative;
+  bottom: 150px;
   padding: 50px 0;
   gap: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
+  background-color: #eee;
   padding: 50px 20px;
   border-radius: 20px;
   font-size: 18px;

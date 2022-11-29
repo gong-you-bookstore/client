@@ -13,7 +13,7 @@ const GalleryPage = () => {
   useEffect(()=>{
     setTimeout(() => {
       setIsScrollToGallery(true);
-    }, 1100)
+    }, 800)
   },[])
 
   return (

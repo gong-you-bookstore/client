@@ -9,7 +9,7 @@ const Footer = () => {
             <h1 className='fs-14 fw-bold'>공유책방</h1>
           </div>
           <div className='t-r'>
-            <span className='fw-bold fs-20'>CONTACT US</span><br/>
+            <span className='fw-bold fs-18'>CONTACT US</span><br/>
             jiheon788@ajou.ac.kr<br/>
             yoonaa@ajou.ac.kr<br/>
             huhwook111@ajou.ac.kr<br/>
