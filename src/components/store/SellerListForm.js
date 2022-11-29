@@ -3,9 +3,6 @@ import React from "react";
 const SellerListForm = ({
   sellers,
   onClickUser,
-  cookies,
-  onClickMessage,
-  selectedUserData,
 }) => {
   return (
     <>
@@ -23,7 +20,7 @@ const SellerListForm = ({
                 className="fw-bold"
                 
               >
-                {seller}
+                {seller.split('@')[0]}
               </div>
               <div className="register-btn-group">
                 <button

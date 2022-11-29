@@ -1479,7 +1479,7 @@ video.drawingBuffer {
   display: flex;
   align-items: center;
   gap: 15px;
-  justify-content: space-between;
+  justify-content: flex-start;
   cursor: pointer;
 }
 
