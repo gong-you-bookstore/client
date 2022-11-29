@@ -13,7 +13,24 @@ const HomePage = ()=>{
     <Suspense fallback={<Loading />}> 
       <Banner setIsScrollTo={setIsScrollTo} />
       <span className="pointer" ref={introRef} />
+
       <About />
+      <div className="content-section">
+      </div>
+
+      <div className="content-section bg-gallery home-gallery">
+        <div className="container">
+          <Fade cascade damping={0.1}>
+            <div className="info-text center-text fs-28 fw-bold">
+                갤러리에서 내 책을 관리하고,<br/>
+                새로운 책을 추천받아보세요
+            </div>
+            </Fade>
+          </div>
+      </div>
+
+
+      
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
@@ -25,7 +42,12 @@ const HomePage = ()=>{
           </div>
         </div>
       </div>
+
       <GenreInfo />
+      
+      
+
+
       <div className="content-section">
       </div>
     </Suspense>

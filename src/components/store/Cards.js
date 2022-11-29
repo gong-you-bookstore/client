@@ -17,7 +17,7 @@ const Cards = () => {
         VIEW ALL
       </p>
     </div>
-    <div className='card-gallery card'
+    {/* <div className='card-gallery card'
       onClick={() => {
         if (!cookies.userData) {
           toastMaker.error("로그인이 필요합니다.")
@@ -30,7 +30,7 @@ const Cards = () => {
       <p className='fc-white '>
       MY GALLERY
       </p>
-    </div>
+    </div> */}
     {
       CATEGORIES.map((category, index) => (
         <div

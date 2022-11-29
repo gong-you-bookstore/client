@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;900&display=swap"); */
 /* @font-face { 
   font-family: "SDGothic";
   src: url("../font/AppleSDGothicNeoM.ttf") format("truetype");
@@ -831,10 +832,6 @@ video.drawingBuffer {
     min-height: 900px;
   }
 }
-.gallery-area h1 {
-  /* text-shadow: 1px 3px #333; */
-  letter-spacing: 3px;
-}
 
 /* x, y , blur, spread, color */
 .wood-shelf {
@@ -1022,7 +1019,6 @@ video.drawingBuffer {
   font-weight: bold;
   grid-template-areas:
     "full full full full full full"
-    "gallery gallery gallery gallery gallery gallery"
     "zero zero zero one one one"
     "two two three three four four"
     "five five six six seven seven"
@@ -1041,7 +1037,6 @@ video.drawingBuffer {
     grid-template-columns: 1fr;
     grid-template-areas:
       "full"
-      "gallery"
       "zero"
       "one"
       "two"
@@ -1053,6 +1048,20 @@ video.drawingBuffer {
       "eight"
       "nine";
   }
+}
+
+.home-gallery {
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  height: 50vh;
 }
 .bg-full {
   background-image: url(./../images/full.jpg);
@@ -1528,7 +1537,6 @@ video.drawingBuffer {
 }
 
 .empty-info {
-  margin: 50px 0;
   display: flex;
   flex-direction: column;
   font-weight: bold;
@@ -1536,6 +1544,11 @@ video.drawingBuffer {
   align-items: center;
   justify-content: center;
   letter-spacing: 2;
+}
+
+.empty-info img {
+  filter: opacity(0.5) drop-shadow(0 0 0 #222) drop-shadow(1px 1px 25px #26292f);
+  /* filter: drop-shadow(1px 1px 15px #26292f); */
 }
 
 .flex-sp-box {
@@ -1550,4 +1563,17 @@ video.drawingBuffer {
   flex-wrap: wrap;
   display: flex;
   gap: 8px;
+}
+
+.type-info {
+  /* font-family: "Black Han Sans", sans-serif; */
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 10px;
+  font-weight: 900;
+  padding: 20px 0;
+  text-shadow: 1px 1px 30px #26292f;
+}
+.fc-eee {
+  color: #eee;
 }

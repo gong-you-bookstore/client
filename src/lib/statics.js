@@ -1,7 +1,7 @@
 export const MENUS = [
   { name: "책 등록", address: "/register", isAuth: true },
   { name: "책방", address: "/store", isAuth: false },
-  // { name: "설문", address: "/survey", isAuth: true },
+  { name: "갤러리", address: "/gallery", isAuth: true },
   { name: "마이페이지", address: "/mypage", isAuth: true },
 ];
 
