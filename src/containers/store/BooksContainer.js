@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from "react-cookie";
 import { toastMaker } from '../../lib/utils';
+import Books from '../../components/store/Books';
 const BooksContainer = ({
   totalBooks,
   searchWord
@@ -14,37 +15,27 @@ const BooksContainer = ({
       .toLocaleLowerCase()
       .includes(searchWord.toLocaleLowerCase().replace(" ",""))
   })
+
+  const onClickBook = (isbn) => {
+    if (!cookies.userData) {
+      toastMaker.error("로그인이 필요합니다.")
+      navigate('/login');
+      return;
+    }
+    navigate(
+      `/detail`,
+      { state: {
+        registered: isbn
+      } }
+    )
+  }
+
+
   return (
-    <>
-      <div className="content-section">
-        <div className='container grid-store'>
-          {
-            filteredBooks.map((book, index) => (
-              <img 
-                key={index} 
-                src={book.thumbnail} 
-                className="book-static book-sd btn-shadow" 
-                alt="img"
-                onClick={()=>{
-                  if (!cookies.userData) {
-                    toastMaker.error("로그인이 필요합니다.")
-                    navigate('/login');
-                    return;
-                  }
-                  
-                  navigate(
-                    `/detail`,
-                    { state: {
-                      registered: book.isbn
-                    } }
-                  )
-                }} 
-              />
-            ))
-          }
-        </div>
-      </div>
-    </>
+    <Books 
+      filteredBooks = {filteredBooks}
+      onClickBook = {onClickBook}
+    />
   )
 }
 

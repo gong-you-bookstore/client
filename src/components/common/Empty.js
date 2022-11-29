@@ -1,7 +1,8 @@
 import empty from '../../assets/images/empty.png'
-
+import { Bounce } from 'react-awesome-reveal';
 const Empty = () => {
   return (
+    <Bounce>
       <div className="empty-info">
         <img 
           src={empty}
@@ -9,6 +10,7 @@ const Empty = () => {
           alt="img"
         />
       </div>
+    </Bounce>
   )
 }
 

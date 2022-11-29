@@ -23,7 +23,7 @@ const MyMessageBox = ({
               <img src={profile} width="40px" className="profile" alt="img"/>
               <div>
                 <span className="fc-main fw-bold">
-                  {myMessage.counterpartEmail}
+                  {myMessage.counterpartEmail.split('@')[0]}
                 </span>
                 님이랑 주고 받은 메시지가 있습니다.
               </div>

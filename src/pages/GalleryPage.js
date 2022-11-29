@@ -13,7 +13,7 @@ const GalleryPage = () => {
   useEffect(()=>{
     setTimeout(() => {
       setIsScrollToGallery(true);
-    }, 1100)
+    }, 800)
   },[])
 
   return (
@@ -31,20 +31,17 @@ const GalleryPage = () => {
 
       <div className="dark-cement-bg" ref={galleryRef}>
         <div className="gallery-area container" >
-          <>
+          <div className="type-info fc-eee">내가 등록한 책</div>
           <RegisteredBookContainer 
             registeredBooks = {registeredBooks}
             setRegisteredBooks = {setRegisteredBooks}
           />
           <div className="wood-shelf" />
-
+          <div className="type-info fc-eee">내 책과 유사한 책</div>
           <MultiRecommendedBookContainer 
             books = {registeredBooks} 
           />
           <div className="wood-shelf" />
-
-          
-          </>
         </div>
       </div>
       </Suspense>

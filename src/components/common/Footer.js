@@ -4,14 +4,17 @@ const Footer = () => {
   return (
     <footer className="footer-bg-dark">
         <div className='footer-inner container'>
-        <img src={faviconImg} width="45px" alt="img" />
-          <p>
-            <span className='fw-bold fs-20'>CONTACT US</span><br/>
+          <div>
+            <img src={faviconImg} width="40px" alt="img" />
+            <h1 className='fs-14 fw-bold'>공유책방</h1>
+          </div>
+          <div className='t-r'>
+            <span className='fw-bold fs-18'>CONTACT US</span><br/>
             jiheon788@ajou.ac.kr<br/>
             yoonaa@ajou.ac.kr<br/>
             huhwook111@ajou.ac.kr<br/>
             ywchung@ajou.ac.kr<br/>
-          </p>
+          </div>
         </div>
         <div className='footer-line'></div>
         <p className='container t-c'>

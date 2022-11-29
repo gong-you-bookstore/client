@@ -10,16 +10,16 @@ const SellerItemForm = ({
     <>
     <div className="register-users-area">
     <h1 className="">
-      {selectedUserEmail}님이 등록하신 책입니다
+      {selectedUserEmail.split('@')[0]}님이 등록하신 책입니다
     </h1>
-    <div className="flex-sp-box">
+    {/* <div className="flex-sp-box">
       <div className="fw-bold">
         게시글 번호
       </div>
       <div>
         {selectedUserData.shelfId}
       </div>
-    </div>
+    </div> */}
     <div className="flex-sp-box">
       <div className="fw-bold">
         상태

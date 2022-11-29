@@ -59,6 +59,7 @@ const BookDetailPage = () => {
                 />
               ) : (<></>)
             }
+            <div className="type-info fc-dark">이 책과 유사한 책</div>
             <SingleRecommendedBookContainer 
               isbn = {book.isbn}
               setBook = {setBook}  

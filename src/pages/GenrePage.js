@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import logo from '../assets/images/logo_row_white.png'
 import $ from 'jquery'
 import useScrollTo from "../lib/hooks/useScrollTo";
-import { getBooks } from '../lib/api/book';
 import SearchBarContainer from "../containers/store/SeachBarContainer";
 import BooksContainer from "../containers/store/BooksContainer";
 import { getBooksByGenre } from "../lib/api/book";
@@ -25,7 +24,7 @@ const GenrePage = () => {
     $(".genre-header").addClass(`bg${state.code}`)
     setTimeout(() => {
       setIsScrollToStore(true);
-    }, 1100)
+    }, 800)
   }, [])
 
   

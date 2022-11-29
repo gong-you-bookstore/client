@@ -19,7 +19,7 @@ const FullPage = () => {
 
     setTimeout(() => {
       setIsScrollToStore(true);
-    }, 1100)
+    }, 800)
   }, [])
 
   

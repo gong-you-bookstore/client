@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import useScrollTo from "../lib/hooks/useScrollTo";
 import Step1SearchContainer from "../containers/register/Step1SearchContainer";
