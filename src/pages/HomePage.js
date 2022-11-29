@@ -16,9 +16,9 @@ const HomePage = ()=>{
 
       <About />
       
-      <div className="content-section bg-gallery home-gallery">
+      <div className="content-section card-gallery home-gallery">
         <div className="container">
-          <Fade cascade damping={0.1}>
+          <Fade>
             <div className="info-text center-text fs-28 fw-bold">
                 갤러리에서<br/>
                 내 책을 관리하고<br/>

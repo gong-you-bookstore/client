@@ -29,15 +29,16 @@ body::after {
   overflow: hidden;
   z-index: -1;
 
-  content: url(./../images/shelf.jpg) url(./../images/kdc000.jpg)
-    url(./../images/kdc100.jpg) url(./../images/kdc200.jpg)
-    url(./../images/kdc300.jpg) url(./../images/kdc400.jpg)
-    url(./../images/kdc500.jpg) url(./../images/kdc600.jpg)
-    url(./../images/kdc700.jpg) url(./../images/kdc800.jpg)
-    url(./../images/kdc900.jpg) url(./../images/door-long.jpg)
-    url(./../images/door-wide.jpg) url(../images/page-bg.png)
-    url(./../images/cement-bg.jpg) url(./../images/wood2.jpg)
-    url(./../images/full.jpg) url(./../images/full-sm.jpg);
+  content: url(./../images/shelf-sm.jpg) url(./../images/shelf.jpg)
+    url(./../images/kdc000.jpg) url(./../images/kdc100.jpg)
+    url(./../images/kdc200.jpg) url(./../images/kdc300.jpg)
+    url(./../images/kdc400.jpg) url(./../images/kdc500.jpg)
+    url(./../images/kdc600.jpg) url(./../images/kdc700.jpg)
+    url(./../images/kdc800.jpg) url(./../images/kdc900.jpg)
+    url(./../images/door-long.jpg) url(./../images/door-wide.jpg)
+    url(../images/page-bg.png) url(./../images/cement-bg.jpg)
+    url(./../images/wood2.jpg) url(./../images/full.jpg)
+    url(./../images/full-sm.jpg);
 }
 
 li {
@@ -838,10 +839,8 @@ video.drawingBuffer {
   border-top: solid 0.5px sandybrown;
   margin-bottom: 100px;
   background-image: url(./../images/wood2.jpg);
-  /* background-color: #AE8A74; */
   box-shadow: 0px 8px 20px 8px #141414;
   height: 8px;
-  /* width: 100%; */
   z-index: 99;
   position: relative;
   z-index: 1;
@@ -1110,7 +1109,7 @@ video.drawingBuffer {
 }
 
 .card-gallery {
-  background-image: url(./../images/shelf.jpg);
+  background-image: url(./../images/shelf-sm.jpg);
   grid-area: gallery;
 }
 .card-full {
