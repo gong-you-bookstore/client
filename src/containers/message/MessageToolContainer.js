@@ -21,9 +21,6 @@ const MessageToolContainer = ({
       [event.target.name]: event.target.value
     })
   }
-  useEffect(()=>{
-    console.log(state)
-  }, [sendMessage])
 
   const onClickSendMessage = () => {
     postMessage(

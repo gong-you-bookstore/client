@@ -19,7 +19,7 @@ const HomePage = ()=>{
       <div className="content-section card-gallery home-gallery">
         <div className="container">
           <Fade>
-            <div className="info-text center-text fs-28 fw-bold">
+            <div className="info-text t-c fw-bold">
                 갤러리에서<br/>
                 내 책을 관리하고<br/>
                 새로운 책을<br/>
@@ -35,7 +35,7 @@ const HomePage = ()=>{
       <div className="content-section">
         <div className="container">
           <div className="content-info-center">
-            <div className="info-text center-text fc-dark fs-28 fw-bold">
+            <div className="info-text fc-dark fw-bold">
               <Fade cascade damping={0.1}>
                 다양한 장르의 책들을 찾아보세요
               </Fade>

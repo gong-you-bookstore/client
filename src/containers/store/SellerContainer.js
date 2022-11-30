@@ -5,6 +5,8 @@ import SellerItemForm from "../../components/store/SellerItemForm";
 import { toastMaker } from "../../lib/utils";
 import { getUserBook } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
+import useScrollTo from '../../lib/hooks/useScrollTo'
+
 const SellerContainer = ({
   sellers,
   isbn
@@ -14,7 +16,7 @@ const SellerContainer = ({
   const [isViewList, setIsViewList] = useState(true);
   const [selectedUserEmail, setSelectedUserEmail] = useState("");
   const [selectedUserData, setSelectedUserData] = useState({});
-
+  const [sellerRef, setIsScrollToSeller] = useScrollTo();
   const onToggleView = () => {
     setIsViewList(!isViewList);
   }
@@ -22,6 +24,7 @@ const SellerContainer = ({
   const onClickUser = (email) => {
     setSelectedUserEmail(email);
     onToggleView();
+    setIsScrollToSeller(true)
   }
 
   const onClickMessage = (shelfId, userEmail, myEmail) => {
@@ -37,6 +40,14 @@ const SellerContainer = ({
         myEmail
       }}
     )
+  }
+
+  const statusMap = {
+    SHARE: "나눔",
+    SOLD: "판매완료",
+    UNSOLD: "판매중",
+    READ: "미판매",
+    PENDING: "예약",
   }
 
   useEffect(() => {
@@ -71,6 +82,8 @@ const SellerContainer = ({
           selectedUserData = {selectedUserData}
           onClickMessage = {onClickMessage}
           cookies = {cookies}
+          sellerRef = {sellerRef}
+          statusMap = {statusMap}
         />
       )
     }

@@ -47,7 +47,6 @@ const BookDetailPage = () => {
   
         <div className='container'>
           <div className="gallery-area">
-            <div className="detail-content-box"> 
             {
               book.userList ? (
                 <SellerContainer 
@@ -64,7 +63,6 @@ const BookDetailPage = () => {
                   />
               ) : (<></>)
             }
-            </div>
           </div>
         </div>
       </div>
