@@ -47,6 +47,7 @@ const BookDetailPage = () => {
   
         <div className='container'>
           <div className="gallery-area">
+            <div className="detail-content-box"> 
             {
               book.userList ? (
                 <SellerContainer 
@@ -55,9 +56,6 @@ const BookDetailPage = () => {
                 />
               ) : (<></>)
             }
-            <div className="type-info fc-dark">
-              이 책과 유사한 책
-            </div>
             {
               book.isbn ? (
                 <SingleRecommendedBookContainer 
@@ -66,6 +64,7 @@ const BookDetailPage = () => {
                   />
               ) : (<></>)
             }
+            </div>
           </div>
         </div>
       </div>

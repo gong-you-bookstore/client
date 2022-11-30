@@ -8,6 +8,9 @@ const SingleRecommendedBook = ({
 }) => {
   return (
     <div className="content-section">
+      <div className="type-info fc-dark">
+              이 책과 유사한 책
+            </div>
       <Carousel responsive={responsiveCarousel}>
       {
         books.map((book, index) => (
@@ -15,7 +18,7 @@ const SingleRecommendedBook = ({
             key={index}
             src={book.thumbnail}
             alt="img"
-            className="book-static btn-shadow"
+            className="book book-static book-carousel-margin btn-shadow"
             onClick={()=>{
               setBook(book);
               scrollToTop();

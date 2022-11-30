@@ -12,7 +12,7 @@ const SearchCarousel = ({
         <img 
           key={index} 
           src={searchResult.thumbnail} 
-          className="book-static"
+          className="book"
           alt="img" 
           onClick={()=>{
             onClickSelectImg(searchResult)

@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;900&display=swap"); */
-/* @font-face { 
-  font-family: "SDGothic";
-  src: url("../font/AppleSDGothicNeoM.ttf") format("truetype");
-  font-weight: normal;
-}  */
 * {
-  /* font-family: 'Nanum Myeongjo', serif; */
   font-family: "Noto Sans KR", sans-serif;
   letter-spacing: 1px;
-  /* line-height: 20px */
 }
-
 /* 모바일 수평 스크롤 금지 */
 html,
 body {
@@ -715,10 +706,10 @@ input:-webkit-autofill:active {
 .footer-inner {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
   line-height: 1.5;
-  gap: 20px;
+  gap: 30px;
 }
 
 .content-section {
@@ -825,7 +816,6 @@ video.drawingBuffer {
   padding: 80px 0px 170px 0;
   min-height: 900px;
 }
-
 /* phone */
 @media screen and (max-width: 575px) {
   .gallery-area {
@@ -845,52 +835,46 @@ video.drawingBuffer {
   position: relative;
   z-index: 1;
 }
-
-.book-dynamic {
+.book {
   cursor: pointer;
   height: 190px;
   width: 130px;
-  margin: 20px 10px 0 10px;
-  background-color: white;
-  transition: all 0.3s ease-in-out;
-  transform-origin: left center 0px;
-  transform-style: preserve-3d;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   -webkit-backface-visibility: hidden;
   overflow: hidden;
-  box-shadow: 3px 10px 15px 3px #141414;
 }
-
-.book-dynamic:hover {
-  cursor: pointer;
-  transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
-  -webkit-backface-visibility: hidden;
-  box-shadow: 3px 10px 15px 3px #141414, 20px 8px 0 #eee,
-    23px 5px 5px rgba(0, 0, 0, 0.2);
+.book-carousel-margin {
+  margin: 20px 10px 0 10px;
 }
-
-.book-static {
-  cursor: pointer;
-  height: 190px;
-  width: 130px;
+.book-dynamic {
   transition: all 0.3s ease-in-out;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  transform-origin: left center 0px;
+  transform-style: preserve-3d;
+  box-shadow: 3px 10px 15px 3px rgba(0, 0, 0, 0.7);
+}
+.book-static {
+  transition: all 0.3s ease-in-out;
+  transform-origin: left center 0px;
+  transform-style: preserve-3d;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
 }
-
-.grid-store .book-static:hover {
+.book-dynamic:hover {
   transform: rotateY(-28deg) rotateZ(-2deg) scale(1.02);
   -webkit-backface-visibility: hidden;
-  box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.4), 20px 2px 0 #fff,
-    21px 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 10px 15px 3px rgba(0, 0, 0, 0.6), 20px 8px 0 #eee,
+    23px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.book-static:hover {
+  transform: rotateY(-18deg) rotateZ(-2deg) scale(1.02);
+  -webkit-backface-visibility: hidden;
+  box-shadow: 3px 5px 15px 3px rgba(0, 0, 0, 0.3), 14px 2px 0 #fff,
+    15px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* tablet */
 @media screen and (max-width: 991px) {
-  .book-static,
-  .book-dynamic {
+  .book {
     height: 170px;
     width: 117px;
   }
@@ -900,8 +884,7 @@ video.drawingBuffer {
 }
 /* phone */
 @media screen and (max-width: 575px) {
-  .book-static,
-  .book-dynamic {
+  .book {
     height: 145px;
     width: 100px;
   }
@@ -1059,17 +1042,19 @@ video.drawingBuffer {
 }
 
 .home-gallery {
-  color: #ccc;
+  background-image: url(./../images/shelf-sm.jpg);
+  color: #eee;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.6);
-  background-position: center;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  height: 50vh;
+  height: 85vh;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
 }
 .bg-full {
   background-image: url(./../images/full.jpg);
@@ -1108,10 +1093,6 @@ video.drawingBuffer {
   background-image: url(./../images/kdc900.jpg);
 }
 
-.card-gallery {
-  background-image: url(./../images/shelf-sm.jpg);
-  grid-area: gallery;
-}
 .card-full {
   background-image: url(./../images/full-sm.jpg);
   grid-area: full;
@@ -1349,10 +1330,14 @@ video.drawingBuffer {
   background-size: cover;
 }
 
-.register-users-area {
-  color: #333;
+.detail-content-box {
   position: relative;
   bottom: 150px;
+}
+
+.register-users-area {
+  color: #333;
+
   padding: 50px 0;
   gap: 30px;
   display: flex;
@@ -1362,8 +1347,7 @@ video.drawingBuffer {
   padding: 50px 20px;
   border-radius: 5px;
   font-size: 18px;
-  box-shadow: -3px -3px 2px rgba(255, 255, 255, 0.1),
-    5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
 }
 
 .register-users-area h1 {

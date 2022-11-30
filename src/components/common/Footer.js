@@ -6,7 +6,9 @@ const Footer = () => {
         <div className='footer-inner container'>
           <div>
             <img src={faviconImg} width="40px" alt="img" />
-            <h1 className='fs-14 fw-bold'>공유책방</h1>
+
+            <div className='fw-bold fs-18'>공유책방</div><br/>
+            경기도 수원시 영통구 월드컵로 206 KR
           </div>
           <div className='t-r'>
             <span className='fw-bold fs-18'>CONTACT US</span><br/>
