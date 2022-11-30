@@ -707,10 +707,10 @@ input:-webkit-autofill:active {
 .footer-inner {
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  line-height: 1.5;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .content-section {
