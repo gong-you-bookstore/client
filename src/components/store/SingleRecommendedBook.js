@@ -7,10 +7,10 @@ const SingleRecommendedBook = ({
   setBook
 }) => {
   return (
-    <div className="content-section">
+    <div>
       <div className="type-info fc-dark">
-              이 책과 유사한 책
-            </div>
+        이 책과 유사한 책
+      </div>
       <Carousel responsive={responsiveCarousel}>
       {
         books.map((book, index) => (

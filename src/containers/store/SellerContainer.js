@@ -16,7 +16,6 @@ const SellerContainer = ({
   const [isViewList, setIsViewList] = useState(true);
   const [selectedUserEmail, setSelectedUserEmail] = useState("");
   const [selectedUserData, setSelectedUserData] = useState({});
-  const [sellerRef, setIsScrollToSeller] = useScrollTo();
   const onToggleView = () => {
     setIsViewList(!isViewList);
   }
@@ -24,7 +23,6 @@ const SellerContainer = ({
   const onClickUser = (email) => {
     setSelectedUserEmail(email);
     onToggleView();
-    setIsScrollToSeller(true)
   }
 
   const onClickMessage = (shelfId, userEmail, myEmail) => {
@@ -82,7 +80,6 @@ const SellerContainer = ({
           selectedUserData = {selectedUserData}
           onClickMessage = {onClickMessage}
           cookies = {cookies}
-          sellerRef = {sellerRef}
           statusMap = {statusMap}
         />
       )

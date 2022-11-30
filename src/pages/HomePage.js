@@ -29,8 +29,6 @@ const HomePage = ()=>{
           </div>
       </div>
 
-      <div className="content-section">
-      </div>
 
       <div className="content-section">
         <div className="container">

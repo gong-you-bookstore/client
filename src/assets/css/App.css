@@ -185,11 +185,11 @@ input:-webkit-autofill:active {
 
 .btn-xxl {
   cursor: pointer;
-  padding: 20px 25px;
-  border-radius: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
   border: none;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: bold;
   transition: all 0.4s;
 }
 
@@ -590,7 +590,7 @@ input:-webkit-autofill:active {
     font-size: 24px;
   }
   .concept-book {
-    width: 220px;
+    width: 250px;
   }
 }
 /* phone */
@@ -1331,9 +1331,16 @@ video.drawingBuffer {
   background-size: cover;
 }
 
+.detail-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 20px 0px 170px 0;
+}
+
 .register-users-area {
   color: #333;
-  gap: 20px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1350,7 +1357,7 @@ video.drawingBuffer {
 }
 
 .status-card {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
   padding: 10px 15px;
   border-radius: 40px;

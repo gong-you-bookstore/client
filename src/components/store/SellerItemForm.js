@@ -5,14 +5,13 @@ const SellerItemForm = ({
   selectedUserData,
   onClickMessage,
   cookies,
-  sellerRef,
   statusMap
 }) => {
   
   return (
     <>
     <div className="register-users-area" >
-    <h1 className="type-info" ref={sellerRef}>
+    <h1 className="type-info">
       {selectedUserEmail.split('@')[0]}님이 등록한 책
     </h1>
 

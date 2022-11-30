@@ -15,12 +15,12 @@ const SellerListForm = ({
           sellers.map((seller, index) => (
               <div 
                 key={index}
-                className="transparent-btn btn-big btn-shadow"
+                className="transparent-btn btn-xxl"
                 onClick={() => {
                   onClickUser(seller);
                 }}
               >
-                {seller.split('@')[0]}
+                # {seller.split('@')[0]}
               </div>
           ))
         }
