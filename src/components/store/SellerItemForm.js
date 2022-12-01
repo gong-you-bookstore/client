@@ -37,7 +37,7 @@ const SellerItemForm = ({
       ) : (<></>)
     }
     
-    <div className="btn-group">
+    <div className="btn-group-row">
       <button
         className="btn-big transparent-btn"
         onClick={() => {

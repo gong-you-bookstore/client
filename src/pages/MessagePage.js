@@ -27,7 +27,6 @@ const MessagePage = () => {
 
   return (
     <div className="bg-dark-full-px">
-      <div className="gallery-area">
       <div className="container desktop-box">
           <div className="maessage-area">
             <MessageToolContainer 
@@ -40,7 +39,6 @@ const MessagePage = () => {
               state = {state}
             />
           </div>
-      </div>
       </div>
     </div>
   )
