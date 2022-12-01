@@ -163,9 +163,6 @@ input:-webkit-autofill:active {
   border: #00c9a9 2px solid;
   background-color: transparent;
   cursor: pointer;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 700;
   transition: all 0.3s;
 }
 .ghost-btn:hover {
@@ -177,9 +174,8 @@ input:-webkit-autofill:active {
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 10px;
-  border: none;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: bold;
   transition: all 0.4s;
 }
 
@@ -197,13 +193,13 @@ input:-webkit-autofill:active {
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 10px;
-  border: none;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: bold;
   transition: all 0.4s;
 }
 .blue-btn {
   background-color: #7780f1;
+  border: none;
   color: #fff;
 }
 .blue-btn:hover {
@@ -212,6 +208,7 @@ input:-webkit-autofill:active {
 
 .grey-btn {
   background-color: #666;
+  border: none;
   color: #fff;
 }
 .grey-btn:hover {
@@ -220,6 +217,7 @@ input:-webkit-autofill:active {
 
 .red-btn {
   background-color: #ea7830;
+  border: none;
   color: #fff;
 }
 .red-btn:hover {
@@ -228,6 +226,7 @@ input:-webkit-autofill:active {
 
 .primary-btn {
   color: #fff;
+  border: none;
   background-color: #00c9a9;
 }
 .primary-btn:hover {
@@ -235,6 +234,7 @@ input:-webkit-autofill:active {
 }
 .transparent-btn {
   color: #eee;
+  border: none;
   background-color: rgba(0, 0, 0, 0.6);
   /* background-color: #333; */
 }
@@ -1373,6 +1373,7 @@ video.drawingBuffer {
   min-height: 300px;
   display: flex;
   flex-direction: column;
+  padding: 0 0 150px 0;
 }
 
 .message-log {
