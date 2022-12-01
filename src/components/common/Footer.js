@@ -10,7 +10,7 @@ const Footer = () => {
             공유책방
           </div>
           <p className='t-c'>경기도 수원시 영통구 월드컵로 206 KR</p>
-          <div className='flex-box w-100p t-c mtb-10'>
+          <div className='flex-box w-100p t-c mt-10 lh-2'>
             <p>jiheon788@ajou.ac.kr</p>
             <p>yoonaa@ajou.ac.kr</p>
             <p>huhwook111@ajou.ac.kr</p>

@@ -26,6 +26,11 @@ export const postSignInData = async (signInData) => {
   })
 }; 
 
+/**
+ * 유저 정보 조회
+ * @param {*} accessToken 
+ * @returns 
+ */
 export const getUserInfo = async (accessToken) => {
   return await apiClient({
     method: "get",
@@ -33,5 +38,17 @@ export const getUserInfo = async (accessToken) => {
     headers: {
       'X-AUTH-TOKEN': accessToken
     }
+  })
+}
+
+/**
+ * 이메일 중복 검사
+ * @param {*} email 
+ * @returns 
+ */
+export const checkDuplicatedEmail = async (email) => {
+  return await apiClient({
+    method: "get",
+    url: `user/check?email=${email}`,
   })
 }

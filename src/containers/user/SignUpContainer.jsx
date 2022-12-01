@@ -1,8 +1,8 @@
 import { useState } from "react";
 import $ from 'jquery'
 import SignUpForm from "../../components/user/SignUpForm";
-import { postSignUpData } from "../../lib/api/user";
-import { toastMaker } from "../../lib/utils";
+import { postSignUpData, checkDuplicatedEmail } from "../../lib/api/user";
+import { toastMaker, isValidateSignUpData } from "../../lib/utils";
 const SignUpContainer = ({
   setIsSignIn,
 }) => {
@@ -21,46 +21,23 @@ const SignUpContainer = ({
   };
 
   const onClickSignUpBtn = () => {
-    if (signUpData.email === "") {
-      toastMaker.error("이메일을 입력해주세요.");
-      $("#email").focus();
-      return;
+    if (isValidateSignUpData(signUpData)) {
+      checkDuplicatedEmail(signUpData.email).then(response => {
+        if (!response.data.success) {
+          toastMaker.error("중복된 이메일입니다.");
+          return;
+        } else if (response.data.success) {
+          postSignUpData(signUpData).then(response => {
+            toastMaker.success("환영합니다. 가입 선물로 토큰 3개가 지급되었습니다.");
+            setIsSignIn(true)
+          }).catch(error => {
+            console.log(error)
+          })
+        }
+      }).catch(error => {
+        console.log(error)
+      })
     }
-
-    if (signUpData.password === "") {
-      toastMaker.error("패스워드를 입력해주세요.");
-      $("#password").focus();
-      return;
-    }
-
-    if (signUpData.rePassword === "") {
-      toastMaker.error("확인 패스워드를 입력해주세요.");
-      $("#rePassword").focus();
-      return;
-    }
-
-    if (signUpData.name === "") {
-      toastMaker.error("이름을 입력해주세요.");
-      $("#name").focus();
-      return;
-    }
-
-    if (signUpData.password !== signUpData.rePassword) {
-      toastMaker.error("비밀번호와 확인 비밀번호가 같지 않습니다.");
-      setSignUpData({
-        ...signUpData,
-        password: "",
-        rePassword: "",
-      });
-      $("#password").focus();
-      return;
-    }
-    postSignUpData(signUpData).then(response => {
-      toastMaker.success("환영합니다. 가입 선물로 토큰 3개가 지급되었습니다.");
-      setIsSignIn(true)
-    }).catch(error => {
-      console.log(error)
-    })
   }
 
   return (

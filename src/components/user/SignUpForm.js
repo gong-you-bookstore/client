@@ -19,7 +19,6 @@ const SignUpForm = ({
           className="input-styled w-100p"
         />
         <label htmlFor="password" className="form-label"></label>
-
         <input
           id="password"
           name="password"
@@ -57,11 +56,10 @@ const SignUpForm = ({
           onClick={()=>{
             onClickSignUpBtn();
           }}
-          className="mb-20 mt-20 primary-btn btn-big w-100p"
+          className="mt-20 mb-20 primary-btn btn-big w-100p"
         >
           Sign Up
         </button>
-
       <p>
         Already registered?{" "}
         <span>
