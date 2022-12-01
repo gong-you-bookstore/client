@@ -66,7 +66,6 @@ const rEmailExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z
  * @param {*} data signUpData
  * @returns 
  */
-
 export const isValidateSignUpData = (data) => {
   if (data.email === "") {
     toastMaker.error("이메일을 입력해주세요.");

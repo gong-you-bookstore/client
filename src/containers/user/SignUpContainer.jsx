@@ -25,6 +25,7 @@ const SignUpContainer = ({
       checkDuplicatedEmail(signUpData.email).then(response => {
         if (!response.data.success) {
           toastMaker.error("중복된 이메일입니다.");
+          $("#email").focus();
           return;
         } else if (response.data.success) {
           postSignUpData(signUpData).then(response => {

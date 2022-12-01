@@ -47,7 +47,10 @@ const MessageToolContainer = ({
       toastMaker.info("거래 요청을 보냈습니다. 상대방의 수락을 기다려 주세요..!");
       loadMessagelog();
     }).catch(error => {
-      console.log(error);
+      if (error.response.data.msg) {
+        toastMaker.error(error.response.data.msg);
+      }
+      console.log(error)
     })
   }
   return (
