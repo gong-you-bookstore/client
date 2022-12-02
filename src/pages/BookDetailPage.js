@@ -58,9 +58,9 @@ const BookDetailPage = () => {
             {
               book.isbn ? (
                 <SingleRecommendedBookContainer 
-                    isbn = {book.isbn}
-                    setBook = {setBook}  
-                  />
+                  book = {book}
+                  setBook = {setBook}  
+                />
               ) : (<></>)
             }
             </div>

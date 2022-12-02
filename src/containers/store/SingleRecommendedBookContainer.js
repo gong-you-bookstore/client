@@ -3,20 +3,20 @@ import { getOneRecommendedBook } from "../../lib/api/recommend";
 import SingleRecommendedBook from "../../components/store/SingleRecommendedBook";
 import Empty from "../../components/common/Empty";
 const SingleRecommendedBookContainer = ({
-  isbn,
+  book,
   setBook
 }) => {
   const [recommendedBooks, setRecommendedBooks] = useState([])
 
   useEffect(() => {
-    if(isbn) {
-      getOneRecommendedBook(isbn).then(response => {
+    if(book.isbn) {
+      getOneRecommendedBook(book.isbn).then(response => {
         setRecommendedBooks(response.data.data);
       }).catch(error => {
 
       })
     }
-  }, [])
+  }, [book])
   return (
     <>
     {

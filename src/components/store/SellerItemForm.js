@@ -15,7 +15,21 @@ const SellerItemForm = ({
       {selectedUserEmail.split('@')[0]}님이 등록한 책
     </h1>
 
-    <div className="flex-sp-box">
+    <div className="flex-end-box">
+    {
+      selectedUserData.images ? (
+        <>
+        {
+          selectedUserData.images.map((image, index) => (
+            <img src={image} className="user-img" key={index}/>
+          ))
+        }
+        </>
+      ) : (<></>)
+    }
+    </div>
+
+    <div className="flex-end-box">
       <div className="status-card">
         {statusMap[`${selectedUserData.status}`]}
       </div>

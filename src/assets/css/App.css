@@ -1558,7 +1558,7 @@ video.drawingBuffer {
   /* filter: drop-shadow(1px 1px 15px #26292f); */
 }
 
-.flex-sp-box {
+.flex-end-box {
   flex-wrap: wrap;
   display: flex;
   justify-content: flex-end;
@@ -1582,4 +1582,17 @@ video.drawingBuffer {
 }
 .fc-eee {
   color: #eee;
+}
+
+.user-img {
+  border-radius: 20px;
+  height: 120px;
+}
+
+.user-img-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
