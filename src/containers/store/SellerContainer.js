@@ -42,7 +42,7 @@ const SellerContainer = ({
 
   const statusMap = {
     SHARE: "나눔",
-    SOLD: "판매완료",
+    SOLD: "판매중",
     UNSOLD: "판매중",
     READ: "미판매",
     PENDING: "예약",
@@ -51,6 +51,7 @@ const SellerContainer = ({
   useEffect(() => {
     if (selectedUserEmail) {
       getUserBook(isbn, selectedUserEmail, cookies.userData.accessToken).then(response => {
+        console.log(response)
         setSelectedUserData(response.data.data);
       }).catch(error => {
         console.log(error)
