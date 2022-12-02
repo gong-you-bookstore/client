@@ -17,20 +17,20 @@ const MessageTool = ({
           onChange={onChangeMyMessage}
           className="input-styled w-100p"
         ></textarea>
-        <div className="btn-group">
+        <div className="btn-group-row">
           <button
             type="button"
-            className="btn-sm blue-btn fw-bold"
+            className="btn-big ghost-btn fw-bold w-100p"
             onClick={onClickRequestTrade}
           >
-            거래를 요청합니다.
+            거래 요청
           </button>
           <button
             type="button"
-            className="btn-sm primary-btn fw-bold"
+            className="btn-big primary-btn fw-bold w-100p"
             onClick={onClickSendMessage}
           >
-            전송
+            메시지 전송
           </button>
         </div>
       </div>

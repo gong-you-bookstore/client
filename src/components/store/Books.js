@@ -11,7 +11,7 @@ const Books = ({
               <img 
                 key={index} 
                 src={book.thumbnail} 
-                className="book-static" 
+                className="book book-static" 
                 alt="img"
                 onClick={()=>{
                   onClickBook(book.isbn)

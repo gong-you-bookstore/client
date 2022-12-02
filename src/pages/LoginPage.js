@@ -3,8 +3,10 @@ import SignUpContainer from "../containers/user/SignUpContainer";
 import { useState } from "react";
 import logoColorImg from '../assets/images/logo-color.png'
 import { useCookies } from "react-cookie"
+import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const [isSignIn, setIsSignIn] = useState(true);
+  const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies(["userData"]);
   return (
     <>
@@ -17,6 +19,9 @@ const LoginPage = () => {
                 src={logoColorImg} 
                 className="w-120 mb-10 c-p"
                 alt="img" 
+                onClick={() => {
+                  navigate('/');
+                }}
               />
               {
                 isSignIn ? (

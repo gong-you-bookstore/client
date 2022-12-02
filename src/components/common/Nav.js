@@ -50,7 +50,7 @@ const Nav = ()=>{
         {
           cookies.userData ? (
             <button
-            className='ghost-btn'
+            className='ghost-btn btn-sm'
             type="button"
             onClick={() => {
               removeCookie("userData", { path: "/" });
@@ -63,7 +63,7 @@ const Nav = ()=>{
           ) : (
             <>
             <button
-            className='ghost-btn'
+            className='ghost-btn btn-sm'
             type="button"
             onClick={() => {navigate("/login")}}
             >

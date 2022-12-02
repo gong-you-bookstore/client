@@ -16,7 +16,7 @@ const BookCarousel = ({
             <img 
               key={index} 
               src={book.thumbnail} 
-              className="book-dynamic" 
+              className="book book-dynamic book-carousel-margin" 
               alt="img"
               onClick={()=>{
                 if (isRecommended) {

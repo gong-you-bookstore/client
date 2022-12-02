@@ -4,39 +4,44 @@ const SellerItemForm = ({
   onToggleView,
   selectedUserData,
   onClickMessage,
-  cookies
+  cookies,
+  statusMap
 }) => {
+  
   return (
     <>
-    <div className="register-users-area">
-    <h1 className="">
-      {selectedUserEmail.split('@')[0]}님이 등록하신 책입니다
+    <div className="register-users-area" >
+    <h1 className="type-info">
+      {selectedUserEmail.split('@')[0]}님이 등록한 책
     </h1>
-    {/* <div className="flex-sp-box">
-      <div className="fw-bold">
-        게시글 번호
-      </div>
-      <div>
-        {selectedUserData.shelfId}
-      </div>
-    </div> */}
-    <div className="flex-sp-box">
-      <div className="fw-bold">
-        상태
-      </div>
-      <div>
-        {selectedUserData.status}
-      </div>
-    </div>
-    <div className="flex-sp-box">
-      <div className="fw-bold">
-        토큰개수
-      </div>
-      <div>
-        {selectedUserData.token}
-      </div>
+
+    <div className="flex-end-box">
+    {
+      selectedUserData.images ? (
+        <>
+        {
+          selectedUserData.images.map((image, index) => (
+            <img src={image} className="user-img" key={index}/>
+          ))
+        }
+        </>
+      ) : (<></>)
+    }
     </div>
 
+    <div className="flex-end-box">
+      <div className="status-card">
+        {statusMap[`${selectedUserData.status}`]}
+      </div>
+      
+      <div className="status-card">
+        토큰: {selectedUserData.token}
+      </div>
+
+      <div className="status-card">
+        {selectedUserData.shelfId}
+      </div>
+    </div>
     {
       selectedUserData.latitude || selectedUserData.longitude ? (
         <KakaoMap 
@@ -45,27 +50,28 @@ const SellerItemForm = ({
         />
       ) : (<></>)
     }
-    <div className="btn-group">
-    <button
-      className="btn-big transparent-btn"
-      onClick={() => {
-        onToggleView();
-    }}
-    >
-      뒤로가기
-    </button>
-    <button
-      className="btn-big primary-btn"
-      onClick={() => {
-        onClickMessage(
-          selectedUserData.shelfId,
-          selectedUserEmail,
-          cookies.userData.email
-        );
+    
+    <div className="btn-group-row">
+      <button
+        className="btn-big transparent-btn"
+        onClick={() => {
+          onToggleView();
       }}
-    >
-      메시지
-    </button>
+      >
+        뒤로가기
+      </button>
+      <button
+        className="btn-big primary-btn"
+        onClick={() => {
+          onClickMessage(
+            selectedUserData.shelfId,
+            selectedUserEmail,
+            cookies.userData.email
+          );
+        }}
+      >
+        메시지
+      </button>
     </div>
     </div>
     </>

@@ -7,7 +7,6 @@ const GenreInfo = () => {
   return (
     <div className="content-section">
         <div className="container">
-
           <div className='home-info-grid'>
           {
             CATEGORIES.map((category, index) => (
