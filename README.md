@@ -5,10 +5,10 @@
 <br>
 
 <div align="left">
-<img src="https://user-images.githubusercontent.com/90181028/205436710-0e0a6088-cc4a-44e4-a172-a84bbe523958.png" width="45%">
-<img src="https://user-images.githubusercontent.com/90181028/205436716-ee97efe3-ab95-4d9c-ac0e-66c8a1ba7163.png" width="45%">
-<img src="https://user-images.githubusercontent.com/90181028/205436740-c5785337-48aa-4b3b-939a-47d8604f17b8.png" width="45%">
-<img src="https://user-images.githubusercontent.com/90181028/205436741-8f14f271-fb48-47f1-8584-e43439e85d1a.png" width="45%">
+<img src="https://user-images.githubusercontent.com/90181028/205436710-0e0a6088-cc4a-44e4-a172-a84bbe523958.png" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/205436716-ee97efe3-ab95-4d9c-ac0e-66c8a1ba7163.png" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/205436740-c5785337-48aa-4b3b-939a-47d8604f17b8.png" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/205436741-8f14f271-fb48-47f1-8584-e43439e85d1a.png" width="49%">
 </div>
 <br>
 
@@ -41,3 +41,25 @@
 # ⚙ SYSTEM STRUCTURE
 
 ![공유책방-시스템구조도](https://user-images.githubusercontent.com/90181028/203847536-937f6e16-a4e1-446a-8cf3-dfbf4f209623.png)
+
+# 📁 gong-you-bookstore/fe
+
+```bash
+├── public
+├── docs # 개발 문서 관리
+├── src
+│   ├── lib
+│   │    ├── api # 서버 통신 함수 폴더
+│   │    ├── hooks # 커스텀 훅 폴더
+│   │    ├── services.js # 외부 api 함수
+│   │    ├── statics.js # 정적 파일
+│   │    ├── styles.js # 스타일링 관련
+│   │    └── utils.js # 유틸 함수
+│   ├── assets # css, images
+│   ├── pages # 페이지 관리
+│   ├── containers # 상태 관리
+│   ├── components # 컴포넌트
+│   ├── App.js
+│   └── index.js
+└── ....etc
+```
