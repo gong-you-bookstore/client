@@ -1,42 +1,38 @@
-# HTTPS vs HTTP
+<div align="center">
 
-## DATE 20221120
+# 공유책방 - Client 개발 기록
+  
+</div>
 
-네트워크 정책상 아래와 같이만 통신이 가능하다.
+<div align="right">
 
-- 클라이언트(http) -> 서버(http)
-- 클라이언트(https) -> 서버(https)
+Author: @jiheon788
+  
+</div>
+ 
 
-공유책방은 현재 프론트 - Netlify(https), 백엔드 - ec2(http) 이므로 문제상황 2에 해당된다.
+# 1. 디자인 과정
+## 1.1. 스타일 가이드
+기획단계에서 유사서비스들의 UI를 분석하며 사용성과 심미성을 고려한 “공유책방”의 UI를 기획하였다. CTR을 높이기 위한 버튼의 디자인과 서비스의 사용성을 해치지 않는 alert창 등을 고민하여 디자인 하였다. 결과물로 로고와 메인칼라, 폰트, UI 컴포넌트 등 디자인 요소들을 정리한 Style Guide를 작성하였다. 
 
-### - 문제상황1: 클라이언트(http) -> 서버(https)
+![image](https://user-images.githubusercontent.com/90181028/205478417-745031e0-7908-48bb-8147-0d2a530e6204.png)
 
-이 경우에는 클라이언테 헤드부분에 아래 태그 추가해주면 클라이언트에서 보내는 모든 요청이 https로 바뀌어서 해결된다.
+## 1.2. 반응형 웹
+온라인 서비스의 핵심은 모바일, 태블릿, 데스크탑 다양한 환경에서 사용이 가능하게 하여 접근성을 높이는 것이라고 생각하였다. 반응형 웹디자인의 패턴으로 가장 작은 화면에서는 수직으로 컬럼을 세우고, 다른 화면에서는 유동형 그리드와 유동형 이미지를 사용하여 레이아웃을 그대로 유지하는 유동형(Mostly Fluid) 패턴을 적용하였다. 유동형 패턴은 주로 유동형 격자(grid)로 구성된다. 대형 혹은 중간크기의 스크린에서 이 패턴은 보통 같은 크기로 간주되며, 단지 더 넓은 화면에서는 여백정도만 조정된다. 더 작은 스크린에서 이 패턴은 열(columns)들이 수직 방향으로 쌓이면서 컨텐츠가 재배치된다. 유동형 패턴은 작은 화면과 큰 화면 사이에 단 하나의 중단점(breakpoints)만 있으면 된다는 장점이 있다. CSS의 Media Query를 사용하여 반응형 웹을 개발하였고, 결과물은 아래 사진과 같다.
+![image](https://user-images.githubusercontent.com/90181028/205478450-cb7c719b-ec84-482d-aa98-2cd4d9e2bfd9.png)
+![image](https://user-images.githubusercontent.com/90181028/205478459-5bee7b0f-82c0-446d-8651-210f87f3e2bb.png)
 
-```html
-<meta
-  http-equiv="Content-Security-Policy"
-  content="upgrade-insecure-requests"
-/>
-```
+# 2. 코드스타일
+리액트는 UI를 구성하는 개별적인 뷰 단위인 컴포넌트가 블록역할을 하며 이를 조립해 하나의 완성품을 만든다. 이러한 리액트의 특징을 살려 각 컴포넌트간 의존성을 줄이고 독립적인 컴포넌트로 분리하는 리팩토링 작업을 지속적으로 거치며 생산성과 유지보수를 용이하게 하였다. 
 
-### - 문제상황2: 클라이언트(https) -> 서버(http)
+# 3. Netlify 배포와 서버 통신 문제 해결 과정
 
-Netlify 공식답변으로는 https를 강제적으로 끌 수 없다. 해결책은 아래와 같다.
 
-- 해결법 1: 서버에 ssl인증 받아서 서버를 https로 바꾸기, 메인서버와 추천서버 두가지 모두 바꿔야하기 때문에 **보류**
-- 해결법 2: 클라이언트 배포를 http로 낮추기. 즉 네트리파이를 버리고 다른 방법으로 배포해야함. 프론트도 aws로 구매하기에는 비용문제가 있어 **보류**
-- 해결법 3: GithubPage 서비스로 배포하고 도메인을 따로 구입하면 http 옵션으로 설정가능, 만약 도메인을 구입할 예정이라면 최선으로 보인다.
+공유책방의 프론트엔드는 Netlify를 사용해 배포하였다. Netlify는 정적인 웹을 무료로 배포하여주는 웹서비스이며 무료라는 점과 Github와 연동하여 간편한 배포가 가능하다는 장점을 가지고 있어 채택하였다. 하지만 Netlify 기본적으로 HTTPS를 사용하는 반면, 서버는 AWS의 EC2를 사용해 배포하였기에 HTTP 방식의 통신을 하였다. 개발단계의 로컬환경에서는 문제가 없었으나, HTTPS와 HTTP의 통신을 금지하는 네트워크 정책으로인해 배포환경에서 프론트가 서버와의 통신을 못하는 문제가 있었다. Netlify 공식답변으로는 HTTPS를 강제적으로 끌 수 없기에 해결책은 서버에 SSL인증을 받아 HTTPS로 바꿔야 했다. 하지만 공유책방은 서비스의 메인기능을 담당하는 메인서버와 책 추천을 위한 추천시스템 서버와 통신하였기에 비용적인 문제를 이유로 보류하였다. 
+새로운 해결책을 찾아보던중 Netlify의 공식 문서에서 해답을 찾았다. 이는 리다이렉트 경로를 설정하여 모든 요청을 브라우저에서 추가로 연결하지 않고, CDN서버에서 바로 프록시 시키는 방식을 사용해 HTTP서버와 통신을 가능하게 하는 것이다. 이 방법을 사용하여 배포환경에서의 서버통신을 가능하게 하였다. 아래는 해답을 얻은 공식문서의 내용이다.
+![image](https://user-images.githubusercontent.com/90181028/205478527-2d014cbe-5de1-47a5-b004-9afb4015d6d7.png)
 
-## DATE 20221122
 
-Netlify 공식문서에서 해답을 찾음. 아래 공식 문서의 내용이다
-
-> Similar to how you can rewrite paths like /_ to /index.html, you can also set up rules to let parts of your site proxy to external services. Let’s say you need to communicate from a single-page app with an API on https://api.example.com that doesn’t support CORS requests. The following rule will let you use /api/ from your JavaScript client:  
-> /api/_ https://api.example.com/:splat 200  
-> Now all requests to /api/... will be proxied through to https://api.example.com straight from our CDN servers without an additional connection from the browser. If the API supports standard HTTP caching mechanisms like ETags or Last-Modified headers, the responses will even get cached by our CDN nodes.
-
-- 해결법4: public 최상단에 \_redirects 파일추가하고 'sample 1'을 삽입한다. 클라이언트에서 api 호출 코드 또한 'sample 2'와 같이 바꿔준다. 이제 모든 요청 은 브라우저에서 추가로 연결하지 않고 CDN 서버에서 바로 /api/...프록시된다. 이 방법을 사용하여 정상적으로 서버와 통신하는 것을 확인하였다.
 
 ```bash
 # sample 1
@@ -61,27 +57,21 @@ axios({
 })
 ```
 
-# Performance
+# 4. 공유책방의 성능관리
 
-사이트의 성능 확인은 아래 3가지 방법으로 측정 및 문서화하였다.
+웹사이트의 성능저하는 곧 사용자의 사용성 하락과 더불어 우리 서비스를 이탈하게 된다. 이를 방지하기 위하여 공유책방의 지속적으로 성능측정 및 개선작업을 진행하였다. 사이트의 성능 확인은 아래 3가지 방법으로 측정 및 문서화하였다.
+-	Chrome DevTools: SHOW FPS
+-	Chrome DevTools: Lighthouse
+-	Chrome DevTools: Performance Tab & Network Tab
 
-- 개발자도구 - SHOW FPS
-- 개발자도구 - Lighthouse
-- 개발자도구 - 네트워크 측정 후 har 파일 추출로 문서화
+공유책방의 성능을 높인 사례 중 이미지 최적화를 통해 42.6 fps에서 58.2fps로 발전시킨 사례가 있다. FPS란 초당 프레임 수로 성능 지표의 가장 기본지표이다. 사용자들은 평균 60fps를 유지해야 동작에 불만을 느끼지 않는다. 하지만 공유책방의 개발환경과 배포환경에서 특정 페이지에 프레임의 손실(42fps)이 지속적으로 발생하였다. 이러한 현상의 공통점은 이미지가 많은 부분에서 발생한다는 것이었다.
 
-## DATE 20221123
+![image](https://user-images.githubusercontent.com/90181028/205478574-9813f243-6b34-47d2-a31f-b098591e8876.png)
 
-개발버전과 배포버전에서 이미지가 많은 부분에 버벅거림이 심하였다. 이미지를 preload 하는 등의 시도를 하였으나 해결되지 않음. 찾아보니 이미지 파일자체의 용량이 많은 리소스를 차지한다. 공유책방의 경우 이미지 파일이 jpg다 보니 원본사이즈(2000이상)를 사용해야 화질이 좋을 것이라 생각하여 실제 300x300px 크기로 사용하더도 큰 이미지를 사용하였다. 그 결과 평균 60 fps를 유지하는 사이트가 이미지가 위치하는 부분에서 아래와 같이 40fps로 떨어짐을 확인하였다.
+실제 통계자료를 살펴보면 웹페이지에서 대부분의 용량을 차지하는 것은 이미지이다. 공유책방의 경우 이미지를 디자인적인 요소로 많이 활용하는데, jpg 파일의 특성상 실제 사이즈보다 크게 사용하는 경우 화질의 저하로 이어진다. 이러한 점을 고려하여 원본사이즈(2000px 이상)를 사용하였고, 자연스럽게 사이트의 성능을 저하시키는 요인으로 작용하였다. 이를 개선시키기 위해 웹에서 이미지가 사용되는 카드 & 배너의 사이즈를 모두 측정하여 이미지의 사이즈를 적합하게 조절하는 최적화 작업을 진행하였다. 하나의 카드는 데스크탑과 태블릿, 모바일에서 환경에 따라 사이즈가 변할 수 있다. 이러한 상황을 모두 고려하여 하나의 이미지에 작은 버전과 큰 버전 두가지 모두 소스에 올려 사용자가 어떤 환경에서 접근하든 적당한 이미지의 결과를 출력되게 하였다. 또한 이미지들을 최초 렌더링 때 모두 preload하여 캐시에 담아두는 “image-preloading” 방식을 적용하였다. 이를 통해 사용자의 페이지 이동에 따른 loss를 최소화할 수 있다. 
+이미지 최적화 작업을 하며 사용자가 화질 저하와 성능 저하없이 서비스를 사용할 수 있게 하고, 프레임 수는 42fps에서 58.2fps로 상승, 이미지의 다운로드 시간도 134ms에서 11ms로 빨라진 것을 확인할 수 있었다.
 
-이를 해결하기 위해 적당한 사이즈의 이미지 최적화를 진행하였다. FPS가 전혀 떨어지지 않는 것을 확인할 수 있다. 하단에는 결과를 비교한 표이다.
-
-#### 변경 전 FPS
-
-![screenshot](./performance/FPS-%EC%B5%9C%EC%A0%81%ED%99%94%EC%A0%84-1123.png)
-
-#### 변경 후 FPS
-
-![screenshot](./performance/FPS-%EC%B5%9C%EC%A0%81%ED%99%94%ED%9B%84-1123.png)
+![image](https://user-images.githubusercontent.com/90181028/205478580-14f5cd04-5b16-4c41-a1c5-d3b994110996.png)
 
 | type | before image | after image |
 | ---- | ------------ | ----------- |
