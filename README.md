@@ -26,7 +26,7 @@
 | 박지헌      | 장윤아    | 허욱      | 정영우          |
 | ----------- | --------- | --------- | --------------- |
 | @jiheon788  | @zogak    | @Wook0111 | @youngwoo-korea |
-| FE / Design | BE / 배포 | RS        | PM              |
+| FE / Design | BE / 배포 | RS | PM |
 
 # ✨ KEY FUNTIONS
 
