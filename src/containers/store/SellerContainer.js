@@ -42,7 +42,7 @@ const SellerContainer = ({
 
   const statusMap = {
     SHARE: "나눔",
-    SOLD: "판매중",
+    SOLD: "판매완료",
     UNSOLD: "판매중",
     READ: "미판매",
     PENDING: "예약",
