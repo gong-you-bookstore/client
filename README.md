@@ -1,16 +1,11 @@
-# 공유책방 - Client
-
-
 <div align="center">
-<img src="https://user-images.githubusercontent.com/90181028/205358825-401a9df2-64df-4b0a-a548-cf73906b2dbd.png" width="150px" alt="img"/>
-<br>
-<br>
+<img src="https://user-images.githubusercontent.com/90181028/205477593-6f5f08cd-0344-40cd-89f3-01e258d57567.png" width="150px" alt="img"/>
 
 > "공유책방"은 더는 활용되지 않은 채 집에 잠들어 있는 책을 깨우고,<br> 나눔을 통하여 책이라는 재화의 효율성을 극대화하는 프로젝트입니다.
 
-<br>
-
 ### [공유책방 바로가기](https://gong-you-bookstore.netlify.app/)
+
+<br>
 
 </div>
 
@@ -21,12 +16,10 @@
 - 2022.10 ~ 2022.12
 
 # 👩🏻‍💻 TEAM
-|Github|Part|
-|------|---|
-|@jiheon788|FE / DESIGN|
-|@zogak|BE / 배포|
-|@Wook0111|RS|
-|@youngwoo-korea|PM|
+|박지헌|장윤아|허욱|정영우|
+|--|--|--|--|
+|@jiheon788|@zogak|@Wook0111|@youngwoo-korea|
+| FE / Design | BE / 배포 | RS | PM |
 
 
 # 📑 REPOSITORY INDEX
