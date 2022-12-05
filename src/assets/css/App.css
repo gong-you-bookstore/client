@@ -389,7 +389,7 @@ input:-webkit-autofill:active {
 
 /* Delete IOS Style */
 @supports (-webkit-touch-callout: none) {
-  input,
+  /* input,
   textarea,
   button {
     appearance: none;
@@ -398,7 +398,7 @@ input:-webkit-autofill:active {
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
-  }
+  } */
 }
 
 /* device-width < device-height */
