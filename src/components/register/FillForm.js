@@ -25,13 +25,13 @@ const FillForm = ({
               <input 
                 type="radio" 
                 name="status" 
-                value="UNSOLD" 
+                value="READ" 
                 onChange={onChangeResult}
               />미판매
               <input 
                 type="radio" 
                 name="status" 
-                value="SOLD" 
+                value="UNSOLD" 
                 onChange={onChangeResult}
               />판매
               <input 
@@ -43,7 +43,7 @@ const FillForm = ({
             </div>
 
             {
-              result.status === "SOLD" ? (
+              result.status === "UNSOLD" ? (
                 <>
                 <label htmlFor="content" className="form-label">Token</label>
                 <div className="form-row-flex">
