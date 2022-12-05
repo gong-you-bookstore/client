@@ -15,7 +15,7 @@ const GenrePage = () => {
 
   useEffect(() => {
     getBooksByGenre(state.code).then(response => {
-      console.log(response)
+      // console.log(response)
       setTotalBooks(response.data.data);
     }).catch(error => {
       console.log(error)

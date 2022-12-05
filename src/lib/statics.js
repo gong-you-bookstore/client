@@ -57,3 +57,12 @@ export const CATEGORIES = [
     eng: "HISTORY & GEOGRAPHY",
   },
 ];
+
+export const statusMap = {
+  SHARE: "나눔",
+  SOLD: "판매완료",
+  UNSOLD: "판매중",
+  READ: "미판매",
+  PENDING: "예약",
+}
+

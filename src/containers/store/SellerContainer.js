@@ -6,7 +6,7 @@ import { toastMaker } from "../../lib/utils";
 import { getUserBook } from "../../lib/api/book";
 import { useNavigate } from "react-router-dom";
 import useScrollTo from '../../lib/hooks/useScrollTo'
-
+import { statusMap } from "../../lib/statics";
 const SellerContainer = ({
   sellers,
   isbn
@@ -40,18 +40,10 @@ const SellerContainer = ({
     )
   }
 
-  const statusMap = {
-    SHARE: "나눔",
-    SOLD: "판매완료",
-    UNSOLD: "판매중",
-    READ: "미판매",
-    PENDING: "예약",
-  }
-
   useEffect(() => {
     if (selectedUserEmail) {
       getUserBook(isbn, selectedUserEmail, cookies.userData.accessToken).then(response => {
-        console.log(response)
+        // console.log(response)
         setSelectedUserData(response.data.data);
       }).catch(error => {
         console.log(error)
