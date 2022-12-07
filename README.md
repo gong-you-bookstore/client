@@ -1,6 +1,6 @@
 # <img align="left" src="https://user-images.githubusercontent.com/90181028/205477593-6f5f08cd-0344-40cd-89f3-01e258d57567.png" width="100px" /> [공유책방](https://gong-you-bookstore.netlify.app/)
 
-> 우리가 만드는 공유책방
+> 공유책방 - client
 
 <br>
 
@@ -10,18 +10,6 @@
 <img src="https://user-images.githubusercontent.com/90181028/205436740-c5785337-48aa-4b3b-939a-47d8604f17b8.png" width="49%">
 <img src="https://user-images.githubusercontent.com/90181028/205436741-8f14f271-fb48-47f1-8584-e43439e85d1a.png" width="49%">
 </div>
-<br>
-
-<div align="center">
-
-# 공유책방 - client
-
-</div>
-
-<div align="right">
-Author: @jiheon788
-</div>
-<br>
 <br>
 
 # 📑 INDEX
