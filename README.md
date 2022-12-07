@@ -12,6 +12,9 @@
 </div>
 <br>
 
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/90181028/206190290-ae029e91-c3ae-405b-9007-75417c450482.gif)
+
 # 📑 INDEX
 
 1. [INTRODUCTION](#1-introduction)
