@@ -5,7 +5,9 @@
 </div>
 
 <div align="right">
-Author: @jiheon788
+Author: @jiheon788  
+
+개발 기간: 2022.09 - 2022/12
 </div>
 
 # 📑 INDEX
