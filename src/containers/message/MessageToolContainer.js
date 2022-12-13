@@ -60,6 +60,7 @@ const MessageToolContainer = ({
       onChangeMyMessage = {onChangeMyMessage}
       onClickRequestTrade = {onClickRequestTrade}
       onClickSendMessage = {onClickSendMessage}
+      loadMessagelog = {loadMessagelog}
     />
   )
 }
