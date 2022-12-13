@@ -7,17 +7,12 @@
 <div align="center">
 <img src="https://user-images.githubusercontent.com/90181028/205436710-0e0a6088-cc4a-44e4-a172-a84bbe523958.png" width="49%">
 <img src="https://user-images.githubusercontent.com/90181028/205436716-ee97efe3-ab95-4d9c-ac0e-66c8a1ba7163.png" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/205436740-c5785337-48aa-4b3b-939a-47d8604f17b8.png" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/205436741-8f14f271-fb48-47f1-8584-e43439e85d1a.png" width="49%">
 
-<img src="https://user-images.githubusercontent.com/90181028/206190290-ae029e91-c3ae-405b-9007-75417c450482.gif" width="98%">
-<img src="https://user-images.githubusercontent.com/90181028/206197843-0e32af37-551f-4e48-9fca-92806fb6ce80.gif" width="98%">
+![슬라이드1](https://user-images.githubusercontent.com/90181028/207235812-c69846e9-a100-4f44-a641-336c80b083ee.PNG)
 
-<img src="https://user-images.githubusercontent.com/90181028/206196901-0de37c9c-1239-4c33-82f9-21d3a5cad484.gif" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/206198670-cff6e98d-aded-4c3e-a75f-74df74b1e570.gif" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/206200013-f3091072-9e7a-4919-aa0b-5a905b748ef9.gif" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/206202669-b8d47340-6d4c-45f4-bbfd-289a26e63d5b.gif" width="49%">
-<img src="https://user-images.githubusercontent.com/90181028/206859023-9e57f872-126f-40fe-a64d-5a535f4f6506.gif" width="49%">
+![슬라이드2](https://user-images.githubusercontent.com/90181028/207235822-95f25465-9924-446d-9a83-eddb49b7b5ce.PNG)
+
+![슬라이드3](https://user-images.githubusercontent.com/90181028/207235831-3ecb5297-c3d0-475b-9996-977d3ff8da7d.PNG)
 
 </div>
 
@@ -40,6 +35,8 @@
    8.1. [Netlify 배포와 서버 통신 문제 해결 과정](#81-netlify-배포와-서버-통신-문제-해결-과정)  
    8.2. [성능관리 - 이미지최적화](#82-성능관리---이미지-최적화)
 9. [DIRECTORY](#9-directory)
+10. [DEMO](#10-demo)
+
 
 ---
 
@@ -259,3 +256,15 @@ axios({
 │   └── index.js
 └── ....etc
 ```
+
+# 10. DEMO
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/90181028/206190290-ae029e91-c3ae-405b-9007-75417c450482.gif" width="98%">
+<img src="https://user-images.githubusercontent.com/90181028/206197843-0e32af37-551f-4e48-9fca-92806fb6ce80.gif" width="98%">
+<img src="https://user-images.githubusercontent.com/90181028/206196901-0de37c9c-1239-4c33-82f9-21d3a5cad484.gif" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/206198670-cff6e98d-aded-4c3e-a75f-74df74b1e570.gif" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/206200013-f3091072-9e7a-4919-aa0b-5a905b748ef9.gif" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/206202669-b8d47340-6d4c-45f4-bbfd-289a26e63d5b.gif" width="49%">
+<img src="https://user-images.githubusercontent.com/90181028/206859023-9e57f872-126f-40fe-a64d-5a535f4f6506.gif" width="49%">
+</div>
