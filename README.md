@@ -16,7 +16,6 @@
 
 </div>
 
-
 # 📑 INDEX
 
 1. [INTRODUCTION](#1-introduction)
@@ -30,13 +29,12 @@
    6.1. [스타일 가이드](#61-스타일-가이드)  
    6.2. [반응형 웹](#62-반응형-웹)  
    6.3. [Design Concept](#63-design-concept)
-7. [프론트엔드 코드스타일](#7-코드스타일)
+7. [아키텍쳐: Container-Presenter 패턴](#7-아키텍쳐-container-presenter-패턴)
 8. [TROUBLE SHOOTING](#8-trouble-shooting)  
    8.1. [Netlify 배포와 서버 통신 문제 해결 과정](#81-netlify-배포와-서버-통신-문제-해결-과정)  
    8.2. [성능관리 - 이미지최적화](#82-성능관리---이미지-최적화)
 9. [DIRECTORY](#9-directory)
 10. [DEMO](#10-demo)
-
 
 ---
 
@@ -147,9 +145,11 @@
 
 - 공유책방 갤러리
 
-# 7. 코드스타일
+# 7. 아키텍쳐: Container-Presenter 패턴
 
-리액트는 UI를 구성하는 개별적인 뷰 단위인 컴포넌트가 블록역할을 하며 이를 조립해 하나의 완성품을 만든다. 이러한 리액트의 특징을 살려 각 컴포넌트간 의존성을 줄이고 독립적인 컴포넌트로 분리하는 리팩토링 작업을 지속적으로 거치며 생산성과 유지보수를 용이하게 하였다.
+비즈니스 로직을 관장하는 Container 컴포넌트, 데이터만 뿌려주는 형태의 컴포넌트(Presenter)를 분리하여 최상단에 Container를 두는 Container-Presenter 아키텍쳐를 채택하였다. 비즈니스 로직이 들어가게 되면 컴포넌트의 재활용성은 상당히 떨어지게 된다. 컴포넌트는 재사용이 가능해야 한다는 원칙에 따라 가급적 비즈니스 로직을 포함시키지 않으려고 개발을 했다.
+
+'공유책방'은 간단한 구조이므로 Props Drilling Problem이 치명적이지 않다고 판단하였다.
 
 # 8. TROUBLE SHOOTING
 
