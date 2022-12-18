@@ -250,8 +250,8 @@ axios({
 │   │    └── utils.js # 유틸 함수
 │   ├── assets # css, images
 │   ├── pages # 페이지 관리
-│   ├── containers # 상태 관리
-│   ├── components # 컴포넌트
+│   ├── containers # 비즈니스 로직 컴포넌트
+│   ├── components # Presenter 컴포넌트
 │   ├── App.js
 │   └── index.js
 └── ....etc
