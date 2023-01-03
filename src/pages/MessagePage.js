@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie"
 import { useLocation } from "react-router-dom";
 import MessageLogContainer from "../containers/message/MessageLogContainer";
@@ -24,6 +24,13 @@ const MessagePage = () => {
       console.log(error)
     })
   }
+
+  // 주기적으로 메시지 로드
+  useEffect(() => {
+    setInterval(() => {
+      loadMessagelog();
+    }, 10000)
+  }, [])
 
   return (
     <div className="bg-dark-full-px">
