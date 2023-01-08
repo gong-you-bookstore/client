@@ -92,7 +92,7 @@
 
 ## ⚙️ System Architecture
 
-![공유책방-시스템구조도](https://user-images.githubusercontent.com/90181028/206103160-0fefc587-5079-4230-9b82-763ad186dbaa.png)
+![공유책방-시스템구조도-002](https://user-images.githubusercontent.com/90181028/211186171-968f354c-0e20-45e8-8ebd-2f36517c7fc2.png)
 
 ## Getting Started
 
