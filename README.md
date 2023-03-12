@@ -98,7 +98,7 @@
 
 ## 🛠 Tech Stack
 
-`React`, `Responsive Web`, `Jquery`, `QuggaJs`, `Container-Presenter`, `Netlify`, `Spring boot`, `Flask`, `scikit learn`, `faiss`, `MySQL`, `EC2`, `RDS`
+`React`, `Responsive Web`, `Jquery`, `QuggaJs`, `Container-Presenter`, `Netlify`
 
 ## ⚙️ System Architecture
 
