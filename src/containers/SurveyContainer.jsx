@@ -1,16 +1,7 @@
-import SurveyForm from "../components/survey/SurveyForm";
-import { useState } from "react";
+import SurveyForm from '../components/survey/SurveyForm';
 
-const SurveyContainer = ({formRef}) => {
-  
-
-  return (
-    <>
-      <SurveyForm
-        formRef = {formRef}
-      />
-    </>
-  )
-}
+const SurveyContainer = ({ formRef }) => {
+  return <SurveyForm formRef={formRef} />;
+};
 
 export default SurveyContainer;

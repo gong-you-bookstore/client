@@ -9,10 +9,6 @@ const useLocWizard = () => {
   
   onChangeStylesByScroll();
 
-  // if(pathname === "/") {
-  //   $("nav").removeClass("non-top");
-  //   $('.rounded-btn').removeClass( 'active' );
-  // }
 
   useEffect(() => {
     scrollToTop();
